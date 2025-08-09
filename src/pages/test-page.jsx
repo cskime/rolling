@@ -6,6 +6,7 @@ import {
   SecondaryButton,
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
+import ToggleButton from "../components/button/toggle-button";
 
 function TestPage() {
   return (
@@ -41,6 +42,9 @@ function TestPage() {
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <ToggleButton options={["컬러", "이미지", "다른값"]} />
       </div>
     </div>
   );
