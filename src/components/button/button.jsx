@@ -64,10 +64,6 @@ const StyledPrimaryButton = styled(BaseButton)`
   background-color: var(--color-purple-600);
   color: white;
 
-  &:disabled {
-    background-color: var(--color-gray-300);
-  }
-
   &:hover {
     background-color: var(--color-purple-700);
   }
@@ -79,6 +75,10 @@ const StyledPrimaryButton = styled(BaseButton)`
   &:focus {
     background-color: var(--color-purple-800);
     box-shadow: 0 0 0 1px var(--color-purple-900) inset;
+  }
+
+  &:disabled {
+    background-color: var(--color-gray-300);
   }
 `;
 
@@ -97,12 +97,6 @@ const StyledSecondaryButton = styled(BaseButton)`
   color: var(--color-purple-700);
   box-shadow: 0 0 0 1px var(--color-purple-600) inset;
 
-  &:disabled {
-    background-color: var(--color-gray-300);
-    color: white;
-    box-shadow: none;
-  }
-
   &:hover {
     background-color: var(--color-purple-100);
     color: var(--color-purple-600);
@@ -117,6 +111,12 @@ const StyledSecondaryButton = styled(BaseButton)`
 
   &:focus {
     box-shadow: 0 0 0 1px var(--color-purple-800) inset;
+  }
+
+  &:disabled {
+    background-color: var(--color-gray-300);
+    color: white;
+    box-shadow: none;
   }
 `;
 
@@ -135,12 +135,6 @@ const StyledOutlinedButton = styled(BaseButton)`
   color: var(--color-gray-900);
   box-shadow: 0 0 0 1px var(--color-gray-300) inset;
 
-  &:disabled {
-    background-color: var(--color-gray-300);
-    color: white;
-    box-shadow: none;
-  }
-
   &:hover {
     background-color: var(--color-gray-100);
   }
@@ -151,6 +145,12 @@ const StyledOutlinedButton = styled(BaseButton)`
 
   &:focus {
     box-shadow: 0 0 0 1px var(--color-gray-500) inset;
+  }
+
+  &:disabled {
+    background-color: var(--color-gray-300);
+    color: white;
+    box-shadow: none;
   }
 `;
 
