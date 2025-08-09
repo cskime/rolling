@@ -90,4 +90,42 @@ function PrimaryButton({ title, size, ...props }) {
   );
 }
 
-export { PrimaryButton };
+/* Secondary Button */
+
+const StyledSecondaryButton = styled(BaseButton)`
+  background-color: white;
+  color: var(--color-purple-700);
+  border: 1px solid var(--color-purple-600);
+
+  &:disabled {
+    background-color: var(--color-gray-300);
+    color: white;
+    border: none;
+  }
+
+  &:hover {
+    background-color: var(--color-purple-100);
+    color: var(--color-purple-600);
+    border: 1px solid var(--color-purple-700);
+  }
+
+  &:active {
+    background-color: var(--color-purple-100);
+    color: var(--color-purple-600);
+    border: 1px solid var(--color-purple-800);
+  }
+
+  &:focus {
+    border: 1px solid var(--color-purple-800);
+  }
+`;
+
+function SecondaryButton({ title, size, ...props }) {
+  return (
+    <StyledSecondaryButton $size={size} {...props}>
+      <span>{title}</span>
+    </StyledSecondaryButton>
+  );
+}
+
+export { PrimaryButton, SecondaryButton };
