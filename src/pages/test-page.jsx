@@ -43,8 +43,16 @@ function TestPage() {
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: 16,
+        }}
+      >
         <ToggleButton options={["컬러", "이미지", "다른값"]} />
+        <ToggleButton value="이미지" options={["컬러", "이미지", "다른값"]} />
       </div>
     </div>
   );
