@@ -1,4 +1,8 @@
-import { PrimaryButton, SecondaryButton } from "../components/button/button";
+import {
+  OutlinedButton,
+  PrimaryButton,
+  SecondaryButton,
+} from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 
 function TestPage() {
@@ -24,6 +28,13 @@ function TestPage() {
         <SecondaryButton size={BUTTON_SIZE.small} title="Hello" />
         <SecondaryButton size={BUTTON_SIZE.extraSmall} title="Hello" />
         <SecondaryButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <OutlinedButton size={BUTTON_SIZE.large} title="Hello" />
+        <OutlinedButton size={BUTTON_SIZE.medium} title="Hello" />
+        <OutlinedButton size={BUTTON_SIZE.small} title="Hello" />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
       </div>
     </div>
   );

@@ -128,4 +128,38 @@ function SecondaryButton({ title, size, ...props }) {
   );
 }
 
-export { PrimaryButton, SecondaryButton };
+/* Outlined Button */
+
+const StyledOutlinedButton = styled(BaseButton)`
+  background-color: white;
+  color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-300);
+
+  &:disabled {
+    background-color: var(--color-gray-300);
+    color: white;
+    border: none;
+  }
+
+  &:hover {
+    background-color: var(--color-gray-100);
+  }
+
+  &:active {
+    background-color: var(--color-gray-100);
+  }
+
+  &:focus {
+    border: 1px solid var(--color-gray-500);
+  }
+`;
+
+function OutlinedButton({ title, size, ...props }) {
+  return (
+    <StyledOutlinedButton $size={size} {...props}>
+      <span>{title}</span>
+    </StyledOutlinedButton>
+  );
+}
+
+export { OutlinedButton, PrimaryButton, SecondaryButton };
