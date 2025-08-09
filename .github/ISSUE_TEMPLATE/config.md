@@ -1,7 +1,7 @@
 ---
 name: "Project configuration"
 about: "빌드, 패키지 관련 설정 등 프로젝트 설정 작업"
-tags: "config"
+labels: "config"
 ---
 
 ## 작업 목표가 무엇인가요?

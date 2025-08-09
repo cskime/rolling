@@ -1,7 +1,7 @@
 ---
 name: "Refactoring"
 about: "코드 리팩터링"
-tags: "refactor"
+labels: "refactor"
 ---
 
 ## 리팩터링의 목적이 무엇인가요?

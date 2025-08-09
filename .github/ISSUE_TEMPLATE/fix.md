@@ -1,7 +1,7 @@
 ---
 name: "Fix"
 about: "버그 및 오류 수정"
-tags: "fix"
+labels: "fix"
 ---
 
 ## 어떤 버그인가요?

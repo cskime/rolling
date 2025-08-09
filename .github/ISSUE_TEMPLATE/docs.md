@@ -1,7 +1,7 @@
 ---
 name: "Documentation"
 about: "문서 관련 작업"
-tags: "docs"
+labels: "docs"
 ---
 
 ## 작업 목표가 무엇인가요?

@@ -1,7 +1,7 @@
 ---
 name: "Feature"
 about: "기능 구현 및 개발"
-tags: "feat"
+labels: "feat"
 ---
 
 ## 어떤 기능인가요?
