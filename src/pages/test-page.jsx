@@ -1,3 +1,5 @@
+import ArrowButton from "../components/button/arrow-button";
+import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
 import {
   OutlinedButton,
   PrimaryButton,
@@ -35,6 +37,10 @@ function TestPage() {
         <OutlinedButton size={BUTTON_SIZE.small} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
+        <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
       </div>
     </div>
   );
