@@ -78,7 +78,7 @@ const StyledPrimaryButton = styled(BaseButton)`
 
   &:focus {
     background-color: var(--color-purple-800);
-    border: 1px solid var(--color-purple-900);
+    box-shadow: 0 0 0 1px var(--color-purple-900) inset;
   }
 `;
 
@@ -95,28 +95,28 @@ function PrimaryButton({ title, size, ...props }) {
 const StyledSecondaryButton = styled(BaseButton)`
   background-color: white;
   color: var(--color-purple-700);
-  border: 1px solid var(--color-purple-600);
+  box-shadow: 0 0 0 1px var(--color-purple-600) inset;
 
   &:disabled {
     background-color: var(--color-gray-300);
     color: white;
-    border: none;
+    box-shadow: none;
   }
 
   &:hover {
     background-color: var(--color-purple-100);
     color: var(--color-purple-600);
-    border: 1px solid var(--color-purple-700);
+    box-shadow: 0 0 0 1px var(--color-purple-700) inset;
   }
 
   &:active {
     background-color: var(--color-purple-100);
     color: var(--color-purple-600);
-    border: 1px solid var(--color-purple-800);
+    box-shadow: 0 0 0 1px var(--color-purple-800) inset;
   }
 
   &:focus {
-    border: 1px solid var(--color-purple-800);
+    box-shadow: 0 0 0 1px var(--color-purple-800) inset;
   }
 `;
 
@@ -133,12 +133,12 @@ function SecondaryButton({ title, size, ...props }) {
 const StyledOutlinedButton = styled(BaseButton)`
   background-color: white;
   color: var(--color-gray-900);
-  border: 1px solid var(--color-gray-300);
+  box-shadow: 0 0 0 1px var(--color-gray-300) inset;
 
   &:disabled {
     background-color: var(--color-gray-300);
     color: white;
-    border: none;
+    box-shadow: none;
   }
 
   &:hover {
@@ -150,7 +150,7 @@ const StyledOutlinedButton = styled(BaseButton)`
   }
 
   &:focus {
-    border: 1px solid var(--color-gray-500);
+    box-shadow: 0 0 0 1px var(--color-gray-500) inset;
   }
 `;
 
