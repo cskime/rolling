@@ -48,7 +48,7 @@ const styles = {
 
 const BaseButton = styled.button`
   border: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   padding: ${({ $size }) => styles.padding[$size]};
   font-size: ${({ $size }) => styles.fontSize[$size]};
   font-weight: ${({ $size }) => styles.fontWeight[$size]};
