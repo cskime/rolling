@@ -2,12 +2,6 @@ import styled from "styled-components";
 import BUTTON_SIZE from "./button-size";
 
 const styles = {
-  padding: {
-    [BUTTON_SIZE.large]: "0 24px",
-    [BUTTON_SIZE.medium]: "0 16px",
-    [BUTTON_SIZE.small]: "0 16px",
-    [BUTTON_SIZE.extraSmall]: "0 16px",
-  },
   minWidth: {
     [BUTTON_SIZE.large]: "160px",
     [BUTTON_SIZE.medium]: "90px",
@@ -49,7 +43,7 @@ const styles = {
 const BaseButton = styled.button`
   border: none;
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
-  padding: ${({ $size }) => styles.padding[$size]};
+  padding: 0 16px;
   font-size: ${({ $size }) => styles.fontSize[$size]};
   font-weight: ${({ $size }) => styles.fontWeight[$size]};
   line-height: ${({ $size }) => styles.lineHeight[$size]};
@@ -61,6 +55,7 @@ const BaseButton = styled.button`
 /* Primary Button */
 
 const StyledPrimaryButton = styled(BaseButton)`
+  padding: 0 24px;
   background-color: var(--color-purple-600);
   color: white;
 
