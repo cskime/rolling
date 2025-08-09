@@ -1,10 +1,10 @@
 ---
-name: "Feature"
-about: "기능 구현 및 개발"
-tags: "feat"
+name: "Refactoring"
+about: "코드 리팩터링"
+tags: "refactor"
 ---
 
-## 어떤 기능인가요?
+## 리팩터링의 목적이 무엇인가요?
 
 > 추가하려는 기능에 대해 간결하게 설명해주세요
 
