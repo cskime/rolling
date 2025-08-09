@@ -30,7 +30,7 @@ function ToggleButton({ value, options = [] }) {
   const [selected, setSelected] = useState(value);
 
   const handleOptionClick = (event) => {
-    setSelected(event.target.innerHTML);
+    setSelected(event.target.textContent);
   };
 
   return (
