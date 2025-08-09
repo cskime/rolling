@@ -8,12 +8,12 @@ const styles = {
     [BUTTON_SIZE.small]: "90px",
     [BUTTON_SIZE.extraSmall]: "90px",
   },
-  height: {
+  height: (hasIcon) => ({
     [BUTTON_SIZE.large]: "56px",
     [BUTTON_SIZE.medium]: "40px",
     [BUTTON_SIZE.small]: "36px",
-    [BUTTON_SIZE.extraSmall]: "28px",
-  },
+    [BUTTON_SIZE.extraSmall]: hasIcon ? "32px" : "28px",
+  }),
   fontSize: {
     [BUTTON_SIZE.large]: "18px",
     [BUTTON_SIZE.medium]: "16px",
@@ -48,7 +48,7 @@ const BaseButton = styled.button`
   font-weight: ${({ $size }) => styles.fontWeight[$size]};
   line-height: ${({ $size }) => styles.lineHeight[$size]};
   border-radius: ${({ $size }) => styles.borderRadius[$size]};
-  height: ${({ $size }) => styles.height[$size]};
+  height: ${({ $size, $icon }) => styles.height($icon)[$size]};
 
   span {
     display: block;
@@ -153,10 +153,48 @@ const StyledOutlinedButton = styled(BaseButton)`
   }
 `;
 
-function OutlinedButton({ title, size, ...props }) {
+const stylesWithIcon = {
+  iconSize: {
+    [BUTTON_SIZE.medium]: "24px",
+    [BUTTON_SIZE.small]: "24px",
+    [BUTTON_SIZE.extraSmall]: "20px",
+  },
+  gap: {
+    [BUTTON_SIZE.medium]: "10px",
+    [BUTTON_SIZE.small]: "4px",
+    [BUTTON_SIZE.extraSmall]: "4px",
+  },
+};
+
+const IconTitleContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ $size }) => stylesWithIcon.gap[$size]};
+
+  & > div:first-child {
+    width: ${({ $size }) => stylesWithIcon.iconSize[$size]};
+    height: ${({ $size }) => stylesWithIcon.iconSize[$size]};
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+`;
+
+function OutlinedButton({ title, icon, size, ...props }) {
   return (
-    <StyledOutlinedButton $size={size} {...props}>
-      <span>{title}</span>
+    <StyledOutlinedButton $size={size} $icon={icon} {...props}>
+      {icon && size !== BUTTON_SIZE.large ? (
+        <IconTitleContent $size={size}>
+          <div>
+            <img src={icon} alt="버튼 아이콘" />
+          </div>
+          {title}
+        </IconTitleContent>
+      ) : (
+        <span>{title}</span>
+      )}
     </StyledOutlinedButton>
   );
 }

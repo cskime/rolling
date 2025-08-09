@@ -1,3 +1,4 @@
+import smileAddImg from "../assets/ic-face-smile-add.svg";
 import ArrowButton from "../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
 import {
@@ -37,7 +38,29 @@ function TestPage() {
         <OutlinedButton size={BUTTON_SIZE.medium} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.small} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" />
-        <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <OutlinedButton
+          size={BUTTON_SIZE.medium}
+          title="Hello"
+          icon={smileAddImg}
+        />
+        <OutlinedButton
+          size={BUTTON_SIZE.small}
+          title="Hello"
+          icon={smileAddImg}
+        />
+        <OutlinedButton
+          size={BUTTON_SIZE.extraSmall}
+          title="Hello"
+          icon={smileAddImg}
+        />
+        <OutlinedButton
+          size={BUTTON_SIZE.extraSmall}
+          title="Hello"
+          disabled
+          icon={smileAddImg}
+        />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
