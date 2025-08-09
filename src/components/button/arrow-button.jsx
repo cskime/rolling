@@ -16,6 +16,7 @@ const StyledArrowButton = styled.button`
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 
   img {
     width: 100%;
