@@ -133,6 +133,9 @@ const StyledOutlinedButton = styled(BaseButton)`
   background-color: white;
   color: var(--color-gray-900);
   box-shadow: 0 0 0 1px var(--color-gray-300) inset;
+  padding: ${({ $title }) => ($title ? "0 16px" : "0 6px")};
+  width: ${({ $icon, $size, $title }) =>
+    $title ? "auto" : styles.height($icon)[$size]};
 
   &:hover {
     background-color: var(--color-gray-100);
@@ -168,6 +171,7 @@ const stylesWithIcon = {
 
 const IconTitleContent = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: ${({ $size }) => stylesWithIcon.gap[$size]};
 
@@ -184,13 +188,13 @@ const IconTitleContent = styled.div`
 
 function OutlinedButton({ title, icon, size, ...props }) {
   return (
-    <StyledOutlinedButton $size={size} $icon={icon} {...props}>
+    <StyledOutlinedButton $size={size} $title={title} $icon={icon} {...props}>
       {icon && size !== BUTTON_SIZE.large ? (
         <IconTitleContent $size={size}>
           <div>
             <img src={icon} alt="버튼 아이콘" />
           </div>
-          {title}
+          {title && <div>{title}</div>}
         </IconTitleContent>
       ) : (
         <span>{title}</span>

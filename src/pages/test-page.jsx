@@ -63,6 +63,16 @@ function TestPage() {
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImg} />
+        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImg} />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImg} />
+        <OutlinedButton
+          size={BUTTON_SIZE.extraSmall}
+          disabled
+          icon={smileAddImg}
+        />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
         <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
       </div>
