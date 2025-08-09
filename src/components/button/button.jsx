@@ -49,7 +49,11 @@ const BaseButton = styled.button`
   line-height: ${({ $size }) => styles.lineHeight[$size]};
   border-radius: ${({ $size }) => styles.borderRadius[$size]};
   height: ${({ $size }) => styles.height[$size]};
-  min-width: ${({ $size }) => styles.minWidth[$size]};
+
+  span {
+    display: block;
+    min-width: ${({ $size }) => styles.minWidth[$size]};
+  }
 `;
 
 /* Primary Button */
