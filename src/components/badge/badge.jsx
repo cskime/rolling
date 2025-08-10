@@ -1,22 +1,23 @@
 import styled from "styled-components";
+import Colors from "../color/colors";
 import BADGE_TYPE from "./badge-type";
 
 const styles = {
   [BADGE_TYPE.acquaintance]: {
-    backgroundColor: "var(--color-beige-100)",
-    color: "var(--color-beige-500)",
+    backgroundColor: Colors.beige(100),
+    color: Colors.beige(500),
   },
   [BADGE_TYPE.coworker]: {
-    backgroundColor: "var(--color-purple-100)",
-    color: "var(--color-purple-600)",
+    backgroundColor: Colors.purple(100),
+    color: Colors.purple(600),
   },
   [BADGE_TYPE.family]: {
-    backgroundColor: "var(--color-green-100)",
-    color: "var(--color-green-500)",
+    backgroundColor: Colors.green(100),
+    color: Colors.green(500),
   },
   [BADGE_TYPE.friend]: {
-    backgroundColor: "var(--color-blue-100)",
-    color: "var(--color-blue-500)",
+    backgroundColor: Colors.blue(100),
+    color: Colors.blue(500),
   },
 };
 
