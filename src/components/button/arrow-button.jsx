@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import arrowLeftImg from "../../assets/ic-chevron-left.svg";
 import arrowRightImg from "../../assets/ic-chevron-right.svg";
+import Colors from "../color/colors";
 import ARROW_BUTTON_DIRECTION from "./arrow-button-direction";
 
 const arrowImg = {
@@ -10,7 +11,7 @@ const arrowImg = {
 
 const StyledArrowButton = styled.button`
   background: none;
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid ${Colors.gray(300)};
   width: 40px;
   height: 40px;
   border-radius: 20px;
