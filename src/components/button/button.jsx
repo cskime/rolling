@@ -174,15 +174,20 @@ const IconTitleContent = styled.div`
   justify-content: center;
   align-items: center;
   gap: ${({ $size }) => stylesWithIcon.gap[$size]};
+`;
 
-  & > div:first-child {
-    width: ${({ $size }) => stylesWithIcon.iconSize[$size]};
-    height: ${({ $size }) => stylesWithIcon.iconSize[$size]};
+const Icon = styled.div`
+  width: ${({ $size }) => stylesWithIcon.iconSize[$size]};
+  height: ${({ $size }) => stylesWithIcon.iconSize[$size]};
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+
+    ${({ $disabled }) =>
+      $disabled
+        ? "filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(5deg) brightness(105%) contrast(101%);"
+        : ""}
   }
 `;
 
@@ -191,9 +196,9 @@ function OutlinedButton({ title, icon, size, ...props }) {
     <StyledOutlinedButton $size={size} $title={title} $icon={icon} {...props}>
       {icon && size !== BUTTON_SIZE.large ? (
         <IconTitleContent $size={size}>
-          <div>
+          <Icon $size={size} $disabled={props.disabled}>
             <img src={icon} alt="버튼 아이콘" />
-          </div>
+          </Icon>
           {title && <div>{title}</div>}
         </IconTitleContent>
       ) : (

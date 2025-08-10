@@ -38,6 +38,7 @@ function TestPage() {
         <OutlinedButton size={BUTTON_SIZE.medium} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.small} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <OutlinedButton
