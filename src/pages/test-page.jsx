@@ -1,4 +1,6 @@
 import smileAddImg from "../assets/ic-face-smile-add.svg";
+import Badge from "../components/badge/badge";
+import BADGE_TYPE from "../components/badge/badge-type";
 import ArrowButton from "../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
 import {
@@ -87,6 +89,12 @@ function TestPage() {
       >
         <ToggleButton options={["컬러", "이미지", "다른값"]} />
         <ToggleButton value="이미지" options={["컬러", "이미지", "다른값"]} />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <Badge type={BADGE_TYPE.acquaintance} />
+        <Badge type={BADGE_TYPE.coworker} />
+        <Badge type={BADGE_TYPE.family} />
+        <Badge type={BADGE_TYPE.friend} />
       </div>
     </div>
   );
