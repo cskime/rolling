@@ -119,6 +119,20 @@ function TestPage() {
           error="Error Message"
         />
       </div>
+      <div style={{ display: "flex", gap: 16 }}>
+        <TextField type={TEXT_FIELD_TYPE.dropdown} placeholder="Placeholder" />
+        <TextField
+          type={TEXT_FIELD_TYPE.dropdown}
+          value="Input value"
+          placeholder="Placeholder"
+          disabled
+        />
+        <TextField
+          type={TEXT_FIELD_TYPE.dropdown}
+          placeholder="Placeholder"
+          error="Error Message"
+        />
+      </div>
     </div>
   );
 }

@@ -24,7 +24,7 @@ function InputTextField({ type, error, ...props }) {
       {type === TEXT_FIELD_TYPE.input ? (
         <TextInput error={error} {...props} />
       ) : (
-        <DropdownInput {...props} />
+        <DropdownInput error={error} {...props} />
       )}
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </StyledInputTextField>
