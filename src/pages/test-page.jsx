@@ -1,3 +1,4 @@
+import { useState } from "react";
 import smileAddImg from "../assets/ic-face-smile-add.svg";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
@@ -15,6 +16,17 @@ import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 
 function TestPage() {
+  const [option1, setOption1] = useState();
+  const [option2, setOption2] = useState();
+  const [dropdown2Error, setDropdown2Error] = useState("Error Message");
+  const handleDropdownSelect1 = (option) => {
+    setOption1(option);
+  };
+  const handleDropdownSelect2 = (option) => {
+    setOption2(option);
+    setDropdown2Error(null);
+  };
+
   return (
     <div
       style={{
@@ -120,17 +132,27 @@ function TestPage() {
         />
       </div>
       <div style={{ display: "flex", gap: 16 }}>
-        <TextField type={TEXT_FIELD_TYPE.dropdown} placeholder="Placeholder" />
+        <TextField
+          type={TEXT_FIELD_TYPE.dropdown}
+          placeholder="Placeholder"
+          value={option1}
+          options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          onSelect={handleDropdownSelect1}
+        />
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
           value="Input value"
           placeholder="Placeholder"
+          options={["Option 1", "Option 2", "Option 3", "Option 4"]}
           disabled
         />
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
           placeholder="Placeholder"
-          error="Error Message"
+          value={option2}
+          error={dropdown2Error}
+          options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          onSelect={handleDropdownSelect2}
         />
       </div>
     </div>

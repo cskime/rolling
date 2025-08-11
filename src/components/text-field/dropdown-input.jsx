@@ -1,10 +1,11 @@
+import { useState } from "react";
 import styled from "styled-components";
 import arrowDownImg from "../../assets/ic-chevron-down.svg";
+import Colors from "../color/colors";
 import INPUT_STYLES from "./input-styles";
 
 const StyledDropdownInput = styled.button`
   background-color: ${INPUT_STYLES.backgroundColor.normal};
-  outline: none;
   border: none;
   border-radius: 8px;
   box-shadow: 0 0 0 1px
@@ -15,6 +16,7 @@ const StyledDropdownInput = styled.button`
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     box-shadow: 0 0 0 1px
@@ -62,18 +64,78 @@ const Icon = styled.div`
   }
 `;
 
-function DropdownInput({ error, placeholder, value, disabled }) {
+const Dropdown = styled.div`
+  background-color: white;
+  box-shadow: 0 0 0 1px ${Colors.gray(300)} inset,
+    0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+`;
+
+const DropdownOption = styled.div`
+  width: calc(100% - 2px);
+  border: none;
+  background: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: ${Colors.gray(900)};
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${Colors.gray(100)};
+  }
+`;
+
+function DropdownInput({
+  error,
+  placeholder,
+  value,
+  options,
+  disabled,
+  onSelect,
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleInputClick = (event) => {
+    setIsOpen(!isOpen);
+    onSelect(event.target.textContent);
+  };
+
   return (
-    <StyledDropdownInput $error={error} disabled={disabled}>
-      {value ? (
-        <InputText>{value}</InputText>
-      ) : (
-        <PlaceholderText>{placeholder}</PlaceholderText>
-      )}
-      <Icon>
-        <img src={arrowDownImg} alt="Dropdown 화살표" />
-      </Icon>
-    </StyledDropdownInput>
+    <>
+      <StyledDropdownInput
+        $error={error}
+        disabled={disabled}
+        onClick={handleInputClick}
+      >
+        {value ? (
+          <InputText>{value}</InputText>
+        ) : (
+          <PlaceholderText>{placeholder}</PlaceholderText>
+        )}
+        <Icon>
+          <img src={arrowDownImg} alt="Dropdown 화살표" />
+        </Icon>
+        {isOpen && (
+          <Dropdown>
+            {options.map((option, index) => (
+              <DropdownOption key={`${index}-${option}`}>
+                {option}
+              </DropdownOption>
+            ))}
+          </Dropdown>
+        )}
+      </StyledDropdownInput>
+    </>
   );
 }
 
