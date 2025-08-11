@@ -11,6 +11,7 @@ const StyledTextInput = styled.input`
   padding: 12px 16px;
   ${INPUT_STYLES.font}
   color: ${INPUT_STYLES.textColor.normal};
+  min-width: 320px;
 
   &::placeholder {
     ${INPUT_STYLES.font}
