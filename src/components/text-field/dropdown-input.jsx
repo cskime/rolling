@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import arrowDownImg from "../../assets/ic-chevron-down.svg";
+import arrowUpImg from "../../assets/ic-chevron-up.svg";
 import Colors from "../color/colors";
 import INPUT_STYLES from "./input-styles";
 
@@ -123,7 +124,7 @@ function DropdownInput({
           <PlaceholderText>{placeholder}</PlaceholderText>
         )}
         <Icon>
-          <img src={arrowDownImg} alt="Dropdown 화살표" />
+          <img src={isOpen ? arrowUpImg : arrowDownImg} alt="Dropdown 화살표" />
         </Icon>
         {isOpen && (
           <Dropdown>
