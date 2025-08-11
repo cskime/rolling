@@ -101,8 +101,8 @@ function DropdownInput({
   placeholder,
   value,
   options,
-  disabled,
   onSelect,
+  ...props
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -113,11 +113,7 @@ function DropdownInput({
 
   return (
     <>
-      <StyledDropdownInput
-        $error={error}
-        disabled={disabled}
-        onClick={handleInputClick}
-      >
+      <StyledDropdownInput $error={error} onClick={handleInputClick} {...props}>
         {value ? (
           <InputText>{value}</InputText>
         ) : (
