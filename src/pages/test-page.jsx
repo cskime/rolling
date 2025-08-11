@@ -11,6 +11,8 @@ import {
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
+import TextField from "../components/text-field/text-field";
+import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 
 function TestPage() {
   return (
@@ -102,6 +104,20 @@ function TestPage() {
         <EmojiBadge emoji="😁" count={10} />
         <EmojiBadge emoji="😉" count={100} />
         <EmojiBadge emoji="😊" count={1000} />
+      </div>
+      <div style={{ display: "flex", gap: 16 }}>
+        <TextField type={TEXT_FIELD_TYPE.input} placeholder="Placeholder" />
+        <TextField
+          type={TEXT_FIELD_TYPE.input}
+          value="Input value"
+          placeholder="Placeholder"
+          disabled
+        />
+        <TextField
+          type={TEXT_FIELD_TYPE.input}
+          placeholder="Placeholder"
+          error="Error Message"
+        />
       </div>
     </div>
   );
