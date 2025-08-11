@@ -35,6 +35,7 @@ function TestPage() {
   const { showsToast, setShowsToast } = useToast();
 
   const handleToastClick = () => setShowsToast(true);
+  const handleToastDismiss = () => setShowsToast(false);
 
   return (
     <div
@@ -174,7 +175,12 @@ function TestPage() {
           title="Show Toast"
           onClick={handleToastClick}
         />
-        {showsToast && <Toast message="URL이 복사 되었습니다." />}
+        {showsToast && (
+          <Toast
+            message="URL이 복사 되었습니다."
+            onDismiss={handleToastDismiss}
+          />
+        )}
       </div>
     </div>
   );

@@ -49,16 +49,23 @@ const Icon = styled.div`
   }
 `;
 
-function Toast({ message }) {
+const IconButton = styled(Icon)`
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+`;
+
+function Toast({ message, onDismiss }) {
   return (
     <StyledToast>
       <Icon>
         <img src={checkImg} alt="확인" />
       </Icon>
       <p>{message}</p>
-      <Icon>
+      <IconButton as="button" onClick={onDismiss}>
         <img src={closeImg} alt="닫기" />
-      </Icon>
+      </IconButton>
     </StyledToast>
   );
 }
