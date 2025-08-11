@@ -14,6 +14,7 @@ import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
+import Toast from "../components/toast/toast";
 
 function TestPage() {
   const [option1, setOption1] = useState();
@@ -158,6 +159,9 @@ function TestPage() {
           options={["Option 1", "Option 2", "Option 3", "Option 4"]}
           onSelect={handleDropdownSelect2}
         />
+      </div>
+      <div style={{ display: "flex", gap: 16 }}>
+        <Toast message="URL이 복사 되었습니다." />
       </div>
     </div>
   );
