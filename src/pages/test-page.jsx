@@ -15,7 +15,7 @@ import ToggleButton from "../components/button/toggle-button";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
-import { useToast } from "../components/toast/useToast";
+import { useToast } from "../hooks/use-toast";
 
 function TestPage() {
   /* Dropdown type TextField */
