@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Colors from "../color/colors";
-import DropdownInput from "./dropdown-input";
+import DropdownInput from "./dropdown-input/dropdown-input";
 import TEXT_FIELD_TYPE from "./text-field-type";
-import TextInput from "./text-input";
+import TextInput from "./text-input/text-input";
 
 const StyledInputTextField = styled.div`
   display: flex;
@@ -18,13 +18,13 @@ const ErrorMessage = styled.p`
   color: ${Colors.error};
 `;
 
-function InputTextField({ type, error, ...props }) {
+function InputTextField({ type, error, dropdownId, ...props }) {
   return (
     <StyledInputTextField>
       {type === TEXT_FIELD_TYPE.input ? (
         <TextInput error={error} {...props} />
       ) : (
-        <DropdownInput error={error} {...props} />
+        <DropdownInput dropdownId={dropdownId} error={error} {...props} />
       )}
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </StyledInputTextField>

@@ -134,6 +134,7 @@ function TestPage() {
       <div style={{ display: "flex", gap: 16 }}>
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
+          dropdownId="dropdown1"
           placeholder="Placeholder"
           value={option1}
           options={["Option 1", "Option 2", "Option 3", "Option 4"]}
@@ -141,6 +142,7 @@ function TestPage() {
         />
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
+          dropdownId="dropdown2"
           value="Input value"
           placeholder="Placeholder"
           options={["Option 1", "Option 2", "Option 3", "Option 4"]}
@@ -148,6 +150,7 @@ function TestPage() {
         />
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
+          dropdownId="dropdown3"
           placeholder="Placeholder"
           value={option2}
           error={dropdown2Error}

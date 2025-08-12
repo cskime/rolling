@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import INPUT_STYLES from "./input-styles";
+import INPUT_STYLES from "../input-styles";
 
 const StyledTextInput = styled.input`
   background-color: ${INPUT_STYLES.backgroundColor.normal};
