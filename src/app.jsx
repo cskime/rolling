@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import DropdownProvider from "./components/text-field/dropdown-input/dropdown-provider";
 import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
-import AddPostPage from "./pages/add-post-page";
+import CreatePostPage from "./pages/create-post-page";
 import MainPage from "./pages/main-page";
 import MessagePage from "./pages/message-list";
 import RecipientPostPage from "./pages/recipient-post-page";
@@ -35,7 +35,7 @@ function App() {
               index
               element={
                 <ContentLayout>
-                  <AddPostPage />
+                  <CreatePostPage />
                 </ContentLayout>
               }
             />
