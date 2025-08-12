@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import smileAddImg from "../assets/ic-face-smile-add.svg";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
@@ -12,8 +13,13 @@ import {
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
+import Header from "../components/header/header";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
+
+const OutlinedHeader = styled(Header)`
+  border: 1px solid black;
+`;
 
 function TestPage() {
   const [option1, setOption1] = useState();
