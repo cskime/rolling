@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Colors from "../color/colors";
 import BUTTON_SIZE from "./button-size";
 
 const styles = {
@@ -60,24 +61,24 @@ const BaseButton = styled.button`
 
 const StyledPrimaryButton = styled(BaseButton)`
   padding: 0 24px;
-  background-color: var(--color-purple-600);
+  background-color: ${Colors.purple(600)};
   color: white;
 
   &:hover {
-    background-color: var(--color-purple-700);
+    background-color: ${Colors.purple(700)};
   }
 
   &:active {
-    background-color: var(--color-purple-800);
+    background-color: ${Colors.purple(800)};
   }
 
   &:focus {
-    background-color: var(--color-purple-800);
-    box-shadow: 0 0 0 1px var(--color-purple-900) inset;
+    background-color: ${Colors.purple(800)};
+    box-shadow: 0 0 0 1px ${Colors.purple(900)} inset;
   }
 
   &:disabled {
-    background-color: var(--color-gray-300);
+    background-color: ${Colors.gray(300)};
   }
 `;
 
@@ -93,27 +94,27 @@ function PrimaryButton({ title, size, ...props }) {
 
 const StyledSecondaryButton = styled(BaseButton)`
   background-color: white;
-  color: var(--color-purple-700);
-  box-shadow: 0 0 0 1px var(--color-purple-600) inset;
+  color: ${Colors.purple(700)};
+  box-shadow: 0 0 0 1px ${Colors.purple(600)} inset;
 
   &:hover {
-    background-color: var(--color-purple-100);
-    color: var(--color-purple-600);
-    box-shadow: 0 0 0 1px var(--color-purple-700) inset;
+    background-color: ${Colors.purple(100)};
+    color: ${Colors.purple(600)};
+    box-shadow: 0 0 0 1px ${Colors.purple(700)} inset;
   }
 
   &:active {
-    background-color: var(--color-purple-100);
-    color: var(--color-purple-600);
-    box-shadow: 0 0 0 1px var(--color-purple-800) inset;
+    background-color: ${Colors.purple(100)};
+    color: ${Colors.purple(600)};
+    box-shadow: 0 0 0 1px ${Colors.purple(800)} inset;
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px var(--color-purple-800) inset;
+    box-shadow: 0 0 0 1px ${Colors.purple(800)} inset;
   }
 
   &:disabled {
-    background-color: var(--color-gray-300);
+    background-color: ${Colors.gray(300)};
     color: white;
     box-shadow: none;
   }
@@ -131,26 +132,26 @@ function SecondaryButton({ title, size, ...props }) {
 
 const StyledOutlinedButton = styled(BaseButton)`
   background-color: white;
-  color: var(--color-gray-900);
-  box-shadow: 0 0 0 1px var(--color-gray-300) inset;
+  color: ${Colors.gray(900)};
+  box-shadow: 0 0 0 1px ${Colors.gray(300)} inset;
   padding: ${({ $title }) => ($title ? "0 16px" : "0 6px")};
   width: ${({ $icon, $size, $title }) =>
     $title ? "auto" : styles.height($icon)[$size]};
 
   &:hover {
-    background-color: var(--color-gray-100);
+    background-color: ${Colors.gray(100)};
   }
 
   &:active {
-    background-color: var(--color-gray-100);
+    background-color: ${Colors.gray(100)};
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px var(--color-gray-500) inset;
+    box-shadow: 0 0 0 1px ${Colors.gray(500)} inset;
   }
 
   &:disabled {
-    background-color: var(--color-gray-300);
+    background-color: ${Colors.gray(300)};
     color: white;
     box-shadow: none;
   }

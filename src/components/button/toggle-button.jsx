@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Colors from "../color/colors";
 
 const StyledToggleButton = styled.div`
-  background-color: var(--color-gray-100);
+  background-color: ${Colors.gray(100)};
   border-radius: 6px;
 `;
 
@@ -10,9 +11,9 @@ const ToggleItem = styled.button`
   background: ${({ $selected }) => ($selected ? "white" : "none")};
   border: none;
   color: ${({ $selected }) =>
-    $selected ? "var(--color-purple-700)" : "var(--color-gray-900)"};
+    $selected ? Colors.purple(700) : Colors.gray(900)};
   box-shadow: ${({ $selected }) =>
-    $selected ? "0 0 0 2px var(--color-purple-600) inset" : "none"};
+    $selected ? `0 0 0 2px ${Colors.purple(600)} inset` : "none"};
   border-radius: 6px;
   padding: 0 16px;
   height: 40px;
