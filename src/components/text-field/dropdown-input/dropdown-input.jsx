@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import arrowDownImg from "../../../assets/ic-chevron-down.svg";
 import arrowUpImg from "../../../assets/ic-chevron-up.svg";
-import { useDropdown } from "../../../hooks/dropdown/use-dropdown";
+import { useDropdown } from "../../../hooks/use-dropdown";
 import INPUT_STYLES from "../input-styles";
 import Dropdown from "./dropdown";
 import DropdownOption from "./dropdown-option";
