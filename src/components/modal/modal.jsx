@@ -1,5 +1,7 @@
+import { createPortal } from "react-dom";
 import styled, { css } from "styled-components";
 import defaultProfileImg from "../../assets/ic-person.svg";
+import { useModal } from "../../hooks/use-modal";
 import { formatDate } from "../../utils/formatter";
 import Badge from "../badge/badge";
 import BADGE_TYPE from "../badge/badge-type";
@@ -153,6 +155,7 @@ const Content = styled.p`
 `;
 
 const StyledModal = styled.div`
+  background-color: white;
   width: 600px;
   border-radius: 16px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
@@ -162,13 +165,43 @@ const StyledModal = styled.div`
   align-items: center;
 `;
 
+/* Container */
+
+const ModalContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 function Modal({ user, date, content }) {
+  const { setShowsModal } = useModal();
+
+  const ModalPortal = ({ children }) => {
+    return createPortal(children, document.getElementById("modal"));
+  };
+
+  const handleConfirmClick = () => setShowsModal(false);
+
   return (
-    <StyledModal>
-      <Header profileImg={user.profileImg} name={user.name} date={date} />
-      <Content>{content}</Content>
-      <PrimaryButton size={BUTTON_SIZE.medium} title="확인" />
-    </StyledModal>
+    <ModalPortal>
+      <ModalContainer>
+        <StyledModal>
+          <Header profileImg={user.profileImg} name={user.name} date={date} />
+          <Content>{content}</Content>
+          <PrimaryButton
+            size={BUTTON_SIZE.medium}
+            title="확인"
+            onClick={handleConfirmClick}
+          />
+        </StyledModal>
+      </ModalContainer>
+    </ModalPortal>
   );
 }
 
