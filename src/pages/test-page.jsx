@@ -36,6 +36,7 @@ function TestPage() {
         margin: 16,
       }}
     >
+      <h1>🤯</h1>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <PrimaryButton size={BUTTON_SIZE.large} title="Hello" />
         <PrimaryButton size={BUTTON_SIZE.medium} title="Hello" />
