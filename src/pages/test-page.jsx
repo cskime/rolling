@@ -12,9 +12,11 @@ import {
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
+import Modal from "../components/modal/modal";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
+import { useModal } from "../hooks/use-modal";
 import { useToast } from "../hooks/use-toast";
 
 function TestPage() {
@@ -36,7 +38,11 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-
+  
+  /* Modal */
+  const { showsModal, setShowsModal } = useModal();
+  const handleModalClick = () => setShowsModal(true);
+  
   return (
     <div
       style={{
@@ -179,6 +185,20 @@ function TestPage() {
           <Toast
             message="URL이 복사 되었습니다."
             onDismiss={handleToastDismiss}
+          />
+        )}
+      </div>
+      <div>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Modal"
+          onClick={handleModalClick}
+        />
+        {showsModal && (
+          <Modal
+            user={{ name: "김동훈" }}
+            date={new Date("2023-07-08")}
+            content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
           />
         )}
       </div>
