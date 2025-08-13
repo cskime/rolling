@@ -14,11 +14,15 @@ import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
+import Toast from "../components/toast/toast";
+import { useToast } from "../hooks/use-toast";
 
 function TestPage() {
+  /* Dropdown type TextField */
   const [option1, setOption1] = useState();
   const [option2, setOption2] = useState();
   const [dropdown2Error, setDropdown2Error] = useState("Error Message");
+
   const handleDropdownSelect1 = (option) => {
     setOption1(option);
   };
@@ -26,6 +30,12 @@ function TestPage() {
     setOption2(option);
     setDropdown2Error(null);
   };
+
+  /* Toast */
+  const { showsToast, setShowsToast } = useToast();
+
+  const handleToastClick = () => setShowsToast(true);
+  const handleToastDismiss = () => setShowsToast(false);
 
   return (
     <div
@@ -158,6 +168,19 @@ function TestPage() {
           options={["Option 1", "Option 2", "Option 3", "Option 4"]}
           onSelect={handleDropdownSelect2}
         />
+      </div>
+      <div>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Toast"
+          onClick={handleToastClick}
+        />
+        {showsToast && (
+          <Toast
+            message="URL이 복사 되었습니다."
+            onDismiss={handleToastDismiss}
+          />
+        )}
       </div>
     </div>
   );
