@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import smileAddImg from "../assets/ic-face-smile-add.svg";
+import smileAddImage from "../assets/ic-face-smile-add.svg";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
 import EmojiBadge from "../components/badge/emoji-badge";
@@ -44,11 +44,11 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-  
+
   /* Modal */
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
-  
+
   return (
     <div
       style={{
@@ -84,33 +84,33 @@ function TestPage() {
         <OutlinedButton
           size={BUTTON_SIZE.medium}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.small}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImg} />
+        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImage} />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>

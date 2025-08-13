@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import checkImg from "../../assets/ic-check-circle-green.svg";
-import closeImg from "../../assets/ic-xmark.svg";
+import checkImage from "../../assets/ic-check-circle-green.svg";
+import closeImage from "../../assets/ic-xmark.svg";
 
 const StyledToast = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
@@ -60,11 +60,11 @@ function Toast({ message, onDismiss }) {
   return (
     <StyledToast>
       <Icon>
-        <img src={checkImg} alt="확인" />
+        <img src={checkImage} alt="확인" />
       </Icon>
       <p>{message}</p>
       <IconButton as="button" onClick={onDismiss}>
-        <img src={closeImg} alt="닫기" />
+        <img src={closeImage} alt="닫기" />
       </IconButton>
     </StyledToast>
   );
