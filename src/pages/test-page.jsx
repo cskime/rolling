@@ -44,18 +44,18 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-  
+
   /* Modal */
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
-  
+
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         gap: "16px",
-        margin: 16,
       }}
     >
       <h1>🤯</h1>
