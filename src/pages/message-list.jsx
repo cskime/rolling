@@ -10,128 +10,174 @@ import ToggleButton from "../components/button/toggle-button";
 
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../api/axios-instance";
+import styled from "styled-components";
+
+/* styled components */
+const TopContainer = styled.div`
+  text-align: center;
+`;
+
+const CardSection = styled.section`
+  justify-self: center;
+`;
+
+const CardTitle = styled.h2`
+  text-align: left;
+`;
+
+const CardContainer = styled.div`
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 275px 275px 275px 275px;
+  gap: 20px;
+  width: fit-content;
+
+  position: relative;
+  overflow: visible;
+`;
+
+const CardItem = styled.div`
+  width: 275px;
+  height: 260px;
+  border: 1px solid red;
+`;
+
+const NextBtnWpr = styled.div`
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+`;
+
+const PrevBtnWpr = styled.div`
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+`;
+
+const MakingBtn = styled(PrimaryButton)`
+  margin-top: 64px;
+  font-weight: 400;
+  padding: 14px 60px;
+`;
+
+/* 그냥 출력 테스트용 */
+const testData = [
+  { id: 1, to: "test1", messageCount: 1 },
+  { id: 2, to: "test2", messageCount: 5 },
+  { id: 3, to: "test3", messageCount: 10 },
+  { id: 4, to: "test4", messageCount: 2 },
+  { id: 5, to: "test5", messageCount: 3 },
+  { id: 6, to: "test6", messageCount: 1 },
+];
 
 function ShowMessageList() {
-  // const [imageUrl, setImageUrl] = useState(null);
+  const [pprCurrentPage, setPprCurrentPage] = useState(0); // 인기카드
+  const [currentPage, setCurrentPage] = useState(0); // 일반카드
+  const [pprShowCards, setPprShowCards] = useState([]);
+  const [showCards, setShowCards] = useState([]);
+  const cardCount = 4;
 
-  const cardConStyle = {
-    border: "1px solid red",
-    display: "grid",
-    gridTemplateColumns: "275px 275px 275px 275px",
-    gap: "20px",
-    width: "fit-content",
+  /* axios로 데이터 가져온다고 가정 */
+  // axiosInstance
+  //   .get("/18-3/recipients/?limit=5&offset=20")
+  //   .then((res) => {
+  //     console.log(res.data);
+  //   })
+  //   .catch(console.error);
 
-    position: "relative",
-    overflow: "visible",
-  };
-
-  const cardStyle = {
-    width: "275px",
-    height: "260px",
-    border: "1px solid red",
-  };
-
-  const testStyle = {
-    textAlign: "center",
-  };
-
-  const sectionStyle = {
-    justifySelf: "center",
-  };
-
-  const buttonStyle = {
-    marginTop: "64px",
-    fontWeight: "400",
-    padding: "14px 60px",
-  };
-
-  const htStyle = {
-    textAlign: "left",
-  };
-
-  const rButton = {
-    position: "absolute",
-    right: -20, // 필요시 조정
-    top: "50%",
-    transform: "translateY(-50%)",
-    zIndex: 20,
-  };
-
-  const lButton = {
-    position: "absolute",
-    left: -20, // 필요시 조정
-    top: "50%",
-    transform: "translateY(-50%)",
-    zIndex: 20,
-  };
+  const totalPages = Math.ceil(testData.length / cardCount);
 
   useEffect(() => {
-    axiosInstance
-      .get("/18-3/recipients/?limit=5&offset=20")
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch(console.error);
-  }, []);
+    const strtPageNum = currentPage * cardCount;
+    const endPageNum = strtPageNum + cardCount;
+
+    const pprStrtPageNum = pprCurrentPage * cardCount;
+    const pprEndPageNum = pprStrtPageNum + cardCount;
+
+    /* createdAt(생성된 시점)에 따라서 정렬 */
+    setShowCards(testData.slice(strtPageNum, endPageNum));
+
+    /* 여기서 messageCount(메시지수)에 따라서 정렬 */
+    setPprShowCards(testData.slice(pprStrtPageNum, pprEndPageNum));
+  }, [pprCurrentPage, currentPage]);
+
+  const nextPage = (mode = null) => {
+    if (mode) {
+      console.log("pprnext");
+      if (pprCurrentPage < totalPages - 1) {
+        setPprCurrentPage((pprCurrentNum) => pprCurrentNum + 1);
+      }
+    } else {
+      console.log("justnext");
+      if (currentPage < totalPages - 1) {
+        setCurrentPage((currentNum) => currentNum + 1);
+      }
+    }
+  };
+
+  const prevPage = (mode = null) => {
+    if (mode) {
+      console.log("pprprev");
+      if (pprCurrentPage > 0) {
+        setPprCurrentPage((pprCurrentNum) => pprCurrentNum - 1);
+      }
+    } else {
+      console.log("justprev");
+      if (currentPage > 0) {
+        setCurrentPage((currentNum) => currentNum - 1);
+      }
+    }
+  };
 
   return (
-    <div style={testStyle}>
+    <TopContainer>
       /* navi 들어갈 자리 */
       <article>
-        <section style={sectionStyle}>
-          <h2 style={htStyle}>인기 롤링 페이퍼 🔥</h2>
-          <div className="card-container" style={cardConStyle}>
-            <div className="card" style={cardStyle}></div>
-            <div className="card" style={cardStyle}></div>
-            <div className="card" style={cardStyle}></div>
-            <div className="card" style={cardStyle}></div>
-            <div style={rButton}>
-              <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
-            </div>
-          </div>
-        </section>
-        <section style={sectionStyle}>
-          <h2 style={htStyle}>최근에 만든 롤링 페이퍼 ⭐</h2>
-          <div className="card-container" style={cardConStyle}>
-            <div className="card" style={cardStyle}></div>
-            <div className="card" style={cardStyle}></div>
-            <div className="card" style={cardStyle}></div>
-            <div className="card" style={cardStyle}></div>
-            <div style={lButton}>
-              <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
-            </div>
-          </div>
-        </section>
+        <CardSection>
+          <CardTitle>인기 롤링 페이퍼 🔥</CardTitle>
+          <CardContainer>
+            {pprShowCards.map((item) => (
+              <CardItem key={item.id}>{item.to}</CardItem> // 테스트용
+            ))}
+            {pprCurrentPage > 0 ? (
+              <PrevBtnWpr onClick={() => prevPage("ppr")}>
+                <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
+              </PrevBtnWpr>
+            ) : null}
+            {pprCurrentPage < totalPages - 1 ? (
+              <NextBtnWpr onClick={() => nextPage("ppr")}>
+                <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
+              </NextBtnWpr>
+            ) : null}
+          </CardContainer>
+        </CardSection>
+
+        <CardSection>
+          <CardTitle>최근에 만든 롤링 페이퍼 ⭐</CardTitle>
+          <CardContainer>
+            {showCards.map((item) => (
+              <CardItem key={item.id}>{item.to}</CardItem> // 테스트용
+            ))}
+            {currentPage > 0 ? (
+              <PrevBtnWpr onClick={() => prevPage()}>
+                <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
+              </PrevBtnWpr>
+            ) : null}
+            {currentPage < totalPages - 1 ? (
+              <NextBtnWpr onClick={() => nextPage()}>
+                <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
+              </NextBtnWpr>
+            ) : null}
+          </CardContainer>
+        </CardSection>
       </article>
-      <PrimaryButton
-        size={BUTTON_SIZE.large}
-        style={buttonStyle}
-        title="나도 만들어보기"
-      />
-    </div>
+      <MakingBtn size={BUTTON_SIZE.large} title="나도 만들어보기" />
+    </TopContainer>
   );
-
-  /* axios 사용 예시코드 */
-  // useEffect(() => {
-  //   axiosInstance
-  //     .get("/background-images/")
-  //     .then((res) => {
-  //       if (res.data && res.data.imageUrls && res.data.imageUrls.length > 0) {
-  //         setImageUrl(res.data.imageUrls[0]);
-  //       }
-  //     })
-  //     .catch(console.error);
-  // }, []);
-
-  // return (
-  //   <div>
-  //     {imageUrl ? (
-  //       <img src={imageUrl} alt="background" style={{ maxWidth: "100%" }} />
-  //     ) : (
-  //       <p>이미지를 불러오는 중입니다...</p>
-  //     )}
-  //   </div>
-  // );
 }
 
 export default ShowMessageList;
