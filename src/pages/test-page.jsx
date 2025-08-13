@@ -38,11 +38,11 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-
+  
   /* Modal */
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
-
+  
   return (
     <div
       style={{
