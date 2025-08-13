@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
+import ModalProvider from "./components/modal/modal-provider";
 import DropdownProvider from "./components/text-field/dropdown-input/dropdown-provider";
 import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
@@ -9,9 +10,17 @@ import RecipientPostPage from "./pages/recipient-post-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestPage from "./pages/test-page";
 
+function Provider({ children }) {
+  return (
+    <ModalProvider>
+      <DropdownProvider>{children}</DropdownProvider>
+    </ModalProvider>
+  );
+}
+
 function App() {
   return (
-    <DropdownProvider>
+    <Provider>
       <BrowserRouter>
         <Routes>
           <Route
@@ -59,7 +68,7 @@ function App() {
           <Route path="/test-components" element={<TestPage />} />
         </Routes>
       </BrowserRouter>
-    </DropdownProvider>
+    </Provider>
   );
 }
 
