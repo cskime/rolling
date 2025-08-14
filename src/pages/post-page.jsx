@@ -31,7 +31,7 @@ const PostSummary = styled.p`
   color: Colors.gray(500);
 `;
 
-const PostToggleButton = styled.div`
+const ToggleButtonWrapper = styled.div`
   width: 100%;
   display: flex;
 `;
@@ -65,7 +65,7 @@ function PostPage() {
     const trimmed = name.trim();
     if (trimmed === "") {
       setNameError("값을 입력해 주세요");
-    } else if (name !== trimmed) {
+    } else if (trimmed !== name) {
       setNameError("앞 뒤 공백 없이 입력해 주세요"); // 텍스트 앞 뒤 공백 에러 처리(임시)
     }
   };
@@ -102,7 +102,7 @@ function PostPage() {
         <PostSummary>
           컬러를 선택하거나, 이미지를 선택할 수 있습니다.
         </PostSummary>
-        <PostToggleButton onClick={handleBackgroundSelect}>
+        <ToggleButtonWrapper onClick={handleBackgroundSelect}>
           <ToggleButton
             value={backgroundType}
             options={["컬러", "이미지"]}
@@ -111,7 +111,7 @@ function PostPage() {
               setSelected(0);
             }}
           />
-        </PostToggleButton>
+        </ToggleButtonWrapper>
       </Wrapper>
       <BackgroundSelect
         type={backgroundType === "컬러" ? "color" : "image"}
