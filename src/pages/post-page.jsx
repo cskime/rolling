@@ -6,6 +6,7 @@ import ToggleButton from "../components/button/toggle-button";
 import styled from "styled-components";
 import { PrimaryButton } from "../components/button/button";
 import BackgroundSelect from "../components/option/background-select";
+import { useNavigate } from "react-router";
 
 const PostContainerStyle = styled.div`
   display: flex;
@@ -52,6 +53,7 @@ function PostPage() {
   const [nameError, setNameError] = useState("");
   const [backgroundType, setBackgroundType] = useState("컬러");
   const [selected, setSelected] = useState(0);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -75,6 +77,11 @@ function PostPage() {
       setBackgroundType(typeSelect);
       setSelected(0);
     }
+  };
+
+  const handleCreate = () => {
+    const randomID = Math.floor(Math.random() * 10000);
+    navigate(`/post/${randomID}`);
   };
 
   return (
@@ -116,6 +123,7 @@ function PostPage() {
           title="생성하기"
           size="large"
           disabled={name === "" || name !== name.trim()}
+          onClick={handleCreate}
         />
       </ButtonWrapperStyle>
     </PostContainerStyle>
