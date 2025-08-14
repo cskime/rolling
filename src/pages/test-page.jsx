@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import styled from "styled-components";
-import smileAddImg from "../assets/ic-face-smile-add.svg";
+import smileAddImage from "../assets/ic-face-smile-add.svg";
+import Avatar from "../components/avatar/avatar";
+import AVATAR_SIZE from "../components/avatar/avatar-size";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
 import EmojiBadge from "../components/badge/emoji-badge";
@@ -52,6 +54,7 @@ function TestPage() {
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
 
+<<<<<<< HEAD
   /* Popover */
   const { popoverPosition, showsPopover, openPopopver, closePopover } =
     usePopover();
@@ -71,13 +74,15 @@ function TestPage() {
     });
   };
 
+=======
+>>>>>>> upstream/develop
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         gap: "16px",
-        margin: 16,
       }}
     >
       <h1>🤯</h1>
@@ -106,33 +111,33 @@ function TestPage() {
         <OutlinedButton
           size={BUTTON_SIZE.medium}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.small}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImg} />
+        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImage} />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -250,6 +255,21 @@ function TestPage() {
         >
           <h1>This is Popover.</h1>
         </Popover>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <Avatar size={AVATAR_SIZE.large} />
+          <Avatar size={AVATAR_SIZE.medium} />
+          <Avatar size={AVATAR_SIZE.small} />
+          <Avatar size={AVATAR_SIZE.extraSmall} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.large} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.medium} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.small} />
+          <Avatar
+            source="https://picsum.photos/80"
+            size={AVATAR_SIZE.extraSmall}
+          />
+        </div>
       </div>
     </div>
   );
