@@ -4,7 +4,7 @@ import DropdownInput from "./dropdown-input/dropdown-input";
 import TEXT_FIELD_TYPE from "./text-field-type";
 import TextInput from "./text-input/text-input";
 
-const StyledInputTextField = styled.div`
+const StyledTextField = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -18,17 +18,17 @@ const ErrorMessage = styled.p`
   color: ${Colors.error};
 `;
 
-function InputTextField({ type, error, dropdownId, ...props }) {
+function TextField({ type, error, dropdownId, ...props }) {
   return (
-    <StyledInputTextField>
+    <StyledTextField>
       {type === TEXT_FIELD_TYPE.input ? (
         <TextInput error={error} {...props} />
       ) : (
         <DropdownInput dropdownId={dropdownId} error={error} {...props} />
       )}
       {error && <ErrorMessage>{error}</ErrorMessage>}
-    </StyledInputTextField>
+    </StyledTextField>
   );
 }
 
-export default InputTextField;
+export default TextField;

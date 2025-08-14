@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import styled, { css } from "styled-components";
-import defaultProfileImg from "../../assets/ic-person.svg";
+import defaultProfileImage from "../../assets/ic-person.svg";
 import { useModal } from "../../hooks/use-modal";
 import { formatDate } from "../../utils/formatter";
 import Badge from "../badge/badge";
@@ -40,7 +40,7 @@ const DefaultProfileImage = styled.div`
 `;
 
 function ProfileImage({ profileImg }) {
-  const img = <img src={profileImg ?? defaultProfileImg} alt="프로필 사진" />;
+  const img = <img src={profileImg ?? defaultProfileImage} alt="프로필 사진" />;
   return profileImg ? (
     <UserProfileImage>{img}</UserProfileImage>
   ) : (
