@@ -112,7 +112,11 @@ function PostPage() {
         onSelect={setSelected}
       />
       <ButtonWrapperStyle>
-        <PrimaryButton title="생성하기" size="large" />
+        <PrimaryButton
+          title="생성하기"
+          size="large"
+          disabled={name === "" || name !== name.trim()}
+        />
       </ButtonWrapperStyle>
     </PostContainerStyle>
   );
