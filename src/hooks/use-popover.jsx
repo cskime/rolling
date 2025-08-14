@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import PopoverContext from "../components/popover/popover-context";
 
@@ -27,16 +27,35 @@ function calculatePopoverPosition(target, alignment) {
 function usePopover() {
   const { showsPopover, setShowsPopover } = useContext(PopoverContext);
   const [popoverPosition, setPopoverPosition] = useState();
+  const [target, setTarget] = useState();
+  const [alignment, setAlignment] = useState(POPOVER_ALIGNMENT.left);
 
   const openPopopver = ({ target, alignment }) => {
-    const position = calculatePopoverPosition(target, alignment);
+    updatePopoverPosition(target, alignment);
+    setTarget(target);
+    setAlignment(alignment);
     setShowsPopover(true);
-    setPopoverPosition(position);
   };
 
   const closePopover = () => {
     setShowsPopover(false);
   };
+
+  const updatePopoverPosition = (target, alignment) => {
+    const position = calculatePopoverPosition(target, alignment);
+    setPopoverPosition(position);
+  };
+
+  useEffect(() => {
+    if (!showsPopover) return;
+
+    function handleWindowResize() {
+      updatePopoverPosition(target, alignment);
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, [showsPopover, target, alignment]);
 
   return {
     popoverPosition,
