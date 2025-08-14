@@ -5,6 +5,8 @@ import { OutlinedButton } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
 import { media } from "../../../utils/media";
+import RollingPaperReactions from "./rolling-paper-reactions";
+import RollingPaperSenders from "./rolling-paper-senders";
 
 const StyledRollingPaperHeader = styled.div`
   display: flex;
@@ -69,6 +71,24 @@ const ShareButton = styled(OutlinedButton)`
 `;
 
 function RollingPaperHeader({ recipientName }) {
+  const profiles = [
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+    "https://picsum.photos/20",
+  ];
+
+  const reactions = [
+    { emoji: "😀", count: 24 },
+    { emoji: "😄", count: 16 },
+    { emoji: "☺️", count: 6 },
+  ];
+
   return (
     <StyledRollingPaperHeader>
       <HeaderContent>
@@ -76,6 +96,10 @@ function RollingPaperHeader({ recipientName }) {
           <RecipientName>{`To. ${recipientName}`}</RecipientName>
         </div>
         <HeaderTrailing>
+          <DividedContainer>
+            <RollingPaperSenders profiles={profiles} />
+            <RollingPaperReactions reactions={reactions} />
+          </DividedContainer>
           <DividedContainer>
             <OutlinedButton
               size={BUTTON_SIZE.small}
