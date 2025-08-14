@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import smileAddImg from "../assets/ic-face-smile-add.svg";
+import Avatar from "../components/avatar/avatar";
+import AVATAR_SIZE from "../components/avatar/avatar-size";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
 import EmojiBadge from "../components/badge/emoji-badge";
@@ -44,11 +46,11 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-  
+
   /* Modal */
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
-  
+
   return (
     <div
       style={{
@@ -207,6 +209,24 @@ function TestPage() {
             content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
           />
         )}
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <Avatar size={AVATAR_SIZE.large} />
+          <Avatar size={AVATAR_SIZE.medium} />
+          <Avatar size={AVATAR_SIZE.small} />
+          <Avatar size={AVATAR_SIZE.extraSmall} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.large} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.medium} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.small} />
+          <Avatar
+            source="https://picsum.photos/80"
+            size={AVATAR_SIZE.extraSmall}
+          />
+        </div>
+        <div
+          style={{ display: "flex", alignItems: "center", gap: "16px" }}
+        ></div>
       </div>
     </div>
   );
