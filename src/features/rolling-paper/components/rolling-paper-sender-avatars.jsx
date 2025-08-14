@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Avatar from "../../../components/avatar/avatar";
 import AVATAR_SIZE from "../../../components/avatar/avatar-size";
@@ -30,21 +31,35 @@ const RestCount = styled(Positioned)`
   background-color: white;
 `;
 
+function calculateWidth({ $numberOfAvatars, $restCountWidth }) {
+  const contentWidth = METRICS.size * $numberOfAvatars;
+  const overlapedWidth = METRICS.overlap * ($numberOfAvatars - 1);
+  const restCountWidth = Math.max(0, $restCountWidth - METRICS.overlap);
+  return contentWidth - overlapedWidth + restCountWidth;
+}
+
 const StyledRollingPaperSenderAvatars = styled.div`
   position: relative;
-  width: ${({ $count }) =>
-    METRICS.size * $count - METRICS.overlap * ($count - 1)}px;
+  width: ${(props) => calculateWidth(props)}px;
   height: ${METRICS.size}px;
 `;
 
 function RollingPaperSenderAvatars({ profiles }) {
+  const countRef = useRef();
+  const [restCountWidth, setRestCountWidth] = useState(METRICS.size);
   const numberOfAvatars = Math.min(profiles.length, 3);
   const restCount = profiles.length - numberOfAvatars;
   const range = Array.from({ length: numberOfAvatars }, (e, i) => i);
-  const itemCount = numberOfAvatars + Math.min(restCount, 1);
+
+  useEffect(() => {
+    setRestCountWidth(countRef.current?.getBoundingClientRect().width ?? 0);
+  }, [countRef]);
 
   return (
-    <StyledRollingPaperSenderAvatars $count={itemCount}>
+    <StyledRollingPaperSenderAvatars
+      $numberOfAvatars={numberOfAvatars}
+      $restCountWidth={restCountWidth}
+    >
       {range.map((index) => (
         <Positioned key={index} $index={index}>
           <Avatar
@@ -54,7 +69,9 @@ function RollingPaperSenderAvatars({ profiles }) {
           />
         </Positioned>
       ))}
-      {restCount > 0 && <RestCount $index={3}>{`+${restCount}`}</RestCount>}
+      {restCount > 0 && (
+        <RestCount $index={3} ref={countRef}>{`+${restCount}`}</RestCount>
+      )}
     </StyledRollingPaperSenderAvatars>
   );
 }
