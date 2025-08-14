@@ -1,5 +1,14 @@
+import RollingPaperHeader from "../features/rolling-paper/components/rolling-paper-header";
+
 function MessagesPage() {
-  return <h1>Messages Page</h1>;
+  return (
+    <>
+      <RollingPaperHeader recipientName={"Ashley Kim"} />
+      <main>
+        <h1>Messages Page</h1>
+      </main>
+    </>
+  );
 }
 
 export default MessagesPage;
