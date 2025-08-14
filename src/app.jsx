@@ -7,7 +7,7 @@ import OnboardingLayout from "./layouts/onboarding-layout";
 import CreatePostPage from "./pages/create-post-page";
 import MainPage from "./pages/main-page";
 import MessagePage from "./pages/message-list";
-import RecipientPostPage from "./pages/recipient-post-page";
+import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestPage from "./pages/test-page";
 
@@ -63,7 +63,7 @@ function App() {
               path=":id"
               element={
                 <ContentLayout>
-                  <RecipientPostPage />
+                  <MessagesPage />
                 </ContentLayout>
               }
             />
