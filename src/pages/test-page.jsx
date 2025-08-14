@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import smileAddImg from "../assets/ic-face-smile-add.svg";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
@@ -12,13 +13,24 @@ import {
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
+import Header from "../components/header/header";
+import Modal from "../components/modal/modal";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
+import Toast from "../components/toast/toast";
+import { useModal } from "../hooks/use-modal";
+import { useToast } from "../hooks/use-toast";
+
+const OutlinedHeader = styled(Header)`
+  border: 1px solid black;
+`;
 
 function TestPage() {
+  /* Dropdown type TextField */
   const [option1, setOption1] = useState();
   const [option2, setOption2] = useState();
   const [dropdown2Error, setDropdown2Error] = useState("Error Message");
+
   const handleDropdownSelect1 = (option) => {
     setOption1(option);
   };
@@ -27,6 +39,16 @@ function TestPage() {
     setDropdown2Error(null);
   };
 
+  /* Toast */
+  const { showsToast, setShowsToast } = useToast();
+
+  const handleToastClick = () => setShowsToast(true);
+  const handleToastDismiss = () => setShowsToast(false);
+  
+  /* Modal */
+  const { showsModal, setShowsModal } = useModal();
+  const handleModalClick = () => setShowsModal(true);
+  
   return (
     <div
       style={{
@@ -158,6 +180,33 @@ function TestPage() {
           options={["Option 1", "Option 2", "Option 3", "Option 4"]}
           onSelect={handleDropdownSelect2}
         />
+      </div>
+      <div>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Toast"
+          onClick={handleToastClick}
+        />
+        {showsToast && (
+          <Toast
+            message="URL이 복사 되었습니다."
+            onDismiss={handleToastDismiss}
+          />
+        )}
+      </div>
+      <div>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Modal"
+          onClick={handleModalClick}
+        />
+        {showsModal && (
+          <Modal
+            user={{ name: "김동훈" }}
+            date={new Date("2023-07-08")}
+            content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
+          />
+        )}
       </div>
     </div>
   );
