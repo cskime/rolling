@@ -8,7 +8,7 @@ import { PrimaryButton } from "../components/button/button";
 import BackgroundSelect from "../components/option/background-select";
 import { useNavigate } from "react-router";
 
-const PostContainerStyle = styled.div`
+const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,26 +17,26 @@ const PostContainerStyle = styled.div`
   margin: 0 auto;
 `;
 
-const WrapperStyle = styled.div`
+const Wrapper = styled.div`
   padding-top: 50px;
   width: 720px;
 `;
 
-const PostTitleStyle = styled.h2`
+const PostTitle = styled.h2`
   font-weight: 700;
 `;
 
-const PostSummaryStyle = styled.p`
+const PostSummary = styled.p`
   font-weight: 400;
   color: Colors.gray(500);
 `;
 
-const PostToggleButtonStyle = styled.div`
+const PostToggleButton = styled.div`
   width: 100%;
   display: flex;
 `;
 
-const ButtonWrapperStyle = styled.div`
+const ButtonWrapper = styled.div`
   padding-top: 50px;
   width: 720px;
   display: flex;
@@ -85,8 +85,8 @@ function PostPage() {
   };
 
   return (
-    <PostContainerStyle>
-      <WrapperStyle>
+    <PostContainer>
+      <Wrapper>
         <PostTitleStyle>To.</PostTitleStyle>
         <InputTextField // TextField로 변경
           type={TEXT_FIELD_TYPE.input}
@@ -96,13 +96,13 @@ function PostPage() {
           placeholder="받는 사람 이름을 입력해 주세요"
           error={nameError}
         />
-      </WrapperStyle>
-      <WrapperStyle>
-        <PostTitleStyle>배경화면을 선택해 주세요.</PostTitleStyle>
-        <PostSummaryStyle>
+      </Wrapper>
+      <Wrapper>
+        <PostTitle>배경화면을 선택해 주세요.</PostTitle>
+        <PostSummary>
           컬러를 선택하거나, 이미지를 선택할 수 있습니다.
-        </PostSummaryStyle>
-        <PostToggleButtonStyle onClick={handleBackgroundSelect}>
+        </PostSummary>
+        <PostToggleButton onClick={handleBackgroundSelect}>
           <ToggleButton
             value={backgroundType}
             options={["컬러", "이미지"]}
@@ -111,22 +111,22 @@ function PostPage() {
               setSelected(0);
             }}
           />
-        </PostToggleButtonStyle>
-      </WrapperStyle>
+        </PostToggleButton>
+      </Wrapper>
       <BackgroundSelect
         type={backgroundType === "컬러" ? "color" : "image"}
         selected={selected}
         onSelect={setSelected}
       />
-      <ButtonWrapperStyle>
+      <ButtonWrapper>
         <PrimaryButton
           title="생성하기"
           size="large"
           disabled={name === "" || name !== name.trim()}
           onClick={handleCreate}
         />
-      </ButtonWrapperStyle>
-    </PostContainerStyle>
+      </ButtonWrapper>
+    </PostContainer>
   );
 }
 
