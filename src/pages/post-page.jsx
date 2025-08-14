@@ -4,6 +4,7 @@ import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Colors from "../components/color/colors";
 import ToggleButton from "../components/button/toggle-button";
 import styled from "styled-components";
+import { PrimaryButton } from "../components/button/button";
 
 const PostContainerStyle = styled.div`
   display: flex;
@@ -31,6 +32,18 @@ const PostSummaryStyle = styled.p`
 const PostToggleButtonStyle = styled.div`
   width: 100%;
   display: flex;
+`;
+
+const ButtonWrapperStyle = styled.div`
+  padding-top: 50px;
+  width: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    flex: 1;
+  }
 `;
 
 function PostPage() {
@@ -74,7 +87,10 @@ function PostPage() {
           <ToggleButton value="컬러" options={["컬러", "이미지"]} />
         </PostToggleButtonStyle>
       </WrapperStyle>
-      <button></button>
+      <WrapperStyle></WrapperStyle>
+      <ButtonWrapperStyle>
+        <PrimaryButton title="생성하기" size="large" />
+      </ButtonWrapperStyle>
     </PostContainerStyle>
   );
 }
