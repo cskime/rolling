@@ -96,7 +96,7 @@ const CardItem = styled.div`
   }
 `;
 
-const NextBtnWpr = styled.div`
+const NextButtonWrapper = styled.div`
   position: absolute;
   right: -20px;
   top: 50%;
@@ -104,7 +104,7 @@ const NextBtnWpr = styled.div`
   z-index: 10;
 `;
 
-const PrevBtnWpr = styled.div`
+const PreviewButtonWrapper = styled.div`
   position: absolute;
   left: -20px;
   top: 50%;
@@ -112,7 +112,7 @@ const PrevBtnWpr = styled.div`
   z-index: 10;
 `;
 
-const MakingBtn = styled(PrimaryButton)`
+const MakingButton = styled(PrimaryButton)`
   margin-top: 64px;
   font-weight: 400;
   padding: 14px 60px;
@@ -157,27 +157,17 @@ function ShowMessageList() {
     );
   }, [popularCurrentPage, recentCurrentPage, testData]);
 
-  const nextPage = (mode) => {
-    if (mode) {
-      if (popularCurrentPage < totalPages - 1) {
-        setPopularCurrentPage((pprCurrentNum) => pprCurrentNum + 1);
-      }
-    } else {
-      if (recentCurrentPage < totalPages - 1) {
-        setRecentCurrentPage((currentNum) => currentNum + 1);
-      }
-    }
-  };
+  const handleTurnCards = (direction, mode) => {
+    const current = mode === "popular" ? popularCurrentPage : recentCurrentPage;
+    const setter =
+      mode === "popular" ? setPopularCurrentPage : setRecentCurrentPage;
+    const total = totalPages;
 
-  const prevPage = (mode) => {
-    if (mode) {
-      if (popularCurrentPage > 0) {
-        setPopularCurrentPage((pprCurrentNum) => pprCurrentNum - 1);
-      }
-    } else {
-      if (recentCurrentPage > 0) {
-        setRecentCurrentPage((currentNum) => currentNum - 1);
-      }
+    const additionalPageIndex = direction === "next" ? 1 : -1;
+    const newPageIndex = current + additionalPageIndex;
+
+    if (newPageIndex >= 0 && newPageIndex < total) {
+      setter(newPageIndex);
     }
   };
 
@@ -212,14 +202,18 @@ function ShowMessageList() {
               </CardItem>
             ))}
             {popularCurrentPage > 0 ? (
-              <PrevBtnWpr onClick={() => prevPage("ppr")}>
+              <PreviewButtonWrapper
+                onClick={() => handleTurnCards("preview", "popular")}
+              >
                 <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
-              </PrevBtnWpr>
+              </PreviewButtonWrapper>
             ) : null}
             {popularCurrentPage < totalPages - 1 ? (
-              <NextBtnWpr onClick={() => nextPage("ppr")}>
+              <NextButtonWrapper
+                onClick={() => handleTurnCards("next", "popular")}
+              >
                 <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
-              </NextBtnWpr>
+              </NextButtonWrapper>
             ) : null}
           </CardContainer>
         </CardSection>
@@ -251,19 +245,23 @@ function ShowMessageList() {
               </CardItem>
             ))}
             {recentCurrentPage > 0 ? (
-              <PrevBtnWpr onClick={() => prevPage()}>
+              <PreviewButtonWrapper
+                onClick={() => handleTurnCards("preview", "recent")}
+              >
                 <ArrowButton direction={ARROW_BUTTON_DIRECTION.left} />
-              </PrevBtnWpr>
+              </PreviewButtonWrapper>
             ) : null}
             {recentCurrentPage < totalPages - 1 ? (
-              <NextBtnWpr onClick={() => nextPage()}>
+              <NextButtonWrapper
+                onClick={() => handleTurnCards("next", "recent")}
+              >
                 <ArrowButton direction={ARROW_BUTTON_DIRECTION.right} />
-              </NextBtnWpr>
+              </NextButtonWrapper>
             ) : null}
           </CardContainer>
         </CardSection>
       </article>
-      <MakingBtn size={BUTTON_SIZE.large} title="나도 만들어보기" />
+      <MakingButton size={BUTTON_SIZE.large} title="나도 만들어보기" />
     </TopContainer>
   );
 }
