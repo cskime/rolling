@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import smileAddImage from "../assets/ic-face-smile-add.svg";
 import Avatar from "../components/avatar/avatar";
@@ -17,10 +17,13 @@ import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
 import Header from "../components/header/header";
 import Modal from "../components/modal/modal";
+import Popover from "../components/popover/popover";
+import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
 import { useModal } from "../hooks/use-modal";
+import { usePopover } from "../hooks/use-popover";
 import { useToast } from "../hooks/use-toast";
 
 const OutlinedHeader = styled(Header)`
@@ -51,6 +54,28 @@ function TestPage() {
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
 
+<<<<<<< HEAD
+  /* Popover */
+  const { popoverPosition, showsPopover, openPopopver, closePopover } =
+    usePopover();
+  const popoverLeftRef = useRef();
+  const popoverRightRef = useRef();
+
+  const handlePopoverLeftClick = () => {
+    openPopopver({
+      target: popoverLeftRef.current,
+      alignment: POPOVER_ALIGNMENT.left,
+    });
+  };
+  const handlePopoverRightClick = () => {
+    openPopopver({
+      target: popoverRightRef.current,
+      alignment: POPOVER_ALIGNMENT.right,
+    });
+  };
+
+=======
+>>>>>>> upstream/develop
   return (
     <div
       style={{
@@ -210,6 +235,27 @@ function TestPage() {
           />
         )}
       </div>
+      <div style={{ display: "flex", gap: "16px" }}>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Popover on Left"
+          onClick={handlePopoverLeftClick}
+          ref={popoverLeftRef}
+        />
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Popover on Right"
+          onClick={handlePopoverRightClick}
+          ref={popoverRightRef}
+        />
+        <Popover
+          isOpen={showsPopover}
+          onClose={closePopover}
+          position={popoverPosition}
+        >
+          <h1>This is Popover.</h1>
+        </Popover>
+      </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <Avatar size={AVATAR_SIZE.large} />
@@ -224,9 +270,6 @@ function TestPage() {
             size={AVATAR_SIZE.extraSmall}
           />
         </div>
-        <div
-          style={{ display: "flex", alignItems: "center", gap: "16px" }}
-        ></div>
       </div>
     </div>
   );
