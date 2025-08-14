@@ -36,6 +36,7 @@ const ToggleButtonWrapper = styled.div`
 function SendMessagePage() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
+  const [option, setOption] = useState("지인");
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -74,6 +75,14 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>상대와의 관계</SendTitle>
+        <InputTextField
+          type={TEXT_FIELD_TYPE.dropdown}
+          dropdownId="dropdown"
+          placeholder={option}
+          value={option}
+          options={["친구", "지인", "동료", "가족"]}
+          onSelect={setOption}
+        />
       </Wrapper>
       <Wrapper>
         <SendTitle>내용을 입력해 주세요</SendTitle>
