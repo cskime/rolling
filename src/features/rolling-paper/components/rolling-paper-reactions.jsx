@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import EmojiBadge from "../../../components/badge/emoji-badge";
 import arrowDownImage from "../../../assets/ic-chevron-down.svg";
+import EmojiBadge from "../../../components/badge/emoji-badge";
 
 const MoreButton = styled.button`
   background: none;
@@ -24,8 +24,8 @@ function RollingPaperReactions({ reactions }) {
   return (
     <StyledRollingPaperReactions>
       <Reactions>
-        {reactions.map(({ emoji, count }) => (
-          <EmojiBadge key={emoji} emoji={emoji} count={count} />
+        {reactions.slice(0, 3).map(({ id, emoji, count }) => (
+          <EmojiBadge key={id} emoji={emoji} count={count} />
         ))}
       </Reactions>
       <MoreButton>

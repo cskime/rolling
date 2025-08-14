@@ -70,25 +70,7 @@ const ShareButton = styled(OutlinedButton)`
   padding: 0 16px;
 `;
 
-function RollingPaperHeader({ recipientName }) {
-  const profiles = [
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-    "https://picsum.photos/20",
-  ];
-
-  const reactions = [
-    { emoji: "😀", count: 24 },
-    { emoji: "😄", count: 16 },
-    { emoji: "☺️", count: 6 },
-  ];
-
+function RollingPaperHeader({ recipientName, messages, reactions }) {
   return (
     <StyledRollingPaperHeader>
       <HeaderContent>
@@ -97,8 +79,10 @@ function RollingPaperHeader({ recipientName }) {
         </div>
         <HeaderTrailing>
           <DividedContainer>
-            <RollingPaperSenders profiles={profiles} />
-            <RollingPaperReactions reactions={reactions} />
+            <RollingPaperSenders
+              profiles={messages.map((message) => message.profileImageURL)}
+            />
+            <RollingPaperReactions reactions={reactions.slice(0, 8)} />
           </DividedContainer>
           <DividedContainer>
             <OutlinedButton
