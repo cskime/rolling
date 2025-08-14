@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import DropdownContext from "../../components/text-field/dropdown-input/dropdown-context";
+import DropdownContext from "../components/text-field/dropdown-input/dropdown-context";
 
 function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
   return {
