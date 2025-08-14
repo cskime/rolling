@@ -9,7 +9,6 @@ import MessagePage from "./pages/message-list";
 import RecipientPostPage from "./pages/recipient-post-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestPage from "./pages/test-page";
-import PostPage from "./pages/create-post-page";
 import SendPage from "./pages/send-page";
 
 function Provider({ children }) {
