@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import DropdownContext from "../components/text-field/dropdown-input/dropdown-context";
 
 function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
@@ -36,11 +36,26 @@ function useDropdown({ id, type }) {
     setDropdownState((prev) => ({ ...prev, [key]: shows }));
   };
 
-  const handleTargetClick = (shows) => {
-    const rect = calculateDropdownRect(targetRef.current);
-    setShowsDropdown(shows);
+  const updateDropdownLayout = (target) => {
+    const rect = calculateDropdownRect(target);
     setDropdownRect(rect);
   };
+
+  const handleTargetClick = (shows) => {
+    updateDropdownLayout(targetRef.current);
+    setShowsDropdown(shows);
+  };
+
+  useEffect(() => {
+    if (!showsDropdown) return;
+
+    function handleWindowResize() {
+      updateDropdownLayout(targetRef.current);
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, [showsDropdown, targetRef]);
 
   return {
     targetRef,

@@ -54,8 +54,8 @@ function TestPage() {
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         gap: "16px",
-        margin: 16,
       }}
     >
       <h1>🤯</h1>
