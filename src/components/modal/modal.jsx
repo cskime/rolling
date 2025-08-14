@@ -129,7 +129,7 @@ const StyledModal = styled.div`
 /* Container */
 
 const ModalContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

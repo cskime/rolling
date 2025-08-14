@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import smileAddImg from "../assets/ic-face-smile-add.svg";
+import smileAddImage from "../assets/ic-face-smile-add.svg";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
 import Badge from "../components/badge/badge";
@@ -56,8 +56,8 @@ function TestPage() {
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         gap: "16px",
-        margin: 16,
       }}
     >
       <h1>🤯</h1>
@@ -86,33 +86,33 @@ function TestPage() {
         <OutlinedButton
           size={BUTTON_SIZE.medium}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.small}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImg} />
+        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImage} />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>

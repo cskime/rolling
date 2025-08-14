@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logoImg from "../../assets/logo.svg";
+import logoImage from "../../assets/logo.svg";
 import { media } from "../../utils/media";
 
 const HeaderContent = styled.div`
@@ -27,7 +27,7 @@ function Header({ className, children }) {
   return (
     <StyledHeader className={className}>
       <HeaderContent>
-        <img src={logoImg} alt="로고" />
+        <img src={logoImage} alt="로고" />
         <div>{children}</div>
       </HeaderContent>
     </StyledHeader>
