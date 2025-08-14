@@ -5,6 +5,7 @@ import Colors from "../components/color/colors";
 import ToggleButton from "../components/button/toggle-button";
 import styled from "styled-components";
 import { PrimaryButton } from "../components/button/button";
+import BackgroundSelect from "../components/option/background-select";
 
 const PostContainerStyle = styled.div`
   display: flex;
@@ -49,6 +50,8 @@ const ButtonWrapperStyle = styled.div`
 function PostPage() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
+  const [backgroundType, setBackgroundType] = useState("컬러");
+  const [selected, setSelected] = useState(0);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -62,6 +65,15 @@ function PostPage() {
       setNameError("값을 입력해 주세요");
     } else if (name !== trimmed) {
       setNameError("앞 뒤 공백 없이 입력해 주세요"); // 텍스트 앞 뒤 공백 에러 처리(임시)
+    }
+  };
+
+  const handleBackgroundSelect = (e) => {
+    let typeSelect = e.target.textContent;
+
+    if (typeSelect === "컬러" || typeSelect === "이미지") {
+      setBackgroundType(typeSelect);
+      setSelected(0);
     }
   };
 
@@ -83,11 +95,22 @@ function PostPage() {
         <PostSummaryStyle>
           컬러를 선택하거나, 이미지를 선택할 수 있습니다.
         </PostSummaryStyle>
-        <PostToggleButtonStyle>
-          <ToggleButton value="컬러" options={["컬러", "이미지"]} />
+        <PostToggleButtonStyle onClick={handleBackgroundSelect}>
+          <ToggleButton
+            value={backgroundType}
+            options={["컬러", "이미지"]}
+            onChange={(type) => {
+              handleBackgroundSelect(type);
+              setSelected(0);
+            }}
+          />
         </PostToggleButtonStyle>
       </WrapperStyle>
-      <WrapperStyle></WrapperStyle>
+      <BackgroundSelect
+        type={backgroundType === "컬러" ? "color" : "image"}
+        selected={selected}
+        onSelect={setSelected}
+      />
       <ButtonWrapperStyle>
         <PrimaryButton title="생성하기" size="large" />
       </ButtonWrapperStyle>
