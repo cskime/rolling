@@ -59,14 +59,7 @@ function App() {
                 </ContentLayout>
               }
             />
-            <Route
-              path=":id"
-              element={
-                <ContentLayout>
-                  <MessagesPage />
-                </ContentLayout>
-              }
-            />
+            <Route path=":id" element={<MessagesPage />} />
           </Route>
           <Route path="/test-components" element={<TestPage />} />
         </Routes>

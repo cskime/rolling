@@ -4,30 +4,10 @@ import shareImage from "../../../assets/ic-share.svg";
 import { OutlinedButton } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
+import { useMedia } from "../../../hooks/use-media";
 import { media } from "../../../utils/media";
 import RollingPaperReactions from "./rolling-paper-reactions";
 import RollingPaperSenders from "./rolling-paper-senders";
-
-const StyledRollingPaperHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 68px;
-  border-bottom: 1px solid #ededed;
-  padding: 0 24px;
-
-  ${media.mobile} {
-    padding: 0 16px;
-  }
-`;
-
-const HeaderContent = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 const RecipientName = styled.h2`
   margin: 0;
@@ -35,6 +15,11 @@ const RecipientName = styled.h2`
   font-weight: 700;
   line-height: 42px;
   color: ${Colors.gray(800)};
+
+  ${media.mobile} {
+    font-size: 18px;
+    line-height: 28px;
+  }
 `;
 
 const Divider = styled.div`
@@ -47,13 +32,17 @@ const StyledDividedContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 28px;
+
+  ${media.mobile} {
+    gap: 16px;
+  }
 `;
 
 function DividedContainer({ children }) {
   return (
     <StyledDividedContainer>
       {children[0]}
-      <Divider />
+      {children[0] && <Divider />}
       {children[1]}
     </StyledDividedContainer>
   );
@@ -65,35 +54,84 @@ const HeaderTrailing = styled.div`
   align-items: center;
 `;
 
+const AddButton = styled(OutlinedButton)`
+  ${media.mobile} {
+    padding: 0 8px;
+  }
+`;
+
 const ShareButton = styled(OutlinedButton)`
   width: auto;
   padding: 0 16px;
+
+  ${media.mobile} {
+    padding: 0 8px;
+  }
+`;
+
+const RollingPaperHeaderContent = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  height: 68px;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${media.mobile} {
+    height: 54px;
+  }
+`;
+
+const StyledRollingPaperHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+
+  ${media.mobile} {
+    padding: 0 16px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 function RollingPaperHeader({ recipientName, messages, reactions }) {
+  const { isDesktop, isMobile } = useMedia();
+
   return (
     <StyledRollingPaperHeader>
-      <HeaderContent>
-        <div>
+      {isMobile && (
+        <RollingPaperHeaderContent>
           <RecipientName>{`To. ${recipientName}`}</RecipientName>
-        </div>
+        </RollingPaperHeaderContent>
+      )}
+      <RollingPaperHeaderContent>
+        {isMobile || (
+          <div>
+            <RecipientName>{`To. ${recipientName}`}</RecipientName>
+          </div>
+        )}
         <HeaderTrailing>
           <DividedContainer>
-            <RollingPaperSenders
-              profiles={messages.map((message) => message.profileImageURL)}
-            />
+            {isDesktop && (
+              <RollingPaperSenders
+                profiles={messages.map((message) => message.profileImageURL)}
+              />
+            )}
             <RollingPaperReactions reactions={reactions.slice(0, 8)} />
           </DividedContainer>
           <DividedContainer>
-            <OutlinedButton
+            <AddButton
               size={BUTTON_SIZE.small}
-              title="추가"
+              title={isMobile ? null : "추가"}
               icon={addImage}
             />
             <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
           </DividedContainer>
         </HeaderTrailing>
-      </HeaderContent>
+      </RollingPaperHeaderContent>
     </StyledRollingPaperHeader>
   );
 }

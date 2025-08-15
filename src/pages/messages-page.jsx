@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/rolling-paper-header";
+import { useMedia } from "../hooks/use-media";
+import ContentLayout from "../layouts/content-layout";
 
 function MessagesPage() {
+  const { isMobile } = useMedia();
   const [recipient, setRecipient] = useState();
 
   useEffect(() => {
     getRecipient().then(setRecipient);
   }, []);
 
-  return (
+  const content = (
     <>
       {recipient && (
         <>
@@ -25,6 +28,8 @@ function MessagesPage() {
       )}
     </>
   );
+
+  return isMobile ? content : <ContentLayout>{content}</ContentLayout>;
 }
 
 export default MessagesPage;
