@@ -54,7 +54,6 @@ function TestPage() {
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
 
-<<<<<<< HEAD
   /* Popover */
   const { popoverPosition, showsPopover, openPopopver, closePopover } =
     usePopover();
@@ -74,8 +73,6 @@ function TestPage() {
     });
   };
 
-=======
->>>>>>> upstream/develop
   return (
     <div
       style={{
