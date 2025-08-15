@@ -87,7 +87,10 @@ const StyledRollingPaperHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 24px;
+
+  @media (max-width: 1248px) {
+    padding: 0 24px;
+  }
 
   ${media.mobile} {
     padding: 0 16px;
