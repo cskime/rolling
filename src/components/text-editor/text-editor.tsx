@@ -9,7 +9,7 @@ interface TextEditorProps {
   font?: string;
 }
 
-const Font = Quill.import("formats/font");
+const Font: any = Quill.import("formats/font");
 Font.whitelist = [
   "Noto Sans",
   "Pretendard",
@@ -25,6 +25,7 @@ function TextEditor({ style, value, onChange, font }: TextEditorProps) {
     if (editorRef.current) {
       const editor = editorRef.current.getEditor();
       editor.root.style.fontFamily = font || "Noto Sans";
+      editor.root.style.fontSize = "20px";
     }
   }, [font]);
 
