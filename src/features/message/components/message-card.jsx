@@ -20,11 +20,13 @@ const Content = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  min-height: 112px; /* line-height x 4 */
 
   ${media.mobile} {
     font-size: 15px;
     line-height: 22px;
     -webkit-line-clamp: 3;
+    min-height: 66px; /* line-height x 3 */
   }
 `;
 
@@ -53,15 +55,7 @@ function MessageCard({ message }) {
           name={message.sender}
         />
       </Header>
-      <Content>
-        {message.content +
-          message.content +
-          message.content +
-          message.content +
-          message.content +
-          message.content +
-          message.content}
-      </Content>
+      <Content>{message.content}</Content>
       <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
     </StyledMessageCard>
   );
