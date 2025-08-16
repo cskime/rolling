@@ -6,7 +6,7 @@ import AVATAR_SIZE from "./avatar-size";
 const borderWidth = {
   [AVATAR_SIZE.large]: 0,
   [AVATAR_SIZE.medium]: 1,
-  [AVATAR_SIZE.medium]: 1,
+  [AVATAR_SIZE.small]: 1.3,
   [AVATAR_SIZE.extraSmall]: 1.5,
 };
 
