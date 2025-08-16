@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ModalProvider from "./components/modal/modal-provider";
-import PopoverProvider from "./components/popover/popover-provider";
-import DropdownProvider from "./components/text-field/dropdown-input/dropdown-provider";
+import PortalProvider from "./components/portal/portal-provider";
 import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
 import CreatePostPage from "./pages/create-post-page";
@@ -13,13 +11,7 @@ import SendPage from "./pages/send-page";
 import TestPage from "./pages/test-page";
 
 function Provider({ children }) {
-  return (
-    <ModalProvider>
-      <PopoverProvider>
-        <DropdownProvider>{children}</DropdownProvider>
-      </PopoverProvider>
-    </ModalProvider>
-  );
+  return <PortalProvider>{children}</PortalProvider>;
 }
 
 function App() {

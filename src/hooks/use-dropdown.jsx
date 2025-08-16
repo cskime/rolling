@@ -1,5 +1,5 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import DropdownContext from "../components/text-field/dropdown-input/dropdown-context";
+import { useEffect, useRef, useState } from "react";
+import { usePortal } from "./use-portal";
 
 function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
   return {
@@ -24,17 +24,11 @@ function calculateDropdownRect(target) {
 }
 
 function useDropdown({ id, type }) {
-  const { dropdownState, setDropdownState } = useContext(DropdownContext);
+  const key = `${type}_${id}`;
+  const { isOpen, setIsOpen } = usePortal({ key });
   const [dropdownRect, setDropdownRect] = useState();
 
   const targetRef = useRef();
-
-  const key = `${type}_${id}`;
-  const showsDropdown = dropdownState[key] ?? false;
-
-  const setShowsDropdown = (shows) => {
-    setDropdownState((prev) => ({ ...prev, [key]: shows }));
-  };
 
   const updateDropdownLayout = (target) => {
     const rect = calculateDropdownRect(target);
@@ -43,11 +37,11 @@ function useDropdown({ id, type }) {
 
   const handleTargetClick = (shows) => {
     updateDropdownLayout(targetRef.current);
-    setShowsDropdown(shows);
+    setIsOpen(shows);
   };
 
   useEffect(() => {
-    if (!showsDropdown) return;
+    if (!isOpen) return;
 
     function handleWindowResize() {
       updateDropdownLayout(targetRef.current);
@@ -55,13 +49,13 @@ function useDropdown({ id, type }) {
 
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
-  }, [showsDropdown, targetRef]);
+  }, [isOpen, targetRef]);
 
   return {
     targetRef,
     dropdownRect,
-    showsDropdown,
-    setShowsDropdown,
+    showsDropdown: isOpen,
+    setShowsDropdown: setIsOpen,
     handleTargetClick,
   };
 }
