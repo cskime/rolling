@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { PrimaryButton } from "../components/button/button";
 import BackgroundSelect from "../components/option/background-select";
 import { useNavigate } from "react-router";
+import BUTTON_SIZE from "../components/button/button-size";
 
 const PostContainer = styled.div`
   display: flex;
@@ -81,6 +82,8 @@ function CreatePostPage() {
     navigate(`/post/${randomID}`);
   };
 
+  const canCreate = name !== "" || name !== name.trim();
+
   return (
     <PostContainer>
       <Wrapper>
@@ -118,8 +121,8 @@ function CreatePostPage() {
       <ButtonWrapper>
         <CreateButton
           title="생성하기"
-          size="large"
-          disabled={name === "" || name !== name.trim()}
+          size={BUTTON_SIZE.large}
+          disabled={!canCreate}
           onClick={handleCreate}
         />
       </ButtonWrapper>
