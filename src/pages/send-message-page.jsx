@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputTextField from "../components/text-field/text-field";
+import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Colors from "../components/color/colors";
 import ToggleButton from "../components/button/toggle-button";
@@ -60,7 +60,7 @@ function SendMessagePage() {
     <SendContainer>
       <Wrapper>
         <SendTitle>From.</SendTitle>
-        <InputTextField // TextField로 변경
+        <TextField
           type={TEXT_FIELD_TYPE.input}
           value={name}
           onChange={handleChange}
