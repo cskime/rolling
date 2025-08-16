@@ -36,6 +36,15 @@ const StyledMessageCard = styled.article`
   border-radius: 16px;
   background-color: white;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  min-height: 280px;
+
+  ${media.tablet} {
+    min-height: 284px;
+  }
+
+  ${media.mobile} {
+    min-height: 230px;
+  }
 `;
 
 function MessageCard({ message }) {
