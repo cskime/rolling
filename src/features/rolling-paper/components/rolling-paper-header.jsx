@@ -11,6 +11,7 @@ import { useMedia } from "../../../hooks/use-media";
 import { media } from "../../../utils/media";
 import RollingPaperReactions from "./rolling-paper-reactions";
 import RollingPaperSenders from "./rolling-paper-senders";
+import RollingPaperSharePopover from "./rolling-paper-share-popover";
 
 const RecipientName = styled.h2`
   margin: 0;
@@ -108,6 +109,14 @@ function RollingPaperHeader({ recipientName, messages, reactions }) {
 
   const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
 
+  const handleShareKakao = () => {
+    // TODO: KakaoTalk 공유하기
+  };
+
+  const handleShareUrl = () => {
+    // TODO: URL 공유하기 (clipboard 저장)
+  };
+
   return (
     <StyledRollingPaperHeader>
       {isMobile && (
@@ -138,7 +147,18 @@ function RollingPaperHeader({ recipientName, messages, reactions }) {
             >
               <EmojiPicker />
             </Popover>
-            <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
+            <Popover
+              id="share-popover"
+              alignment={POPOVER_ALIGNMENT.right}
+              action={
+                <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
+              }
+            >
+              <RollingPaperSharePopover
+                onShareKakao={handleShareKakao}
+                onShareUrl={handleShareUrl}
+              />
+            </Popover>
           </DividedContainer>
         </HeaderTrailing>
       </RollingPaperHeaderContent>
