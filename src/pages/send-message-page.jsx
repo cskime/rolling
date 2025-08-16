@@ -75,7 +75,7 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>상대와의 관계</SendTitle>
-        <InputTextField
+        <TextField
           type={TEXT_FIELD_TYPE.dropdown}
           dropdownId="dropdown"
           placeholder={option}
