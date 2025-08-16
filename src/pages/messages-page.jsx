@@ -30,7 +30,7 @@ function MessagesPage() {
             reactions={recipient.topReactions}
           />
           <Content $backgroundColor={recipient.backgroundColor}>
-            <RollingPaperMessagesGrid />
+            <RollingPaperMessagesGrid messages={recipient.recentMessages} />
           </Content>
         </>
       )}

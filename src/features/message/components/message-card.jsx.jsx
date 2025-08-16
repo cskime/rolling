@@ -1,0 +1,56 @@
+import styled from "styled-components";
+import Colors from "../../../components/color/colors";
+import { formatDate } from "../../../utils/formatter";
+import { media } from "../../../utils/media";
+import MessageSender from "./message-sender";
+
+const Header = styled.header`
+  padding-bottom: 16px;
+  border-bottom: 1px solid ${Colors.gray(200)};
+`;
+
+const Content = styled.div`
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: ${Colors.gray(600)};
+
+  ${media.mobile} {
+    font-size: 15px;
+    line-height: 22px;
+  }
+`;
+
+const CreatedDate = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: ${Colors.gray(400)};
+`;
+
+const StyledMessageCard = styled.article`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+`;
+
+function MessageCard({ message }) {
+  return (
+    <StyledMessageCard>
+      <Header>
+        <MessageSender
+          profileImage={message.profileImage}
+          name={message.sender}
+        />
+      </Header>
+      <Content>{message.content}</Content>
+      <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
+    </StyledMessageCard>
+  );
+}
+
+export default MessageCard;

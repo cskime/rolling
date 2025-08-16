@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { media } from "../../../../utils/media";
-
-const MessageCard = styled.div`
-  background-color: blue;
-  height: 200px;
-`;
+import MessageCard from "../../../message/components/message-card.jsx";
 
 const StyledRollingPaperMessagesGrid = styled.div`
   display: grid;
@@ -27,14 +23,12 @@ const StyledRollingPaperMessagesGrid = styled.div`
   }
 `;
 
-function RollingPaperMessagesGrid() {
+function RollingPaperMessagesGrid({ messages }) {
   return (
     <StyledRollingPaperMessagesGrid>
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
-      <MessageCard />
+      {messages.map((message) => (
+        <MessageCard key={message.id} message={message} />
+      ))}
     </StyledRollingPaperMessagesGrid>
   );
 }
