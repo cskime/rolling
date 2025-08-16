@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { usePortal } from "./use-portal";
 
-function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
+const DEFAULT_RECT = { x: 0, y: 0, width: 0 };
+
+function makeRect({ x, y, width }) {
   return {
     origin: { x, y },
     size: { width },
@@ -10,7 +12,7 @@ function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
 
 function calculateDropdownRect(target) {
   if (!target) {
-    return makeRect();
+    return DEFAULT_RECT;
   }
 
   const targetRect = target.getBoundingClientRect();
@@ -26,7 +28,7 @@ function calculateDropdownRect(target) {
 function useDropdown({ id, type }) {
   const key = `${type}_${id}`;
   const { isOpen, setIsOpen } = usePortal({ key });
-  const [dropdownRect, setDropdownRect] = useState();
+  const [dropdownRect, setDropdownRect] = useState(DEFAULT_RECT);
 
   const targetRef = useRef();
 

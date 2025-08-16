@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import { usePortal } from "./use-portal";
 
+const DEFAULT_POSITION = { top: 0, left: 0, right: 0 };
+
 function calculatePopoverPosition(target, alignment) {
   if (!target) {
-    return { top: 0, left: 0, right: 0 };
+    return DEFAULT_POSITION;
   }
 
   const targetRect = target.getBoundingClientRect();
@@ -27,7 +29,7 @@ function calculatePopoverPosition(target, alignment) {
 function usePopover({ id, type, alignment }) {
   const key = `${type}_${id}`;
   const { isOpen, setIsOpen } = usePortal({ key });
-  const [position, setPopoverPosition] = useState();
+  const [position, setPopoverPosition] = useState(DEFAULT_POSITION);
   const targetRef = useRef();
 
   const updatePopoverPosition = (target, alignment) => {
