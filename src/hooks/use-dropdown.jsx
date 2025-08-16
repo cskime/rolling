@@ -47,8 +47,17 @@ function useDropdown({ id, type }) {
       updateDropdownLayout(targetRef.current);
     }
 
+    function handleWindowScroll() {
+      updateDropdownLayout(targetRef.current);
+    }
+
     window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
+    window.addEventListener("scroll", handleWindowScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
   }, [isOpen, targetRef]);
 
   return {

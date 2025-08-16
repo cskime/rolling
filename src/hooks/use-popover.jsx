@@ -47,8 +47,17 @@ function usePopover({ id, type, alignment }) {
       updatePopoverPosition(targetRef.current, alignment);
     }
 
+    function handleWindowScroll() {
+      updatePopoverPosition(targetRef.current, alignment);
+    }
+
     window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
+    window.addEventListener("scroll", handleWindowScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
   }, [isOpen, targetRef, alignment]);
 
   return {
