@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
+import RollingPaperMessagesGrid from "../features/rolling-paper/components/messages/rolling-paper-messages-grid";
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
 
@@ -28,7 +29,9 @@ function MessagesPage() {
             messages={recipient.recentMessages}
             reactions={recipient.topReactions}
           />
-          <Content $backgroundColor={recipient.backgroundColor}></Content>
+          <Content $backgroundColor={recipient.backgroundColor}>
+            <RollingPaperMessagesGrid />
+          </Content>
         </>
       )}
     </>
