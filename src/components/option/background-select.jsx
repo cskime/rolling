@@ -39,7 +39,7 @@ const CircleButtonWrapper = styled.div`
   }
 `;
 
-function BackgroundSelect({ type, selected, onSelect }) {
+function BackgroundSelect({ type, selected, onOptionClick }) {
   const [imageUrls, setImageUrls] = useState([]);
 
   const colorOptions = [
@@ -93,7 +93,7 @@ function BackgroundSelect({ type, selected, onSelect }) {
           type={type}
           color={option.color}
           url={option.url}
-          onClick={() => onSelect(index)}
+          onClick={() => onOptionClick(index)}
         >
           {selected === index && (
             <CircleButtonWrapper>

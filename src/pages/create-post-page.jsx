@@ -116,7 +116,7 @@ function CreatePostPage() {
       <BackgroundSelect
         type={backgroundType === "컬러" ? "color" : "image"}
         selected={selected}
-        onSelect={setSelected}
+        onOptionClick={setSelected}
       />
       <ButtonWrapper>
         <PrimaryButton
