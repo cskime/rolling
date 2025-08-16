@@ -103,19 +103,15 @@ const StyledRollingPaperHeader = styled.div`
 function RollingPaperHeader({ recipientName, messages, reactions }) {
   const { isDesktop, isMobile } = useMedia();
 
+  const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
+
   return (
     <StyledRollingPaperHeader>
       {isMobile && (
-        <RollingPaperHeaderContent>
-          <RecipientName>{`To. ${recipientName}`}</RecipientName>
-        </RollingPaperHeaderContent>
+        <RollingPaperHeaderContent>{name}</RollingPaperHeaderContent>
       )}
       <RollingPaperHeaderContent>
-        {isMobile || (
-          <div>
-            <RecipientName>{`To. ${recipientName}`}</RecipientName>
-          </div>
-        )}
+        {isMobile || <div>{name}</div>}
         <HeaderTrailing>
           <DividedContainer>
             {isDesktop && (
