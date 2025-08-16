@@ -39,6 +39,7 @@ const ToggleButtonWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   padding-top: 50px;
+  padding-bottom: 150px;
   width: 720px;
 `;
 

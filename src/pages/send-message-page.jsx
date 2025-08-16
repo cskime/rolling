@@ -61,6 +61,7 @@ const DefaultAvatar = styled.div`
 
 const ButtonWrapper = styled.div`
   padding-top: 50px;
+  padding-bottom: 150px;
   width: 720px;
 `;
 
@@ -171,10 +172,10 @@ function SendMessagePage() {
             style={{
               height: "300px",
               marginBottom: "20px",
-              fontFamily: fontOption,
             }}
             value={content}
             onChange={(value) => setContent(value)}
+            font={fontOption}
           />
         </div>
       </Wrapper>
@@ -185,7 +186,12 @@ function SendMessagePage() {
           dropdownId="dropdown2"
           placeholder={fontOption}
           value={fontOption}
-          options={["Noto Sans", "Pretendard", "", ""]}
+          options={[
+            "Noto Sans",
+            "Pretendard",
+            "Nanum Gothic",
+            "Nanum Pen Script",
+          ]}
           onSelect={setFontOption}
         />
       </Wrapper>
