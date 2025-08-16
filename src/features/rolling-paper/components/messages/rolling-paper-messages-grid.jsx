@@ -1,7 +1,9 @@
 import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
-import { media } from "../../../../utils/media";
+import Modal from "../../../../components/modal/modal.jsx";
+import { media } from "../../../../utils/media.js";
 import MessageCardAdd from "../../../message/components/message-card-add.jsx";
+import MessageCardDetail from "../../../message/components/message-card-detail.jsx";
 import MessageCard from "../../../message/components/message-card.jsx";
 
 const StyledRollingPaperMessagesGrid = styled.div`
@@ -37,7 +39,13 @@ function RollingPaperMessagesGrid({ messages }) {
     <StyledRollingPaperMessagesGrid>
       <MessageCardAdd onClick={handleAddClick} />
       {messages.map((message) => (
-        <MessageCard key={message.id} message={message} />
+        <Modal
+          key={message.id}
+          id={message.id}
+          action={<MessageCard key={message.id} message={message} />}
+        >
+          <MessageCardDetail message={message} />
+        </Modal>
       ))}
     </StyledRollingPaperMessagesGrid>
   );
