@@ -34,6 +34,10 @@ const ModalContainer = styled.div`
   align-items: center;
 `;
 
+const ActionButton = styled.div`
+  cursor: pointer;
+`;
+
 function Modal({ id, action, children }) {
   const { showsModal, setShowsModal } = useModal({
     id: id,
@@ -45,7 +49,7 @@ function Modal({ id, action, children }) {
 
   return (
     <>
-      <div onClick={handleClick}>{action}</div>
+      <ActionButton onClick={handleClick}>{action}</ActionButton>
       {showsModal && (
         <Portal id="modal">
           <ModalContainer>
