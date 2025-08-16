@@ -15,10 +15,16 @@ const Content = styled.div`
   font-weight: 400;
   line-height: 28px;
   color: ${Colors.gray(600)};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 
   ${media.mobile} {
     font-size: 15px;
     line-height: 22px;
+    -webkit-line-clamp: 3;
   }
 `;
 
@@ -36,15 +42,6 @@ const StyledMessageCard = styled.article`
   border-radius: 16px;
   background-color: white;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
-  min-height: 280px;
-
-  ${media.tablet} {
-    min-height: 284px;
-  }
-
-  ${media.mobile} {
-    min-height: 230px;
-  }
 `;
 
 function MessageCard({ message }) {
@@ -56,7 +53,15 @@ function MessageCard({ message }) {
           name={message.sender}
         />
       </Header>
-      <Content>{message.content}</Content>
+      <Content>
+        {message.content +
+          message.content +
+          message.content +
+          message.content +
+          message.content +
+          message.content +
+          message.content}
+      </Content>
       <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
     </StyledMessageCard>
   );
