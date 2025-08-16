@@ -59,6 +59,10 @@ const DefaultAvatar = styled.div`
   cursor: pointer;
 `;
 
+const TextEditorWrapper = styled.div`
+  width: 100%;
+`;
+
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 150px;
@@ -167,7 +171,7 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>내용을 입력해 주세요</SendTitle>
-        <div>
+        <TextEditorWrapper>
           <TextEditor
             style={{
               height: "300px",
@@ -177,7 +181,7 @@ function SendMessagePage() {
             onChange={(value) => setContent(value)}
             font={fontOption}
           />
-        </div>
+        </TextEditorWrapper>
       </Wrapper>
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
