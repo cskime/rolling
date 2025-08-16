@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/rolling-paper-header";
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
+
+const Content = styled.div`
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
+  height: calc(100% - 68px);
+`;
 
 function MessagesPage() {
   const { isMobile } = useMedia();
@@ -22,9 +28,7 @@ function MessagesPage() {
             messages={recipient.recentMessages}
             reactions={recipient.topReactions}
           />
-          <main>
-            <h1>Messages Page</h1>
-          </main>
+          <Content $backgroundColor={recipient.backgroundColor}></Content>
         </>
       )}
     </>
