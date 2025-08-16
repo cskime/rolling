@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
-import smileAddImg from "../assets/ic-face-smile-add.svg";
+import smileAddImage from "../assets/ic-face-smile-add.svg";
+import Avatar from "../components/avatar/avatar";
+import AVATAR_SIZE from "../components/avatar/avatar-size";
 import Badge from "../components/badge/badge";
 import BADGE_TYPE from "../components/badge/badge-type";
 import EmojiBadge from "../components/badge/emoji-badge";
@@ -15,10 +17,13 @@ import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
 import Header from "../components/header/header";
 import Modal from "../components/modal/modal";
+import Popover from "../components/popover/popover";
+import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
 import { useModal } from "../hooks/use-modal";
+import { usePopover } from "../hooks/use-popover";
 import { useToast } from "../hooks/use-toast";
 
 const OutlinedHeader = styled(Header)`
@@ -44,18 +49,37 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-  
+
   /* Modal */
   const { showsModal, setShowsModal } = useModal();
   const handleModalClick = () => setShowsModal(true);
-  
+
+  /* Popover */
+  const { popoverPosition, showsPopover, openPopopver, closePopover } =
+    usePopover();
+  const popoverLeftRef = useRef();
+  const popoverRightRef = useRef();
+
+  const handlePopoverLeftClick = () => {
+    openPopopver({
+      target: popoverLeftRef.current,
+      alignment: POPOVER_ALIGNMENT.left,
+    });
+  };
+  const handlePopoverRightClick = () => {
+    openPopopver({
+      target: popoverRightRef.current,
+      alignment: POPOVER_ALIGNMENT.right,
+    });
+  };
+
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         gap: "16px",
-        margin: 16,
       }}
     >
       <h1>🤯</h1>
@@ -84,33 +108,33 @@ function TestPage() {
         <OutlinedButton
           size={BUTTON_SIZE.medium}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.small}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           title="Hello"
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImg} />
-        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImg} />
+        <OutlinedButton size={BUTTON_SIZE.medium} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.small} icon={smileAddImage} />
+        <OutlinedButton size={BUTTON_SIZE.extraSmall} icon={smileAddImage} />
         <OutlinedButton
           size={BUTTON_SIZE.extraSmall}
           disabled
-          icon={smileAddImg}
+          icon={smileAddImage}
         />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -207,6 +231,42 @@ function TestPage() {
             content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
           />
         )}
+      </div>
+      <div style={{ display: "flex", gap: "16px" }}>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Popover on Left"
+          onClick={handlePopoverLeftClick}
+          ref={popoverLeftRef}
+        />
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Popover on Right"
+          onClick={handlePopoverRightClick}
+          ref={popoverRightRef}
+        />
+        <Popover
+          isOpen={showsPopover}
+          onClose={closePopover}
+          position={popoverPosition}
+        >
+          <h1>This is Popover.</h1>
+        </Popover>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <Avatar size={AVATAR_SIZE.large} />
+          <Avatar size={AVATAR_SIZE.medium} />
+          <Avatar size={AVATAR_SIZE.small} />
+          <Avatar size={AVATAR_SIZE.extraSmall} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.large} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.medium} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.small} />
+          <Avatar
+            source="https://picsum.photos/80"
+            size={AVATAR_SIZE.extraSmall}
+          />
+        </div>
       </div>
     </div>
   );

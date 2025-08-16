@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ModalProvider from "./components/modal/modal-provider";
+import PopoverProvider from "./components/popover/popover-provider";
 import DropdownProvider from "./components/text-field/dropdown-input/dropdown-provider";
 import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
@@ -13,7 +14,9 @@ import TestPage from "./pages/test-page";
 function Provider({ children }) {
   return (
     <ModalProvider>
-      <DropdownProvider>{children}</DropdownProvider>
+      <PopoverProvider>
+        <DropdownProvider>{children}</DropdownProvider>
+      </PopoverProvider>
     </ModalProvider>
   );
 }

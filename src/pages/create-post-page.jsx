@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputTextField from "../components/text-field/text-field";
+import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Colors from "../components/color/colors";
 import ToggleButton from "../components/button/toggle-button";
@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { PrimaryButton } from "../components/button/button";
 import BackgroundSelect from "../components/option/background-select";
 import { useNavigate } from "react-router";
+import BUTTON_SIZE from "../components/button/button-size";
 
 const PostContainer = styled.div`
   display: flex;
@@ -39,12 +40,10 @@ const ToggleButtonWrapper = styled.div`
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   width: 720px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  & > * {
-    flex: 1;
-  }
+`;
+
+const CreateButton = styled(PrimaryButton)`
+  width: 100%;
 `;
 
 function CreatePostPage() {
@@ -83,11 +82,13 @@ function CreatePostPage() {
     navigate(`/post/${randomID}`);
   };
 
+  const canCreate = name !== "" || name !== name.trim();
+
   return (
     <PostContainer>
       <Wrapper>
         <PostTitle>To.</PostTitle>
-        <InputTextField // TextField로 변경
+        <TextField
           type={TEXT_FIELD_TYPE.input}
           value={name}
           onChange={handleChange}
@@ -118,10 +119,10 @@ function CreatePostPage() {
         onSelect={setSelected}
       />
       <ButtonWrapper>
-        <PrimaryButton
+        <CreateButton
           title="생성하기"
-          size="large"
-          disabled={name === "" || name !== name.trim()}
+          size={BUTTON_SIZE.large}
+          disabled={!canCreate}
           onClick={handleCreate}
         />
       </ButtonWrapper>

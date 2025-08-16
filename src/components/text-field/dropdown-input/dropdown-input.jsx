@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import arrowDownImg from "../../../assets/ic-chevron-down.svg";
-import arrowUpImg from "../../../assets/ic-chevron-up.svg";
+import arrowDownImage from "../../../assets/ic-chevron-down.svg";
+import arrowUpImage from "../../../assets/ic-chevron-up.svg";
 import { useDropdown } from "../../../hooks/use-dropdown";
 import INPUT_STYLES from "../input-styles";
 import Dropdown from "./dropdown";
@@ -117,7 +117,7 @@ function DropdownInput({
         <Text value={value} placeholder={placeholder} />
         <Icon>
           <img
-            src={showsDropdown ? arrowUpImg : arrowDownImg}
+            src={showsDropdown ? arrowUpImage : arrowDownImage}
             alt="Dropdown 화살표"
           />
         </Icon>

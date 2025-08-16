@@ -1,52 +1,13 @@
 import { createPortal } from "react-dom";
-import styled, { css } from "styled-components";
-import defaultProfileImg from "../../assets/ic-person.svg";
+import styled from "styled-components";
 import { useModal } from "../../hooks/use-modal";
 import { formatDate } from "../../utils/formatter";
+import Avatar from "../avatar/avatar";
 import Badge from "../badge/badge";
 import BADGE_TYPE from "../badge/badge-type";
 import { PrimaryButton } from "../button/button";
 import BUTTON_SIZE from "../button/button-size";
 import Colors from "../color/colors";
-
-/* ProfileImage */
-
-const profileImageStyle = css`
-  width: 56px;
-  height: 56px;
-  border-radius: 28px;
-`;
-
-const UserProfileImage = styled.div`
-  ${profileImageStyle}
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-const DefaultProfileImage = styled.div`
-  ${profileImageStyle}
-  background-color: ${Colors.gray(300)};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    width: 32px;
-    height: 32px;
-  }
-`;
-
-function ProfileImage({ profileImg }) {
-  const img = <img src={profileImg ?? defaultProfileImg} alt="프로필 사진" />;
-  return profileImg ? (
-    <UserProfileImage>{img}</UserProfileImage>
-  ) : (
-    <DefaultProfileImage>{img}</DefaultProfileImage>
-  );
-}
 
 /* UserInfo */
 
@@ -89,7 +50,7 @@ const StyledUserProfile = styled.div`
 function UserProfile({ profileImg, name }) {
   return (
     <StyledUserProfile>
-      <ProfileImage profileImg={profileImg} />
+      <Avatar source={profileImg} />
       <UserInfo name={name} type={BADGE_TYPE.coworker} />
     </StyledUserProfile>
   );
@@ -168,7 +129,7 @@ const StyledModal = styled.div`
 /* Container */
 
 const ModalContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
