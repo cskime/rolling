@@ -110,7 +110,7 @@ function SendMessagePage() {
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = name.trim() !== "" && selectedAvatar !== null;
+  const canCreate = name.trim() !== "";
 
   return (
     <SendContainer>
