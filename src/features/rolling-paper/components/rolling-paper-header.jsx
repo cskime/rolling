@@ -1,9 +1,12 @@
+import EmojiPicker from "emoji-picker-react";
 import styled from "styled-components";
 import addImage from "../../../assets/ic-face-smile-add.svg";
 import shareImage from "../../../assets/ic-share.svg";
 import { OutlinedButton } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
+import Popover from "../../../components/popover/popover";
+import POPOVER_ALIGNMENT from "../../../components/popover/popover-alignment";
 import { useMedia } from "../../../hooks/use-media";
 import { media } from "../../../utils/media";
 import RollingPaperReactions from "./rolling-paper-reactions";
@@ -122,11 +125,19 @@ function RollingPaperHeader({ recipientName, messages, reactions }) {
             <RollingPaperReactions reactions={reactions.slice(0, 8)} />
           </DividedContainer>
           <DividedContainer>
-            <AddButton
-              size={BUTTON_SIZE.small}
-              title={isMobile ? null : "추가"}
-              icon={addImage}
-            />
+            <Popover
+              id="emoji-picker-popover"
+              alignment={POPOVER_ALIGNMENT.right}
+              action={
+                <AddButton
+                  size={BUTTON_SIZE.small}
+                  title={isMobile ? null : "추가"}
+                  icon={addImage}
+                />
+              }
+            >
+              <EmojiPicker />
+            </Popover>
             <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
           </DividedContainer>
         </HeaderTrailing>
