@@ -19,6 +19,7 @@ const StyledPopover = styled.div`
   border: 1px solid #b6b6b6;
   background-color: white;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 `;
 
 function Popover({ id, alignment, action, children }) {
