@@ -2,10 +2,12 @@ import { useState } from "react";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Colors from "../components/color/colors";
-import ToggleButton from "../components/button/toggle-button";
 import styled from "styled-components";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
+import BUTTON_SIZE from "../components/button/button-size";
+import { useNavigate } from "react-router";
+import { PrimaryButton } from "../components/button/button";
 
 const SendContainer = styled.div`
   display: flex;
@@ -56,11 +58,13 @@ const DefaultAvatar = styled.div`
   cursor: pointer;
 `;
 
-const DEFAULT_AVATAR = <Avatar />;
+const ButtonWrapper = styled.div`
+  padding-top: 50px;
+  width: 720px;
+`;
 
-const ToggleButtonWrapper = styled.div`
+const CreateButton = styled(PrimaryButton)`
   width: 100%;
-  display: flex;
 `;
 
 function SendMessagePage() {
@@ -68,6 +72,7 @@ function SendMessagePage() {
   const [nameError, setNameError] = useState("");
   const [option, setOption] = useState("지인");
   const [selectedAvatar, setSelectedAvatar] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -100,6 +105,13 @@ function SendMessagePage() {
     "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMzAg/MDAxNjMwNTk5NjE5ODI2.cmwNyDHTza4N64bhN0rIRu2KaFHUxqv0BkuaX6GBHJ0g.ufZqe7x1GLrCLJg2zb6N_nJ_fTgFPXq09TTe_fhsMiog.JPEG.gmlwjd5363/FB＿IMG＿1630599538261.jpg?type=w800",
   ];
 
+  const handleCreate = () => {
+    const randomID = Math.floor(Math.random() * 10000);
+    navigate(`/post/${randomID}`);
+  };
+
+  const canCreate = name.trim() !== "" && selectedAvatar !== null;
+
   return (
     <SendContainer>
       <Wrapper>
@@ -117,7 +129,7 @@ function SendMessagePage() {
         <SendTitle>프로필 이미지</SendTitle>
         <AvatarWrapper>
           <DefaultAvatar
-            onClick={() => setSelectedAvatar((prev) => (prev ? null : prev))}
+            onClick={() => setSelectedAvatar((prev) => (prev ? null : prev))} // 아바타 선택 상태에서 재클릭 시 기본 아바타로
           >
             <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
           </DefaultAvatar>
@@ -155,9 +167,14 @@ function SendMessagePage() {
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
       </Wrapper>
-      <ToggleButtonWrapper>
-        <ToggleButton value="컬러" options={["컬러", "이미지"]} />
-      </ToggleButtonWrapper>
+      <ButtonWrapper>
+        <CreateButton
+          title="생성하기"
+          size={BUTTON_SIZE.large}
+          disabled={!canCreate}
+          onClick={handleCreate}
+        />
+      </ButtonWrapper>
     </SendContainer>
   );
 }

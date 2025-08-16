@@ -82,7 +82,7 @@ function CreatePostPage() {
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = name !== "" || name !== name.trim();
+  const canCreate = name.trim() !== "";
 
   return (
     <PostContainer>
