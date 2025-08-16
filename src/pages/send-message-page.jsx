@@ -8,6 +8,7 @@ import AVATAR_SIZE from "../components/avatar/avatar-size";
 import BUTTON_SIZE from "../components/button/button-size";
 import { useNavigate } from "react-router";
 import { PrimaryButton } from "../components/button/button";
+import TextEditor from "../components/text-editor/text-editor";
 
 const SendContainer = styled.div`
   display: flex;
@@ -72,6 +73,7 @@ function SendMessagePage() {
   const [nameError, setNameError] = useState("");
   const [option, setOption] = useState("지인");
   const [selectedAvatar, setSelectedAvatar] = useState(null);
+  const [content, setContent] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -163,6 +165,13 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>내용을 입력해 주세요</SendTitle>
+        <div>
+          <TextEditor
+            style={{ height: "300px", marginBottom: "20px" }}
+            value={content}
+            onChange={(value) => setContent(value)}
+          />
+        </div>
       </Wrapper>
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
