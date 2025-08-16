@@ -1,7 +1,6 @@
 const AVATAR_SIZE = Object.freeze({
   large: 80,
   medium: 56,
-  medium: 40,
   extraSmall: 28,
 });
 
