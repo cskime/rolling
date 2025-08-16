@@ -21,14 +21,12 @@ function TextEditor({ style, value, onChange }: TextEditorProps) {
   };
 
   return (
-    <>
-      <ReactQuill
-        style={style}
-        modules={modules}
-        value={value}
-        onChange={onChange}
-      />
-    </>
+    <ReactQuill
+      style={style}
+      modules={modules}
+      value={value}
+      onChange={onChange}
+    />
   );
 }
 

@@ -71,9 +71,10 @@ const CreateButton = styled(PrimaryButton)`
 function SendMessagePage() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
-  const [option, setOption] = useState("지인");
+  const [relationOption, setRelationOption] = useState("지인");
   const [selectedAvatar, setSelectedAvatar] = useState(null);
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState("I am your reach text editor.");
+  const [fontOption, setFontOption] = useState("Noto Sans");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -156,18 +157,22 @@ function SendMessagePage() {
         <SendTitle>상대와의 관계</SendTitle>
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
-          dropdownId="dropdown"
-          placeholder={option}
-          value={option}
+          dropdownId="dropdown1"
+          placeholder={relationOption}
+          value={relationOption}
           options={["친구", "지인", "동료", "가족"]}
-          onSelect={setOption}
+          onSelect={setRelationOption}
         />
       </Wrapper>
       <Wrapper>
         <SendTitle>내용을 입력해 주세요</SendTitle>
         <div>
           <TextEditor
-            style={{ height: "300px", marginBottom: "20px" }}
+            style={{
+              height: "300px",
+              marginBottom: "20px",
+              fontFamily: fontOption,
+            }}
             value={content}
             onChange={(value) => setContent(value)}
           />
@@ -175,6 +180,14 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
+        <TextField
+          type={TEXT_FIELD_TYPE.dropdown}
+          dropdownId="dropdown2"
+          placeholder={fontOption}
+          value={fontOption}
+          options={["Noto Sans", "Pretendard", "", ""]}
+          onSelect={setFontOption}
+        />
       </Wrapper>
       <ButtonWrapper>
         <CreateButton
