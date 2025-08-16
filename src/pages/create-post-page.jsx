@@ -39,13 +39,10 @@ const ToggleButtonWrapper = styled.div`
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   width: 720px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+`;
 
-  & > * {
-    flex: 1;
-  }
+const CreateButton = styled(PrimaryButton)`
+  width: 100%;
 `;
 
 function CreatePostPage() {
@@ -119,7 +116,7 @@ function CreatePostPage() {
         onSelect={setSelected}
       />
       <ButtonWrapper>
-        <PrimaryButton
+        <CreateButton
           title="생성하기"
           size="large"
           disabled={name === "" || name !== name.trim()}
