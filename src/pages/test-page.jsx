@@ -257,11 +257,11 @@ function TestPage() {
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <Avatar size={AVATAR_SIZE.large} />
           <Avatar size={AVATAR_SIZE.medium} />
-          <Avatar size={AVATAR_SIZE.small} />
+          <Avatar size={AVATAR_SIZE.medium} />
           <Avatar size={AVATAR_SIZE.extraSmall} />
           <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.large} />
           <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.medium} />
-          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.small} />
+          <Avatar source="https://picsum.photos/80" size={AVATAR_SIZE.medium} />
           <Avatar
             source="https://picsum.photos/80"
             size={AVATAR_SIZE.extraSmall}
