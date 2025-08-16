@@ -31,14 +31,14 @@ const AvatarWrapper = styled.div`
   gap: 32px;
 `;
 
-const AvatarSummaryWrapper = styled.div`
+const AvatarOptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 80%;
 `;
 
-const AvatarSummary = styled.p`
+const AvatarDescription = styled.p`
   font-weight: 400;
   color: ${Colors.gray(500)};
 `;
@@ -47,6 +47,16 @@ const AvatarOption = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const AvatarPreview = styled.div`
+  cursor: pointer;
+`;
+
+const DefaultAvatar = styled.div`
+  cursor: pointer;
+`;
+
+const DEFAULT_AVATAR = <Avatar />;
 
 const ToggleButtonWrapper = styled.div`
   width: 100%;
@@ -57,6 +67,7 @@ function SendMessagePage() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const [option, setOption] = useState("지인");
+  const [selectedAvatar, setSelectedAvatar] = useState(null);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -76,6 +87,19 @@ function SendMessagePage() {
     }
   };
 
+  const avatarList = [
+    "https://i.pinimg.com/236x/49/86/62/4986627b45cecd1a5c4330bda777c2bf.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRok3sjZOWtm7o5kFf0BdW0w7IUHI1oAlC-Z6RCKAiCvvCExG_qq7qMzPOQlEzfknS3B3U&usqp=CAU",
+    "https://i.pinimg.com/236x/20/d1/6f/20d16f236500e8daa315a298a8586193.jpg",
+    "https://i.pinimg.com/474x/28/6c/fd/286cfdcdaeaf2768d4b285a226c33a02.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxR-Twic2lXwfF87JweyQ81vrGDUgn7zzYj60N-wD21DwS4JzOc0BLhzaOuUt4PGfLcI&usqp=CAU",
+    "https://i.pinimg.com/236x/74/68/89/7468894ce7592357a3514dbb8dc5f181.jpg",
+    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMjE1/MDAxNjMwNTk5NjE4NTc5.b-OgHjcav5kz8kt_9Cr2u1Z_eJYmKY_H9Ii9mOnwo74g.r0G6iGYg-oQMLnTymwyrjDlOMGLEnWGYJXefCSy2ixwg.JPEG.gmlwjd5363/FB＿IMG＿1630599533529.jpg?type=w800",
+    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMTIy/MDAxNjMwNTk5NjE5MDA5.w_wMeYmMF2kOhDAVXXxe0JgVqJhtGd0EuR0b2D2k3S0g.Nds6Oxagjks2DjjwFz5yWyjCGcEOL1iS84XqhAQw3wUg.JPEG.gmlwjd5363/FB＿IMG＿1630599535069.jpg?type=w800",
+    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfNDQg/MDAxNjMwNTk5NjE5MzQ4.J4lhtJZRKMzEXj0HjrG1aH65qIcBv9GI1LdVQsWlC-Ug.10QCNt81CdbIyBkd1bFOAOAolDL6hxYXrb9dXgmS8zQg.JPEG.gmlwjd5363/FB＿IMG＿1630599536666.jpg?type=w800",
+    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMzAg/MDAxNjMwNTk5NjE5ODI2.cmwNyDHTza4N64bhN0rIRu2KaFHUxqv0BkuaX6GBHJ0g.ufZqe7x1GLrCLJg2zb6N_nJ_fTgFPXq09TTe_fhsMiog.JPEG.gmlwjd5363/FB＿IMG＿1630599538261.jpg?type=w800",
+  ];
+
   return (
     <SendContainer>
       <Wrapper>
@@ -92,52 +116,26 @@ function SendMessagePage() {
       <Wrapper>
         <SendTitle>프로필 이미지</SendTitle>
         <AvatarWrapper>
-          <Avatar size={AVATAR_SIZE.large} />
-          <AvatarSummaryWrapper>
-            <AvatarSummary>프로필 이미지를 선택해 주세요!</AvatarSummary>
+          <DefaultAvatar
+            onClick={() => setSelectedAvatar((prev) => (prev ? null : prev))}
+          >
+            <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
+          </DefaultAvatar>
+          <AvatarOptionWrapper>
+            <AvatarDescription>
+              프로필 이미지를 선택해 주세요!
+            </AvatarDescription>
             <AvatarOption>
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://i.pinimg.com/236x/49/86/62/4986627b45cecd1a5c4330bda777c2bf.jpg"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRok3sjZOWtm7o5kFf0BdW0w7IUHI1oAlC-Z6RCKAiCvvCExG_qq7qMzPOQlEzfknS3B3U&usqp=CAU"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://i.pinimg.com/236x/20/d1/6f/20d16f236500e8daa315a298a8586193.jpg"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://i.pinimg.com/474x/28/6c/fd/286cfdcdaeaf2768d4b285a226c33a02.jpg"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxR-Twic2lXwfF87JweyQ81vrGDUgn7zzYj60N-wD21DwS4JzOc0BLhzaOuUt4PGfLcI&usqp=CAU"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://i.pinimg.com/236x/74/68/89/7468894ce7592357a3514dbb8dc5f181.jpg"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMjE1/MDAxNjMwNTk5NjE4NTc5.b-OgHjcav5kz8kt_9Cr2u1Z_eJYmKY_H9Ii9mOnwo74g.r0G6iGYg-oQMLnTymwyrjDlOMGLEnWGYJXefCSy2ixwg.JPEG.gmlwjd5363/FB＿IMG＿1630599533529.jpg?type=w800"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMTIy/MDAxNjMwNTk5NjE5MDA5.w_wMeYmMF2kOhDAVXXxe0JgVqJhtGd0EuR0b2D2k3S0g.Nds6Oxagjks2DjjwFz5yWyjCGcEOL1iS84XqhAQw3wUg.JPEG.gmlwjd5363/FB＿IMG＿1630599535069.jpg?type=w800"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfNDQg/MDAxNjMwNTk5NjE5MzQ4.J4lhtJZRKMzEXj0HjrG1aH65qIcBv9GI1LdVQsWlC-Ug.10QCNt81CdbIyBkd1bFOAOAolDL6hxYXrb9dXgmS8zQg.JPEG.gmlwjd5363/FB＿IMG＿1630599536666.jpg?type=w800"
-              />
-              <Avatar
-                size={AVATAR_SIZE.medium}
-                source="https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMzAg/MDAxNjMwNTk5NjE5ODI2.cmwNyDHTza4N64bhN0rIRu2KaFHUxqv0BkuaX6GBHJ0g.ufZqe7x1GLrCLJg2zb6N_nJ_fTgFPXq09TTe_fhsMiog.JPEG.gmlwjd5363/FB＿IMG＿1630599538261.jpg?type=w800"
-              />
+              {avatarList.map((url, index) => (
+                <AvatarPreview
+                  key={index}
+                  onClick={() => setSelectedAvatar(url)}
+                >
+                  <Avatar size={AVATAR_SIZE.medium} source={url} />
+                </AvatarPreview>
+              ))}
             </AvatarOption>
-          </AvatarSummaryWrapper>
+          </AvatarOptionWrapper>
         </AvatarWrapper>
       </Wrapper>
       <Wrapper>
