@@ -7,7 +7,9 @@ import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
 import Popover from "../../../components/popover/popover";
 import POPOVER_ALIGNMENT from "../../../components/popover/popover-alignment";
+import Toast from "../../../components/toast/toast";
 import { useMedia } from "../../../hooks/use-media";
+import { useToast } from "../../../hooks/use-toast";
 import { media } from "../../../utils/media";
 import RollingPaperReactions from "./rolling-paper-reactions";
 import RollingPaperSenders from "./rolling-paper-senders";
@@ -105,6 +107,7 @@ const StyledRollingPaperHeader = styled.div`
 `;
 
 function RollingPaperHeader({ recipientName, messages, reactions }) {
+  const { showsToast, setShowsToast } = useToast();
   const { isDesktop, isMobile } = useMedia();
 
   const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
@@ -114,7 +117,9 @@ function RollingPaperHeader({ recipientName, messages, reactions }) {
   };
 
   const handleShareUrl = () => {
-    // TODO: URL 공유하기 (clipboard 저장)
+    const url = window.location.href;
+    navigator.clipboard.writeText(url);
+    setShowsToast(true);
   };
 
   return (
@@ -162,6 +167,12 @@ function RollingPaperHeader({ recipientName, messages, reactions }) {
           </DividedContainer>
         </HeaderTrailing>
       </RollingPaperHeaderContent>
+      {showsToast && (
+        <Toast
+          message="URL이 복사 되었습니다."
+          onDismiss={() => setShowsToast(false)}
+        />
+      )}
     </StyledRollingPaperHeader>
   );
 }
