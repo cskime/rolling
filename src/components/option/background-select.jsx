@@ -25,6 +25,7 @@ const OptionItem = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: ${({ selected }) => (selected ? 0.3 : 1)};
 `;
 
 const CircleButtonWrapper = styled.div`
@@ -94,6 +95,7 @@ function BackgroundSelect({ type, selected, onSelect }) {
           color={option.color}
           url={option.url}
           onClick={() => onSelect(index)}
+          selected={selected === index}
         >
           {selected === index && (
             <CircleButtonWrapper>
