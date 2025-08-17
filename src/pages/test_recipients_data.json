@@ -1,11 +1,11 @@
 [
   {
     "id": 7024,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": null,
     "createdAt": "2023-10-22T19:15:11Z",
-    "messageCount": 5,
+    "messageCount": 1,
     "recentMessages": [
       {
         "id": 90163,
@@ -16,54 +16,17 @@
         "content": "김하은님의 메세지 내용 50",
         "font": "Roboto",
         "createdAt": "2023-08-18T21:20:29Z"
-      },
-      {
-        "id": 90164,
-        "recipientId": 7024,
-        "sender": "강동원",
-        "profileImageURL": "https://picsum.photos/id/142/200/200",
-        "relationship": "친구",
-        "content": "강동원님의 메세지 내용 50",
-        "font": "Roboto",
-        "createdAt": "2023-08-19T21:20:29Z"
-      },
-      {
-        "id": 90165,
-        "recipientId": 7024,
-        "sender": "고수",
-        "profileImageURL": "https://picsum.photos/id/142/200/200",
-        "relationship": "친구",
-        "content": "고수님의 메세지 내용 50",
-        "font": "Roboto",
-        "createdAt": "2023-08-20T21:20:29Z"
       }
     ],
     "reactionCount": 77,
     "topReactions": [
       {
-        "id": 78000,
+        "emoji": "🥹",
+        "count": 159
+      },
+      {
         "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 70479,
-        "emoji": "🥹",
-        "count": 15
-      },
-      {
-        "id": 32001,
-        "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 25196,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 15685,
-        "emoji": "🥹",
-        "count": 2
+        "count": 923
       }
     ]
   },
@@ -79,7 +42,7 @@
         "id": 42811,
         "recipientId": 71200,
         "sender": "현빈",
-        "profileImageURL": "https://picsum.photos/id/435/200/200",
+        "profileImageURL": "https://picsum.photos/id/51/200/200",
         "relationship": "가족",
         "content": "현빈님의 메세지 내용 25",
         "font": "Roboto",
@@ -109,34 +72,8 @@
     "reactionCount": 66,
     "topReactions": [
       {
-        "id": 84284,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 67905,
         "emoji": "😁",
-        "count": 2
-      },
-      {
-        "id": 19092,
-        "emoji": "👍",
-        "count": 4
-      },
-      {
-        "id": 62998,
-        "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 49907,
-        "emoji": "🥹",
-        "count": 10
-      },
-      {
-        "id": 306,
-        "emoji": "🥹",
-        "count": 3
+        "count": 962
       }
     ]
   },
@@ -151,10 +88,10 @@
       {
         "id": 30238,
         "recipientId": 43558,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/340/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 32",
+        "content": "Sowon Kim님의 메세지 내용 32",
         "font": "Nanum Gothic",
         "createdAt": "2023-06-17T00:31:29Z"
       },
@@ -182,34 +119,16 @@
     "reactionCount": 13,
     "topReactions": [
       {
-        "id": 84326,
         "emoji": "😀",
-        "count": 13
+        "count": 46
       },
       {
-        "id": 29537,
-        "emoji": "🥹",
-        "count": 2
-      },
-      {
-        "id": 78412,
-        "emoji": "😁",
-        "count": 4
-      },
-      {
-        "id": 91457,
         "emoji": "🎉",
-        "count": 6
+        "count": 585
       },
       {
-        "id": 50902,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 5434,
-        "emoji": "🥹",
-        "count": 14
+        "emoji": "😁",
+        "count": 311
       }
     ]
   },
@@ -245,25 +164,14 @@
     "reactionCount": 84,
     "topReactions": [
       {
-        "id": 605,
         "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 90894,
-        "emoji": "🥹",
-        "count": 3
-      },
-      {
-        "id": 26499,
-        "emoji": "🥹",
-        "count": 5
+        "count": 570
       }
     ]
   },
   {
     "id": 18499,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": "https://picsum.photos/seed/18499/600/400",
     "createdAt": "2023-06-03T04:15:47Z",
@@ -272,10 +180,10 @@
       {
         "id": 48979,
         "recipientId": 18499,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/11/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 77",
+        "content": "Sowon Kim님의 메세지 내용 77",
         "font": "Nanum Gothic",
         "createdAt": "2023-08-25T00:15:25Z"
       },
@@ -292,10 +200,10 @@
       {
         "id": 35753,
         "recipientId": 18499,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/173/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 67",
+        "content": "Sowon Kim님의 메세지 내용 67",
         "font": "Nanum Gothic",
         "createdAt": "2023-07-23T23:14:30Z"
       }
@@ -303,34 +211,16 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 84545,
-        "emoji": "👍",
-        "count": 2
-      },
-      {
-        "id": 91678,
         "emoji": "❤️",
-        "count": 10
+        "count": 847
       },
       {
-        "id": 13771,
         "emoji": "😀",
-        "count": 20
+        "count": 141
       },
       {
-        "id": 45654,
-        "emoji": "❤️",
-        "count": 2
-      },
-      {
-        "id": 97554,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 78344,
         "emoji": "👍",
-        "count": 1
+        "count": 396
       }
     ]
   },
@@ -376,24 +266,12 @@
     "reactionCount": 14,
     "topReactions": [
       {
-        "id": 5423,
+        "emoji": "🥹",
+        "count": 800
+      },
+      {
         "emoji": "😁",
-        "count": 19
-      },
-      {
-        "id": 694,
-        "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 2845,
-        "emoji": "🥹",
-        "count": 13
-      },
-      {
-        "id": 90938,
-        "emoji": "🥹",
-        "count": 19
+        "count": 262
       }
     ]
   },
@@ -439,35 +317,22 @@
     "reactionCount": 87,
     "topReactions": [
       {
-        "id": 71912,
         "emoji": "😀",
-        "count": 1
+        "count": 846
       },
       {
-        "id": 53543,
-        "emoji": "❤️",
-        "count": 12
-      },
-      {
-        "id": 90369,
-        "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 65448,
         "emoji": "😁",
-        "count": 17
+        "count": 901
       },
       {
-        "id": 96672,
-        "emoji": "👍",
-        "count": 15
+        "emoji": "❤️",
+        "count": 921
       }
     ]
   },
   {
     "id": 13425,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": "https://picsum.photos/seed/13425/600/400",
     "createdAt": "2023-07-06T20:30:52Z",
@@ -487,24 +352,12 @@
     "reactionCount": 33,
     "topReactions": [
       {
-        "id": 78114,
-        "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 46240,
-        "emoji": "👍",
-        "count": 10
-      },
-      {
-        "id": 3995,
         "emoji": "❤️",
-        "count": 7
+        "count": 865
       },
       {
-        "id": 47582,
-        "emoji": "👍",
-        "count": 11
+        "emoji": "😁",
+        "count": 198
       }
     ]
   },
@@ -550,9 +403,8 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 58872,
         "emoji": "🥹",
-        "count": 13
+        "count": 403
       }
     ]
   },
@@ -567,10 +419,10 @@
       {
         "id": 34424,
         "recipientId": 97436,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/141/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 6",
+        "content": "Sowon Kim님의 메세지 내용 6",
         "font": "Nanum Gothic",
         "createdAt": "2023-06-01T12:35:35Z"
       },
@@ -598,25 +450,22 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 34505,
         "emoji": "😀",
-        "count": 2
+        "count": 264
       },
       {
-        "id": 97779,
         "emoji": "😁",
-        "count": 14
+        "count": 580
       },
       {
-        "id": 64296,
         "emoji": "🥹",
-        "count": 17
+        "count": 8
       }
     ]
   },
   {
     "id": 22932,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": "https://picsum.photos/seed/22932/600/400",
     "createdAt": "2023-12-21T05:29:02Z",
@@ -636,9 +485,8 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 80894,
         "emoji": "👍",
-        "count": 6
+        "count": 983
       }
     ]
   },
@@ -684,14 +532,8 @@
     "reactionCount": 67,
     "topReactions": [
       {
-        "id": 20683,
         "emoji": "😁",
-        "count": 7
-      },
-      {
-        "id": 55812,
-        "emoji": "❤️",
-        "count": 8
+        "count": 882
       }
     ]
   },
@@ -737,14 +579,8 @@
     "reactionCount": 29,
     "topReactions": [
       {
-        "id": 60975,
         "emoji": "🎉",
-        "count": 16
-      },
-      {
-        "id": 94228,
-        "emoji": "🎉",
-        "count": 12
+        "count": 137
       }
     ]
   },
@@ -779,10 +615,10 @@
       {
         "id": 88963,
         "recipientId": 2194,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/317/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 81",
+        "content": "Sowon Kim님의 메세지 내용 81",
         "font": "Nanum Gothic",
         "createdAt": "2023-03-12T08:38:10Z"
       }
@@ -790,34 +626,12 @@
     "reactionCount": 32,
     "topReactions": [
       {
-        "id": 60382,
-        "emoji": "🎉",
-        "count": 14
-      },
-      {
-        "id": 35188,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 36631,
-        "emoji": "😁",
-        "count": 7
-      },
-      {
-        "id": 42371,
         "emoji": "❤️",
-        "count": 9
+        "count": 58
       },
       {
-        "id": 49401,
-        "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 62636,
-        "emoji": "😀",
-        "count": 4
+        "emoji": "😁",
+        "count": 334
       }
     ]
   },
@@ -863,29 +677,8 @@
     "reactionCount": 3,
     "topReactions": [
       {
-        "id": 75158,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 91157,
-        "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 62992,
-        "emoji": "👍",
-        "count": 5
-      },
-      {
-        "id": 36793,
         "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 47139,
-        "emoji": "👍",
-        "count": 18
+        "count": 165
       }
     ]
   },
@@ -931,9 +724,8 @@
     "reactionCount": 18,
     "topReactions": [
       {
-        "id": 88345,
         "emoji": "😀",
-        "count": 17
+        "count": 19
       }
     ]
   },
@@ -959,40 +751,14 @@
     "reactionCount": 86,
     "topReactions": [
       {
-        "id": 61646,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 36266,
-        "emoji": "🎉",
-        "count": 11
-      },
-      {
-        "id": 19739,
-        "emoji": "🎉",
-        "count": 19
-      },
-      {
-        "id": 49081,
-        "emoji": "🎉",
-        "count": 7
-      },
-      {
-        "id": 60907,
-        "emoji": "👍",
-        "count": 11
-      },
-      {
-        "id": 82566,
         "emoji": "❤️",
-        "count": 14
+        "count": 680
       }
     ]
   },
   {
     "id": 45901,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "purple",
     "backgroundImageURL": null,
     "createdAt": "2023-06-14T15:34:31Z",
@@ -1032,29 +798,12 @@
     "reactionCount": 15,
     "topReactions": [
       {
-        "id": 32010,
         "emoji": "❤️",
-        "count": 20
+        "count": 648
       },
       {
-        "id": 25614,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 44236,
         "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 26955,
-        "emoji": "❤️",
-        "count": 12
-      },
-      {
-        "id": 68249,
-        "emoji": "😁",
-        "count": 9
+        "count": 457
       }
     ]
   },
@@ -1080,24 +829,16 @@
     "reactionCount": 17,
     "topReactions": [
       {
-        "id": 38691,
-        "emoji": "🎉",
-        "count": 14
-      },
-      {
-        "id": 74561,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 67482,
-        "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 77948,
         "emoji": "😀",
-        "count": 5
+        "count": 525
+      },
+      {
+        "emoji": "🎉",
+        "count": 408
+      },
+      {
+        "emoji": "🥹",
+        "count": 160
       }
     ]
   },
@@ -1133,24 +874,16 @@
     "reactionCount": 36,
     "topReactions": [
       {
-        "id": 41246,
         "emoji": "😀",
-        "count": 3
+        "count": 472
       },
       {
-        "id": 91855,
         "emoji": "❤️",
-        "count": 17
+        "count": 938
       },
       {
-        "id": 88660,
         "emoji": "🎉",
-        "count": 1
-      },
-      {
-        "id": 98907,
-        "emoji": "❤️",
-        "count": 15
+        "count": 169
       }
     ]
   },
@@ -1165,10 +898,10 @@
       {
         "id": 99518,
         "recipientId": 84532,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/2/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 83",
+        "content": "Sowon Kim님의 메세지 내용 83",
         "font": "Nanum Gothic",
         "createdAt": "2023-07-12T22:08:05Z"
       },
@@ -1196,19 +929,8 @@
     "reactionCount": 27,
     "topReactions": [
       {
-        "id": 24529,
         "emoji": "🥹",
-        "count": 15
-      },
-      {
-        "id": 72262,
-        "emoji": "😀",
-        "count": 20
-      },
-      {
-        "id": 85359,
-        "emoji": "🎉",
-        "count": 16
+        "count": 55
       }
     ]
   },
@@ -1243,10 +965,10 @@
       {
         "id": 72173,
         "recipientId": 85839,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/137/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 84",
+        "content": "Sowon Kim님의 메세지 내용 84",
         "font": "Pretendard",
         "createdAt": "2023-04-01T12:40:19Z"
       }
@@ -1254,34 +976,8 @@
     "reactionCount": 77,
     "topReactions": [
       {
-        "id": 89993,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 92268,
-        "emoji": "👍",
-        "count": 18
-      },
-      {
-        "id": 77791,
-        "emoji": "🎉",
-        "count": 15
-      },
-      {
-        "id": 34959,
-        "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 7685,
         "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 34844,
-        "emoji": "👍",
-        "count": 14
+        "count": 634
       }
     ]
   },
@@ -1327,14 +1023,8 @@
     "reactionCount": 18,
     "topReactions": [
       {
-        "id": 39441,
-        "emoji": "👍",
-        "count": 16
-      },
-      {
-        "id": 89350,
         "emoji": "🥹",
-        "count": 1
+        "count": 398
       }
     ]
   },
@@ -1359,10 +1049,10 @@
       {
         "id": 20559,
         "recipientId": 76172,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/315/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 53",
+        "content": "Sowon Kim님의 메세지 내용 53",
         "font": "Roboto",
         "createdAt": "2023-07-06T05:06:42Z"
       },
@@ -1380,9 +1070,8 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 1687,
         "emoji": "🥹",
-        "count": 15
+        "count": 309
       }
     ]
   },
@@ -1428,29 +1117,16 @@
     "reactionCount": 11,
     "topReactions": [
       {
-        "id": 3029,
-        "emoji": "👍",
-        "count": 13
-      },
-      {
-        "id": 76170,
-        "emoji": "👍",
-        "count": 15
-      },
-      {
-        "id": 96379,
-        "emoji": "😀",
-        "count": 13
-      },
-      {
-        "id": 89555,
-        "emoji": "😀",
-        "count": 16
-      },
-      {
-        "id": 39796,
         "emoji": "❤️",
-        "count": 17
+        "count": 698
+      },
+      {
+        "emoji": "👍",
+        "count": 583
+      },
+      {
+        "emoji": "😀",
+        "count": 349
       }
     ]
   },
@@ -1475,10 +1151,10 @@
       {
         "id": 26243,
         "recipientId": 525,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/470/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 36",
+        "content": "Sowon Kim님의 메세지 내용 36",
         "font": "Noto Sans",
         "createdAt": "2024-02-01T22:09:11Z"
       },
@@ -1496,14 +1172,12 @@
     "reactionCount": 40,
     "topReactions": [
       {
-        "id": 92021,
         "emoji": "❤️",
-        "count": 17
+        "count": 778
       },
       {
-        "id": 63448,
         "emoji": "😀",
-        "count": 11
+        "count": 821
       }
     ]
   },
@@ -1529,9 +1203,8 @@
     "reactionCount": 2,
     "topReactions": [
       {
-        "id": 6976,
         "emoji": "❤️",
-        "count": 1
+        "count": 735
       }
     ]
   },
@@ -1577,9 +1250,8 @@
     "reactionCount": 28,
     "topReactions": [
       {
-        "id": 38379,
         "emoji": "🥹",
-        "count": 3
+        "count": 407
       }
     ]
   },
@@ -1625,9 +1297,8 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 63000,
         "emoji": "🎉",
-        "count": 12
+        "count": 91
       }
     ]
   },
@@ -1642,10 +1313,10 @@
       {
         "id": 8442,
         "recipientId": 76854,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/391/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 6",
+        "content": "Sowon Kim님의 메세지 내용 6",
         "font": "Pretendard",
         "createdAt": "2023-12-21T09:27:19Z"
       },
@@ -1673,9 +1344,8 @@
     "reactionCount": 86,
     "topReactions": [
       {
-        "id": 27143,
         "emoji": "🥹",
-        "count": 8
+        "count": 334
       }
     ]
   },
@@ -1690,10 +1360,10 @@
       {
         "id": 3111,
         "recipientId": 50919,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/384/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 80",
+        "content": "Sowon Kim님의 메세지 내용 80",
         "font": "Pretendard",
         "createdAt": "2023-08-12T11:51:00Z"
       },
@@ -1721,24 +1391,12 @@
     "reactionCount": 76,
     "topReactions": [
       {
-        "id": 89101,
-        "emoji": "👍",
-        "count": 12
-      },
-      {
-        "id": 60242,
-        "emoji": "😁",
-        "count": 17
-      },
-      {
-        "id": 97519,
-        "emoji": "🎉",
-        "count": 11
-      },
-      {
-        "id": 65104,
         "emoji": "❤️",
-        "count": 7
+        "count": 902
+      },
+      {
+        "emoji": "👍",
+        "count": 427
       }
     ]
   },
@@ -1784,19 +1442,12 @@
     "reactionCount": 90,
     "topReactions": [
       {
-        "id": 95691,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 89483,
         "emoji": "😁",
-        "count": 2
+        "count": 357
       },
       {
-        "id": 56468,
         "emoji": "🎉",
-        "count": 13
+        "count": 480
       }
     ]
   },
@@ -1822,14 +1473,8 @@
     "reactionCount": 88,
     "topReactions": [
       {
-        "id": 72401,
         "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 5640,
-        "emoji": "❤️",
-        "count": 5
+        "count": 148
       }
     ]
   },
@@ -1875,29 +1520,12 @@
     "reactionCount": 17,
     "topReactions": [
       {
-        "id": 91559,
-        "emoji": "🥹",
-        "count": 3
-      },
-      {
-        "id": 56771,
         "emoji": "🎉",
-        "count": 3
+        "count": 493
       },
       {
-        "id": 15952,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 90450,
-        "emoji": "👍",
-        "count": 15
-      },
-      {
-        "id": 52341,
         "emoji": "😀",
-        "count": 14
+        "count": 464
       }
     ]
   },
@@ -1943,35 +1571,22 @@
     "reactionCount": 78,
     "topReactions": [
       {
-        "id": 65046,
-        "emoji": "🎉",
-        "count": 12
-      },
-      {
-        "id": 94282,
         "emoji": "😀",
-        "count": 15
+        "count": 537
       },
       {
-        "id": 87051,
-        "emoji": "🎉",
-        "count": 12
-      },
-      {
-        "id": 76472,
         "emoji": "😁",
-        "count": 12
+        "count": 154
       },
       {
-        "id": 43401,
         "emoji": "🥹",
-        "count": 1
+        "count": 801
       }
     ]
   },
   {
     "id": 5465,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": null,
     "createdAt": "2023-01-10T18:10:25Z",
@@ -2011,34 +1626,12 @@
     "reactionCount": 25,
     "topReactions": [
       {
-        "id": 59656,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 91642,
         "emoji": "👍",
-        "count": 6
+        "count": 490
       },
       {
-        "id": 63844,
-        "emoji": "🎉",
-        "count": 9
-      },
-      {
-        "id": 38254,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 80222,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 76177,
-        "emoji": "🎉",
-        "count": 10
+        "emoji": "😁",
+        "count": 686
       }
     ]
   },
@@ -2064,24 +1657,12 @@
     "reactionCount": 60,
     "topReactions": [
       {
-        "id": 21526,
-        "emoji": "❤️",
-        "count": 9
-      },
-      {
-        "id": 89624,
         "emoji": "😁",
-        "count": 9
+        "count": 127
       },
       {
-        "id": 92331,
-        "emoji": "🎉",
-        "count": 17
-      },
-      {
-        "id": 56922,
-        "emoji": "🎉",
-        "count": 12
+        "emoji": "❤️",
+        "count": 193
       }
     ]
   },
@@ -2127,34 +1708,16 @@
     "reactionCount": 3,
     "topReactions": [
       {
-        "id": 75083,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 99458,
         "emoji": "👍",
-        "count": 8
+        "count": 366
       },
       {
-        "id": 58435,
-        "emoji": "🥹",
-        "count": 9
+        "emoji": "🎉",
+        "count": 391
       },
       {
-        "id": 35549,
         "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 89316,
-        "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 92464,
-        "emoji": "😀",
-        "count": 12
+        "count": 61
       }
     ]
   },
@@ -2200,19 +1763,16 @@
     "reactionCount": 50,
     "topReactions": [
       {
-        "id": 16722,
         "emoji": "🎉",
-        "count": 11
+        "count": 503
       },
       {
-        "id": 59575,
-        "emoji": "👍",
-        "count": 9
-      },
-      {
-        "id": 92248,
         "emoji": "😁",
-        "count": 2
+        "count": 761
+      },
+      {
+        "emoji": "👍",
+        "count": 572
       }
     ]
   },
@@ -2258,34 +1818,16 @@
     "reactionCount": 19,
     "topReactions": [
       {
-        "id": 40145,
-        "emoji": "😁",
-        "count": 19
-      },
-      {
-        "id": 85434,
-        "emoji": "❤️",
-        "count": 4
-      },
-      {
-        "id": 12101,
-        "emoji": "😁",
-        "count": 14
-      },
-      {
-        "id": 81287,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 4370,
-        "emoji": "❤️",
-        "count": 6
-      },
-      {
-        "id": 37361,
         "emoji": "😀",
-        "count": 3
+        "count": 894
+      },
+      {
+        "emoji": "😁",
+        "count": 106
+      },
+      {
+        "emoji": "❤️",
+        "count": 675
       }
     ]
   },
@@ -2331,14 +1873,12 @@
     "reactionCount": 89,
     "topReactions": [
       {
-        "id": 68890,
-        "emoji": "😁",
-        "count": 8
+        "emoji": "🥹",
+        "count": 714
       },
       {
-        "id": 36484,
-        "emoji": "🥹",
-        "count": 11
+        "emoji": "😁",
+        "count": 930
       }
     ]
   },
@@ -2353,10 +1893,10 @@
       {
         "id": 66552,
         "recipientId": 90385,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/498/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 36",
+        "content": "Sowon Kim님의 메세지 내용 36",
         "font": "Noto Sans",
         "createdAt": "2023-10-17T11:54:41Z"
       }
@@ -2364,14 +1904,8 @@
     "reactionCount": 73,
     "topReactions": [
       {
-        "id": 88512,
         "emoji": "❤️",
-        "count": 4
-      },
-      {
-        "id": 33951,
-        "emoji": "🥹",
-        "count": 10
+        "count": 423
       }
     ]
   },
@@ -2407,9 +1941,8 @@
     "reactionCount": 87,
     "topReactions": [
       {
-        "id": 7092,
         "emoji": "🥹",
-        "count": 20
+        "count": 422
       }
     ]
   },
@@ -2455,34 +1988,8 @@
     "reactionCount": 48,
     "topReactions": [
       {
-        "id": 47934,
-        "emoji": "❤️",
-        "count": 7
-      },
-      {
-        "id": 38552,
         "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 97573,
-        "emoji": "❤️",
-        "count": 17
-      },
-      {
-        "id": 90066,
-        "emoji": "👍",
-        "count": 17
-      },
-      {
-        "id": 75594,
-        "emoji": "👍",
-        "count": 5
-      },
-      {
-        "id": 80625,
-        "emoji": "🥹",
-        "count": 10
+        "count": 800
       }
     ]
   },
@@ -2497,10 +2004,10 @@
       {
         "id": 59673,
         "recipientId": 39122,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/467/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 15",
+        "content": "Sowon Kim님의 메세지 내용 15",
         "font": "Nanum Gothic",
         "createdAt": "2023-03-20T07:58:11Z"
       },
@@ -2528,14 +2035,12 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 21238,
         "emoji": "❤️",
-        "count": 7
+        "count": 529
       },
       {
-        "id": 36319,
         "emoji": "🥹",
-        "count": 8
+        "count": 458
       }
     ]
   },
@@ -2570,10 +2075,10 @@
       {
         "id": 87956,
         "recipientId": 36279,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/362/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 45",
+        "content": "Sowon Kim님의 메세지 내용 45",
         "font": "Pretendard",
         "createdAt": "2023-01-10T01:43:19Z"
       }
@@ -2581,19 +2086,8 @@
     "reactionCount": 58,
     "topReactions": [
       {
-        "id": 37731,
-        "emoji": "🎉",
-        "count": 19
-      },
-      {
-        "id": 95128,
         "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 65326,
-        "emoji": "🎉",
-        "count": 9
+        "count": 191
       }
     ]
   },
@@ -2639,29 +2133,12 @@
     "reactionCount": 11,
     "topReactions": [
       {
-        "id": 60036,
         "emoji": "🎉",
-        "count": 20
+        "count": 198
       },
       {
-        "id": 66223,
-        "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 57559,
         "emoji": "❤️",
-        "count": 14
-      },
-      {
-        "id": 85462,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 78366,
-        "emoji": "❤️",
-        "count": 10
+        "count": 31
       }
     ]
   },
@@ -2707,14 +2184,12 @@
     "reactionCount": 1,
     "topReactions": [
       {
-        "id": 85067,
-        "emoji": "❤️",
-        "count": 19
+        "emoji": "🎉",
+        "count": 230
       },
       {
-        "id": 23463,
-        "emoji": "🎉",
-        "count": 14
+        "emoji": "❤️",
+        "count": 31
       }
     ]
   },
@@ -2760,24 +2235,16 @@
     "reactionCount": 13,
     "topReactions": [
       {
-        "id": 47472,
         "emoji": "🥹",
-        "count": 1
+        "count": 836
       },
       {
-        "id": 73490,
         "emoji": "👍",
-        "count": 7
+        "count": 817
       },
       {
-        "id": 9397,
         "emoji": "😁",
-        "count": 18
-      },
-      {
-        "id": 62463,
-        "emoji": "😀",
-        "count": 8
+        "count": 375
       }
     ]
   },
@@ -2802,10 +2269,10 @@
       {
         "id": 60985,
         "recipientId": 2640,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/440/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 52",
+        "content": "Sowon Kim님의 메세지 내용 52",
         "font": "Pretendard",
         "createdAt": "2023-05-11T23:03:58Z"
       },
@@ -2823,9 +2290,8 @@
     "reactionCount": 39,
     "topReactions": [
       {
-        "id": 68723,
         "emoji": "😁",
-        "count": 10
+        "count": 706
       }
     ]
   },
@@ -2861,24 +2327,16 @@
     "reactionCount": 59,
     "topReactions": [
       {
-        "id": 67796,
-        "emoji": "👍",
-        "count": 17
-      },
-      {
-        "id": 73312,
-        "emoji": "🎉",
-        "count": 14
-      },
-      {
-        "id": 69831,
-        "emoji": "❤️",
-        "count": 6
-      },
-      {
-        "id": 68250,
         "emoji": "😁",
-        "count": 15
+        "count": 573
+      },
+      {
+        "emoji": "🎉",
+        "count": 172
+      },
+      {
+        "emoji": "👍",
+        "count": 833
       }
     ]
   },
@@ -2924,14 +2382,8 @@
     "reactionCount": 3,
     "topReactions": [
       {
-        "id": 61747,
         "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 25034,
-        "emoji": "🥹",
-        "count": 7
+        "count": 599
       }
     ]
   },
@@ -2977,24 +2429,16 @@
     "reactionCount": 64,
     "topReactions": [
       {
-        "id": 3352,
+        "emoji": "🎉",
+        "count": 385
+      },
+      {
         "emoji": "👍",
-        "count": 10
+        "count": 512
       },
       {
-        "id": 39601,
         "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 11421,
-        "emoji": "🎉",
-        "count": 5
-      },
-      {
-        "id": 35027,
-        "emoji": "🎉",
-        "count": 10
+        "count": 705
       }
     ]
   },
@@ -3020,14 +2464,8 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 8574,
         "emoji": "🎉",
-        "count": 7
-      },
-      {
-        "id": 64170,
-        "emoji": "❤️",
-        "count": 8
+        "count": 764
       }
     ]
   },
@@ -3053,7 +2491,7 @@
         "id": 20798,
         "recipientId": 28312,
         "sender": "한지민",
-        "profileImageURL": "https://picsum.photos/id/435/200/200",
+        "profileImageURL": "https://picsum.photos/id/51/200/200",
         "relationship": "가족",
         "content": "한지민님의 메세지 내용 83",
         "font": "Noto Sans",
@@ -3073,19 +2511,8 @@
     "reactionCount": 31,
     "topReactions": [
       {
-        "id": 9532,
-        "emoji": "🎉",
-        "count": 15
-      },
-      {
-        "id": 71554,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 39488,
         "emoji": "👍",
-        "count": 14
+        "count": 846
       }
     ]
   },
@@ -3131,34 +2558,12 @@
     "reactionCount": 33,
     "topReactions": [
       {
-        "id": 52748,
-        "emoji": "👍",
-        "count": 10
-      },
-      {
-        "id": 16337,
-        "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 61443,
         "emoji": "🥹",
-        "count": 20
+        "count": 584
       },
       {
-        "id": 68842,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 32585,
-        "emoji": "🎉",
-        "count": 10
-      },
-      {
-        "id": 71746,
-        "emoji": "😁",
-        "count": 9
+        "emoji": "👍",
+        "count": 958
       }
     ]
   },
@@ -3204,34 +2609,16 @@
     "reactionCount": 74,
     "topReactions": [
       {
-        "id": 47111,
-        "emoji": "👍",
-        "count": 12
-      },
-      {
-        "id": 67878,
-        "emoji": "😀",
-        "count": 16
-      },
-      {
-        "id": 49575,
-        "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 72740,
-        "emoji": "🎉",
-        "count": 15
-      },
-      {
-        "id": 66239,
         "emoji": "❤️",
-        "count": 16
+        "count": 222
       },
       {
-        "id": 78326,
-        "emoji": "🥹",
-        "count": 14
+        "emoji": "🎉",
+        "count": 8
+      },
+      {
+        "emoji": "😀",
+        "count": 947
       }
     ]
   },
@@ -3256,20 +2643,20 @@
       {
         "id": 96788,
         "recipientId": 73648,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/249/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 54",
+        "content": "Sowon Kim님의 메세지 내용 54",
         "font": "Nanum Gothic",
         "createdAt": "2023-09-16T01:58:06Z"
       },
       {
         "id": 20726,
         "recipientId": 73648,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/431/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 78",
+        "content": "Sowon Kim님의 메세지 내용 78",
         "font": "Pretendard",
         "createdAt": "2023-07-25T07:59:44Z"
       }
@@ -3277,29 +2664,8 @@
     "reactionCount": 45,
     "topReactions": [
       {
-        "id": 86527,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 59551,
         "emoji": "🥹",
-        "count": 16
-      },
-      {
-        "id": 3729,
-        "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 29902,
-        "emoji": "🎉",
-        "count": 12
-      },
-      {
-        "id": 39150,
-        "emoji": "❤️",
-        "count": 19
+        "count": 466
       }
     ]
   },
@@ -3325,34 +2691,12 @@
     "reactionCount": 59,
     "topReactions": [
       {
-        "id": 93221,
         "emoji": "👍",
-        "count": 1
+        "count": 787
       },
       {
-        "id": 95714,
         "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 8397,
-        "emoji": "🎉",
-        "count": 16
-      },
-      {
-        "id": 70176,
-        "emoji": "🎉",
-        "count": 9
-      },
-      {
-        "id": 67165,
-        "emoji": "🎉",
-        "count": 10
-      },
-      {
-        "id": 41000,
-        "emoji": "👍",
-        "count": 7
+        "count": 995
       }
     ]
   },
@@ -3378,19 +2722,8 @@
     "reactionCount": 91,
     "topReactions": [
       {
-        "id": 72115,
         "emoji": "👍",
-        "count": 5
-      },
-      {
-        "id": 91626,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 19336,
-        "emoji": "😀",
-        "count": 4
+        "count": 571
       }
     ]
   },
@@ -3436,19 +2769,12 @@
     "reactionCount": 8,
     "topReactions": [
       {
-        "id": 3482,
+        "emoji": "🥹",
+        "count": 229
+      },
+      {
         "emoji": "👍",
-        "count": 18
-      },
-      {
-        "id": 66591,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 38585,
-        "emoji": "🥹",
-        "count": 19
+        "count": 597
       }
     ]
   },
@@ -3494,24 +2820,12 @@
     "reactionCount": 68,
     "topReactions": [
       {
-        "id": 59908,
-        "emoji": "❤️",
-        "count": 9
-      },
-      {
-        "id": 88137,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 73395,
-        "emoji": "😀",
-        "count": 1
-      },
-      {
-        "id": 1194,
         "emoji": "👍",
-        "count": 7
+        "count": 102
+      },
+      {
+        "emoji": "❤️",
+        "count": 306
       }
     ]
   },
@@ -3557,34 +2871,8 @@
     "reactionCount": 32,
     "topReactions": [
       {
-        "id": 91871,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 78009,
-        "emoji": "🎉",
-        "count": 6
-      },
-      {
-        "id": 19885,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 93729,
         "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 57682,
-        "emoji": "🥹",
-        "count": 19
-      },
-      {
-        "id": 6511,
-        "emoji": "🎉",
-        "count": 15
+        "count": 759
       }
     ]
   },
@@ -3630,29 +2918,8 @@
     "reactionCount": 53,
     "topReactions": [
       {
-        "id": 14727,
-        "emoji": "🥹",
-        "count": 20
-      },
-      {
-        "id": 66436,
-        "emoji": "🎉",
-        "count": 5
-      },
-      {
-        "id": 36308,
         "emoji": "👍",
-        "count": 14
-      },
-      {
-        "id": 21367,
-        "emoji": "😁",
-        "count": 18
-      },
-      {
-        "id": 12087,
-        "emoji": "😁",
-        "count": 9
+        "count": 559
       }
     ]
   },
@@ -3688,9 +2955,8 @@
     "reactionCount": 97,
     "topReactions": [
       {
-        "id": 57205,
         "emoji": "👍",
-        "count": 19
+        "count": 780
       }
     ]
   },
@@ -3725,10 +2991,10 @@
       {
         "id": 65998,
         "recipientId": 73391,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/117/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 7",
+        "content": "Sowon Kim님의 메세지 내용 7",
         "font": "Noto Sans",
         "createdAt": "2023-06-29T21:54:39Z"
       }
@@ -3736,9 +3002,8 @@
     "reactionCount": 64,
     "topReactions": [
       {
-        "id": 87665,
         "emoji": "🎉",
-        "count": 12
+        "count": 698
       }
     ]
   },
@@ -3784,34 +3049,8 @@
     "reactionCount": 18,
     "topReactions": [
       {
-        "id": 55291,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 90016,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 84184,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 43715,
         "emoji": "🥹",
-        "count": 3
-      },
-      {
-        "id": 62315,
-        "emoji": "🎉",
-        "count": 6
-      },
-      {
-        "id": 34308,
-        "emoji": "🎉",
-        "count": 12
+        "count": 609
       }
     ]
   },
@@ -3857,34 +3096,16 @@
     "reactionCount": 64,
     "topReactions": [
       {
-        "id": 27890,
-        "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 56175,
-        "emoji": "👍",
-        "count": 17
-      },
-      {
-        "id": 91877,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 69359,
         "emoji": "😀",
-        "count": 7
+        "count": 486
       },
       {
-        "id": 52444,
         "emoji": "❤️",
-        "count": 19
+        "count": 416
       },
       {
-        "id": 40782,
-        "emoji": "😁",
-        "count": 13
+        "emoji": "👍",
+        "count": 171
       }
     ]
   },
@@ -3930,30 +3151,22 @@
     "reactionCount": 36,
     "topReactions": [
       {
-        "id": 76073,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 96332,
         "emoji": "🎉",
-        "count": 17
+        "count": 231
       },
       {
-        "id": 10485,
         "emoji": "🥹",
-        "count": 5
+        "count": 667
       },
       {
-        "id": 59065,
         "emoji": "👍",
-        "count": 7
+        "count": 246
       }
     ]
   },
   {
     "id": 26744,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": null,
     "createdAt": "2023-03-23T03:14:00Z",
@@ -3993,34 +3206,16 @@
     "reactionCount": 96,
     "topReactions": [
       {
-        "id": 43701,
         "emoji": "😁",
-        "count": 11
+        "count": 921
       },
       {
-        "id": 56499,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 84055,
-        "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 17678,
-        "emoji": "🥹",
-        "count": 15
-      },
-      {
-        "id": 79009,
         "emoji": "❤️",
-        "count": 17
+        "count": 453
       },
       {
-        "id": 77257,
-        "emoji": "😀",
-        "count": 8
+        "emoji": "🎉",
+        "count": 433
       }
     ]
   },
@@ -4066,24 +3261,8 @@
     "reactionCount": 57,
     "topReactions": [
       {
-        "id": 14687,
         "emoji": "😀",
-        "count": 19
-      },
-      {
-        "id": 39344,
-        "emoji": "👍",
-        "count": 7
-      },
-      {
-        "id": 34161,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 35565,
-        "emoji": "🎉",
-        "count": 16
+        "count": 379
       }
     ]
   },
@@ -4098,10 +3277,10 @@
       {
         "id": 35228,
         "recipientId": 90477,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/94/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 63",
+        "content": "Sowon Kim님의 메세지 내용 63",
         "font": "Roboto",
         "createdAt": "2023-05-25T06:02:55Z"
       },
@@ -4129,19 +3308,12 @@
     "reactionCount": 96,
     "topReactions": [
       {
-        "id": 23630,
-        "emoji": "🥹",
-        "count": 19
-      },
-      {
-        "id": 94766,
         "emoji": "😁",
-        "count": 3
+        "count": 286
       },
       {
-        "id": 59725,
         "emoji": "😀",
-        "count": 19
+        "count": 100
       }
     ]
   },
@@ -4187,24 +3359,16 @@
     "reactionCount": 76,
     "topReactions": [
       {
-        "id": 15262,
-        "emoji": "😀",
-        "count": 8
-      },
-      {
-        "id": 76672,
-        "emoji": "👍",
-        "count": 12
-      },
-      {
-        "id": 85829,
-        "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 86733,
         "emoji": "❤️",
-        "count": 13
+        "count": 367
+      },
+      {
+        "emoji": "👍",
+        "count": 476
+      },
+      {
+        "emoji": "😀",
+        "count": 449
       }
     ]
   },
@@ -4250,19 +3414,8 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 74781,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 8118,
-        "emoji": "😁",
-        "count": 19
-      },
-      {
-        "id": 42107,
         "emoji": "🥹",
-        "count": 7
+        "count": 474
       }
     ]
   },
@@ -4308,14 +3461,12 @@
     "reactionCount": 89,
     "topReactions": [
       {
-        "id": 12830,
-        "emoji": "🥹",
-        "count": 5
+        "emoji": "😁",
+        "count": 393
       },
       {
-        "id": 70733,
-        "emoji": "😁",
-        "count": 8
+        "emoji": "🥹",
+        "count": 30
       }
     ]
   },
@@ -4361,24 +3512,8 @@
     "reactionCount": 81,
     "topReactions": [
       {
-        "id": 1589,
-        "emoji": "🥹",
-        "count": 15
-      },
-      {
-        "id": 78183,
         "emoji": "🎉",
-        "count": 19
-      },
-      {
-        "id": 22247,
-        "emoji": "🎉",
-        "count": 1
-      },
-      {
-        "id": 19112,
-        "emoji": "🥹",
-        "count": 17
+        "count": 609
       }
     ]
   },
@@ -4424,40 +3559,22 @@
     "reactionCount": 59,
     "topReactions": [
       {
-        "id": 34874,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 26479,
-        "emoji": "😁",
-        "count": 1
-      },
-      {
-        "id": 35105,
         "emoji": "🎉",
-        "count": 18
+        "count": 205
       },
       {
-        "id": 6384,
-        "emoji": "😀",
-        "count": 13
-      },
-      {
-        "id": 70298,
         "emoji": "🥹",
-        "count": 9
+        "count": 461
       },
       {
-        "id": 48862,
-        "emoji": "😁",
-        "count": 11
+        "emoji": "😀",
+        "count": 580
       }
     ]
   },
   {
     "id": 31714,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": "https://picsum.photos/seed/31714/600/400",
     "createdAt": "2023-01-13T08:26:56Z",
@@ -4477,24 +3594,8 @@
     "reactionCount": 15,
     "topReactions": [
       {
-        "id": 84856,
-        "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 37418,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 68962,
         "emoji": "🥹",
-        "count": 16
-      },
-      {
-        "id": 63309,
-        "emoji": "🥹",
-        "count": 8
+        "count": 854
       }
     ]
   },
@@ -4529,10 +3630,10 @@
       {
         "id": 88820,
         "recipientId": 24976,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/355/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 72",
+        "content": "Sowon Kim님의 메세지 내용 72",
         "font": "Pretendard",
         "createdAt": "2023-12-02T16:28:28Z"
       }
@@ -4540,34 +3641,12 @@
     "reactionCount": 14,
     "topReactions": [
       {
-        "id": 23520,
-        "emoji": "😁",
-        "count": 1
-      },
-      {
-        "id": 1327,
         "emoji": "🎉",
-        "count": 6
+        "count": 534
       },
       {
-        "id": 99333,
         "emoji": "😀",
-        "count": 7
-      },
-      {
-        "id": 24221,
-        "emoji": "😁",
-        "count": 8
-      },
-      {
-        "id": 34796,
-        "emoji": "👍",
-        "count": 13
-      },
-      {
-        "id": 24544,
-        "emoji": "🎉",
-        "count": 5
+        "count": 337
       }
     ]
   },
@@ -4613,29 +3692,12 @@
     "reactionCount": 26,
     "topReactions": [
       {
-        "id": 67233,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 15477,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 52552,
-        "emoji": "😁",
-        "count": 2
-      },
-      {
-        "id": 4534,
         "emoji": "❤️",
-        "count": 5
+        "count": 655
       },
       {
-        "id": 81700,
-        "emoji": "🎉",
-        "count": 5
+        "emoji": "😁",
+        "count": 504
       }
     ]
   },
@@ -4681,24 +3743,8 @@
     "reactionCount": 60,
     "topReactions": [
       {
-        "id": 67321,
-        "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 37472,
-        "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 38481,
         "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 10179,
-        "emoji": "😁",
-        "count": 14
+        "count": 41
       }
     ]
   },
@@ -4713,10 +3759,10 @@
       {
         "id": 35658,
         "recipientId": 9191,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/62/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 27",
+        "content": "Sowon Kim님의 메세지 내용 27",
         "font": "Nanum Gothic",
         "createdAt": "2023-04-09T12:56:46Z"
       },
@@ -4733,10 +3779,10 @@
       {
         "id": 20041,
         "recipientId": 9191,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/114/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 72",
+        "content": "Sowon Kim님의 메세지 내용 72",
         "font": "Pretendard",
         "createdAt": "2023-11-11T12:43:30Z"
       }
@@ -4744,34 +3790,16 @@
     "reactionCount": 90,
     "topReactions": [
       {
-        "id": 46794,
-        "emoji": "🎉",
-        "count": 2
-      },
-      {
-        "id": 78569,
-        "emoji": "😁",
-        "count": 20
-      },
-      {
-        "id": 71969,
-        "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 8787,
         "emoji": "❤️",
-        "count": 10
+        "count": 771
       },
       {
-        "id": 56094,
-        "emoji": "🥹",
-        "count": 3
+        "emoji": "😀",
+        "count": 898
       },
       {
-        "id": 4661,
-        "emoji": "😁",
-        "count": 6
+        "emoji": "🎉",
+        "count": 17
       }
     ]
   },
@@ -4807,9 +3835,8 @@
     "reactionCount": 53,
     "topReactions": [
       {
-        "id": 33992,
         "emoji": "🎉",
-        "count": 13
+        "count": 153
       }
     ]
   },
@@ -4834,10 +3861,10 @@
       {
         "id": 53736,
         "recipientId": 625,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/411/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 98",
+        "content": "Sowon Kim님의 메세지 내용 98",
         "font": "Nanum Gothic",
         "createdAt": "2023-06-06T17:47:12Z"
       },
@@ -4855,24 +3882,12 @@
     "reactionCount": 66,
     "topReactions": [
       {
-        "id": 36713,
-        "emoji": "❤️",
-        "count": 2
-      },
-      {
-        "id": 89567,
         "emoji": "🥹",
-        "count": 2
+        "count": 640
       },
       {
-        "id": 98915,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 6789,
         "emoji": "😁",
-        "count": 10
+        "count": 605
       }
     ]
   },
@@ -4907,10 +3922,10 @@
       {
         "id": 53607,
         "recipientId": 23417,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/402/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 96",
+        "content": "Sowon Kim님의 메세지 내용 96",
         "font": "Noto Sans",
         "createdAt": "2023-06-28T04:25:20Z"
       }
@@ -4918,29 +3933,12 @@
     "reactionCount": 42,
     "topReactions": [
       {
-        "id": 2457,
-        "emoji": "👍",
-        "count": 10
-      },
-      {
-        "id": 86246,
-        "emoji": "❤️",
-        "count": 2
-      },
-      {
-        "id": 54698,
-        "emoji": "❤️",
-        "count": 7
-      },
-      {
-        "id": 72375,
-        "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 7835,
         "emoji": "😁",
-        "count": 1
+        "count": 463
+      },
+      {
+        "emoji": "❤️",
+        "count": 510
       }
     ]
   },
@@ -4986,29 +3984,16 @@
     "reactionCount": 51,
     "topReactions": [
       {
-        "id": 60510,
         "emoji": "😁",
-        "count": 5
+        "count": 808
       },
       {
-        "id": 183,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 70387,
         "emoji": "❤️",
-        "count": 5
+        "count": 905
       },
       {
-        "id": 5940,
-        "emoji": "🥹",
-        "count": 20
-      },
-      {
-        "id": 69316,
-        "emoji": "🎉",
-        "count": 2
+        "emoji": "😀",
+        "count": 541
       }
     ]
   },
@@ -5054,19 +4039,16 @@
     "reactionCount": 6,
     "topReactions": [
       {
-        "id": 52593,
-        "emoji": "🥹",
-        "count": 1
-      },
-      {
-        "id": 49827,
         "emoji": "🎉",
-        "count": 12
+        "count": 654
       },
       {
-        "id": 3837,
         "emoji": "👍",
-        "count": 9
+        "count": 618
+      },
+      {
+        "emoji": "🥹",
+        "count": 827
       }
     ]
   },
@@ -5081,10 +4063,10 @@
       {
         "id": 76625,
         "recipientId": 48647,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/256/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 98",
+        "content": "Sowon Kim님의 메세지 내용 98",
         "font": "Pretendard",
         "createdAt": "2023-03-21T02:42:08Z"
       },
@@ -5112,24 +4094,16 @@
     "reactionCount": 28,
     "topReactions": [
       {
-        "id": 38782,
         "emoji": "🎉",
-        "count": 10
+        "count": 993
       },
       {
-        "id": 30497,
-        "emoji": "❤️",
-        "count": 20
-      },
-      {
-        "id": 65578,
         "emoji": "😀",
-        "count": 11
+        "count": 939
       },
       {
-        "id": 54351,
         "emoji": "❤️",
-        "count": 2
+        "count": 447
       }
     ]
   },
@@ -5144,10 +4118,10 @@
       {
         "id": 90888,
         "recipientId": 7110,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/19/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 42",
+        "content": "Sowon Kim님의 메세지 내용 42",
         "font": "Roboto",
         "createdAt": "2023-09-16T18:15:50Z"
       },
@@ -5175,24 +4149,16 @@
     "reactionCount": 75,
     "topReactions": [
       {
-        "id": 71539,
+        "emoji": "❤️",
+        "count": 861
+      },
+      {
         "emoji": "👍",
-        "count": 15
+        "count": 953
       },
       {
-        "id": 86386,
-        "emoji": "❤️",
-        "count": 4
-      },
-      {
-        "id": 81736,
         "emoji": "🎉",
-        "count": 12
-      },
-      {
-        "id": 63021,
-        "emoji": "❤️",
-        "count": 13
+        "count": 390
       }
     ]
   },
@@ -5238,25 +4204,22 @@
     "reactionCount": 52,
     "topReactions": [
       {
-        "id": 21041,
-        "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 81901,
         "emoji": "🎉",
-        "count": 20
+        "count": 945
       },
       {
-        "id": 3660,
+        "emoji": "❤️",
+        "count": 556
+      },
+      {
         "emoji": "🥹",
-        "count": 7
+        "count": 28
       }
     ]
   },
   {
     "id": 75973,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": "https://picsum.photos/seed/75973/600/400",
     "createdAt": "2023-04-29T23:14:33Z",
@@ -5265,10 +4228,10 @@
       {
         "id": 85401,
         "recipientId": 75973,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/269/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 90",
+        "content": "Sowon Kim님의 메세지 내용 90",
         "font": "Noto Sans",
         "createdAt": "2023-11-12T05:17:44Z"
       },
@@ -5296,24 +4259,12 @@
     "reactionCount": 27,
     "topReactions": [
       {
-        "id": 98483,
-        "emoji": "🥹",
-        "count": 5
-      },
-      {
-        "id": 73979,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 14149,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 73714,
         "emoji": "😁",
-        "count": 11
+        "count": 850
+      },
+      {
+        "emoji": "🥹",
+        "count": 931
       }
     ]
   },
@@ -5359,19 +4310,12 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 84273,
         "emoji": "🥹",
-        "count": 18
+        "count": 74
       },
       {
-        "id": 67980,
         "emoji": "😀",
-        "count": 19
-      },
-      {
-        "id": 57293,
-        "emoji": "🥹",
-        "count": 9
+        "count": 239
       }
     ]
   },
@@ -5417,29 +4361,12 @@
     "reactionCount": 66,
     "topReactions": [
       {
-        "id": 48674,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 8548,
         "emoji": "😀",
-        "count": 6
+        "count": 657
       },
       {
-        "id": 43006,
         "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 6573,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 57200,
-        "emoji": "😀",
-        "count": 1
+        "count": 573
       }
     ]
   },
@@ -5485,24 +4412,16 @@
     "reactionCount": 48,
     "topReactions": [
       {
-        "id": 214,
-        "emoji": "👍",
-        "count": 3
-      },
-      {
-        "id": 16801,
-        "emoji": "😀",
-        "count": 1
-      },
-      {
-        "id": 64372,
         "emoji": "❤️",
-        "count": 18
+        "count": 258
       },
       {
-        "id": 4933,
-        "emoji": "🎉",
-        "count": 4
+        "emoji": "😀",
+        "count": 476
+      },
+      {
+        "emoji": "👍",
+        "count": 813
       }
     ]
   },
@@ -5548,24 +4467,16 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 1802,
+        "emoji": "🎉",
+        "count": 347
+      },
+      {
         "emoji": "😀",
-        "count": 10
+        "count": 532
       },
       {
-        "id": 94631,
-        "emoji": "🎉",
-        "count": 17
-      },
-      {
-        "id": 42577,
         "emoji": "❤️",
-        "count": 6
-      },
-      {
-        "id": 83907,
-        "emoji": "🎉",
-        "count": 6
+        "count": 718
       }
     ]
   },
@@ -5611,24 +4522,12 @@
     "reactionCount": 6,
     "topReactions": [
       {
-        "id": 14584,
-        "emoji": "👍",
-        "count": 16
-      },
-      {
-        "id": 64130,
         "emoji": "🎉",
-        "count": 19
+        "count": 169
       },
       {
-        "id": 98800,
-        "emoji": "😀",
-        "count": 20
-      },
-      {
-        "id": 93562,
         "emoji": "😁",
-        "count": 13
+        "count": 329
       }
     ]
   },
@@ -5674,29 +4573,8 @@
     "reactionCount": 24,
     "topReactions": [
       {
-        "id": 85440,
-        "emoji": "😀",
-        "count": 4
-      },
-      {
-        "id": 94784,
         "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 65361,
-        "emoji": "👍",
-        "count": 12
-      },
-      {
-        "id": 74494,
-        "emoji": "🥹",
-        "count": 2
-      },
-      {
-        "id": 20433,
-        "emoji": "🥹",
-        "count": 2
+        "count": 996
       }
     ]
   },
@@ -5742,20 +4620,18 @@
     "reactionCount": 65,
     "topReactions": [
       {
-        "id": 4983,
-        "emoji": "😀",
-        "count": 20
+        "emoji": "❤️",
+        "count": 276
       },
       {
-        "id": 91060,
-        "emoji": "❤️",
-        "count": 2
+        "emoji": "😀",
+        "count": 421
       }
     ]
   },
   {
     "id": 32314,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "purple",
     "backgroundImageURL": null,
     "createdAt": "2023-06-09T07:16:23Z",
@@ -5774,10 +4650,10 @@
       {
         "id": 10034,
         "recipientId": 32314,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/288/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 22",
+        "content": "Sowon Kim님의 메세지 내용 22",
         "font": "Pretendard",
         "createdAt": "2023-09-14T13:27:24Z"
       },
@@ -5795,9 +4671,8 @@
     "reactionCount": 59,
     "topReactions": [
       {
-        "id": 58698,
         "emoji": "😀",
-        "count": 13
+        "count": 832
       }
     ]
   },
@@ -5843,19 +4718,8 @@
     "reactionCount": 16,
     "topReactions": [
       {
-        "id": 7801,
         "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 58961,
-        "emoji": "❤️",
-        "count": 16
-      },
-      {
-        "id": 59283,
-        "emoji": "🥹",
-        "count": 5
+        "count": 23
       }
     ]
   },
@@ -5901,9 +4765,8 @@
     "reactionCount": 37,
     "topReactions": [
       {
-        "id": 11248,
         "emoji": "❤️",
-        "count": 3
+        "count": 693
       }
     ]
   },
@@ -5938,10 +4801,10 @@
       {
         "id": 50489,
         "recipientId": 63219,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/11/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 77",
+        "content": "Sowon Kim님의 메세지 내용 77",
         "font": "Noto Sans",
         "createdAt": "2023-11-27T08:16:32Z"
       }
@@ -5949,20 +4812,14 @@
     "reactionCount": 17,
     "topReactions": [
       {
-        "id": 78228,
         "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 93441,
-        "emoji": "🥹",
-        "count": 10
+        "count": 700
       }
     ]
   },
   {
     "id": 32218,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": null,
     "createdAt": "2023-07-22T22:33:51Z",
@@ -6002,29 +4859,12 @@
     "reactionCount": 47,
     "topReactions": [
       {
-        "id": 88844,
         "emoji": "🎉",
-        "count": 16
+        "count": 474
       },
       {
-        "id": 58724,
         "emoji": "👍",
-        "count": 19
-      },
-      {
-        "id": 26471,
-        "emoji": "👍",
-        "count": 5
-      },
-      {
-        "id": 39423,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 68714,
-        "emoji": "👍",
-        "count": 6
+        "count": 437
       }
     ]
   },
@@ -6070,9 +4910,8 @@
     "reactionCount": 2,
     "topReactions": [
       {
-        "id": 42141,
         "emoji": "👍",
-        "count": 19
+        "count": 425
       }
     ]
   },
@@ -6107,10 +4946,10 @@
       {
         "id": 24988,
         "recipientId": 1341,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/423/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 64",
+        "content": "Sowon Kim님의 메세지 내용 64",
         "font": "Roboto",
         "createdAt": "2023-01-06T05:53:05Z"
       }
@@ -6118,9 +4957,8 @@
     "reactionCount": 95,
     "topReactions": [
       {
-        "id": 39502,
         "emoji": "🎉",
-        "count": 11
+        "count": 666
       }
     ]
   },
@@ -6166,25 +5004,14 @@
     "reactionCount": 87,
     "topReactions": [
       {
-        "id": 1723,
         "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 7654,
-        "emoji": "😀",
-        "count": 8
-      },
-      {
-        "id": 29263,
-        "emoji": "😀",
-        "count": 4
+        "count": 381
       }
     ]
   },
   {
     "id": 93438,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": "https://picsum.photos/seed/93438/600/400",
     "createdAt": "2023-04-02T11:00:53Z",
@@ -6203,10 +5030,10 @@
       {
         "id": 6156,
         "recipientId": 93438,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/109/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 59",
+        "content": "Sowon Kim님의 메세지 내용 59",
         "font": "Noto Sans",
         "createdAt": "2023-01-24T10:30:39Z"
       },
@@ -6224,15 +5051,14 @@
     "reactionCount": 99,
     "topReactions": [
       {
-        "id": 19288,
         "emoji": "😁",
-        "count": 11
+        "count": 891
       }
     ]
   },
   {
     "id": 44334,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": "https://picsum.photos/seed/44334/600/400",
     "createdAt": "2023-12-30T01:42:47Z",
@@ -6272,34 +5098,8 @@
     "reactionCount": 87,
     "topReactions": [
       {
-        "id": 37061,
-        "emoji": "👍",
-        "count": 6
-      },
-      {
-        "id": 2287,
-        "emoji": "👍",
-        "count": 11
-      },
-      {
-        "id": 45099,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 90256,
-        "emoji": "😁",
-        "count": 7
-      },
-      {
-        "id": 99885,
-        "emoji": "👍",
-        "count": 8
-      },
-      {
-        "id": 76279,
         "emoji": "❤️",
-        "count": 12
+        "count": 390
       }
     ]
   },
@@ -6345,15 +5145,14 @@
     "reactionCount": 70,
     "topReactions": [
       {
-        "id": 17950,
         "emoji": "🥹",
-        "count": 20
+        "count": 766
       }
     ]
   },
   {
     "id": 44928,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": null,
     "createdAt": "2023-11-24T12:12:26Z",
@@ -6373,24 +5172,12 @@
     "reactionCount": 8,
     "topReactions": [
       {
-        "id": 82489,
         "emoji": "🥹",
-        "count": 7
+        "count": 470
       },
       {
-        "id": 41836,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 64846,
         "emoji": "❤️",
-        "count": 9
-      },
-      {
-        "id": 50727,
-        "emoji": "❤️",
-        "count": 14
+        "count": 625
       }
     ]
   },
@@ -6405,10 +5192,10 @@
       {
         "id": 31761,
         "recipientId": 94539,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/62/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 53",
+        "content": "Sowon Kim님의 메세지 내용 53",
         "font": "Pretendard",
         "createdAt": "2023-04-17T18:23:36Z"
       },
@@ -6436,14 +5223,12 @@
     "reactionCount": 92,
     "topReactions": [
       {
-        "id": 73214,
-        "emoji": "👍",
-        "count": 14
+        "emoji": "😀",
+        "count": 634
       },
       {
-        "id": 314,
-        "emoji": "😀",
-        "count": 20
+        "emoji": "👍",
+        "count": 296
       }
     ]
   },
@@ -6489,24 +5274,12 @@
     "reactionCount": 73,
     "topReactions": [
       {
-        "id": 49624,
         "emoji": "😁",
-        "count": 6
+        "count": 171
       },
       {
-        "id": 69914,
-        "emoji": "😁",
-        "count": 17
-      },
-      {
-        "id": 12300,
-        "emoji": "👍",
-        "count": 16
-      },
-      {
-        "id": 26416,
         "emoji": "🎉",
-        "count": 12
+        "count": 87
       }
     ]
   },
@@ -6552,9 +5325,8 @@
     "reactionCount": 96,
     "topReactions": [
       {
-        "id": 85370,
         "emoji": "😀",
-        "count": 9
+        "count": 844
       }
     ]
   },
@@ -6600,29 +5372,16 @@
     "reactionCount": 76,
     "topReactions": [
       {
-        "id": 20609,
         "emoji": "😀",
-        "count": 4
+        "count": 470
       },
       {
-        "id": 24638,
         "emoji": "❤️",
-        "count": 8
+        "count": 638
       },
       {
-        "id": 38365,
         "emoji": "👍",
-        "count": 20
-      },
-      {
-        "id": 16361,
-        "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 41186,
-        "emoji": "👍",
-        "count": 20
+        "count": 364
       }
     ]
   },
@@ -6648,9 +5407,8 @@
     "reactionCount": 79,
     "topReactions": [
       {
-        "id": 36218,
         "emoji": "😀",
-        "count": 9
+        "count": 595
       }
     ]
   },
@@ -6696,34 +5454,12 @@
     "reactionCount": 73,
     "topReactions": [
       {
-        "id": 24875,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 99067,
-        "emoji": "❤️",
-        "count": 20
-      },
-      {
-        "id": 24734,
-        "emoji": "❤️",
-        "count": 20
-      },
-      {
-        "id": 3733,
         "emoji": "👍",
-        "count": 10
+        "count": 375
       },
       {
-        "id": 54558,
-        "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 21392,
-        "emoji": "🎉",
-        "count": 18
+        "emoji": "😀",
+        "count": 358
       }
     ]
   },
@@ -6759,29 +5495,12 @@
     "reactionCount": 82,
     "topReactions": [
       {
-        "id": 53064,
-        "emoji": "❤️",
-        "count": 4
-      },
-      {
-        "id": 84662,
-        "emoji": "🎉",
-        "count": 16
-      },
-      {
-        "id": 15519,
-        "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 75306,
-        "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 59498,
         "emoji": "😀",
-        "count": 14
+        "count": 232
+      },
+      {
+        "emoji": "🎉",
+        "count": 564
       }
     ]
   },
@@ -6827,24 +5546,16 @@
     "reactionCount": 57,
     "topReactions": [
       {
-        "id": 67314,
-        "emoji": "🎉",
-        "count": 6
-      },
-      {
-        "id": 20708,
-        "emoji": "👍",
-        "count": 13
-      },
-      {
-        "id": 32217,
         "emoji": "🥹",
-        "count": 8
+        "count": 243
       },
       {
-        "id": 59013,
+        "emoji": "🎉",
+        "count": 12
+      },
+      {
         "emoji": "😁",
-        "count": 9
+        "count": 966
       }
     ]
   },
@@ -6890,24 +5601,16 @@
     "reactionCount": 47,
     "topReactions": [
       {
-        "id": 81037,
-        "emoji": "🥹",
-        "count": 20
-      },
-      {
-        "id": 16358,
-        "emoji": "😁",
-        "count": 3
-      },
-      {
-        "id": 44167,
-        "emoji": "😀",
-        "count": 15
-      },
-      {
-        "id": 66141,
         "emoji": "🎉",
-        "count": 19
+        "count": 383
+      },
+      {
+        "emoji": "😁",
+        "count": 160
+      },
+      {
+        "emoji": "🥹",
+        "count": 822
       }
     ]
   },
@@ -6933,19 +5636,12 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 17924,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 49600,
-        "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 11142,
         "emoji": "🥹",
-        "count": 7
+        "count": 544
+      },
+      {
+        "emoji": "😀",
+        "count": 617
       }
     ]
   },
@@ -6970,10 +5666,10 @@
       {
         "id": 41596,
         "recipientId": 43809,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/439/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 36",
+        "content": "Sowon Kim님의 메세지 내용 36",
         "font": "Roboto",
         "createdAt": "2023-02-12T07:13:07Z"
       },
@@ -6991,14 +5687,12 @@
     "reactionCount": 45,
     "topReactions": [
       {
-        "id": 89452,
         "emoji": "🥹",
-        "count": 11
+        "count": 3
       },
       {
-        "id": 83618,
         "emoji": "😀",
-        "count": 12
+        "count": 575
       }
     ]
   },
@@ -7044,14 +5738,12 @@
     "reactionCount": 7,
     "topReactions": [
       {
-        "id": 45551,
-        "emoji": "❤️",
-        "count": 19
+        "emoji": "😁",
+        "count": 772
       },
       {
-        "id": 57044,
-        "emoji": "😁",
-        "count": 1
+        "emoji": "❤️",
+        "count": 189
       }
     ]
   },
@@ -7086,10 +5778,10 @@
       {
         "id": 62162,
         "recipientId": 62125,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/293/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 93",
+        "content": "Sowon Kim님의 메세지 내용 93",
         "font": "Roboto",
         "createdAt": "2023-04-29T23:05:56Z"
       }
@@ -7097,9 +5789,8 @@
     "reactionCount": 75,
     "topReactions": [
       {
-        "id": 11123,
         "emoji": "🎉",
-        "count": 14
+        "count": 421
       }
     ]
   },
@@ -7145,34 +5836,8 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 79847,
-        "emoji": "👍",
-        "count": 9
-      },
-      {
-        "id": 33325,
         "emoji": "🎉",
-        "count": 6
-      },
-      {
-        "id": 19452,
-        "emoji": "😀",
-        "count": 4
-      },
-      {
-        "id": 70794,
-        "emoji": "🥹",
-        "count": 20
-      },
-      {
-        "id": 55957,
-        "emoji": "😀",
-        "count": 20
-      },
-      {
-        "id": 1762,
-        "emoji": "🎉",
-        "count": 14
+        "count": 521
       }
     ]
   },
@@ -7207,10 +5872,10 @@
       {
         "id": 91516,
         "recipientId": 58844,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/108/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 82",
+        "content": "Sowon Kim님의 메세지 내용 82",
         "font": "Pretendard",
         "createdAt": "2023-08-27T12:05:46Z"
       }
@@ -7218,24 +5883,8 @@
     "reactionCount": 20,
     "topReactions": [
       {
-        "id": 81634,
-        "emoji": "😀",
-        "count": 5
-      },
-      {
-        "id": 88135,
-        "emoji": "🥹",
-        "count": 16
-      },
-      {
-        "id": 86465,
-        "emoji": "😀",
-        "count": 13
-      },
-      {
-        "id": 92893,
         "emoji": "❤️",
-        "count": 3
+        "count": 154
       }
     ]
   },
@@ -7260,10 +5909,10 @@
       {
         "id": 29903,
         "recipientId": 72437,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/106/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 40",
+        "content": "Sowon Kim님의 메세지 내용 40",
         "font": "Roboto",
         "createdAt": "2023-04-29T16:49:48Z"
       }
@@ -7271,24 +5920,8 @@
     "reactionCount": 98,
     "topReactions": [
       {
-        "id": 70510,
-        "emoji": "🎉",
-        "count": 20
-      },
-      {
-        "id": 66505,
-        "emoji": "👍",
-        "count": 3
-      },
-      {
-        "id": 66557,
         "emoji": "❤️",
-        "count": 12
-      },
-      {
-        "id": 61631,
-        "emoji": "😁",
-        "count": 20
+        "count": 11
       }
     ]
   },
@@ -7323,10 +5956,10 @@
       {
         "id": 91691,
         "recipientId": 31124,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/461/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 53",
+        "content": "Sowon Kim님의 메세지 내용 53",
         "font": "Roboto",
         "createdAt": "2023-05-21T09:55:42Z"
       }
@@ -7334,20 +5967,18 @@
     "reactionCount": 91,
     "topReactions": [
       {
-        "id": 70597,
         "emoji": "😁",
-        "count": 10
+        "count": 439
       },
       {
-        "id": 86461,
         "emoji": "👍",
-        "count": 11
+        "count": 337
       }
     ]
   },
   {
     "id": 73111,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": null,
     "createdAt": "2023-12-29T11:24:51Z",
@@ -7377,24 +6008,8 @@
     "reactionCount": 16,
     "topReactions": [
       {
-        "id": 42626,
-        "emoji": "😀",
-        "count": 7
-      },
-      {
-        "id": 2933,
-        "emoji": "😁",
-        "count": 19
-      },
-      {
-        "id": 8592,
         "emoji": "👍",
-        "count": 20
-      },
-      {
-        "id": 33974,
-        "emoji": "😀",
-        "count": 9
+        "count": 642
       }
     ]
   },
@@ -7419,10 +6034,10 @@
       {
         "id": 2974,
         "recipientId": 44599,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/46/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 13",
+        "content": "Sowon Kim님의 메세지 내용 13",
         "font": "Roboto",
         "createdAt": "2023-11-11T07:56:34Z"
       },
@@ -7440,34 +6055,12 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 69943,
-        "emoji": "🥹",
-        "count": 8
+        "emoji": "❤️",
+        "count": 97
       },
       {
-        "id": 93387,
         "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 55895,
-        "emoji": "❤️",
-        "count": 12
-      },
-      {
-        "id": 1552,
-        "emoji": "🥹",
-        "count": 13
-      },
-      {
-        "id": 62897,
-        "emoji": "❤️",
-        "count": 8
-      },
-      {
-        "id": 11953,
-        "emoji": "👍",
-        "count": 9
+        "count": 591
       }
     ]
   },
@@ -7513,29 +6106,16 @@
     "reactionCount": 99,
     "topReactions": [
       {
-        "id": 26899,
-        "emoji": "🥹",
-        "count": 19
-      },
-      {
-        "id": 64192,
         "emoji": "😀",
-        "count": 20
+        "count": 360
       },
       {
-        "id": 38049,
-        "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 3255,
-        "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 35106,
         "emoji": "👍",
-        "count": 17
+        "count": 360
+      },
+      {
+        "emoji": "🥹",
+        "count": 667
       }
     ]
   },
@@ -7581,34 +6161,8 @@
     "reactionCount": 81,
     "topReactions": [
       {
-        "id": 40481,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 89819,
         "emoji": "👍",
-        "count": 5
-      },
-      {
-        "id": 56551,
-        "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 90383,
-        "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 48052,
-        "emoji": "😁",
-        "count": 4
-      },
-      {
-        "id": 53141,
-        "emoji": "🎉",
-        "count": 10
+        "count": 825
       }
     ]
   },
@@ -7654,14 +6208,12 @@
     "reactionCount": 91,
     "topReactions": [
       {
-        "id": 22984,
-        "emoji": "😁",
-        "count": 2
+        "emoji": "😀",
+        "count": 979
       },
       {
-        "id": 38976,
-        "emoji": "😀",
-        "count": 1
+        "emoji": "😁",
+        "count": 230
       }
     ]
   },
@@ -7697,20 +6249,14 @@
     "reactionCount": 48,
     "topReactions": [
       {
-        "id": 64931,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 32976,
         "emoji": "🎉",
-        "count": 19
+        "count": 36
       }
     ]
   },
   {
     "id": 72332,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "purple",
     "backgroundImageURL": "https://picsum.photos/seed/72332/600/400",
     "createdAt": "2023-10-08T20:12:12Z",
@@ -7750,9 +6296,8 @@
     "reactionCount": 84,
     "topReactions": [
       {
-        "id": 34056,
         "emoji": "🎉",
-        "count": 9
+        "count": 320
       }
     ]
   },
@@ -7798,9 +6343,8 @@
     "reactionCount": 86,
     "topReactions": [
       {
-        "id": 11941,
         "emoji": "😀",
-        "count": 10
+        "count": 371
       }
     ]
   },
@@ -7815,10 +6359,10 @@
       {
         "id": 47612,
         "recipientId": 6048,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/97/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 72",
+        "content": "Sowon Kim님의 메세지 내용 72",
         "font": "Pretendard",
         "createdAt": "2023-12-11T12:42:57Z"
       },
@@ -7846,24 +6390,8 @@
     "reactionCount": 93,
     "topReactions": [
       {
-        "id": 85562,
-        "emoji": "👍",
-        "count": 14
-      },
-      {
-        "id": 19775,
-        "emoji": "❤️",
-        "count": 4
-      },
-      {
-        "id": 97219,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 77812,
         "emoji": "🎉",
-        "count": 3
+        "count": 177
       }
     ]
   },
@@ -7888,10 +6416,10 @@
       {
         "id": 54283,
         "recipientId": 7768,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/368/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 8",
+        "content": "Sowon Kim님의 메세지 내용 8",
         "font": "Nanum Gothic",
         "createdAt": "2023-02-19T15:25:55Z"
       },
@@ -7909,9 +6437,8 @@
     "reactionCount": 17,
     "topReactions": [
       {
-        "id": 56016,
         "emoji": "😁",
-        "count": 7
+        "count": 948
       }
     ]
   },
@@ -7946,10 +6473,10 @@
       {
         "id": 66344,
         "recipientId": 60032,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/444/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 47",
+        "content": "Sowon Kim님의 메세지 내용 47",
         "font": "Pretendard",
         "createdAt": "2023-07-26T07:54:55Z"
       }
@@ -7957,9 +6484,8 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 79749,
         "emoji": "😀",
-        "count": 11
+        "count": 77
       }
     ]
   },
@@ -7985,14 +6511,8 @@
     "reactionCount": 58,
     "topReactions": [
       {
-        "id": 15557,
         "emoji": "❤️",
-        "count": 1
-      },
-      {
-        "id": 87847,
-        "emoji": "❤️",
-        "count": 5
+        "count": 740
       }
     ]
   },
@@ -8018,29 +6538,8 @@
     "reactionCount": 83,
     "topReactions": [
       {
-        "id": 19026,
         "emoji": "🎉",
-        "count": 9
-      },
-      {
-        "id": 66458,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 39586,
-        "emoji": "❤️",
-        "count": 7
-      },
-      {
-        "id": 19251,
-        "emoji": "🥹",
-        "count": 17
-      },
-      {
-        "id": 4095,
-        "emoji": "🥹",
-        "count": 13
+        "count": 116
       }
     ]
   },
@@ -8086,29 +6585,12 @@
     "reactionCount": 47,
     "topReactions": [
       {
-        "id": 55806,
         "emoji": "😀",
-        "count": 9
+        "count": 983
       },
       {
-        "id": 81344,
-        "emoji": "🎉",
-        "count": 20
-      },
-      {
-        "id": 23760,
         "emoji": "😁",
-        "count": 7
-      },
-      {
-        "id": 95115,
-        "emoji": "❤️",
-        "count": 10
-      },
-      {
-        "id": 62637,
-        "emoji": "😀",
-        "count": 2
+        "count": 421
       }
     ]
   },
@@ -8154,34 +6636,16 @@
     "reactionCount": 15,
     "topReactions": [
       {
-        "id": 12348,
-        "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 54843,
-        "emoji": "👍",
-        "count": 15
-      },
-      {
-        "id": 79979,
-        "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 20768,
-        "emoji": "👍",
-        "count": 20
-      },
-      {
-        "id": 16109,
         "emoji": "❤️",
-        "count": 1
+        "count": 506
       },
       {
-        "id": 10264,
+        "emoji": "🎉",
+        "count": 735
+      },
+      {
         "emoji": "😁",
-        "count": 9
+        "count": 370
       }
     ]
   },
@@ -8207,24 +6671,12 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 65130,
-        "emoji": "👍",
-        "count": 7
-      },
-      {
-        "id": 3875,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 93476,
         "emoji": "❤️",
-        "count": 16
+        "count": 368
       },
       {
-        "id": 22262,
         "emoji": "🥹",
-        "count": 2
+        "count": 996
       }
     ]
   },
@@ -8260,29 +6712,8 @@
     "reactionCount": 80,
     "topReactions": [
       {
-        "id": 90187,
         "emoji": "😀",
-        "count": 6
-      },
-      {
-        "id": 26989,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 80780,
-        "emoji": "🥹",
-        "count": 15
-      },
-      {
-        "id": 4359,
-        "emoji": "🎉",
-        "count": 15
-      },
-      {
-        "id": 25620,
-        "emoji": "👍",
-        "count": 10
+        "count": 807
       }
     ]
   },
@@ -8308,34 +6739,12 @@
     "reactionCount": 4,
     "topReactions": [
       {
-        "id": 71201,
         "emoji": "😀",
-        "count": 5
+        "count": 81
       },
       {
-        "id": 4897,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 64978,
         "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 69162,
-        "emoji": "🥹",
-        "count": 1
-      },
-      {
-        "id": 99414,
-        "emoji": "😀",
-        "count": 5
-      },
-      {
-        "id": 2807,
-        "emoji": "🥹",
-        "count": 7
+        "count": 425
       }
     ]
   },
@@ -8381,29 +6790,8 @@
     "reactionCount": 23,
     "topReactions": [
       {
-        "id": 7041,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 19313,
         "emoji": "😀",
-        "count": 1
-      },
-      {
-        "id": 22714,
-        "emoji": "👍",
-        "count": 12
-      },
-      {
-        "id": 12076,
-        "emoji": "👍",
-        "count": 18
-      },
-      {
-        "id": 8583,
-        "emoji": "🎉",
-        "count": 5
+        "count": 865
       }
     ]
   },
@@ -8418,10 +6806,10 @@
       {
         "id": 48175,
         "recipientId": 96506,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/145/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 86",
+        "content": "Sowon Kim님의 메세지 내용 86",
         "font": "Pretendard",
         "createdAt": "2023-03-13T10:17:35Z"
       },
@@ -8449,29 +6837,8 @@
     "reactionCount": 29,
     "topReactions": [
       {
-        "id": 52114,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 93670,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 34535,
         "emoji": "🎉",
-        "count": 1
-      },
-      {
-        "id": 34032,
-        "emoji": "🥹",
-        "count": 3
-      },
-      {
-        "id": 24268,
-        "emoji": "😁",
-        "count": 2
+        "count": 167
       }
     ]
   },
@@ -8517,9 +6884,8 @@
     "reactionCount": 10,
     "topReactions": [
       {
-        "id": 34005,
         "emoji": "🎉",
-        "count": 7
+        "count": 388
       }
     ]
   },
@@ -8565,14 +6931,12 @@
     "reactionCount": 45,
     "topReactions": [
       {
-        "id": 30409,
-        "emoji": "🎉",
-        "count": 9
+        "emoji": "👍",
+        "count": 253
       },
       {
-        "id": 96020,
-        "emoji": "👍",
-        "count": 19
+        "emoji": "🎉",
+        "count": 611
       }
     ]
   },
@@ -8607,10 +6971,10 @@
       {
         "id": 11805,
         "recipientId": 10732,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/76/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 48",
+        "content": "Sowon Kim님의 메세지 내용 48",
         "font": "Nanum Gothic",
         "createdAt": "2023-12-29T05:06:21Z"
       }
@@ -8618,24 +6982,16 @@
     "reactionCount": 45,
     "topReactions": [
       {
-        "id": 75995,
-        "emoji": "🎉",
-        "count": 14
-      },
-      {
-        "id": 83468,
         "emoji": "👍",
-        "count": 6
+        "count": 956
       },
       {
-        "id": 3826,
         "emoji": "🎉",
-        "count": 6
+        "count": 702
       },
       {
-        "id": 53081,
         "emoji": "❤️",
-        "count": 14
+        "count": 858
       }
     ]
   },
@@ -8681,9 +7037,8 @@
     "reactionCount": 99,
     "topReactions": [
       {
-        "id": 22251,
         "emoji": "👍",
-        "count": 13
+        "count": 359
       }
     ]
   },
@@ -8708,10 +7063,10 @@
       {
         "id": 94450,
         "recipientId": 64061,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/353/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 61",
+        "content": "Sowon Kim님의 메세지 내용 61",
         "font": "Pretendard",
         "createdAt": "2023-12-02T06:48:01Z"
       },
@@ -8729,15 +7084,14 @@
     "reactionCount": 9,
     "topReactions": [
       {
-        "id": 16899,
         "emoji": "🥹",
-        "count": 5
+        "count": 658
       }
     ]
   },
   {
     "id": 15549,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": null,
     "createdAt": "2023-12-13T10:07:11Z",
@@ -8777,24 +7131,12 @@
     "reactionCount": 72,
     "topReactions": [
       {
-        "id": 71384,
-        "emoji": "👍",
-        "count": 8
-      },
-      {
-        "id": 23202,
-        "emoji": "👍",
-        "count": 19
-      },
-      {
-        "id": 98227,
-        "emoji": "👍",
-        "count": 15
-      },
-      {
-        "id": 17552,
         "emoji": "🥹",
-        "count": 14
+        "count": 585
+      },
+      {
+        "emoji": "👍",
+        "count": 331
       }
     ]
   },
@@ -8819,10 +7161,10 @@
       {
         "id": 67124,
         "recipientId": 84213,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/482/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 81",
+        "content": "Sowon Kim님의 메세지 내용 81",
         "font": "Pretendard",
         "createdAt": "2023-04-16T14:42:59Z"
       },
@@ -8840,34 +7182,8 @@
     "reactionCount": 5,
     "topReactions": [
       {
-        "id": 84810,
-        "emoji": "😀",
-        "count": 13
-      },
-      {
-        "id": 42243,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 63560,
-        "emoji": "👍",
-        "count": 10
-      },
-      {
-        "id": 6972,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 32485,
         "emoji": "😁",
-        "count": 1
-      },
-      {
-        "id": 29060,
-        "emoji": "😁",
-        "count": 10
+        "count": 335
       }
     ]
   },
@@ -8913,9 +7229,8 @@
     "reactionCount": 0,
     "topReactions": [
       {
-        "id": 99864,
         "emoji": "🥹",
-        "count": 11
+        "count": 650
       }
     ]
   },
@@ -8930,10 +7245,10 @@
       {
         "id": 91701,
         "recipientId": 83558,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/169/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 97",
+        "content": "Sowon Kim님의 메세지 내용 97",
         "font": "Noto Sans",
         "createdAt": "2023-11-22T09:50:03Z"
       },
@@ -8961,29 +7276,8 @@
     "reactionCount": 95,
     "topReactions": [
       {
-        "id": 4780,
-        "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 36370,
-        "emoji": "👍",
-        "count": 15
-      },
-      {
-        "id": 857,
         "emoji": "😁",
-        "count": 11
-      },
-      {
-        "id": 68373,
-        "emoji": "😁",
-        "count": 17
-      },
-      {
-        "id": 86784,
-        "emoji": "❤️",
-        "count": 20
+        "count": 794
       }
     ]
   },
@@ -9029,24 +7323,16 @@
     "reactionCount": 63,
     "topReactions": [
       {
-        "id": 48182,
         "emoji": "😀",
-        "count": 16
+        "count": 235
       },
       {
-        "id": 5086,
-        "emoji": "😀",
-        "count": 9
-      },
-      {
-        "id": 3495,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 84837,
         "emoji": "🥹",
-        "count": 6
+        "count": 186
+      },
+      {
+        "emoji": "❤️",
+        "count": 701
       }
     ]
   },
@@ -9061,10 +7347,10 @@
       {
         "id": 86215,
         "recipientId": 1220,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/419/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 25",
+        "content": "Sowon Kim님의 메세지 내용 25",
         "font": "Pretendard",
         "createdAt": "2023-05-10T21:59:12Z"
       }
@@ -9072,20 +7358,18 @@
     "reactionCount": 14,
     "topReactions": [
       {
-        "id": 11863,
         "emoji": "👍",
-        "count": 16
+        "count": 865
       },
       {
-        "id": 36179,
         "emoji": "🎉",
-        "count": 18
+        "count": 581
       }
     ]
   },
   {
     "id": 53959,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": "https://picsum.photos/seed/53959/600/400",
     "createdAt": "2023-08-24T05:22:48Z",
@@ -9114,10 +7398,10 @@
       {
         "id": 59151,
         "recipientId": 53959,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/10/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 4",
+        "content": "Sowon Kim님의 메세지 내용 4",
         "font": "Nanum Gothic",
         "createdAt": "2023-03-11T07:04:18Z"
       }
@@ -9125,34 +7409,8 @@
     "reactionCount": 24,
     "topReactions": [
       {
-        "id": 23239,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 8346,
-        "emoji": "😀",
-        "count": 3
-      },
-      {
-        "id": 10520,
         "emoji": "❤️",
-        "count": 9
-      },
-      {
-        "id": 92010,
-        "emoji": "😀",
-        "count": 9
-      },
-      {
-        "id": 33511,
-        "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 29961,
-        "emoji": "😀",
-        "count": 17
+        "count": 91
       }
     ]
   },
@@ -9198,25 +7456,22 @@
     "reactionCount": 8,
     "topReactions": [
       {
-        "id": 78078,
-        "emoji": "👍",
-        "count": 2
-      },
-      {
-        "id": 36649,
-        "emoji": "🎉",
-        "count": 6
-      },
-      {
-        "id": 92725,
         "emoji": "❤️",
-        "count": 2
+        "count": 902
+      },
+      {
+        "emoji": "🎉",
+        "count": 548
+      },
+      {
+        "emoji": "👍",
+        "count": 583
       }
     ]
   },
   {
     "id": 51432,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": "https://picsum.photos/seed/51432/600/400",
     "createdAt": "2023-11-07T07:07:37Z",
@@ -9235,10 +7490,10 @@
       {
         "id": 33808,
         "recipientId": 51432,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/478/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 8",
+        "content": "Sowon Kim님의 메세지 내용 8",
         "font": "Pretendard",
         "createdAt": "2023-04-04T10:06:15Z"
       },
@@ -9256,29 +7511,8 @@
     "reactionCount": 12,
     "topReactions": [
       {
-        "id": 45279,
         "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 59474,
-        "emoji": "👍",
-        "count": 11
-      },
-      {
-        "id": 61205,
-        "emoji": "👍",
-        "count": 20
-      },
-      {
-        "id": 69208,
-        "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 47277,
-        "emoji": "🎉",
-        "count": 13
+        "count": 545
       }
     ]
   },
@@ -9324,9 +7558,8 @@
     "reactionCount": 96,
     "topReactions": [
       {
-        "id": 49415,
         "emoji": "😀",
-        "count": 16
+        "count": 316
       }
     ]
   },
@@ -9352,24 +7585,12 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 78077,
         "emoji": "❤️",
-        "count": 15
+        "count": 575
       },
       {
-        "id": 81214,
         "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 17360,
-        "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 21652,
-        "emoji": "🥹",
-        "count": 4
+        "count": 192
       }
     ]
   },
@@ -9415,9 +7636,8 @@
     "reactionCount": 77,
     "topReactions": [
       {
-        "id": 52469,
         "emoji": "❤️",
-        "count": 16
+        "count": 653
       }
     ]
   },
@@ -9463,9 +7683,8 @@
     "reactionCount": 33,
     "topReactions": [
       {
-        "id": 41010,
         "emoji": "🥹",
-        "count": 14
+        "count": 740
       }
     ]
   },
@@ -9511,29 +7730,8 @@
     "reactionCount": 86,
     "topReactions": [
       {
-        "id": 42848,
         "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 30829,
-        "emoji": "🎉",
-        "count": 5
-      },
-      {
-        "id": 89207,
-        "emoji": "😁",
-        "count": 11
-      },
-      {
-        "id": 82766,
-        "emoji": "😀",
-        "count": 7
-      },
-      {
-        "id": 95876,
-        "emoji": "🎉",
-        "count": 6
+        "count": 229
       }
     ]
   },
@@ -9579,34 +7777,8 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 70355,
-        "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 23001,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 16865,
-        "emoji": "🎉",
-        "count": 20
-      },
-      {
-        "id": 85383,
         "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 62476,
-        "emoji": "👍",
-        "count": 2
-      },
-      {
-        "id": 25834,
-        "emoji": "👍",
-        "count": 1
+        "count": 632
       }
     ]
   },
@@ -9642,19 +7814,12 @@
     "reactionCount": 51,
     "topReactions": [
       {
-        "id": 79191,
         "emoji": "😀",
-        "count": 17
+        "count": 782
       },
       {
-        "id": 99981,
-        "emoji": "😀",
-        "count": 7
-      },
-      {
-        "id": 77927,
         "emoji": "🎉",
-        "count": 4
+        "count": 968
       }
     ]
   },
@@ -9700,24 +7865,8 @@
     "reactionCount": 13,
     "topReactions": [
       {
-        "id": 22643,
         "emoji": "👍",
-        "count": 19
-      },
-      {
-        "id": 77117,
-        "emoji": "😁",
-        "count": 8
-      },
-      {
-        "id": 35930,
-        "emoji": "❤️",
-        "count": 8
-      },
-      {
-        "id": 86858,
-        "emoji": "🎉",
-        "count": 16
+        "count": 652
       }
     ]
   },
@@ -9742,10 +7891,10 @@
       {
         "id": 93059,
         "recipientId": 73798,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/252/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 99",
+        "content": "Sowon Kim님의 메세지 내용 99",
         "font": "Roboto",
         "createdAt": "2023-11-21T09:01:45Z"
       },
@@ -9763,29 +7912,16 @@
     "reactionCount": 71,
     "topReactions": [
       {
-        "id": 31784,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 52139,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 20530,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 12585,
         "emoji": "👍",
-        "count": 11
+        "count": 773
       },
       {
-        "id": 6677,
         "emoji": "❤️",
-        "count": 6
+        "count": 613
+      },
+      {
+        "emoji": "😁",
+        "count": 445
       }
     ]
   },
@@ -9831,19 +7967,8 @@
     "reactionCount": 53,
     "topReactions": [
       {
-        "id": 16359,
         "emoji": "😁",
-        "count": 4
-      },
-      {
-        "id": 63702,
-        "emoji": "😁",
-        "count": 11
-      },
-      {
-        "id": 74672,
-        "emoji": "😁",
-        "count": 18
+        "count": 353
       }
     ]
   },
@@ -9868,10 +7993,10 @@
       {
         "id": 33941,
         "recipientId": 3992,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/364/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 93",
+        "content": "Sowon Kim님의 메세지 내용 93",
         "font": "Pretendard",
         "createdAt": "2023-02-13T23:03:26Z"
       },
@@ -9889,9 +8014,8 @@
     "reactionCount": 28,
     "topReactions": [
       {
-        "id": 59388,
         "emoji": "🎉",
-        "count": 4
+        "count": 814
       }
     ]
   },
@@ -9937,9 +8061,8 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 3962,
         "emoji": "🥹",
-        "count": 17
+        "count": 963
       }
     ]
   },
@@ -9964,10 +8087,10 @@
       {
         "id": 89359,
         "recipientId": 63758,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/401/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 53",
+        "content": "Sowon Kim님의 메세지 내용 53",
         "font": "Roboto",
         "createdAt": "2023-05-10T19:04:15Z"
       },
@@ -9985,9 +8108,8 @@
     "reactionCount": 56,
     "topReactions": [
       {
-        "id": 52289,
         "emoji": "😁",
-        "count": 7
+        "count": 365
       }
     ]
   },
@@ -10013,14 +8135,8 @@
     "reactionCount": 69,
     "topReactions": [
       {
-        "id": 75660,
         "emoji": "🥹",
-        "count": 13
-      },
-      {
-        "id": 30629,
-        "emoji": "❤️",
-        "count": 6
+        "count": 764
       }
     ]
   },
@@ -10066,25 +8182,18 @@
     "reactionCount": 26,
     "topReactions": [
       {
-        "id": 68634,
         "emoji": "👍",
-        "count": 16
+        "count": 606
       },
       {
-        "id": 74041,
         "emoji": "🥹",
-        "count": 12
-      },
-      {
-        "id": 834,
-        "emoji": "🥹",
-        "count": 5
+        "count": 965
       }
     ]
   },
   {
     "id": 63096,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": "https://picsum.photos/seed/63096/600/400",
     "createdAt": "2023-08-25T09:30:08Z",
@@ -10093,10 +8202,10 @@
       {
         "id": 72995,
         "recipientId": 63096,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/368/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 44",
+        "content": "Sowon Kim님의 메세지 내용 44",
         "font": "Pretendard",
         "createdAt": "2023-10-07T18:41:59Z"
       },
@@ -10124,19 +8233,12 @@
     "reactionCount": 90,
     "topReactions": [
       {
-        "id": 30117,
         "emoji": "🎉",
-        "count": 14
+        "count": 568
       },
       {
-        "id": 52187,
         "emoji": "👍",
-        "count": 6
-      },
-      {
-        "id": 18011,
-        "emoji": "🎉",
-        "count": 17
+        "count": 213
       }
     ]
   },
@@ -10151,10 +8253,10 @@
       {
         "id": 44494,
         "recipientId": 13289,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/118/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 64",
+        "content": "Sowon Kim님의 메세지 내용 64",
         "font": "Nanum Gothic",
         "createdAt": "2024-01-29T16:37:33Z"
       },
@@ -10182,34 +8284,8 @@
     "reactionCount": 20,
     "topReactions": [
       {
-        "id": 27582,
-        "emoji": "🥹",
-        "count": 5
-      },
-      {
-        "id": 7453,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 32011,
-        "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 18525,
-        "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 15768,
-        "emoji": "😀",
-        "count": 19
-      },
-      {
-        "id": 14938,
         "emoji": "👍",
-        "count": 6
+        "count": 94
       }
     ]
   },
@@ -10255,34 +8331,8 @@
     "reactionCount": 63,
     "topReactions": [
       {
-        "id": 75593,
-        "emoji": "🎉",
-        "count": 17
-      },
-      {
-        "id": 86152,
-        "emoji": "👍",
-        "count": 18
-      },
-      {
-        "id": 94679,
         "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 93225,
-        "emoji": "😁",
-        "count": 3
-      },
-      {
-        "id": 50484,
-        "emoji": "🎉",
-        "count": 9
-      },
-      {
-        "id": 97858,
-        "emoji": "👍",
-        "count": 2
+        "count": 448
       }
     ]
   },
@@ -10328,14 +8378,12 @@
     "reactionCount": 98,
     "topReactions": [
       {
-        "id": 11291,
-        "emoji": "🥹",
-        "count": 9
+        "emoji": "😀",
+        "count": 985
       },
       {
-        "id": 71787,
-        "emoji": "😀",
-        "count": 19
+        "emoji": "🥹",
+        "count": 609
       }
     ]
   },
@@ -10381,24 +8429,12 @@
     "reactionCount": 69,
     "topReactions": [
       {
-        "id": 29485,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 51258,
-        "emoji": "😁",
-        "count": 14
-      },
-      {
-        "id": 24027,
-        "emoji": "😁",
-        "count": 18
-      },
-      {
-        "id": 86629,
         "emoji": "😀",
-        "count": 4
+        "count": 737
+      },
+      {
+        "emoji": "😁",
+        "count": 298
       }
     ]
   },
@@ -10424,29 +8460,12 @@
     "reactionCount": 52,
     "topReactions": [
       {
-        "id": 78028,
-        "emoji": "👍",
-        "count": 7
-      },
-      {
-        "id": 81658,
-        "emoji": "👍",
-        "count": 8
-      },
-      {
-        "id": 99396,
-        "emoji": "❤️",
-        "count": 1
-      },
-      {
-        "id": 91845,
         "emoji": "🎉",
-        "count": 4
+        "count": 679
       },
       {
-        "id": 95208,
         "emoji": "👍",
-        "count": 5
+        "count": 166
       }
     ]
   },
@@ -10482,24 +8501,12 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 63963,
-        "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 26888,
-        "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 5147,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 47112,
         "emoji": "❤️",
-        "count": 7
+        "count": 828
+      },
+      {
+        "emoji": "😁",
+        "count": 960
       }
     ]
   },
@@ -10534,10 +8541,10 @@
       {
         "id": 33150,
         "recipientId": 66190,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/26/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 47",
+        "content": "Sowon Kim님의 메세지 내용 47",
         "font": "Roboto",
         "createdAt": "2024-01-22T00:03:15Z"
       }
@@ -10545,20 +8552,18 @@
     "reactionCount": 29,
     "topReactions": [
       {
-        "id": 30808,
-        "emoji": "🥹",
-        "count": 20
+        "emoji": "😀",
+        "count": 142
       },
       {
-        "id": 18642,
-        "emoji": "😀",
-        "count": 9
+        "emoji": "🥹",
+        "count": 226
       }
     ]
   },
   {
     "id": 68635,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": null,
     "createdAt": "2023-10-22T10:14:45Z",
@@ -10598,19 +8603,8 @@
     "reactionCount": 18,
     "topReactions": [
       {
-        "id": 98726,
-        "emoji": "😀",
-        "count": 15
-      },
-      {
-        "id": 65169,
         "emoji": "🥹",
-        "count": 3
-      },
-      {
-        "id": 8481,
-        "emoji": "🥹",
-        "count": 12
+        "count": 536
       }
     ]
   },
@@ -10625,10 +8619,10 @@
       {
         "id": 8378,
         "recipientId": 52236,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/383/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 53",
+        "content": "Sowon Kim님의 메세지 내용 53",
         "font": "Pretendard",
         "createdAt": "2023-12-03T19:03:51Z"
       }
@@ -10636,9 +8630,8 @@
     "reactionCount": 48,
     "topReactions": [
       {
-        "id": 89637,
         "emoji": "😀",
-        "count": 8
+        "count": 914
       }
     ]
   },
@@ -10663,10 +8656,10 @@
       {
         "id": 14027,
         "recipientId": 81115,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/400/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 48",
+        "content": "Sowon Kim님의 메세지 내용 48",
         "font": "Noto Sans",
         "createdAt": "2023-09-18T14:09:01Z"
       },
@@ -10684,9 +8677,8 @@
     "reactionCount": 93,
     "topReactions": [
       {
-        "id": 89132,
         "emoji": "🎉",
-        "count": 18
+        "count": 633
       }
     ]
   },
@@ -10732,9 +8724,8 @@
     "reactionCount": 93,
     "topReactions": [
       {
-        "id": 21925,
         "emoji": "😀",
-        "count": 4
+        "count": 623
       }
     ]
   },
@@ -10780,9 +8771,8 @@
     "reactionCount": 10,
     "topReactions": [
       {
-        "id": 71407,
         "emoji": "😁",
-        "count": 11
+        "count": 349
       }
     ]
   },
@@ -10828,29 +8818,16 @@
     "reactionCount": 30,
     "topReactions": [
       {
-        "id": 45061,
         "emoji": "❤️",
-        "count": 20
+        "count": 425
       },
       {
-        "id": 40818,
-        "emoji": "❤️",
-        "count": 20
-      },
-      {
-        "id": 86400,
         "emoji": "🥹",
-        "count": 3
+        "count": 131
       },
       {
-        "id": 90349,
-        "emoji": "🥹",
-        "count": 1
-      },
-      {
-        "id": 307,
         "emoji": "😁",
-        "count": 9
+        "count": 242
       }
     ]
   },
@@ -10885,10 +8862,10 @@
       {
         "id": 16314,
         "recipientId": 60,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/345/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 52",
+        "content": "Sowon Kim님의 메세지 내용 52",
         "font": "Roboto",
         "createdAt": "2023-03-07T04:55:33Z"
       }
@@ -10896,14 +8873,12 @@
     "reactionCount": 50,
     "topReactions": [
       {
-        "id": 58906,
-        "emoji": "😀",
-        "count": 1
+        "emoji": "🎉",
+        "count": 814
       },
       {
-        "id": 50471,
-        "emoji": "🎉",
-        "count": 7
+        "emoji": "😀",
+        "count": 481
       }
     ]
   },
@@ -10928,10 +8903,10 @@
       {
         "id": 81467,
         "recipientId": 66554,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/487/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 17",
+        "content": "Sowon Kim님의 메세지 내용 17",
         "font": "Nanum Gothic",
         "createdAt": "2023-03-16T05:19:39Z"
       },
@@ -10949,24 +8924,16 @@
     "reactionCount": 78,
     "topReactions": [
       {
-        "id": 11998,
-        "emoji": "😀",
-        "count": 1
-      },
-      {
-        "id": 43630,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 4909,
-        "emoji": "🥹",
-        "count": 10
-      },
-      {
-        "id": 15023,
         "emoji": "😁",
-        "count": 4
+        "count": 632
+      },
+      {
+        "emoji": "🥹",
+        "count": 377
+      },
+      {
+        "emoji": "😀",
+        "count": 581
       }
     ]
   },
@@ -10992,7 +8959,7 @@
         "id": 19330,
         "recipientId": 50312,
         "sender": "전지현",
-        "profileImageURL": "https://picsum.photos/id/435/200/200",
+        "profileImageURL": "https://picsum.photos/id/51/200/200",
         "relationship": "가족",
         "content": "전지현님의 메세지 내용 14",
         "font": "Pretendard",
@@ -11012,14 +8979,12 @@
     "reactionCount": 97,
     "topReactions": [
       {
-        "id": 73411,
-        "emoji": "❤️",
-        "count": 14
+        "emoji": "🥹",
+        "count": 281
       },
       {
-        "id": 26879,
-        "emoji": "🥹",
-        "count": 9
+        "emoji": "❤️",
+        "count": 265
       }
     ]
   },
@@ -11045,34 +9010,8 @@
     "reactionCount": 41,
     "topReactions": [
       {
-        "id": 69423,
         "emoji": "🥹",
-        "count": 19
-      },
-      {
-        "id": 37533,
-        "emoji": "🎉",
-        "count": 10
-      },
-      {
-        "id": 73552,
-        "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 58186,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 26741,
-        "emoji": "😁",
-        "count": 18
-      },
-      {
-        "id": 8330,
-        "emoji": "❤️",
-        "count": 6
+        "count": 974
       }
     ]
   },
@@ -11108,19 +9047,8 @@
     "reactionCount": 35,
     "topReactions": [
       {
-        "id": 44310,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 10011,
         "emoji": "❤️",
-        "count": 6
-      },
-      {
-        "id": 8641,
-        "emoji": "🥹",
-        "count": 4
+        "count": 900
       }
     ]
   },
@@ -11155,10 +9083,10 @@
       {
         "id": 19962,
         "recipientId": 31459,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/80/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 11",
+        "content": "Sowon Kim님의 메세지 내용 11",
         "font": "Nanum Gothic",
         "createdAt": "2023-11-26T04:31:20Z"
       }
@@ -11166,9 +9094,8 @@
     "reactionCount": 21,
     "topReactions": [
       {
-        "id": 4005,
         "emoji": "😀",
-        "count": 7
+        "count": 783
       }
     ]
   },
@@ -11214,34 +9141,12 @@
     "reactionCount": 5,
     "topReactions": [
       {
-        "id": 5588,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 98400,
-        "emoji": "🥹",
-        "count": 13
-      },
-      {
-        "id": 5484,
-        "emoji": "❤️",
-        "count": 16
-      },
-      {
-        "id": 40058,
         "emoji": "🎉",
-        "count": 2
+        "count": 275
       },
       {
-        "id": 51056,
         "emoji": "👍",
-        "count": 14
-      },
-      {
-        "id": 31995,
-        "emoji": "🎉",
-        "count": 12
+        "count": 76
       }
     ]
   },
@@ -11287,34 +9192,8 @@
     "reactionCount": 6,
     "topReactions": [
       {
-        "id": 51742,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 48690,
-        "emoji": "🎉",
-        "count": 2
-      },
-      {
-        "id": 50705,
         "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 8991,
-        "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 12174,
-        "emoji": "🥹",
-        "count": 9
-      },
-      {
-        "id": 10137,
-        "emoji": "😀",
-        "count": 10
+        "count": 604
       }
     ]
   },
@@ -11360,24 +9239,12 @@
     "reactionCount": 90,
     "topReactions": [
       {
-        "id": 16362,
-        "emoji": "😁",
-        "count": 14
-      },
-      {
-        "id": 6576,
-        "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 78222,
         "emoji": "🎉",
-        "count": 1
+        "count": 657
       },
       {
-        "id": 62128,
-        "emoji": "😁",
-        "count": 18
+        "emoji": "🥹",
+        "count": 298
       }
     ]
   },
@@ -11402,10 +9269,10 @@
       {
         "id": 24156,
         "recipientId": 41885,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/360/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 14",
+        "content": "Sowon Kim님의 메세지 내용 14",
         "font": "Noto Sans",
         "createdAt": "2023-07-13T21:35:18Z"
       },
@@ -11423,24 +9290,16 @@
     "reactionCount": 9,
     "topReactions": [
       {
-        "id": 31604,
         "emoji": "😀",
-        "count": 15
+        "count": 646
       },
       {
-        "id": 7967,
         "emoji": "😁",
-        "count": 2
+        "count": 786
       },
       {
-        "id": 52857,
         "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 52766,
-        "emoji": "😀",
-        "count": 13
+        "count": 677
       }
     ]
   },
@@ -11486,24 +9345,12 @@
     "reactionCount": 21,
     "topReactions": [
       {
-        "id": 13179,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 5003,
         "emoji": "🥹",
-        "count": 1
+        "count": 11
       },
       {
-        "id": 37584,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 63440,
         "emoji": "🎉",
-        "count": 4
+        "count": 646
       }
     ]
   },
@@ -11529,29 +9376,8 @@
     "reactionCount": 37,
     "topReactions": [
       {
-        "id": 1985,
-        "emoji": "👍",
-        "count": 9
-      },
-      {
-        "id": 65556,
         "emoji": "❤️",
-        "count": 7
-      },
-      {
-        "id": 96682,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 49044,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 76158,
-        "emoji": "❤️",
-        "count": 7
+        "count": 725
       }
     ]
   },
@@ -11577,34 +9403,12 @@
     "reactionCount": 33,
     "topReactions": [
       {
-        "id": 38198,
         "emoji": "😁",
-        "count": 5
+        "count": 236
       },
       {
-        "id": 75156,
-        "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 85523,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 68198,
         "emoji": "🎉",
-        "count": 5
-      },
-      {
-        "id": 91,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 249,
-        "emoji": "😀",
-        "count": 4
+        "count": 36
       }
     ]
   },
@@ -11640,29 +9444,16 @@
     "reactionCount": 28,
     "topReactions": [
       {
-        "id": 13204,
         "emoji": "😀",
-        "count": 13
+        "count": 842
       },
       {
-        "id": 16155,
         "emoji": "🎉",
-        "count": 19
+        "count": 398
       },
       {
-        "id": 68608,
-        "emoji": "😀",
-        "count": 18
-      },
-      {
-        "id": 78848,
-        "emoji": "😀",
-        "count": 18
-      },
-      {
-        "id": 4799,
         "emoji": "👍",
-        "count": 12
+        "count": 585
       }
     ]
   },
@@ -11708,9 +9499,8 @@
     "reactionCount": 100,
     "topReactions": [
       {
-        "id": 72646,
         "emoji": "❤️",
-        "count": 5
+        "count": 622
       }
     ]
   },
@@ -11756,14 +9546,8 @@
     "reactionCount": 72,
     "topReactions": [
       {
-        "id": 37949,
-        "emoji": "❤️",
-        "count": 10
-      },
-      {
-        "id": 46408,
         "emoji": "😀",
-        "count": 1
+        "count": 809
       }
     ]
   },
@@ -11799,9 +9583,8 @@
     "reactionCount": 100,
     "topReactions": [
       {
-        "id": 51363,
         "emoji": "😀",
-        "count": 9
+        "count": 98
       }
     ]
   },
@@ -11816,20 +9599,20 @@
       {
         "id": 86564,
         "recipientId": 46642,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/36/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 78",
+        "content": "Sowon Kim님의 메세지 내용 78",
         "font": "Noto Sans",
         "createdAt": "2023-09-23T23:48:17Z"
       },
       {
         "id": 46880,
         "recipientId": 46642,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/453/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 92",
+        "content": "Sowon Kim님의 메세지 내용 92",
         "font": "Noto Sans",
         "createdAt": "2023-06-07T09:44:08Z"
       },
@@ -11847,34 +9630,12 @@
     "reactionCount": 24,
     "topReactions": [
       {
-        "id": 50493,
-        "emoji": "🥹",
-        "count": 10
-      },
-      {
-        "id": 14174,
         "emoji": "❤️",
-        "count": 7
+        "count": 839
       },
       {
-        "id": 8164,
-        "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 59391,
         "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 503,
-        "emoji": "❤️",
-        "count": 14
-      },
-      {
-        "id": 96571,
-        "emoji": "❤️",
-        "count": 7
+        "count": 258
       }
     ]
   },
@@ -11920,15 +9681,14 @@
     "reactionCount": 93,
     "topReactions": [
       {
-        "id": 90352,
         "emoji": "😁",
-        "count": 1
+        "count": 90
       }
     ]
   },
   {
     "id": 93469,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "beige",
     "backgroundImageURL": "https://picsum.photos/seed/93469/600/400",
     "createdAt": "2023-08-05T08:37:01Z",
@@ -11968,30 +9728,22 @@
     "reactionCount": 84,
     "topReactions": [
       {
-        "id": 89622,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 63069,
-        "emoji": "🎉",
-        "count": 4
-      },
-      {
-        "id": 24110,
         "emoji": "😀",
-        "count": 4
+        "count": 442
       },
       {
-        "id": 67263,
+        "emoji": "🎉",
+        "count": 682
+      },
+      {
         "emoji": "👍",
-        "count": 12
+        "count": 278
       }
     ]
   },
   {
     "id": 45950,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "green",
     "backgroundImageURL": "https://picsum.photos/seed/45950/600/400",
     "createdAt": "2023-04-24T21:39:46Z",
@@ -12031,9 +9783,8 @@
     "reactionCount": 45,
     "topReactions": [
       {
-        "id": 39540,
         "emoji": "🎉",
-        "count": 13
+        "count": 775
       }
     ]
   },
@@ -12079,19 +9830,8 @@
     "reactionCount": 84,
     "topReactions": [
       {
-        "id": 12098,
-        "emoji": "👍",
-        "count": 9
-      },
-      {
-        "id": 54057,
         "emoji": "😀",
-        "count": 9
-      },
-      {
-        "id": 45620,
-        "emoji": "👍",
-        "count": 3
+        "count": 792
       }
     ]
   },
@@ -12137,34 +9877,16 @@
     "reactionCount": 72,
     "topReactions": [
       {
-        "id": 76463,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 25167,
-        "emoji": "🎉",
-        "count": 19
-      },
-      {
-        "id": 5479,
-        "emoji": "🥹",
-        "count": 2
-      },
-      {
-        "id": 92981,
-        "emoji": "😀",
-        "count": 17
-      },
-      {
-        "id": 85208,
-        "emoji": "😁",
-        "count": 10
-      },
-      {
-        "id": 61758,
         "emoji": "👍",
-        "count": 8
+        "count": 829
+      },
+      {
+        "emoji": "🎉",
+        "count": 814
+      },
+      {
+        "emoji": "😁",
+        "count": 369
       }
     ]
   },
@@ -12210,24 +9932,16 @@
     "reactionCount": 70,
     "topReactions": [
       {
-        "id": 11095,
-        "emoji": "😁",
-        "count": 1
-      },
-      {
-        "id": 76832,
-        "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 65012,
         "emoji": "🥹",
-        "count": 7
+        "count": 765
       },
       {
-        "id": 65074,
-        "emoji": "🎉",
-        "count": 2
+        "emoji": "👍",
+        "count": 288
+      },
+      {
+        "emoji": "😁",
+        "count": 492
       }
     ]
   },
@@ -12273,14 +9987,8 @@
     "reactionCount": 34,
     "topReactions": [
       {
-        "id": 17825,
-        "emoji": "🎉",
-        "count": 10
-      },
-      {
-        "id": 85431,
         "emoji": "❤️",
-        "count": 1
+        "count": 561
       }
     ]
   },
@@ -12326,14 +10034,12 @@
     "reactionCount": 4,
     "topReactions": [
       {
-        "id": 50561,
-        "emoji": "❤️",
-        "count": 15
+        "emoji": "🎉",
+        "count": 678
       },
       {
-        "id": 80082,
-        "emoji": "🎉",
-        "count": 18
+        "emoji": "❤️",
+        "count": 792
       }
     ]
   },
@@ -12379,34 +10085,16 @@
     "reactionCount": 41,
     "topReactions": [
       {
-        "id": 26308,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 63793,
         "emoji": "👍",
-        "count": 11
+        "count": 843
       },
       {
-        "id": 52541,
-        "emoji": "🎉",
-        "count": 4
-      },
-      {
-        "id": 83299,
         "emoji": "😀",
-        "count": 9
+        "count": 155
       },
       {
-        "id": 85136,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 889,
-        "emoji": "👍",
-        "count": 7
+        "emoji": "🎉",
+        "count": 16
       }
     ]
   },
@@ -12452,29 +10140,8 @@
     "reactionCount": 70,
     "topReactions": [
       {
-        "id": 40083,
         "emoji": "👍",
-        "count": 5
-      },
-      {
-        "id": 46868,
-        "emoji": "😀",
-        "count": 4
-      },
-      {
-        "id": 9028,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 33264,
-        "emoji": "😁",
-        "count": 2
-      },
-      {
-        "id": 5936,
-        "emoji": "❤️",
-        "count": 13
+        "count": 89
       }
     ]
   },
@@ -12489,10 +10156,10 @@
       {
         "id": 46241,
         "recipientId": 30047,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/397/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 64",
+        "content": "Sowon Kim님의 메세지 내용 64",
         "font": "Roboto",
         "createdAt": "2023-04-12T04:50:45Z"
       },
@@ -12520,34 +10187,16 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 35861,
         "emoji": "👍",
-        "count": 20
+        "count": 865
       },
       {
-        "id": 3537,
         "emoji": "🎉",
-        "count": 19
+        "count": 993
       },
       {
-        "id": 95822,
         "emoji": "😀",
-        "count": 11
-      },
-      {
-        "id": 70453,
-        "emoji": "❤️",
-        "count": 10
-      },
-      {
-        "id": 12985,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 22095,
-        "emoji": "😀",
-        "count": 1
+        "count": 755
       }
     ]
   },
@@ -12593,14 +10242,8 @@
     "reactionCount": 96,
     "topReactions": [
       {
-        "id": 55075,
         "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 35577,
-        "emoji": "🎉",
-        "count": 19
+        "count": 196
       }
     ]
   },
@@ -12646,24 +10289,12 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 5861,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 44343,
         "emoji": "🥹",
-        "count": 12
+        "count": 112
       },
       {
-        "id": 43982,
         "emoji": "🎉",
-        "count": 14
-      },
-      {
-        "id": 4963,
-        "emoji": "🎉",
-        "count": 6
+        "count": 135
       }
     ]
   },
@@ -12689,19 +10320,8 @@
     "reactionCount": 71,
     "topReactions": [
       {
-        "id": 99348,
         "emoji": "😁",
-        "count": 10
-      },
-      {
-        "id": 52447,
-        "emoji": "🎉",
-        "count": 19
-      },
-      {
-        "id": 16678,
-        "emoji": "😁",
-        "count": 1
+        "count": 72
       }
     ]
   },
@@ -12747,29 +10367,16 @@
     "reactionCount": 32,
     "topReactions": [
       {
-        "id": 20504,
         "emoji": "🥹",
-        "count": 16
+        "count": 111
       },
       {
-        "id": 54171,
-        "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 73446,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 11616,
         "emoji": "🎉",
-        "count": 7
+        "count": 859
       },
       {
-        "id": 95136,
-        "emoji": "🥹",
-        "count": 5
+        "emoji": "😁",
+        "count": 919
       }
     ]
   },
@@ -12815,25 +10422,18 @@
     "reactionCount": 31,
     "topReactions": [
       {
-        "id": 57710,
+        "emoji": "🥹",
+        "count": 814
+      },
+      {
         "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 8909,
-        "emoji": "🥹",
-        "count": 2
-      },
-      {
-        "id": 28098,
-        "emoji": "🥹",
-        "count": 9
+        "count": 701
       }
     ]
   },
   {
     "id": 44091,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": "https://picsum.photos/seed/44091/600/400",
     "createdAt": "2023-06-17T19:51:45Z",
@@ -12873,9 +10473,8 @@
     "reactionCount": 73,
     "topReactions": [
       {
-        "id": 53118,
         "emoji": "😁",
-        "count": 1
+        "count": 832
       }
     ]
   },
@@ -12921,24 +10520,8 @@
     "reactionCount": 70,
     "topReactions": [
       {
-        "id": 60136,
-        "emoji": "😀",
-        "count": 7
-      },
-      {
-        "id": 45903,
         "emoji": "🥹",
-        "count": 17
-      },
-      {
-        "id": 38212,
-        "emoji": "😀",
-        "count": 18
-      },
-      {
-        "id": 59414,
-        "emoji": "🥹",
-        "count": 5
+        "count": 962
       }
     ]
   },
@@ -12984,29 +10567,8 @@
     "reactionCount": 9,
     "topReactions": [
       {
-        "id": 19392,
         "emoji": "😁",
-        "count": 18
-      },
-      {
-        "id": 13700,
-        "emoji": "❤️",
-        "count": 12
-      },
-      {
-        "id": 50701,
-        "emoji": "😁",
-        "count": 6
-      },
-      {
-        "id": 28314,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 65318,
-        "emoji": "🥹",
-        "count": 19
+        "count": 212
       }
     ]
   },
@@ -13052,9 +10614,8 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 38169,
         "emoji": "🥹",
-        "count": 6
+        "count": 948
       }
     ]
   },
@@ -13080,24 +10641,16 @@
     "reactionCount": 36,
     "topReactions": [
       {
-        "id": 51242,
-        "emoji": "👍",
-        "count": 3
-      },
-      {
-        "id": 23565,
         "emoji": "❤️",
-        "count": 8
+        "count": 705
       },
       {
-        "id": 37031,
         "emoji": "🥹",
-        "count": 17
+        "count": 173
       },
       {
-        "id": 78779,
-        "emoji": "❤️",
-        "count": 9
+        "emoji": "👍",
+        "count": 137
       }
     ]
   },
@@ -13143,29 +10696,12 @@
     "reactionCount": 31,
     "topReactions": [
       {
-        "id": 50319,
-        "emoji": "😁",
-        "count": 20
-      },
-      {
-        "id": 44923,
         "emoji": "🥹",
-        "count": 16
+        "count": 10
       },
       {
-        "id": 54729,
-        "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 82072,
-        "emoji": "🎉",
-        "count": 11
-      },
-      {
-        "id": 10911,
         "emoji": "😁",
-        "count": 2
+        "count": 714
       }
     ]
   },
@@ -13211,19 +10747,8 @@
     "reactionCount": 48,
     "topReactions": [
       {
-        "id": 55639,
         "emoji": "😁",
-        "count": 2
-      },
-      {
-        "id": 98809,
-        "emoji": "❤️",
-        "count": 2
-      },
-      {
-        "id": 69046,
-        "emoji": "👍",
-        "count": 2
+        "count": 901
       }
     ]
   },
@@ -13269,9 +10794,8 @@
     "reactionCount": 100,
     "topReactions": [
       {
-        "id": 4687,
         "emoji": "❤️",
-        "count": 9
+        "count": 726
       }
     ]
   },
@@ -13317,14 +10841,12 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 5609,
-        "emoji": "🎉",
-        "count": 3
+        "emoji": "😁",
+        "count": 818
       },
       {
-        "id": 93922,
-        "emoji": "😁",
-        "count": 19
+        "emoji": "🎉",
+        "count": 315
       }
     ]
   },
@@ -13349,10 +10871,10 @@
       {
         "id": 58525,
         "recipientId": 62965,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/103/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 1",
+        "content": "Sowon Kim님의 메세지 내용 1",
         "font": "Noto Sans",
         "createdAt": "2023-04-24T14:22:46Z"
       },
@@ -13370,9 +10892,8 @@
     "reactionCount": 74,
     "topReactions": [
       {
-        "id": 29181,
         "emoji": "😁",
-        "count": 2
+        "count": 95
       }
     ]
   },
@@ -13387,10 +10908,10 @@
       {
         "id": 86114,
         "recipientId": 61614,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/1/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 48",
+        "content": "Sowon Kim님의 메세지 내용 48",
         "font": "Noto Sans",
         "createdAt": "2023-11-16T04:24:55Z"
       },
@@ -13418,19 +10939,8 @@
     "reactionCount": 43,
     "topReactions": [
       {
-        "id": 96270,
-        "emoji": "😁",
-        "count": 8
-      },
-      {
-        "id": 86470,
         "emoji": "👍",
-        "count": 20
-      },
-      {
-        "id": 73582,
-        "emoji": "😁",
-        "count": 18
+        "count": 658
       }
     ]
   },
@@ -13476,25 +10986,18 @@
     "reactionCount": 59,
     "topReactions": [
       {
-        "id": 10874,
         "emoji": "❤️",
-        "count": 20
+        "count": 950
       },
       {
-        "id": 9648,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 90543,
         "emoji": "👍",
-        "count": 3
+        "count": 704
       }
     ]
   },
   {
     "id": 31146,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "green",
     "backgroundImageURL": null,
     "createdAt": "2023-09-27T13:42:38Z",
@@ -13514,29 +11017,8 @@
     "reactionCount": 88,
     "topReactions": [
       {
-        "id": 90630,
         "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 31427,
-        "emoji": "🎉",
-        "count": 13
-      },
-      {
-        "id": 40617,
-        "emoji": "🎉",
-        "count": 19
-      },
-      {
-        "id": 21215,
-        "emoji": "🎉",
-        "count": 1
-      },
-      {
-        "id": 10418,
-        "emoji": "😀",
-        "count": 10
+        "count": 136
       }
     ]
   },
@@ -13551,10 +11033,10 @@
       {
         "id": 80875,
         "recipientId": 99123,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/42/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 14",
+        "content": "Sowon Kim님의 메세지 내용 14",
         "font": "Roboto",
         "createdAt": "2023-11-30T19:44:40Z"
       },
@@ -13582,14 +11064,12 @@
     "reactionCount": 80,
     "topReactions": [
       {
-        "id": 24281,
         "emoji": "😁",
-        "count": 12
+        "count": 347
       },
       {
-        "id": 56612,
         "emoji": "❤️",
-        "count": 8
+        "count": 766
       }
     ]
   },
@@ -13635,19 +11115,16 @@
     "reactionCount": 83,
     "topReactions": [
       {
-        "id": 41395,
         "emoji": "❤️",
-        "count": 3
+        "count": 886
       },
       {
-        "id": 71463,
         "emoji": "😁",
-        "count": 14
+        "count": 199
       },
       {
-        "id": 43684,
         "emoji": "🎉",
-        "count": 20
+        "count": 734
       }
     ]
   },
@@ -13682,10 +11159,10 @@
       {
         "id": 9237,
         "recipientId": 16143,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/437/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 14",
+        "content": "Sowon Kim님의 메세지 내용 14",
         "font": "Pretendard",
         "createdAt": "2023-03-17T21:44:08Z"
       }
@@ -13693,24 +11170,8 @@
     "reactionCount": 77,
     "topReactions": [
       {
-        "id": 18467,
         "emoji": "👍",
-        "count": 17
-      },
-      {
-        "id": 28382,
-        "emoji": "😀",
-        "count": 1
-      },
-      {
-        "id": 94572,
-        "emoji": "❤️",
-        "count": 1
-      },
-      {
-        "id": 63127,
-        "emoji": "🥹",
-        "count": 16
+        "count": 219
       }
     ]
   },
@@ -13756,9 +11217,8 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 99369,
         "emoji": "👍",
-        "count": 6
+        "count": 974
       }
     ]
   },
@@ -13793,10 +11253,10 @@
       {
         "id": 31892,
         "recipientId": 98422,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/8/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 43",
+        "content": "Sowon Kim님의 메세지 내용 43",
         "font": "Pretendard",
         "createdAt": "2023-09-02T03:23:20Z"
       }
@@ -13804,19 +11264,12 @@
     "reactionCount": 6,
     "topReactions": [
       {
-        "id": 99679,
-        "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 42127,
-        "emoji": "👍",
-        "count": 20
-      },
-      {
-        "id": 49549,
         "emoji": "😀",
-        "count": 5
+        "count": 838
+      },
+      {
+        "emoji": "👍",
+        "count": 490
       }
     ]
   },
@@ -13841,10 +11294,10 @@
       {
         "id": 85445,
         "recipientId": 53532,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/363/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 51",
+        "content": "Sowon Kim님의 메세지 내용 51",
         "font": "Noto Sans",
         "createdAt": "2023-09-23T11:29:56Z"
       },
@@ -13862,34 +11315,8 @@
     "reactionCount": 59,
     "topReactions": [
       {
-        "id": 23496,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 81866,
-        "emoji": "👍",
-        "count": 10
-      },
-      {
-        "id": 17757,
-        "emoji": "🥹",
-        "count": 10
-      },
-      {
-        "id": 39750,
-        "emoji": "🥹",
-        "count": 16
-      },
-      {
-        "id": 24933,
         "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 26409,
-        "emoji": "❤️",
-        "count": 19
+        "count": 349
       }
     ]
   },
@@ -13904,10 +11331,10 @@
       {
         "id": 86518,
         "recipientId": 93792,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/204/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 9",
+        "content": "Sowon Kim님의 메세지 내용 9",
         "font": "Roboto",
         "createdAt": "2023-01-22T13:44:09Z"
       },
@@ -13924,10 +11351,10 @@
       {
         "id": 9752,
         "recipientId": 93792,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/171/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 68",
+        "content": "Sowon Kim님의 메세지 내용 68",
         "font": "Roboto",
         "createdAt": "2023-02-15T23:39:35Z"
       }
@@ -13935,29 +11362,16 @@
     "reactionCount": 52,
     "topReactions": [
       {
-        "id": 4867,
-        "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 39233,
         "emoji": "🥹",
-        "count": 20
+        "count": 325
       },
       {
-        "id": 20026,
-        "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 72595,
         "emoji": "👍",
-        "count": 13
+        "count": 579
       },
       {
-        "id": 13775,
-        "emoji": "🥹",
-        "count": 17
+        "emoji": "❤️",
+        "count": 675
       }
     ]
   },
@@ -13992,10 +11406,10 @@
       {
         "id": 84648,
         "recipientId": 12242,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/112/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 4",
+        "content": "Sowon Kim님의 메세지 내용 4",
         "font": "Pretendard",
         "createdAt": "2024-01-06T11:37:10Z"
       }
@@ -14003,34 +11417,16 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 84557,
-        "emoji": "😀",
-        "count": 20
-      },
-      {
-        "id": 77673,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 99493,
         "emoji": "❤️",
-        "count": 13
+        "count": 47
       },
       {
-        "id": 67646,
+        "emoji": "😀",
+        "count": 589
+      },
+      {
         "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 54419,
-        "emoji": "❤️",
-        "count": 12
-      },
-      {
-        "id": 2038,
-        "emoji": "🎉",
-        "count": 1
+        "count": 840
       }
     ]
   },
@@ -14066,14 +11462,12 @@
     "reactionCount": 31,
     "topReactions": [
       {
-        "id": 72384,
         "emoji": "🎉",
-        "count": 10
+        "count": 687
       },
       {
-        "id": 24751,
         "emoji": "👍",
-        "count": 2
+        "count": 355
       }
     ]
   },
@@ -14098,10 +11492,10 @@
       {
         "id": 35816,
         "recipientId": 76148,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/488/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 96",
+        "content": "Sowon Kim님의 메세지 내용 96",
         "font": "Nanum Gothic",
         "createdAt": "2023-04-09T14:21:56Z"
       }
@@ -14109,24 +11503,8 @@
     "reactionCount": 3,
     "topReactions": [
       {
-        "id": 24742,
         "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 31827,
-        "emoji": "👍",
-        "count": 6
-      },
-      {
-        "id": 12947,
-        "emoji": "🎉",
-        "count": 5
-      },
-      {
-        "id": 40799,
-        "emoji": "🎉",
-        "count": 3
+        "count": 231
       }
     ]
   },
@@ -14162,9 +11540,8 @@
     "reactionCount": 50,
     "topReactions": [
       {
-        "id": 99751,
         "emoji": "❤️",
-        "count": 16
+        "count": 267
       }
     ]
   },
@@ -14179,10 +11556,10 @@
       {
         "id": 76780,
         "recipientId": 38642,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/253/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 24",
+        "content": "Sowon Kim님의 메세지 내용 24",
         "font": "Nanum Gothic",
         "createdAt": "2023-07-12T11:54:03Z"
       },
@@ -14210,24 +11587,8 @@
     "reactionCount": 29,
     "topReactions": [
       {
-        "id": 96587,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 33006,
         "emoji": "🎉",
-        "count": 8
-      },
-      {
-        "id": 4665,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 6761,
-        "emoji": "😀",
-        "count": 7
+        "count": 48
       }
     ]
   },
@@ -14263,9 +11624,8 @@
     "reactionCount": 29,
     "topReactions": [
       {
-        "id": 85255,
         "emoji": "😀",
-        "count": 10
+        "count": 269
       }
     ]
   },
@@ -14311,24 +11671,8 @@
     "reactionCount": 15,
     "topReactions": [
       {
-        "id": 93584,
-        "emoji": "🥹",
-        "count": 17
-      },
-      {
-        "id": 64509,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 26383,
         "emoji": "❤️",
-        "count": 11
-      },
-      {
-        "id": 18223,
-        "emoji": "🥹",
-        "count": 6
+        "count": 607
       }
     ]
   },
@@ -14364,19 +11708,12 @@
     "reactionCount": 91,
     "topReactions": [
       {
-        "id": 12819,
+        "emoji": "❤️",
+        "count": 419
+      },
+      {
         "emoji": "🎉",
-        "count": 16
-      },
-      {
-        "id": 51793,
-        "emoji": "❤️",
-        "count": 8
-      },
-      {
-        "id": 47344,
-        "emoji": "❤️",
-        "count": 9
+        "count": 932
       }
     ]
   },
@@ -14391,10 +11728,10 @@
       {
         "id": 78207,
         "recipientId": 55884,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/155/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 87",
+        "content": "Sowon Kim님의 메세지 내용 87",
         "font": "Pretendard",
         "createdAt": "2023-06-01T07:21:37Z"
       },
@@ -14422,24 +11759,16 @@
     "reactionCount": 53,
     "topReactions": [
       {
-        "id": 48355,
         "emoji": "👍",
-        "count": 6
+        "count": 737
       },
       {
-        "id": 38418,
-        "emoji": "👍",
-        "count": 13
-      },
-      {
-        "id": 7995,
         "emoji": "😀",
-        "count": 20
+        "count": 7
       },
       {
-        "id": 55879,
         "emoji": "🥹",
-        "count": 5
+        "count": 149
       }
     ]
   },
@@ -14454,10 +11783,10 @@
       {
         "id": 2300,
         "recipientId": 65809,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/358/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 60",
+        "content": "Sowon Kim님의 메세지 내용 60",
         "font": "Roboto",
         "createdAt": "2023-05-12T09:25:19Z"
       },
@@ -14485,34 +11814,8 @@
     "reactionCount": 93,
     "topReactions": [
       {
-        "id": 51783,
         "emoji": "🎉",
-        "count": 10
-      },
-      {
-        "id": 37523,
-        "emoji": "❤️",
-        "count": 19
-      },
-      {
-        "id": 58371,
-        "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 83933,
-        "emoji": "😀",
-        "count": 10
-      },
-      {
-        "id": 67432,
-        "emoji": "❤️",
-        "count": 17
-      },
-      {
-        "id": 37226,
-        "emoji": "😀",
-        "count": 15
+        "count": 758
       }
     ]
   },
@@ -14527,10 +11830,10 @@
       {
         "id": 12155,
         "recipientId": 47549,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/247/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 80",
+        "content": "Sowon Kim님의 메세지 내용 80",
         "font": "Pretendard",
         "createdAt": "2023-03-09T22:19:14Z"
       },
@@ -14558,34 +11861,8 @@
     "reactionCount": 73,
     "topReactions": [
       {
-        "id": 6824,
-        "emoji": "🎉",
-        "count": 1
-      },
-      {
-        "id": 77828,
         "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 10712,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 14431,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 41886,
-        "emoji": "🎉",
-        "count": 15
-      },
-      {
-        "id": 38043,
-        "emoji": "❤️",
-        "count": 7
+        "count": 662
       }
     ]
   },
@@ -14620,10 +11897,10 @@
       {
         "id": 64811,
         "recipientId": 7135,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/184/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 9",
+        "content": "Sowon Kim님의 메세지 내용 9",
         "font": "Roboto",
         "createdAt": "2023-10-17T00:36:13Z"
       }
@@ -14631,9 +11908,8 @@
     "reactionCount": 80,
     "topReactions": [
       {
-        "id": 73068,
         "emoji": "😁",
-        "count": 14
+        "count": 292
       }
     ]
   },
@@ -14679,29 +11955,16 @@
     "reactionCount": 0,
     "topReactions": [
       {
-        "id": 64631,
-        "emoji": "❤️",
-        "count": 7
-      },
-      {
-        "id": 15818,
-        "emoji": "❤️",
-        "count": 6
-      },
-      {
-        "id": 96523,
-        "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 87388,
         "emoji": "🎉",
-        "count": 19
+        "count": 176
       },
       {
-        "id": 64648,
+        "emoji": "❤️",
+        "count": 889
+      },
+      {
         "emoji": "👍",
-        "count": 4
+        "count": 759
       }
     ]
   },
@@ -14747,19 +12010,16 @@
     "reactionCount": 54,
     "topReactions": [
       {
-        "id": 38019,
         "emoji": "😀",
-        "count": 5
+        "count": 420
       },
       {
-        "id": 97709,
-        "emoji": "😁",
-        "count": 17
-      },
-      {
-        "id": 46872,
         "emoji": "👍",
-        "count": 1
+        "count": 760
+      },
+      {
+        "emoji": "😁",
+        "count": 167
       }
     ]
   },
@@ -14805,14 +12065,12 @@
     "reactionCount": 2,
     "topReactions": [
       {
-        "id": 10319,
-        "emoji": "🥹",
-        "count": 19
+        "emoji": "🎉",
+        "count": 440
       },
       {
-        "id": 88672,
-        "emoji": "🎉",
-        "count": 18
+        "emoji": "🥹",
+        "count": 460
       }
     ]
   },
@@ -14858,24 +12116,16 @@
     "reactionCount": 56,
     "topReactions": [
       {
-        "id": 82148,
-        "emoji": "😀",
-        "count": 5
-      },
-      {
-        "id": 99162,
-        "emoji": "😀",
-        "count": 20
-      },
-      {
-        "id": 60338,
         "emoji": "🎉",
-        "count": 20
+        "count": 241
       },
       {
-        "id": 99668,
+        "emoji": "😀",
+        "count": 812
+      },
+      {
         "emoji": "👍",
-        "count": 10
+        "count": 621
       }
     ]
   },
@@ -14921,19 +12171,8 @@
     "reactionCount": 4,
     "topReactions": [
       {
-        "id": 2410,
-        "emoji": "👍",
-        "count": 7
-      },
-      {
-        "id": 46152,
-        "emoji": "😀",
-        "count": 4
-      },
-      {
-        "id": 98175,
         "emoji": "🎉",
-        "count": 1
+        "count": 452
       }
     ]
   },
@@ -14979,14 +12218,12 @@
     "reactionCount": 24,
     "topReactions": [
       {
-        "id": 8056,
-        "emoji": "🥹",
-        "count": 17
+        "emoji": "❤️",
+        "count": 576
       },
       {
-        "id": 73087,
-        "emoji": "❤️",
-        "count": 2
+        "emoji": "🥹",
+        "count": 888
       }
     ]
   },
@@ -15022,9 +12259,8 @@
     "reactionCount": 31,
     "topReactions": [
       {
-        "id": 58447,
         "emoji": "😁",
-        "count": 18
+        "count": 130
       }
     ]
   },
@@ -15070,29 +12306,8 @@
     "reactionCount": 28,
     "topReactions": [
       {
-        "id": 18524,
-        "emoji": "🎉",
-        "count": 5
-      },
-      {
-        "id": 46949,
         "emoji": "😁",
-        "count": 16
-      },
-      {
-        "id": 76510,
-        "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 81605,
-        "emoji": "😀",
-        "count": 19
-      },
-      {
-        "id": 66745,
-        "emoji": "🎉",
-        "count": 13
+        "count": 339
       }
     ]
   },
@@ -15117,10 +12332,10 @@
       {
         "id": 65322,
         "recipientId": 21977,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/156/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 79",
+        "content": "Sowon Kim님의 메세지 내용 79",
         "font": "Nanum Gothic",
         "createdAt": "2023-09-13T04:30:55Z"
       }
@@ -15128,19 +12343,16 @@
     "reactionCount": 76,
     "topReactions": [
       {
-        "id": 11821,
         "emoji": "😀",
-        "count": 15
+        "count": 90
       },
       {
-        "id": 35147,
         "emoji": "😁",
-        "count": 1
+        "count": 875
       },
       {
-        "id": 34644,
         "emoji": "🎉",
-        "count": 5
+        "count": 422
       }
     ]
   },
@@ -15155,10 +12367,10 @@
       {
         "id": 37649,
         "recipientId": 67245,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/160/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 84",
+        "content": "Sowon Kim님의 메세지 내용 84",
         "font": "Roboto",
         "createdAt": "2023-05-09T12:36:18Z"
       },
@@ -15186,34 +12398,12 @@
     "reactionCount": 35,
     "topReactions": [
       {
-        "id": 59116,
-        "emoji": "🥹",
-        "count": 1
-      },
-      {
-        "id": 49749,
         "emoji": "😀",
-        "count": 6
+        "count": 254
       },
       {
-        "id": 9760,
-        "emoji": "❤️",
-        "count": 20
-      },
-      {
-        "id": 29620,
-        "emoji": "😀",
-        "count": 17
-      },
-      {
-        "id": 93360,
         "emoji": "🥹",
-        "count": 5
-      },
-      {
-        "id": 55285,
-        "emoji": "🎉",
-        "count": 6
+        "count": 515
       }
     ]
   },
@@ -15259,24 +12449,8 @@
     "reactionCount": 66,
     "topReactions": [
       {
-        "id": 93016,
-        "emoji": "❤️",
-        "count": 5
-      },
-      {
-        "id": 41560,
-        "emoji": "👍",
-        "count": 8
-      },
-      {
-        "id": 62205,
-        "emoji": "👍",
-        "count": 17
-      },
-      {
-        "id": 98001,
         "emoji": "🥹",
-        "count": 4
+        "count": 414
       }
     ]
   },
@@ -15312,34 +12486,16 @@
     "reactionCount": 100,
     "topReactions": [
       {
-        "id": 18600,
         "emoji": "😁",
-        "count": 20
+        "count": 782
       },
       {
-        "id": 69649,
-        "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 61872,
         "emoji": "🎉",
-        "count": 12
+        "count": 204
       },
       {
-        "id": 53627,
-        "emoji": "👍",
-        "count": 3
-      },
-      {
-        "id": 97051,
         "emoji": "❤️",
-        "count": 17
-      },
-      {
-        "id": 91070,
-        "emoji": "🥹",
-        "count": 19
+        "count": 348
       }
     ]
   },
@@ -15385,19 +12541,8 @@
     "reactionCount": 6,
     "topReactions": [
       {
-        "id": 61471,
-        "emoji": "❤️",
-        "count": 17
-      },
-      {
-        "id": 3871,
         "emoji": "👍",
-        "count": 2
-      },
-      {
-        "id": 72869,
-        "emoji": "😀",
-        "count": 8
+        "count": 324
       }
     ]
   },
@@ -15443,34 +12588,12 @@
     "reactionCount": 65,
     "topReactions": [
       {
-        "id": 92606,
-        "emoji": "😁",
-        "count": 4
-      },
-      {
-        "id": 38991,
         "emoji": "👍",
-        "count": 8
+        "count": 399
       },
       {
-        "id": 59355,
-        "emoji": "🥹",
-        "count": 3
-      },
-      {
-        "id": 54969,
-        "emoji": "🥹",
-        "count": 6
-      },
-      {
-        "id": 33347,
-        "emoji": "🥹",
-        "count": 8
-      },
-      {
-        "id": 92921,
         "emoji": "🎉",
-        "count": 13
+        "count": 851
       }
     ]
   },
@@ -15496,24 +12619,16 @@
     "reactionCount": 83,
     "topReactions": [
       {
-        "id": 30441,
-        "emoji": "❤️",
-        "count": 1
-      },
-      {
-        "id": 39751,
-        "emoji": "😁",
-        "count": 20
-      },
-      {
-        "id": 53520,
-        "emoji": "😀",
-        "count": 20
-      },
-      {
-        "id": 10975,
         "emoji": "👍",
-        "count": 7
+        "count": 682
+      },
+      {
+        "emoji": "❤️",
+        "count": 842
+      },
+      {
+        "emoji": "😁",
+        "count": 379
       }
     ]
   },
@@ -15559,19 +12674,8 @@
     "reactionCount": 46,
     "topReactions": [
       {
-        "id": 62030,
-        "emoji": "🎉",
-        "count": 15
-      },
-      {
-        "id": 97843,
-        "emoji": "🎉",
-        "count": 10
-      },
-      {
-        "id": 93058,
         "emoji": "😁",
-        "count": 4
+        "count": 277
       }
     ]
   },
@@ -15617,29 +12721,12 @@
     "reactionCount": 74,
     "topReactions": [
       {
-        "id": 48788,
-        "emoji": "🎉",
-        "count": 3
-      },
-      {
-        "id": 40394,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 22994,
         "emoji": "😁",
-        "count": 16
+        "count": 619
       },
       {
-        "id": 46587,
         "emoji": "🎉",
-        "count": 17
-      },
-      {
-        "id": 83614,
-        "emoji": "🥹",
-        "count": 13
+        "count": 601
       }
     ]
   },
@@ -15654,10 +12741,10 @@
       {
         "id": 7778,
         "recipientId": 37498,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/202/200/200",
         "relationship": "가족",
-        "content": "Suwon Kim님의 메세지 내용 24",
+        "content": "Sowon Kim님의 메세지 내용 24",
         "font": "Pretendard",
         "createdAt": "2023-12-27T07:03:22Z"
       },
@@ -15685,24 +12772,8 @@
     "reactionCount": 86,
     "topReactions": [
       {
-        "id": 3081,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 5953,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 28198,
         "emoji": "😀",
-        "count": 2
-      },
-      {
-        "id": 89135,
-        "emoji": "👍",
-        "count": 5
+        "count": 23
       }
     ]
   },
@@ -15738,9 +12809,8 @@
     "reactionCount": 44,
     "topReactions": [
       {
-        "id": 5603,
         "emoji": "👍",
-        "count": 5
+        "count": 712
       }
     ]
   },
@@ -15786,34 +12856,8 @@
     "reactionCount": 19,
     "topReactions": [
       {
-        "id": 56372,
         "emoji": "😁",
-        "count": 2
-      },
-      {
-        "id": 27688,
-        "emoji": "😀",
-        "count": 12
-      },
-      {
-        "id": 41479,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 84278,
-        "emoji": "👍",
-        "count": 1
-      },
-      {
-        "id": 10391,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 47486,
-        "emoji": "👍",
-        "count": 14
+        "count": 714
       }
     ]
   },
@@ -15859,35 +12903,14 @@
     "reactionCount": 51,
     "topReactions": [
       {
-        "id": 91006,
         "emoji": "😁",
-        "count": 7
-      },
-      {
-        "id": 33237,
-        "emoji": "😀",
-        "count": 9
-      },
-      {
-        "id": 53636,
-        "emoji": "🎉",
-        "count": 12
-      },
-      {
-        "id": 15454,
-        "emoji": "😀",
-        "count": 18
-      },
-      {
-        "id": 14384,
-        "emoji": "❤️",
-        "count": 14
+        "count": 165
       }
     ]
   },
   {
     "id": 12700,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "purple",
     "backgroundImageURL": null,
     "createdAt": "2023-08-18T22:43:12Z",
@@ -15916,10 +12939,10 @@
       {
         "id": 4746,
         "recipientId": 12700,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/260/200/200",
         "relationship": "친구",
-        "content": "Suwon Kim님의 메세지 내용 44",
+        "content": "Sowon Kim님의 메세지 내용 44",
         "font": "Noto Sans",
         "createdAt": "2023-02-17T03:59:23Z"
       }
@@ -15927,34 +12950,12 @@
     "reactionCount": 74,
     "topReactions": [
       {
-        "id": 88984,
-        "emoji": "❤️",
-        "count": 18
-      },
-      {
-        "id": 57596,
-        "emoji": "❤️",
-        "count": 1
-      },
-      {
-        "id": 12377,
         "emoji": "🥹",
-        "count": 17
+        "count": 597
       },
       {
-        "id": 45146,
         "emoji": "❤️",
-        "count": 9
-      },
-      {
-        "id": 53052,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 60303,
-        "emoji": "❤️",
-        "count": 10
+        "count": 681
       }
     ]
   },
@@ -15990,24 +12991,12 @@
     "reactionCount": 9,
     "topReactions": [
       {
-        "id": 5270,
-        "emoji": "🎉",
-        "count": 4
-      },
-      {
-        "id": 42056,
-        "emoji": "🎉",
-        "count": 9
-      },
-      {
-        "id": 79595,
         "emoji": "❤️",
-        "count": 20
+        "count": 756
       },
       {
-        "id": 49566,
         "emoji": "😁",
-        "count": 10
+        "count": 922
       }
     ]
   },
@@ -16053,19 +13042,16 @@
     "reactionCount": 53,
     "topReactions": [
       {
-        "id": 89292,
-        "emoji": "❤️",
-        "count": 4
-      },
-      {
-        "id": 50557,
-        "emoji": "🥹",
-        "count": 14
-      },
-      {
-        "id": 50390,
         "emoji": "🎉",
-        "count": 1
+        "count": 596
+      },
+      {
+        "emoji": "🥹",
+        "count": 907
+      },
+      {
+        "emoji": "❤️",
+        "count": 594
       }
     ]
   },
@@ -16111,9 +13097,8 @@
     "reactionCount": 65,
     "topReactions": [
       {
-        "id": 79656,
         "emoji": "🎉",
-        "count": 14
+        "count": 94
       }
     ]
   },
@@ -16159,14 +13144,8 @@
     "reactionCount": 41,
     "topReactions": [
       {
-        "id": 90464,
         "emoji": "😀",
-        "count": 14
-      },
-      {
-        "id": 30005,
-        "emoji": "😀",
-        "count": 10
+        "count": 176
       }
     ]
   },
@@ -16181,10 +13160,10 @@
       {
         "id": 47661,
         "recipientId": 56031,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/395/200/200",
         "relationship": "동료",
-        "content": "Suwon Kim님의 메세지 내용 62",
+        "content": "Sowon Kim님의 메세지 내용 62",
         "font": "Nanum Gothic",
         "createdAt": "2023-08-20T17:27:35Z"
       },
@@ -16212,14 +13191,12 @@
     "reactionCount": 83,
     "topReactions": [
       {
-        "id": 33533,
         "emoji": "❤️",
-        "count": 11
+        "count": 375
       },
       {
-        "id": 51483,
         "emoji": "🥹",
-        "count": 16
+        "count": 408
       }
     ]
   },
@@ -16265,9 +13242,8 @@
     "reactionCount": 61,
     "topReactions": [
       {
-        "id": 76710,
         "emoji": "👍",
-        "count": 5
+        "count": 665
       }
     ]
   },
@@ -16303,29 +13279,12 @@
     "reactionCount": 97,
     "topReactions": [
       {
-        "id": 82751,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 27780,
-        "emoji": "🥹",
-        "count": 11
-      },
-      {
-        "id": 11937,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 35875,
-        "emoji": "❤️",
-        "count": 9
-      },
-      {
-        "id": 93134,
         "emoji": "😀",
-        "count": 6
+        "count": 951
+      },
+      {
+        "emoji": "❤️",
+        "count": 215
       }
     ]
   },
@@ -16371,24 +13330,8 @@
     "reactionCount": 48,
     "topReactions": [
       {
-        "id": 33044,
-        "emoji": "🥹",
-        "count": 18
-      },
-      {
-        "id": 77894,
-        "emoji": "😁",
-        "count": 4
-      },
-      {
-        "id": 97021,
         "emoji": "🎉",
-        "count": 17
-      },
-      {
-        "id": 94868,
-        "emoji": "🥹",
-        "count": 3
+        "count": 995
       }
     ]
   },
@@ -16434,14 +13377,8 @@
     "reactionCount": 13,
     "topReactions": [
       {
-        "id": 81498,
         "emoji": "❤️",
-        "count": 10
-      },
-      {
-        "id": 39236,
-        "emoji": "❤️",
-        "count": 17
+        "count": 62
       }
     ]
   },
@@ -16487,34 +13424,8 @@
     "reactionCount": 57,
     "topReactions": [
       {
-        "id": 5184,
         "emoji": "👍",
-        "count": 18
-      },
-      {
-        "id": 31068,
-        "emoji": "😁",
-        "count": 8
-      },
-      {
-        "id": 87339,
-        "emoji": "👍",
-        "count": 2
-      },
-      {
-        "id": 79179,
-        "emoji": "❤️",
-        "count": 15
-      },
-      {
-        "id": 2076,
-        "emoji": "😁",
-        "count": 9
-      },
-      {
-        "id": 9962,
-        "emoji": "👍",
-        "count": 15
+        "count": 412
       }
     ]
   },
@@ -16560,24 +13471,12 @@
     "reactionCount": 87,
     "topReactions": [
       {
-        "id": 87641,
-        "emoji": "😁",
-        "count": 12
-      },
-      {
-        "id": 89470,
         "emoji": "😀",
-        "count": 4
+        "count": 356
       },
       {
-        "id": 40031,
-        "emoji": "❤️",
-        "count": 1
-      },
-      {
-        "id": 42953,
         "emoji": "😁",
-        "count": 18
+        "count": 255
       }
     ]
   },
@@ -16623,9 +13522,8 @@
     "reactionCount": 55,
     "topReactions": [
       {
-        "id": 71312,
         "emoji": "❤️",
-        "count": 1
+        "count": 839
       }
     ]
   },
@@ -16671,14 +13569,12 @@
     "reactionCount": 34,
     "topReactions": [
       {
-        "id": 4256,
         "emoji": "👍",
-        "count": 4
+        "count": 367
       },
       {
-        "id": 89759,
         "emoji": "❤️",
-        "count": 3
+        "count": 86
       }
     ]
   },
@@ -16704,19 +13600,12 @@
     "reactionCount": 40,
     "topReactions": [
       {
-        "id": 93310,
-        "emoji": "😁",
-        "count": 4
-      },
-      {
-        "id": 37249,
-        "emoji": "😁",
-        "count": 5
-      },
-      {
-        "id": 73269,
         "emoji": "🥹",
-        "count": 7
+        "count": 607
+      },
+      {
+        "emoji": "😁",
+        "count": 324
       }
     ]
   },
@@ -16762,29 +13651,12 @@
     "reactionCount": 12,
     "topReactions": [
       {
-        "id": 66681,
         "emoji": "🥹",
-        "count": 8
+        "count": 603
       },
       {
-        "id": 67854,
-        "emoji": "😁",
-        "count": 15
-      },
-      {
-        "id": 94387,
-        "emoji": "❤️",
-        "count": 16
-      },
-      {
-        "id": 94338,
         "emoji": "🎉",
-        "count": 20
-      },
-      {
-        "id": 59665,
-        "emoji": "🎉",
-        "count": 8
+        "count": 741
       }
     ]
   },
@@ -16830,29 +13702,12 @@
     "reactionCount": 26,
     "topReactions": [
       {
-        "id": 63913,
-        "emoji": "😀",
-        "count": 8
-      },
-      {
-        "id": 82488,
-        "emoji": "🎉",
-        "count": 6
-      },
-      {
-        "id": 38729,
-        "emoji": "👍",
-        "count": 3
-      },
-      {
-        "id": 79770,
         "emoji": "❤️",
-        "count": 16
+        "count": 356
       },
       {
-        "id": 75631,
         "emoji": "🎉",
-        "count": 5
+        "count": 780
       }
     ]
   },
@@ -16898,34 +13753,16 @@
     "reactionCount": 45,
     "topReactions": [
       {
-        "id": 86657,
         "emoji": "🥹",
-        "count": 10
+        "count": 664
       },
       {
-        "id": 6702,
-        "emoji": "🎉",
-        "count": 11
-      },
-      {
-        "id": 64387,
-        "emoji": "🥹",
-        "count": 7
-      },
-      {
-        "id": 16189,
         "emoji": "😀",
-        "count": 11
+        "count": 205
       },
       {
-        "id": 58652,
         "emoji": "🎉",
-        "count": 2
-      },
-      {
-        "id": 67118,
-        "emoji": "🥹",
-        "count": 5
+        "count": 667
       }
     ]
   },
@@ -16971,34 +13808,16 @@
     "reactionCount": 15,
     "topReactions": [
       {
-        "id": 40353,
-        "emoji": "🥹",
-        "count": 19
-      },
-      {
-        "id": 25637,
-        "emoji": "👍",
-        "count": 17
-      },
-      {
-        "id": 34226,
-        "emoji": "🥹",
-        "count": 4
-      },
-      {
-        "id": 14495,
-        "emoji": "👍",
-        "count": 14
-      },
-      {
-        "id": 96566,
-        "emoji": "❤️",
-        "count": 3
-      },
-      {
-        "id": 2409,
         "emoji": "🎉",
-        "count": 10
+        "count": 963
+      },
+      {
+        "emoji": "❤️",
+        "count": 879
+      },
+      {
+        "emoji": "🥹",
+        "count": 713
       }
     ]
   },
@@ -17044,14 +13863,12 @@
     "reactionCount": 73,
     "topReactions": [
       {
-        "id": 83819,
         "emoji": "😁",
-        "count": 15
+        "count": 12
       },
       {
-        "id": 91850,
         "emoji": "🥹",
-        "count": 2
+        "count": 176
       }
     ]
   },
@@ -17097,25 +13914,18 @@
     "reactionCount": 12,
     "topReactions": [
       {
-        "id": 14335,
         "emoji": "❤️",
-        "count": 10
+        "count": 766
       },
       {
-        "id": 37620,
         "emoji": "😁",
-        "count": 18
-      },
-      {
-        "id": 35030,
-        "emoji": "😁",
-        "count": 18
+        "count": 636
       }
     ]
   },
   {
     "id": 31249,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "blue",
     "backgroundImageURL": null,
     "createdAt": "2023-05-16T17:41:45Z",
@@ -17134,10 +13944,10 @@
       {
         "id": 54855,
         "recipientId": 31249,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/188/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 84",
+        "content": "Sowon Kim님의 메세지 내용 84",
         "font": "Pretendard",
         "createdAt": "2023-07-01T14:34:04Z"
       }
@@ -17145,25 +13955,18 @@
     "reactionCount": 87,
     "topReactions": [
       {
-        "id": 64819,
-        "emoji": "😀",
-        "count": 16
-      },
-      {
-        "id": 14849,
-        "emoji": "😀",
-        "count": 4
-      },
-      {
-        "id": 30100,
         "emoji": "🎉",
-        "count": 15
+        "count": 697
+      },
+      {
+        "emoji": "😀",
+        "count": 765
       }
     ]
   },
   {
     "id": 87008,
-    "name": "Suwon Kim",
+    "name": "Sowon Kim",
     "backgroundColor": "purple",
     "backgroundImageURL": null,
     "createdAt": "2023-05-31T18:24:49Z",
@@ -17182,10 +13985,10 @@
       {
         "id": 29069,
         "recipientId": 87008,
-        "sender": "Suwon Kim",
+        "sender": "Sowon Kim",
         "profileImageURL": "https://picsum.photos/id/25/200/200",
         "relationship": "지인",
-        "content": "Suwon Kim님의 메세지 내용 19",
+        "content": "Sowon Kim님의 메세지 내용 19",
         "font": "Roboto",
         "createdAt": "2024-01-14T03:59:30Z"
       },
@@ -17203,24 +14006,8 @@
     "reactionCount": 42,
     "topReactions": [
       {
-        "id": 86769,
-        "emoji": "❤️",
-        "count": 10
-      },
-      {
-        "id": 17942,
-        "emoji": "👍",
-        "count": 8
-      },
-      {
-        "id": 88772,
         "emoji": "😀",
-        "count": 5
-      },
-      {
-        "id": 69231,
-        "emoji": "👍",
-        "count": 15
+        "count": 832
       }
     ]
   }

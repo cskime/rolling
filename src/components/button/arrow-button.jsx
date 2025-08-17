@@ -10,7 +10,7 @@ const arrowImg = {
 };
 
 const StyledArrowButton = styled.button`
-  background: none;
+  background: #ffffff;
   border: 1px solid ${Colors.gray(300)};
   width: 40px;
   height: 40px;
