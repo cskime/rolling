@@ -59,10 +59,6 @@ const DefaultAvatar = styled.div`
   cursor: pointer;
 `;
 
-const TextEditorWrapper = styled.div`
-  width: 100%;
-`;
-
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 150px;
@@ -162,7 +158,7 @@ function SendMessagePage() {
         <SendTitle>상대와의 관계</SendTitle>
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
-          dropdownId="dropdown1"
+          dropdownId="realtionship-dropdown"
           placeholder={relationOption}
           value={relationOption}
           options={["친구", "지인", "동료", "가족"]}
@@ -171,23 +167,24 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>내용을 입력해 주세요</SendTitle>
-        <TextEditorWrapper>
+        <div>
           <TextEditor
             style={{
               height: "300px",
               marginBottom: "20px",
+              width: "100%",
             }}
             value={content}
             onChange={(value) => setContent(value)}
             font={fontOption}
           />
-        </TextEditorWrapper>
+        </div>
       </Wrapper>
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
-          dropdownId="dropdown2"
+          dropdownId="font-option-dropdown"
           placeholder={fontOption}
           value={fontOption}
           options={[
