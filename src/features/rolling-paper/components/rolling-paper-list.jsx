@@ -32,15 +32,16 @@ const CardContainer = styled.div`
 
 const CardItem = styled.div`
   width: 275px;
-  height: 260px;
+  min-height: 260px;
   border-radius: 16px;
   text-align: left;
   padding: 30px 24px 20px 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 
-  display: grid;
-  grid-template-rows: 1fr 1fr auto;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
 
   background: ${(props) =>
     props.$backgroundImageURL
@@ -153,8 +154,54 @@ const MessageCountText = styled.span`
   }
 `;
 
-const CardEmoji = styled.div`
+const CardEmojiBox = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 17px;
+  margin-top: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+`;
+
+const CardEmoji = styled.span`
+  background-color: rgba(0, 0, 0, 0.54);
+  border-radius: 32px;
+  color: #ffffff;
+  padding: 8px 12px;
+  margin-right: 8px;
+
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+
+  min-width: ${(props) => (props.$isLong ? "60px" : "auto")};
+  max-width: ${(props) => (props.$isLong ? "44px" : "none")};
+
+  transition: max-width 0.3s ease, z-index 0s;
+
+  &:hover {
+    max-width: 200px;
+    z-index: 100;
+    position: relative;
+  }
+`;
+
+const HiddenCount = styled.span`
+  display: inline;
+
+  .show-on-hover {
+    display: none;
+  }
+
+  ${CardEmoji}:hover & {
+    .show-on-hover {
+      display: inline;
+    }
+    .hide-on-hover {
+      display: none;
+    }
+  }
 `;
 
 const NextButtonWrapper = styled.div`
@@ -206,7 +253,26 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
           >
             <em>{item.messageCount}</em>명이 작성했어요!
           </MessageCountText>
-          <CardEmoji>{item.topReactions.map((emoji) => emoji.emoji)}</CardEmoji>
+          <CardEmojiBox>
+            {item.topReactions.map((emoji, index) => {
+              const countLength = emoji.count.toString().length;
+              const isLongCount = countLength > 2;
+
+              return (
+                <CardEmoji key={index} $isLong={isLongCount}>
+                  {emoji.emoji}
+                  {isLongCount ? (
+                    <HiddenCount>
+                      <span className="hide-on-hover"> +</span>
+                      <span className="show-on-hover"> {emoji.count}</span>
+                    </HiddenCount>
+                  ) : (
+                    ` ${emoji.count}`
+                  )}
+                </CardEmoji>
+              );
+            })}
+          </CardEmojiBox>
         </CardItem>
       ))}
       {currentPage > 0 && (
