@@ -201,7 +201,12 @@ function TestPage() {
           placeholder="Placeholder"
           value={option2}
           error={dropdown2Error}
-          options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          options={[
+            { title: "Option 1", fontFamily: "system-ui" },
+            { title: "Option 2", fontFamily: "Roboto" },
+            { title: "Option 3", fontFamily: "Helvetica Neue" },
+            { title: "Option 4", fontFamily: "Segoe UI" },
+          ]}
           onSelect={handleDropdownSelect2}
         />
       </div>
