@@ -6,11 +6,11 @@ import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
 import CreatePostPage from "./pages/create-post-page";
 import MainPage from "./pages/main-page";
-import MessagePage from "./pages/rolling-paper-list-page";
-import RecipientPostPage from "./pages/recipient-post-page";
+import MessagePage from "./pages/message-list";
+import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
-import TestPage from "./pages/test-page";
 import SendPage from "./pages/send-page";
+import TestPage from "./pages/test-page";
 
 function Provider({ children }) {
   return (
@@ -60,14 +60,7 @@ function App() {
                 </ContentLayout>
               }
             />
-            <Route
-              path=":id"
-              element={
-                <ContentLayout>
-                  <RecipientPostPage />
-                </ContentLayout>
-              }
-            />
+            <Route path=":id" element={<MessagesPage />} />
           </Route>
           <Route path="/test-components" element={<TestPage />} />
           <Route path="/list" element={<MessagePage />} />
