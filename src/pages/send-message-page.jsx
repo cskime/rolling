@@ -88,10 +88,12 @@ function SendMessagePage() {
     }
   };
 
+  const trimmed = name.trim();
+
   const handleBlur = () => {
-    if (name.trim() === "") {
+    if (trimmed === "") {
       setNameError("값을 입력해 주세요");
-    } else if (name !== name.trim()) {
+    } else if (trimmed !== name.trim()) {
       setNameError("공백 없이 입력해 주세요"); // 텍스트 앞 뒤 공백 에러 처리(임시)
     }
   };
@@ -114,7 +116,7 @@ function SendMessagePage() {
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = name.trim() !== "";
+  const canCreate = trimmed !== "";
 
   return (
     <SendContainer>
