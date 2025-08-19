@@ -131,8 +131,9 @@ function DropdownInput({
               <DropdownOption
                 key={`${index}-${option}`}
                 onClick={handleOptionClick}
+                style={{ fontFamily: option.fontFamily }}
               >
-                {option}
+                {option.title ?? option}
               </DropdownOption>
             ))}
           </Dropdown>
