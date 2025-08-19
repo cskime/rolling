@@ -1,10 +1,12 @@
-import { useContext, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
-import PopoverContext from "../components/popover/popover-context";
+import { usePortal } from "./use-portal";
+
+const DEFAULT_POSITION = { top: 0, left: 0, right: 0 };
 
 function calculatePopoverPosition(target, alignment) {
   if (!target) {
-    return { top: 0, left: 0, right: 0 };
+    return DEFAULT_POSITION;
   }
 
   const targetRect = target.getBoundingClientRect();
@@ -24,44 +26,48 @@ function calculatePopoverPosition(target, alignment) {
   return position;
 }
 
-function usePopover() {
-  const { showsPopover, setShowsPopover } = useContext(PopoverContext);
-  const [popoverPosition, setPopoverPosition] = useState();
-  const [target, setTarget] = useState();
-  const [alignment, setAlignment] = useState(POPOVER_ALIGNMENT.left);
-
-  const openPopopver = ({ target, alignment }) => {
-    updatePopoverPosition(target, alignment);
-    setTarget(target);
-    setAlignment(alignment);
-    setShowsPopover(true);
-  };
-
-  const closePopover = () => {
-    setShowsPopover(false);
-  };
+function usePopover({ id, type, alignment }) {
+  const key = `${type}_${id}`;
+  const { isOpen, setIsOpen } = usePortal({ key });
+  const [position, setPopoverPosition] = useState(DEFAULT_POSITION);
+  const targetRef = useRef();
 
   const updatePopoverPosition = (target, alignment) => {
     const position = calculatePopoverPosition(target, alignment);
     setPopoverPosition(position);
   };
 
+  const handleTargetClick = (shows) => {
+    updatePopoverPosition(targetRef.current, alignment);
+    setIsOpen(shows);
+  };
+
   useEffect(() => {
-    if (!showsPopover) return;
+    if (!isOpen) return;
 
     function handleWindowResize() {
-      updatePopoverPosition(target, alignment);
+      updatePopoverPosition(targetRef.current, alignment);
+    }
+
+    function handleWindowScroll() {
+      updatePopoverPosition(targetRef.current, alignment);
     }
 
     window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, [showsPopover, target, alignment]);
+    window.addEventListener("scroll", handleWindowScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
+  }, [isOpen, targetRef, alignment]);
 
   return {
-    popoverPosition,
-    showsPopover,
-    openPopopver,
-    closePopover,
+    targetRef,
+    position,
+    showsPopover: isOpen,
+    setShowsPopover: setIsOpen,
+    handleTargetClick,
   };
 }
 

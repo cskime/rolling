@@ -1,7 +1,9 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import DropdownContext from "../components/text-field/dropdown-input/dropdown-context";
+import { useEffect, useRef, useState } from "react";
+import { usePortal } from "./use-portal";
 
-function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
+const DEFAULT_RECT = { x: 0, y: 0, width: 0 };
+
+function makeRect({ x, y, width }) {
   return {
     origin: { x, y },
     size: { width },
@@ -10,7 +12,7 @@ function makeRect({ x, y, width } = { x: 0, y: 0, width: 0 }) {
 
 function calculateDropdownRect(target) {
   if (!target) {
-    return makeRect();
+    return DEFAULT_RECT;
   }
 
   const targetRect = target.getBoundingClientRect();
@@ -24,17 +26,11 @@ function calculateDropdownRect(target) {
 }
 
 function useDropdown({ id, type }) {
-  const { dropdownState, setDropdownState } = useContext(DropdownContext);
-  const [dropdownRect, setDropdownRect] = useState();
+  const key = `${type}_${id}`;
+  const { isOpen, setIsOpen } = usePortal({ key });
+  const [dropdownRect, setDropdownRect] = useState(DEFAULT_RECT);
 
   const targetRef = useRef();
-
-  const key = `${type}_${id}`;
-  const showsDropdown = dropdownState[key] ?? false;
-
-  const setShowsDropdown = (shows) => {
-    setDropdownState((prev) => ({ ...prev, [key]: shows }));
-  };
 
   const updateDropdownLayout = (target) => {
     const rect = calculateDropdownRect(target);
@@ -43,25 +39,34 @@ function useDropdown({ id, type }) {
 
   const handleTargetClick = (shows) => {
     updateDropdownLayout(targetRef.current);
-    setShowsDropdown(shows);
+    setIsOpen(shows);
   };
 
   useEffect(() => {
-    if (!showsDropdown) return;
+    if (!isOpen) return;
 
     function handleWindowResize() {
       updateDropdownLayout(targetRef.current);
     }
 
+    function handleWindowScroll() {
+      updateDropdownLayout(targetRef.current);
+    }
+
     window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, [showsDropdown, targetRef]);
+    window.addEventListener("scroll", handleWindowScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
+  }, [isOpen, targetRef]);
 
   return {
     targetRef,
     dropdownRect,
-    showsDropdown,
-    setShowsDropdown,
+    showsDropdown: isOpen,
+    setShowsDropdown: setIsOpen,
     handleTargetClick,
   };
 }

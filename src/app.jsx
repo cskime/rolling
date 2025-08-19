@@ -1,24 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ModalProvider from "./components/modal/modal-provider";
-import PopoverProvider from "./components/popover/popover-provider";
-import DropdownProvider from "./components/text-field/dropdown-input/dropdown-provider";
+import PortalProvider from "./components/portal/portal-provider";
 import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
 import CreatePostPage from "./pages/create-post-page";
 import MainPage from "./pages/main-page";
 import MessagePage from "./pages/message-list";
-import RecipientPostPage from "./pages/recipient-post-page";
+import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestPage from "./pages/test-page";
 
 function Provider({ children }) {
-  return (
-    <ModalProvider>
-      <PopoverProvider>
-        <DropdownProvider>{children}</DropdownProvider>
-      </PopoverProvider>
-    </ModalProvider>
-  );
+  return <PortalProvider>{children}</PortalProvider>;
 }
 
 function App() {
@@ -59,14 +51,7 @@ function App() {
                 </ContentLayout>
               }
             />
-            <Route
-              path=":id"
-              element={
-                <ContentLayout>
-                  <RecipientPostPage />
-                </ContentLayout>
-              }
-            />
+            <Route path=":id" element={<MessagesPage />} />
           </Route>
           <Route path="/test-components" element={<TestPage />} />
           <Route path="/list" element={<MessagePage />} />

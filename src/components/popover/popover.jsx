@@ -1,5 +1,6 @@
-import { createPortal } from "react-dom";
 import styled from "styled-components";
+import { usePopover } from "../../hooks/use-popover";
+import Portal from "../portal/portal";
 
 const Container = styled.div`
   position: fixed;
@@ -8,10 +9,6 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
 `;
-
-function PopoverPortal({ children }) {
-  return createPortal(children, document.getElementById("popover"));
-}
 
 const StyledPopover = styled.div`
   position: absolute;
@@ -22,17 +19,38 @@ const StyledPopover = styled.div`
   border: 1px solid #b6b6b6;
   background-color: white;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 `;
 
-function Popover({ isOpen, onClose, position, children }) {
+function Popover({ id, alignment, action, children }) {
+  const {
+    targetRef,
+    position,
+    showsPopover,
+    setShowsPopover,
+    handleTargetClick,
+  } = usePopover({
+    id,
+    type: "popover",
+    alignment,
+  });
+
+  const handleClick = () => handleTargetClick(true);
+  const handleBackdropClick = () => setShowsPopover(false);
+
   return (
-    isOpen && (
-      <PopoverPortal>
-        <Container onClick={onClose}>
-          <StyledPopover $position={position}>{children}</StyledPopover>
-        </Container>
-      </PopoverPortal>
-    )
+    <>
+      <div onClick={handleClick} ref={targetRef}>
+        {action}
+      </div>
+      {showsPopover && (
+        <Portal id="popover">
+          <Container onClick={handleBackdropClick}>
+            <StyledPopover $position={position}>{children}</StyledPopover>
+          </Container>
+        </Portal>
+      )}
+    </>
   );
 }
 

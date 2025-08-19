@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import smileAddImage from "../assets/ic-face-smile-add.svg";
 import Avatar from "../components/avatar/avatar";
@@ -22,8 +22,6 @@ import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
-import { useModal } from "../hooks/use-modal";
-import { usePopover } from "../hooks/use-popover";
 import { useToast } from "../hooks/use-toast";
 
 const OutlinedHeader = styled(Header)`
@@ -49,29 +47,6 @@ function TestPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
-
-  /* Modal */
-  const { showsModal, setShowsModal } = useModal();
-  const handleModalClick = () => setShowsModal(true);
-
-  /* Popover */
-  const { popoverPosition, showsPopover, openPopopver, closePopover } =
-    usePopover();
-  const popoverLeftRef = useRef();
-  const popoverRightRef = useRef();
-
-  const handlePopoverLeftClick = () => {
-    openPopopver({
-      target: popoverLeftRef.current,
-      alignment: POPOVER_ALIGNMENT.left,
-    });
-  };
-  const handlePopoverRightClick = () => {
-    openPopopver({
-      target: popoverRightRef.current,
-      alignment: POPOVER_ALIGNMENT.right,
-    });
-  };
 
   return (
     <div
@@ -201,7 +176,12 @@ function TestPage() {
           placeholder="Placeholder"
           value={option2}
           error={dropdown2Error}
-          options={["Option 1", "Option 2", "Option 3", "Option 4"]}
+          options={[
+            { title: "Option 1", fontFamily: "system-ui" },
+            { title: "Option 2", fontFamily: "Roboto" },
+            { title: "Option 3", fontFamily: "Helvetica Neue" },
+            { title: "Option 4", fontFamily: "Segoe UI" },
+          ]}
           onSelect={handleDropdownSelect2}
         />
       </div>
@@ -219,36 +199,36 @@ function TestPage() {
         )}
       </div>
       <div>
-        <PrimaryButton
-          size={BUTTON_SIZE.small}
-          title="Show Modal"
-          onClick={handleModalClick}
+        <Modal
+          id="user"
+          user={{ name: "김동훈", profileImage: null }}
+          date={new Date("2023-07-08")}
+          content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
+          action={<PrimaryButton size={BUTTON_SIZE.small} title="Show Modal" />}
         />
-        {showsModal && (
-          <Modal
-            user={{ name: "김동훈" }}
-            date={new Date("2023-07-08")}
-            content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
-          />
-        )}
       </div>
       <div style={{ display: "flex", gap: "16px" }}>
-        <PrimaryButton
-          size={BUTTON_SIZE.small}
-          title="Show Popover on Left"
-          onClick={handlePopoverLeftClick}
-          ref={popoverLeftRef}
-        />
-        <PrimaryButton
-          size={BUTTON_SIZE.small}
-          title="Show Popover on Right"
-          onClick={handlePopoverRightClick}
-          ref={popoverRightRef}
-        />
         <Popover
-          isOpen={showsPopover}
-          onClose={closePopover}
-          position={popoverPosition}
+          id="left-popover"
+          alignment={POPOVER_ALIGNMENT.left}
+          action={
+            <PrimaryButton
+              size={BUTTON_SIZE.small}
+              title="Show Popover on Left"
+            />
+          }
+        >
+          <h1>This is Popover.</h1>
+        </Popover>
+        <Popover
+          id="right-popover"
+          alignment={POPOVER_ALIGNMENT.right}
+          action={
+            <PrimaryButton
+              size={BUTTON_SIZE.small}
+              title="Show Popover on Right"
+            />
+          }
         >
           <h1>This is Popover.</h1>
         </Popover>

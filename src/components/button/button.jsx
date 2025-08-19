@@ -192,9 +192,15 @@ const Icon = styled.div`
   }
 `;
 
-function OutlinedButton({ title, icon, size, ...props }) {
+function OutlinedButton({ className, title, icon, size, ...props }) {
   return (
-    <StyledOutlinedButton $size={size} $title={title} $icon={icon} {...props}>
+    <StyledOutlinedButton
+      className={className}
+      $size={size}
+      $title={title}
+      $icon={icon}
+      {...props}
+    >
       {icon && size !== BUTTON_SIZE.large ? (
         <IconTitleContent $size={size}>
           <Icon $size={size} $disabled={props.disabled}>

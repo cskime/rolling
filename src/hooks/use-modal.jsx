@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import ModalContext from "../components/modal/modal-context";
+import { usePortal } from "./use-portal";
 
-function useModal() {
-  const { showsModal, setShowsModal } = useContext(ModalContext);
-  return { showsModal, setShowsModal };
+function useModal({ id, type }) {
+  const key = `${type}_${id}`;
+  const { isOpen, setIsOpen } = usePortal({ key });
+  return { showsModal: isOpen, setShowsModal: setIsOpen };
 }
 
 export { useModal };
