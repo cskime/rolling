@@ -7,10 +7,11 @@ import {
 } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import ToggleButton from "../../../components/button/toggle-button";
+import EmojiBadge from "../../../components/badge/emoji-badge";
 
 // import React, { useEffect, useState } from "react";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const backgroundColors = {
   beige: "#FFE2AD",
@@ -21,26 +22,26 @@ const backgroundColors = {
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: 275px 275px 275px 275px;
+  grid-template-columns: repeat(4, 275px);
   gap: 20px;
   width: fit-content;
   font-family: Pretendard;
 
   position: relative;
-  overflow: visible;
 `;
 
 const CardItem = styled.div`
   width: 275px;
-  height: 260px;
+  min-height: 260px;
   border-radius: 16px;
   text-align: left;
   padding: 30px 24px 20px 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 
-  display: grid;
-  grid-template-rows: 1fr 1fr auto;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
 
   background: ${(props) =>
     props.$backgroundImageURL
@@ -55,58 +56,60 @@ const CardItem = styled.div`
     content: "";
     position: absolute;
     z-index: 0;
-    ${(props) => {
-      if (!props.$backgroundImageURL) {
-        if (
-          props.$backgroundColor === "purple" ||
-          props.$backgroundColor === "green"
-        ) {
-          return `
-              width: 336px;
-              height: 169px;
-              background-color: ${
-                props.$backgroundColor === "purple"
-                  ? "rgba(220,185,255,0.4)"
-                  : "rgba(155, 226, 130, 0.3)"
-              };
-              border-radius: 90.5px;
-              top: 124px;
-              left: 133px;
-            `;
-        } else if (props.$backgroundColor === "beige") {
-          return `
-              width: 332px;
-              height: 318px;
-              border-radius: 51px;
-              background-color: #ffd382;
-              top: 124px;
-              left: 154px;
-            `;
-        } else if (props.$backgroundColor === "blue") {
-          const svgString = `<svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M74.4299 16.6978C88.1712 -5.00283 119.829 -5.00284 133.57 16.6978L202.482 125.526C217.239 148.829 200.495 179.25 172.912 179.25H35.0878C7.5049 179.25 -9.23877 148.829 5.51768 125.526L74.4299 16.6978Z" fill="#9DDDFF"/></svg>`;
-          const encodedSvg = encodeURIComponent(svgString);
-
-          return `
-            width: 170px;
-            height: 200px;
-            background-image: url("data:image/svg+xml,${encodedSvg}");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            top: 108px;
-            left: 113px;
-          `;
-        }
-      }
-      return "";
+    ${({ $backgroundImageURL, $backgroundColor }) => {
+      return $backgroundImageURL ? "" : polygonStyle[$backgroundColor];
     }}
-  }
 
   & > * {
     position: relative;
     z-index: 1;
   }
 `;
+
+const ellipseStyle = css`
+  width: 336px;
+  height: 169px;
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor === "purple"
+      ? "rgba(220,185,255,0.4)"
+      : "rgba(155, 226, 130, 0.3)"};
+  border-radius: 90.5px;
+  top: 124px;
+  left: 133px;
+`;
+
+const roundedRectangleStyle = css`
+  width: 332px;
+  height: 318px;
+  border-radius: 51px;
+  background-color: #ffd382;
+  top: 124px;
+  left: 154px;
+`;
+
+function getTriangleBackgroundImage() {
+  const svgString = `<svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M74.4299 16.6978C88.1712 -5.00283 119.829 -5.00284 133.57 16.6978L202.482 125.526C217.239 148.829 200.495 179.25 172.912 179.25H35.0878C7.5049 179.25 -9.23877 148.829 5.51768 125.526L74.4299 16.6978Z" fill="#9DDDFF"/></svg>`;
+  const encodedSvg = encodeURIComponent(svgString);
+  return `url("data:image/svg+xml,${encodedSvg}")`;
+}
+
+const roundedTriangleStyle = css`
+  width: 170px;
+  height: 200px;
+  background-image: ${getTriangleBackgroundImage};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 108px;
+  left: 113px;
+`;
+
+const polygonStyle = {
+  beige: roundedRectangleStyle,
+  purple: ellipseStyle,
+  green: ellipseStyle,
+  blue: roundedTriangleStyle,
+};
 
 const CardTitle = styled.h2`
   margin: 0;
@@ -153,8 +156,55 @@ const MessageCountText = styled.span`
   }
 `;
 
-const CardEmoji = styled.div`
+const CardEmojiBox = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 17px;
+  margin-top: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  z-index: 2;
+`;
+
+const CardEmoji = styled.span`
+  background-color: rgba(0, 0, 0, 0.54);
+  border-radius: 32px;
+  color: #ffffff;
+  padding: 8px 12px;
+  margin-right: 8px;
+
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+
+  min-width: ${(props) => (props.$isLong ? "60px" : "auto")};
+  max-width: ${(props) => (props.$isLong ? "44px" : "none")};
+
+  transition: max-width 0.3s ease, z-index 0s;
+
+  &:hover {
+    max-width: 200px;
+    z-index: 100;
+    position: relative;
+  }
+`;
+
+const HiddenCount = styled.span`
+  display: inline;
+
+  .show-on-hover {
+    display: none;
+  }
+
+  ${CardEmoji}:hover & {
+    .show-on-hover {
+      display: inline;
+    }
+    .hide-on-hover {
+      display: none;
+    }
+  }
 `;
 
 const NextButtonWrapper = styled.div`
@@ -206,7 +256,32 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
           >
             <em>{item.messageCount}</em>명이 작성했어요!
           </MessageCountText>
-          <CardEmoji>{item.topReactions.map((emoji) => emoji.emoji)}</CardEmoji>
+          <CardEmojiBox>
+            {item.topReactions.map((emoji, index) => {
+              const countLength = emoji.count.toString().length;
+              const isLongCount = countLength > 2;
+
+              return (
+                // <EmojiBadge
+                //   key={index}
+                //   emoji={emoji.emoji}
+                //   count={emoji.count}
+                // />
+
+                <CardEmoji key={index} $isLong={isLongCount}>
+                  {emoji.emoji}
+                  {isLongCount ? (
+                    <HiddenCount>
+                      <span className="hide-on-hover"> +</span>
+                      <span className="show-on-hover"> {emoji.count}</span>
+                    </HiddenCount>
+                  ) : (
+                    ` ${emoji.count}`
+                  )}
+                </CardEmoji>
+              );
+            })}
+          </CardEmojiBox>
         </CardItem>
       ))}
       {currentPage > 0 && (
