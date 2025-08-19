@@ -1,6 +1,6 @@
-import { createPortal } from "react-dom";
 import styled from "styled-components";
 import Colors from "../../color/colors";
+import Portal from "../../portal/portal";
 
 const BACKDROP_CLASS_NAME = "dropdown-backdrop";
 
@@ -44,12 +44,8 @@ const StyledDropdown = styled.div`
 `;
 
 function Dropdown({ children, origin, size, onClose }) {
-  const DropdownPortal = ({ children }) => {
-    return createPortal(children, document.getElementById("dropdown"));
-  };
-
   return (
-    <DropdownPortal>
+    <Portal id="dropdown">
       <DropdownContainer>
         <DropdownBackdrop className={BACKDROP_CLASS_NAME} onClick={onClose}>
           <DropdownContent>
@@ -59,7 +55,7 @@ function Dropdown({ children, origin, size, onClose }) {
           </DropdownContent>
         </DropdownBackdrop>
       </DropdownContainer>
-    </DropdownPortal>
+    </Portal>
   );
 }
 

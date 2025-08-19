@@ -1,4 +1,3 @@
-import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { useModal } from "../../hooks/use-modal";
 import { formatDate } from "../../utils/formatter";
@@ -8,6 +7,7 @@ import BADGE_TYPE from "../badge/badge-type";
 import { PrimaryButton } from "../button/button";
 import BUTTON_SIZE from "../button/button-size";
 import Colors from "../color/colors";
+import Portal from "../portal/portal";
 
 /* UserInfo */
 
@@ -47,10 +47,10 @@ const StyledUserProfile = styled.div`
   gap: 16px;
 `;
 
-function UserProfile({ profileImg, name }) {
+function UserProfile({ profileImage, name }) {
   return (
     <StyledUserProfile>
-      <Avatar source={profileImg} />
+      <Avatar source={profileImage} />
       <UserInfo name={name} type={BADGE_TYPE.coworker} />
     </StyledUserProfile>
   );
@@ -77,11 +77,11 @@ const StyledHeader = styled.div`
   }
 `;
 
-function Header({ profileImg, name, date }) {
+function Header({ profileImage, name, date }) {
   return (
     <StyledHeader>
       <div>
-        <UserProfile profileImg={profileImg} name={name} />
+        <UserProfile profileImage={profileImage} name={name} />
         <Date>{formatDate(date, ".")}</Date>
       </div>
     </StyledHeader>
@@ -140,29 +140,38 @@ const ModalContainer = styled.div`
   align-items: center;
 `;
 
-function Modal({ user, date, content }) {
-  const { setShowsModal } = useModal();
+function Modal({ id, user, date, content, action }) {
+  const { showsModal, setShowsModal } = useModal({
+    id: id,
+    type: "modal",
+  });
 
-  const ModalPortal = ({ children }) => {
-    return createPortal(children, document.getElementById("modal"));
-  };
-
+  const handleClick = () => setShowsModal(true);
   const handleConfirmClick = () => setShowsModal(false);
 
   return (
-    <ModalPortal>
-      <ModalContainer>
-        <StyledModal>
-          <Header profileImg={user.profileImg} name={user.name} date={date} />
-          <Content>{content}</Content>
-          <PrimaryButton
-            size={BUTTON_SIZE.medium}
-            title="확인"
-            onClick={handleConfirmClick}
-          />
-        </StyledModal>
-      </ModalContainer>
-    </ModalPortal>
+    <>
+      <div onClick={handleClick}>{action}</div>
+      {showsModal && (
+        <Portal id="modal">
+          <ModalContainer>
+            <StyledModal>
+              <Header
+                profileImage={user.profileImage}
+                name={user.name}
+                date={date}
+              />
+              <Content>{content}</Content>
+              <PrimaryButton
+                size={BUTTON_SIZE.medium}
+                title="확인"
+                onClick={handleConfirmClick}
+              />
+            </StyledModal>
+          </ModalContainer>
+        </Portal>
+      )}
+    </>
   );
 }
 
