@@ -7,6 +7,7 @@ import {
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
+import { useNavigate } from "react-router";
 
 import React, { useEffect, useState } from "react";
 // import axiosInstance from "../api/axios-instance";
@@ -17,6 +18,7 @@ import RollingPaperList from "../features/rolling-paper/components/rolling-paper
 
 const TopContainer = styled.div`
   text-align: center;
+  margin-top: 50px;
 `;
 
 const CardSection = styled.section`
@@ -43,6 +45,8 @@ function getCachedImage(url) {
 }
 
 function ShowMessageList() {
+  const navigate = useNavigate();
+
   const [testData, setTestData] = useState([]);
   const [popularDataList, setPopularDataList] = useState([]);
   const [recentDataList, setRecentDataList] = useState([]);
@@ -51,6 +55,10 @@ function ShowMessageList() {
   const [popularrecentShowCards, setPopularrecentShowCards] = useState([]);
   const [recentShowCards, setRecentShowCards] = useState([]);
   const cardCount = 4;
+
+  const handleMakingButton = () => {
+    navigate("/post");
+  };
 
   useEffect(() => {
     setTestData(testDataFile);
@@ -141,7 +149,11 @@ function ShowMessageList() {
           />
         </CardSection>
       </article>
-      <MakingButton size={BUTTON_SIZE.large} title="나도 만들어보기" />
+      <MakingButton
+        size={BUTTON_SIZE.large}
+        title="나도 만들어보기"
+        onClick={handleMakingButton}
+      />
     </TopContainer>
   );
 }
