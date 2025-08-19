@@ -92,8 +92,8 @@ function SendMessagePage() {
 
   const handleBlur = () => {
     if (trimmed === "") {
-      setNameError("값을 입력해 주세요");
-    } else if (trimmed !== name.trim()) {
+      setNameError("이름을 입력해 주세요");
+    } else if (trimmed !== name) {
       setNameError("공백 없이 입력해 주세요"); // 텍스트 앞 뒤 공백 에러 처리(임시)
     }
   };
