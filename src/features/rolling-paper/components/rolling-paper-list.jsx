@@ -7,10 +7,11 @@ import {
 } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import ToggleButton from "../../../components/button/toggle-button";
+import EmojiBadge from "../../../components/badge/emoji-badge";
 
 // import React, { useEffect, useState } from "react";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const backgroundColors = {
   beige: "#FFE2AD",
@@ -21,13 +22,12 @@ const backgroundColors = {
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: 275px 275px 275px 275px;
+  grid-template-columns: repeat(4, 275px);
   gap: 20px;
   width: fit-content;
   font-family: Pretendard;
 
   position: relative;
-  overflow: visible;
 `;
 
 const CardItem = styled.div`
@@ -56,58 +56,60 @@ const CardItem = styled.div`
     content: "";
     position: absolute;
     z-index: 0;
-    ${(props) => {
-      if (!props.$backgroundImageURL) {
-        if (
-          props.$backgroundColor === "purple" ||
-          props.$backgroundColor === "green"
-        ) {
-          return `
-              width: 336px;
-              height: 169px;
-              background-color: ${
-                props.$backgroundColor === "purple"
-                  ? "rgba(220,185,255,0.4)"
-                  : "rgba(155, 226, 130, 0.3)"
-              };
-              border-radius: 90.5px;
-              top: 124px;
-              left: 133px;
-            `;
-        } else if (props.$backgroundColor === "beige") {
-          return `
-              width: 332px;
-              height: 318px;
-              border-radius: 51px;
-              background-color: #ffd382;
-              top: 124px;
-              left: 154px;
-            `;
-        } else if (props.$backgroundColor === "blue") {
-          const svgString = `<svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M74.4299 16.6978C88.1712 -5.00283 119.829 -5.00284 133.57 16.6978L202.482 125.526C217.239 148.829 200.495 179.25 172.912 179.25H35.0878C7.5049 179.25 -9.23877 148.829 5.51768 125.526L74.4299 16.6978Z" fill="#9DDDFF"/></svg>`;
-          const encodedSvg = encodeURIComponent(svgString);
-
-          return `
-            width: 170px;
-            height: 200px;
-            background-image: url("data:image/svg+xml,${encodedSvg}");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            top: 108px;
-            left: 113px;
-          `;
-        }
-      }
-      return "";
+    ${({ $backgroundImageURL, $backgroundColor }) => {
+      return $backgroundImageURL ? "" : polygonStyle[$backgroundColor];
     }}
-  }
 
   & > * {
     position: relative;
     z-index: 1;
   }
 `;
+
+const ellipseStyle = css`
+  width: 336px;
+  height: 169px;
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor === "purple"
+      ? "rgba(220,185,255,0.4)"
+      : "rgba(155, 226, 130, 0.3)"};
+  border-radius: 90.5px;
+  top: 124px;
+  left: 133px;
+`;
+
+const roundedRectangleStyle = css`
+  width: 332px;
+  height: 318px;
+  border-radius: 51px;
+  background-color: #ffd382;
+  top: 124px;
+  left: 154px;
+`;
+
+function getTriangleBackgroundImage() {
+  const svgString = `<svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M74.4299 16.6978C88.1712 -5.00283 119.829 -5.00284 133.57 16.6978L202.482 125.526C217.239 148.829 200.495 179.25 172.912 179.25H35.0878C7.5049 179.25 -9.23877 148.829 5.51768 125.526L74.4299 16.6978Z" fill="#9DDDFF"/></svg>`;
+  const encodedSvg = encodeURIComponent(svgString);
+  return `url("data:image/svg+xml,${encodedSvg}")`;
+}
+
+const roundedTriangleStyle = css`
+  width: 170px;
+  height: 200px;
+  background-image: ${getTriangleBackgroundImage};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 108px;
+  left: 113px;
+`;
+
+const polygonStyle = {
+  beige: roundedRectangleStyle,
+  purple: ellipseStyle,
+  green: ellipseStyle,
+  blue: roundedTriangleStyle,
+};
 
 const CardTitle = styled.h2`
   margin: 0;
@@ -162,6 +164,7 @@ const CardEmojiBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   row-gap: 5px;
+  z-index: 2;
 `;
 
 const CardEmoji = styled.span`
@@ -259,6 +262,12 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
               const isLongCount = countLength > 2;
 
               return (
+                // <EmojiBadge
+                //   key={index}
+                //   emoji={emoji.emoji}
+                //   count={emoji.count}
+                // />
+
                 <CardEmoji key={index} $isLong={isLongCount}>
                   {emoji.emoji}
                   {isLongCount ? (
