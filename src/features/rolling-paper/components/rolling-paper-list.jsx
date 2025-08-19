@@ -111,6 +111,10 @@ const ellipseStyle = css`
   border-radius: 90.5px;
   top: 124px;
   left: 133px;
+
+  ${media.mobile} {
+    left: 100.6px;
+  }
 `;
 
 const roundedRectangleStyle = css`
@@ -120,6 +124,10 @@ const roundedRectangleStyle = css`
   background-color: #ffd382;
   top: 124px;
   left: 154px;
+
+  ${media.mobile} {
+    left: 121.6px;
+  }
 `;
 
 function getTriangleBackgroundImage() {
@@ -137,6 +145,10 @@ const roundedTriangleStyle = css`
   background-size: contain;
   top: 108px;
   left: 113px;
+
+  ${media.mobile} {
+    left: 60.6px;
+  }
 `;
 
 const polygonStyle = {
@@ -185,6 +197,7 @@ const OverProfile = styled.div`
 
 const MessageCountText = styled.span`
   color: ${(props) => props.$fontColor || "black"};
+  z-index: 1;
   em {
     font-weight: 700;
     font-style: normal;
