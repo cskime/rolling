@@ -117,7 +117,9 @@ function SendMessagePage() {
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = name.trim() !== "";
+  const canCreate =
+    name.trim() !== "" && content.replace(/<[^>]+>/g, "").trim() !== "";
+  // 정규식 유효성 검사로 html 태그 찾기("<"로 시작해서 ">"로 끝나는 문자 중 > 를 제외한(^ not) 모든 문자 제외)
 
   const fontOptions = [
     { title: "Noto Sans", fontFamily: "Noto Sans" },
