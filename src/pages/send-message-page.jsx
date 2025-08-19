@@ -75,7 +75,10 @@ function SendMessagePage() {
   const [relationOption, setRelationOption] = useState("지인");
   const [selectedAvatar, setSelectedAvatar] = useState(null);
   const [content, setContent] = useState("I am your reach text editor.");
-  const [fontOption, setFontOption] = useState("Noto Sans");
+  const [selectedFont, setSelectedFont] = useState({
+    title: "Noto Sans",
+    fontFamily: "Noto Sans",
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -115,6 +118,13 @@ function SendMessagePage() {
   };
 
   const canCreate = name.trim() !== "";
+
+  const fontOptions = [
+    { title: "Noto Sans", fontFamily: "Noto Sans" },
+    { title: "Pretendard", fontFamily: "Pretendard" },
+    { title: "나눔고딕", fontFamily: "Nanum Ghthic" },
+    { title: "나눔손글씨 펜체", fontFamily: "Nanum Pen Script" },
+  ];
 
   return (
     <SendContainer>
@@ -176,7 +186,7 @@ function SendMessagePage() {
             }}
             value={content}
             onChange={(value) => setContent(value)}
-            font={fontOption}
+            font={selectedFont.fontFamily}
           />
         </div>
       </Wrapper>
@@ -185,15 +195,16 @@ function SendMessagePage() {
         <TextField
           type={TEXT_FIELD_TYPE.dropdown}
           dropdownId="font-option-dropdown"
-          placeholder={fontOption}
-          value={fontOption}
-          options={[
-            "Noto Sans",
-            "Pretendard",
-            "Nanum Gothic",
-            "Nanum Pen Script",
-          ]}
-          onSelect={setFontOption}
+          placeholder={selectedFont.title}
+          value={selectedFont.title}
+          options={fontOptions}
+          onSelect={(selectedFontOption) => {
+            const selected = fontOptions.find(
+              (fontOption) => fontOption.title === selectedFontOption
+            );
+            setSelectedFont(selected);
+          }}
+          style={{ fontFamily: selectedFont.fontFamily }}
         />
       </Wrapper>
       <ButtonWrapper>
