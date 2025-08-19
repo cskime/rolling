@@ -17,27 +17,31 @@ const BackgroundWrapper = styled.div`
 const OptionItem = styled.div`
   width: 168px;
   height: 168px;
-  border-radius: 8px;
   cursor: pointer;
-  background-color: ${({ type, color }) => (type === "color" ? color : "none")};
+  position: relative;
+`;
+
+const CheckedIcon = styled(OutlinedButton)`
+  background-color: ${Colors.gray(500)};
+  box-shadow: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const BackgroundOverlay = styled.div`
+  height: 100%;
+  border-radius: 8px;
+  background-color: ${({ type, color }) =>
+    type === "color" ? color : "transparent"};
   background-image: ${({ type, url }) =>
     type === "image" ? `url(${url})` : "none"};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   opacity: ${({ selected }) => (selected ? 0.3 : 1)};
-`;
-
-const CircleButtonWrapper = styled.div`
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & > button {
-    border-radius: 50%;
-  }
 `;
 
 function BackgroundSelect({ type, selected, onSelect }) {
@@ -89,22 +93,15 @@ function BackgroundSelect({ type, selected, onSelect }) {
   return (
     <BackgroundWrapper>
       {options.map((option, index) => (
-        <OptionItem
-          key={index}
-          type={type}
-          color={option.color}
-          url={option.url}
-          onClick={() => onSelect(index)}
-          selected={selected === index}
-        >
+        <OptionItem key={index} onClick={() => onSelect(index)}>
+          <BackgroundOverlay
+            type={type}
+            color={option.color}
+            url={option.url}
+            selected={selected === index}
+          />
           {selected === index && (
-            <CircleButtonWrapper>
-              <OutlinedButton
-                size={BUTTON_SIZE.extraSmall}
-                icon={CheckImage}
-                style={{ backgroundColor: Colors.gray(500), boxShadow: "none" }}
-              />
-            </CircleButtonWrapper>
+            <CheckedIcon size={BUTTON_SIZE.extraSmall} icon={CheckImage} />
           )}
         </OptionItem>
       ))}
