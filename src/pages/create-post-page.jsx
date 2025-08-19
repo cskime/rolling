@@ -60,13 +60,11 @@ function CreatePostPage() {
     setNameError(""); // 값 입력 중 에러 없애기
   };
 
-  const trimmed = name.trim();
-
   const handleBlur = () => {
+    const trimmed = name.trim();
+    setName(trimmed);
     if (trimmed === "") {
-      setNameError("값을 입력해 주세요");
-    } else if (trimmed !== name) {
-      setNameError("앞 뒤 공백 없이 입력해 주세요"); // 텍스트 앞 뒤 공백 에러 처리(임시)
+      setNameError("이름을 입력해 주세요");
     }
   };
 
@@ -80,15 +78,11 @@ function CreatePostPage() {
   };
 
   const handleCreate = () => {
-    const finalName = trimmed;
     const randomID = Math.floor(Math.random() * 10000);
-    if (finalName !== name) {
-      return;
-    }
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = trimmed !== "";
+  const canCreate = name.trim() !== "";
 
   return (
     <PostContainer>
