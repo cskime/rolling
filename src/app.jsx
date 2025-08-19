@@ -7,7 +7,6 @@ import MainPage from "./pages/main-page";
 import MessagePage from "./pages/message-list";
 import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
-import SendPage from "./pages/send-page";
 import TestPage from "./pages/test-page";
 
 function Provider({ children }) {
@@ -56,7 +55,6 @@ function App() {
           </Route>
           <Route path="/test-components" element={<TestPage />} />
           <Route path="/list" element={<MessagePage />} />
-          <Route path="/post/{id}/message" element={<SendPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

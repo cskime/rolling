@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputTextField from "../components/text-field/text-field";
+import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Colors from "../components/color/colors";
 import ToggleButton from "../components/button/toggle-button";
@@ -39,6 +39,7 @@ const ToggleButtonWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   padding-top: 50px;
+  padding-bottom: 150px;
   width: 720px;
 `;
 
@@ -82,13 +83,13 @@ function CreatePostPage() {
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = name !== "" || name !== name.trim();
+  const canCreate = name.trim() !== "";
 
   return (
     <PostContainer>
       <Wrapper>
         <PostTitle>To.</PostTitle>
-        <InputTextField // TextField로 변경
+        <TextField
           type={TEXT_FIELD_TYPE.input}
           value={name}
           onChange={handleChange}
