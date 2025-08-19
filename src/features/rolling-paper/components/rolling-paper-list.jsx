@@ -8,6 +8,7 @@ import {
 import BUTTON_SIZE from "../../../components/button/button-size";
 import ToggleButton from "../../../components/button/toggle-button";
 import EmojiBadge from "../../../components/badge/emoji-badge";
+import { media } from "../../../utils/media";
 
 // import React, { useEffect, useState } from "react";
 
@@ -28,6 +29,31 @@ const CardContainer = styled.div`
   font-family: Pretendard;
 
   position: relative;
+
+  ${media.tablet} {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE && Edge
+
+    max-width: 1199px;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  ${media.tablet} > div {
+    flex: 0 0 275px;
+    scroll-snap-align: start;
+  }
+
+  ${media.mobile} {
+    max-width: 767px;
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 const CardItem = styled.div`
@@ -50,6 +76,15 @@ const CardItem = styled.div`
 
   position: relative;
   overflow: hidden;
+
+  ${media.tablet} {
+    flex-shrink: 0;
+  }
+
+  ${media.mobile} {
+    width: 208px;
+    height: 232px;
+  }
 
   /* 배경 도형 */
   &::before {
@@ -172,11 +207,14 @@ const CardEmoji = styled.span`
   border-radius: 32px;
   color: #ffffff;
   padding: 8px 12px;
-  margin-right: 8px;
+  margin-right: 5px;
 
   position: relative;
   white-space: nowrap;
   overflow: hidden;
+
+  font-size: 16px;
+  font-weight: 400;
 
   min-width: ${(props) => (props.$isLong ? "60px" : "auto")};
   max-width: ${(props) => (props.$isLong ? "44px" : "none")};
@@ -187,6 +225,10 @@ const CardEmoji = styled.span`
     max-width: 200px;
     z-index: 100;
     position: relative;
+  }
+
+  ${media.mobile} {
+    font-size: 14px;
   }
 `;
 

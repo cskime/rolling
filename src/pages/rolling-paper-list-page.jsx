@@ -9,12 +9,13 @@ import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
 import { useNavigate } from "react-router";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 // import axiosInstance from "../api/axios-instance";
 import testDataFile from "./test_recipients_data.json";
 
 import styled from "styled-components";
 import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
+import { media } from "../utils/media";
 
 const TopContainer = styled.div`
   text-align: center;
@@ -23,16 +24,37 @@ const TopContainer = styled.div`
 
 const CardSection = styled.section`
   justify-self: center;
+
+  ${media.tablet} {
+    width: 100%;
+  }
 `;
 
 const CardTitle = styled.h2`
   text-align: left;
+
+  ${media.tablet} {
+    margin-left: 24px;
+  }
+
+  ${media.mobile} {
+    margin-left: 20px;
+  }
 `;
 
 const MakingButton = styled(PrimaryButton)`
   margin-top: 64px;
   font-weight: 400;
   padding: 14px 60px;
+
+  ${media.tablet} {
+    position: absolute;
+    bottom: 24px;
+    justify-self: anchor-center;
+    margin-left: 24px;
+    margin-right: 24px;
+    width: calc(100% - 48px);
+  }
 `;
 
 const cache = {};
@@ -52,9 +74,22 @@ function ShowMessageList() {
   const [recentDataList, setRecentDataList] = useState([]);
   const [popularCurrentPage, setPopularCurrentPage] = useState(0);
   const [recentCurrentPage, setRecentCurrentPage] = useState(0);
-  const [popularrecentShowCards, setPopularrecentShowCards] = useState([]);
-  const [recentShowCards, setRecentShowCards] = useState([]);
-  const cardCount = 4;
+  const [cardCount, setCardCount] = useState(4);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 1199px)");
+    const updateCardCount = (e) => {
+      if (e.matches) {
+        setCardCount(null);
+      } else {
+        setCardCount(4);
+      }
+    };
+
+    updateCardCount(mql);
+    mql.addEventListener("change", updateCardCount);
+    return () => mql.removeEventListener("change", updateCardCount);
+  }, []);
 
   const handleMakingButton = () => {
     navigate("/post");
@@ -87,30 +122,23 @@ function ShowMessageList() {
 
     const sortedRecent = testData
       .slice()
-      .sort((a, b) => b.createdAt - a.createdAt);
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     setRecentDataList(sortedRecent);
   }, [testData]);
 
-  const totalPages = Math.ceil(testData.length / cardCount);
+  const totalPages = cardCount ? Math.ceil(testData.length / cardCount) : 1;
 
-  useEffect(() => {
-    const startPageNum = recentCurrentPage * cardCount;
-    const endPageNum = startPageNum + cardCount;
+  const popularShowCards = useMemo(() => {
+    if (!cardCount) return popularDataList;
+    const start = popularCurrentPage * cardCount;
+    return popularDataList.slice(start, start + cardCount);
+  }, [popularDataList, popularCurrentPage, cardCount]);
 
-    const popularStartPageNum = popularCurrentPage * cardCount;
-    const popularEndPageNum = popularStartPageNum + cardCount;
-
-    setPopularrecentShowCards(
-      popularDataList.slice(popularStartPageNum, popularEndPageNum)
-    );
-    setRecentShowCards(recentDataList.slice(startPageNum, endPageNum));
-  }, [
-    popularCurrentPage,
-    recentCurrentPage,
-    testData,
-    popularDataList,
-    recentDataList,
-  ]);
+  const recentShowCards = useMemo(() => {
+    if (!cardCount) return recentDataList;
+    const start = recentCurrentPage * cardCount;
+    return recentDataList.slice(start, start + cardCount);
+  }, [recentDataList, recentCurrentPage, cardCount]);
 
   const handleTurnCards = (direction, mode) => {
     const current = mode === "popular" ? popularCurrentPage : recentCurrentPage;
@@ -132,7 +160,7 @@ function ShowMessageList() {
         <CardSection>
           <CardTitle>인기 롤링 페이퍼 🔥</CardTitle>
           <RollingPaperList
-            cardData={popularrecentShowCards}
+            cardData={popularShowCards}
             totalPages={totalPages}
             currentPage={popularCurrentPage}
             onTurnCards={(direction) => handleTurnCards(direction, "popular")}
