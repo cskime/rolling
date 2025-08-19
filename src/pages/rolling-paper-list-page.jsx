@@ -70,6 +70,10 @@ function ShowMessageList() {
   const [cardCount, setCardCount] = useState(4);
   const { isDesktop } = useMedia();
 
+  const handleMakingButton = () => {
+    navigate("/post");
+  };
+
   useEffect(() => {
     isDesktop ? setCardCount(4) : setCardCount(null);
   }, [isDesktop]);
