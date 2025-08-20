@@ -6,8 +6,19 @@ import RollingPaperMessagesGrid from "../features/rolling-paper/components/messa
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
 
+const backgroundStyle = ({ $backgroundImageUrl, $backgroundColor }) => {
+  if (!$backgroundImageUrl) {
+    return `background-color: ${$backgroundColor}`;
+  }
+
+  return `
+    background: url('${$backgroundImageUrl}');
+    background-size: contain;
+  `;
+};
+
 const Content = styled.div`
-  background-color: ${({ $backgroundColor }) => $backgroundColor};
+  ${backgroundStyle};
   height: calc(100% - 68px);
 `;
 
@@ -29,7 +40,10 @@ function MessagesPage() {
             messages={recipient.recentMessages}
             reactions={recipient.topReactions}
           />
-          <Content $backgroundColor={recipient.backgroundColor}>
+          <Content
+            $backgroundImageUrl={recipient.backgroundImageURL}
+            $backgroundColor={recipient.backgroundColor}
+          >
             <RollingPaperMessagesGrid messages={recipient.recentMessages} />
           </Content>
         </>
