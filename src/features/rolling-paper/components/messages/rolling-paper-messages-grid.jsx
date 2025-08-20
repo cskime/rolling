@@ -12,10 +12,11 @@ const StyledRollingPaperMessagesGrid = styled.div`
   column-gap: 24px;
   row-gap: 28px;
   margin: 0 auto;
-  max-width: 1200px;
+  width: 1200px;
   padding: 112px 0 246px;
 
   @media (max-width: 1248px) {
+    width: 100%;
     padding: 93px 24px 91px;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
