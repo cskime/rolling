@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import styled from "styled-components";
-import { PrimaryButton } from "../components/button/button";
+import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
@@ -44,23 +44,38 @@ const Content = styled.div`
   }
 `;
 
-const StyledEditButton = styled(PrimaryButton)`
+const ButtonContainer = styled.div`
   align-self: flex-end;
+  display: flex;
+  gap: 16px;
 `;
 
-function EditButton({ isEditing }) {
-  const navigate = useNavigate();
-
-  const handleEditClick = () => {
-    navigate(isEditing ? -1 : "edit");
-  };
-
+function ViewerButtons({ onEdit }) {
   return (
-    <StyledEditButton
-      size={BUTTON_SIZE.medium}
-      title={isEditing ? "삭제하기" : "수정하기"}
-      onClick={handleEditClick}
-    />
+    <ButtonContainer>
+      <PrimaryButton
+        size={BUTTON_SIZE.medium}
+        title="수정하기"
+        onClick={onEdit}
+      />
+    </ButtonContainer>
+  );
+}
+
+function EditingButtons({ onDelete, onCancel }) {
+  return (
+    <ButtonContainer>
+      <PrimaryButton
+        size={BUTTON_SIZE.medium}
+        title="삭제하기"
+        onClick={onDelete}
+      />
+      <OutlinedButton
+        size={BUTTON_SIZE.medium}
+        title="취소하기"
+        onClick={onCancel}
+      />
+    </ButtonContainer>
   );
 }
 
@@ -68,6 +83,31 @@ function MessagesPage() {
   const { isMobile } = useMedia();
   const [recipient, setRecipient] = useState();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const isEditing = useMemo(
+    () => location.pathname.includes("edit"),
+    [location]
+  );
+
+  const handleEditClick = () => {
+    navigate("edit");
+  };
+
+  const handleRollingPaperDelete = () => {
+    // TODO: Rolling Paper 삭제
+    console.log(`Delete Rolling Paper ${recipient.id}`);
+    navigate(-1);
+  };
+
+  const handleEditCancel = () => {
+    navigate(-1);
+  };
+
+  const handleMessageDelete = (messageId) => {
+    // TODO: Message 삭제
+    console.log(`Delete Message ${messageId}`);
+  };
 
   useEffect(() => {
     getRecipient().then(setRecipient);
@@ -88,8 +128,19 @@ function MessagesPage() {
             $backgroundColor={recipient.backgroundColor}
           >
             <div>
-              <EditButton isEditing={location.pathname.includes("edit")} />
-              <RollingPaperMessagesGrid messages={recipient.recentMessages} />
+              {isEditing ? (
+                <EditingButtons
+                  onDelete={handleRollingPaperDelete}
+                  onCancel={handleEditCancel}
+                />
+              ) : (
+                <ViewerButtons onEdit={handleEditClick} />
+              )}
+              <RollingPaperMessagesGrid
+                isEditing={isEditing}
+                messages={recipient.recentMessages}
+                onDelete={handleMessageDelete}
+              />
             </div>
           </Content>
         </>

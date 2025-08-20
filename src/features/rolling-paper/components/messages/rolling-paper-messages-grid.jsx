@@ -22,7 +22,7 @@ const StyledRollingPaperMessagesGrid = styled.div`
   }
 `;
 
-function RollingPaperMessagesGrid({ messages }) {
+function RollingPaperMessagesGrid({ isEditing, messages, onDelete }) {
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -30,18 +30,31 @@ function RollingPaperMessagesGrid({ messages }) {
     navigate(`/post/${id}/message`);
   };
 
+  const handleDeleteClick = (messageId) => {
+    onDelete(messageId);
+  };
+
+  const messageCard = (message) => (
+    <MessageCard
+      key={message.id}
+      isEditing={isEditing}
+      message={message}
+      onDelete={(event) => handleDeleteClick(event, message.id)}
+    />
+  );
+
   return (
     <StyledRollingPaperMessagesGrid>
       <MessageCardAdd onClick={handleAddClick} />
-      {messages.map((message) => (
-        <Modal
-          key={message.id}
-          id={message.id}
-          action={<MessageCard key={message.id} message={message} />}
-        >
-          <MessageCardDetail message={message} />
-        </Modal>
-      ))}
+      {messages.map((message) =>
+        isEditing ? (
+          messageCard(message)
+        ) : (
+          <Modal key={message.id} id={message.id} action={messageCard(message)}>
+            <MessageCardDetail message={message} />
+          </Modal>
+        )
+      )}
     </StyledRollingPaperMessagesGrid>
   );
 }
