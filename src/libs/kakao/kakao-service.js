@@ -6,7 +6,7 @@ function initKakaoSDK() {
 function shareRollingPaper({ recipientId, recipientName }) {
   if (!recipientId || !recipientName) return;
 
-  const appIdString = import.meta.env.VITE_KAKAO_APP_ID;
+  const appIdString = import.meta.env.VITE_KAKAO_MESSAGE_TEMPLATE_ID;
   const appId = Number(appIdString);
   if (!appId) return;
 
