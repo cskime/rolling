@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import arrowDownImage from "../../../assets/ic-chevron-down.svg";
-import EmojiBadge from "../../../components/badge/emoji-badge";
-import Popover from "../../../components/popover/popover";
-import POPOVER_ALIGNMENT from "../../../components/popover/popover-alignment";
-import { useMedia } from "../../../hooks/use-media";
-import { media } from "../../../utils/media";
+import arrowDownImage from "../../../../assets/ic-chevron-down.svg";
+import EmojiBadge from "../../../../components/badge/emoji-badge";
+import Popover from "../../../../components/popover/popover";
+import POPOVER_ALIGNMENT from "../../../../components/popover/popover-alignment";
+import { useMedia } from "../../../../hooks/use-media";
+import { media } from "../../../../utils/media";
 
 const MoreButton = styled.button`
   background: none;

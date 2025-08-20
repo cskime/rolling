@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
-import RollingPaperHeader from "../features/rolling-paper/components/rolling-paper-header";
+import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
 

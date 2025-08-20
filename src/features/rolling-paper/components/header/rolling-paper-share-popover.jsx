@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Colors from "../../../components/color/colors";
+import Colors from "../../../../components/color/colors";
 
 const ShareOption = styled.li`
   padding: 12px 16px;
