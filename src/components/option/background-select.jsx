@@ -29,6 +29,10 @@ const CheckedIcon = styled(OutlinedButton)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  &:hover {
+    background-color: ${Colors.gray(500)};
+  }
 `;
 
 const BackgroundOverlay = styled.div`
