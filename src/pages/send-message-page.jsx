@@ -53,6 +53,9 @@ const AvatarOption = styled.div`
 
 const AvatarPreview = styled.div`
   cursor: pointer;
+  box-shadow: ${({ $isSelected }) =>
+    $isSelected ? `0 0 0 2px ${Colors.purple(400)}` : "none"};
+  border-radius: 50%;
 `;
 
 const DefaultAvatar = styled.div`
@@ -157,6 +160,7 @@ function SendMessagePage() {
               {avatarList.map((url, index) => (
                 <AvatarPreview
                   key={index}
+                  $isSelected={selectedAvatar === url}
                   onClick={() => setSelectedAvatar(url)}
                 >
                   <Avatar size={AVATAR_SIZE.medium} source={url} />
