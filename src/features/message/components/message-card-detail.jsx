@@ -45,7 +45,7 @@ const StyledMessageCardDetail = styled.div``;
 
 function MessageCardDetail({ message }) {
   return (
-    <div>
+    <StyledMessageCardDetail>
       <Header>
         <MessageSender
           profileImage={message.profileImage}
@@ -54,7 +54,7 @@ function MessageCardDetail({ message }) {
         <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
       </Header>
       <Content>{message.content}</Content>
-    </div>
+    </StyledMessageCardDetail>
   );
 }
 
