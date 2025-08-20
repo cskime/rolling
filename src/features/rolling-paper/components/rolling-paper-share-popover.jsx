@@ -7,6 +7,7 @@ const ShareOption = styled.li`
   font-weight: 400;
   line-height: 26px;
   background-color: white;
+  cursor: pointer;
 
   &:hover {
     background-color: ${Colors.gray(100)};
