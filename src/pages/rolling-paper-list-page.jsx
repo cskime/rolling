@@ -71,19 +71,8 @@ function ShowMessageList() {
   const { isDesktop } = useMedia();
 
   useEffect(() => {
-    const mql = window.matchMedia("(max-width: 1199px)");
-    const updateCardCount = (e) => {
-      if (e.matches) {
-        setCardCount(null);
-      } else {
-        setCardCount(4);
-      }
-    };
-
-    updateCardCount(mql);
-    mql.addEventListener("change", updateCardCount);
-    return () => mql.removeEventListener("change", updateCardCount);
-  }, []);
+    isDesktop ? setCardCount(4) : setCardCount(null);
+  }, [isDesktop]);
 
   const handleMakingButton = () => {
     navigate("/post");
@@ -93,9 +82,6 @@ function ShowMessageList() {
     isDesktop ? setCardCount(4) : setCardCount(null);
   }, [isDesktop]);
 
-  const handleMakingButton = () => {
-    navigate("/post");
-  };
 
   useEffect(() => {
     getRollingPaperList().then(setTestData);
