@@ -1,16 +1,6 @@
 import ArrowButton from "../../../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../../../components/button/arrow-button-direction";
-import {
-  OutlinedButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "../../../components/button/button";
-import BUTTON_SIZE from "../../../components/button/button-size";
-import ToggleButton from "../../../components/button/toggle-button";
-import EmojiBadge from "../../../components/badge/emoji-badge";
 import { media } from "../../../utils/media";
-
-// import React, { useEffect, useState } from "react";
 
 import styled, { css } from "styled-components";
 
@@ -36,17 +26,17 @@ const CardContainer = styled.div`
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // IE && Edge
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     max-width: 1199px;
     width: 100%;
     padding: 0 24px;
-  }
 
-  ${media.tablet} > div {
-    flex: 0 0 275px;
-    scroll-snap-align: start;
+    & > div {
+      flex: 0 0 275px;
+      scroll-snap-align: start;
+    }
   }
 
   ${media.mobile} {
@@ -84,6 +74,7 @@ const CardItem = styled.div`
   ${media.mobile} {
     width: 208px;
     height: 232px;
+    padding: 30px 15px 20px 15px;
   }
 
   /* 배경 도형 */
@@ -94,6 +85,7 @@ const CardItem = styled.div`
     ${({ $backgroundImageURL, $backgroundColor }) => {
       return $backgroundImageURL ? "" : polygonStyle[$backgroundColor];
     }}
+  }
 
   & > * {
     position: relative;
@@ -229,9 +221,6 @@ const CardEmoji = styled.span`
   font-size: 16px;
   font-weight: 400;
 
-  min-width: ${(props) => (props.$isLong ? "60px" : "auto")};
-  max-width: ${(props) => (props.$isLong ? "44px" : "none")};
-
   transition: max-width 0.3s ease, z-index 0s;
 
   &:hover {
@@ -242,6 +231,8 @@ const CardEmoji = styled.span`
 
   ${media.mobile} {
     font-size: 14px;
+    padding: 8px 8px;
+    margin-right: 3px;
   }
 `;
 
@@ -281,57 +272,50 @@ const PreviewButtonWrapper = styled.div`
 function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
   return (
     <CardContainer>
-      {cardData.map((item) => (
+      {cardData.map((card) => (
         <CardItem
-          key={item.id}
-          $backgroundColor={item.backgroundColor}
-          $backgroundImageURL={item.backgroundImageURL}
+          key={card.id}
+          $backgroundColor={card.backgroundColor}
+          $backgroundImageURL={card.backgroundImageURL}
         >
           <CardTitle
-            $fontColor={item.backgroundImageURL ? "#ffffff" : "#000000"}
+            $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
           >
-            To. {item.name}
+            To. {card.name}
           </CardTitle>
           <ProfileContainer>
-            {item.recentMessages.slice(0, 3).map((messageItem, index) => (
+            {card.recentMessages.slice(0, 3).map((messagecard, index) => (
               <CardProfile
                 key={index}
-                src={messageItem.profileImageURL}
+                src={messagecard.profileImageURL}
                 alt={`profile-${index}`}
               />
             ))}
-            {item.messageCount > 3 && (
+            {card.messageCount > 3 && (
               <OverProfile>
-                <span>+{item.messageCount - 3}</span>
+                <span>+{card.messageCount - 3}</span>
               </OverProfile>
             )}
           </ProfileContainer>
           <MessageCountText
-            $fontColor={item.backgroundImageURL ? "#ffffff" : "#000000"}
+            $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
           >
-            <em>{item.messageCount}</em>명이 작성했어요!
+            <em>{card.messageCount}</em>명이 작성했어요!
           </MessageCountText>
           <CardEmojiBox>
-            {item.topReactions.map((emoji, index) => {
+            {card.topReactions.map((emoji, index) => {
               const countLength = emoji.count.toString().length;
               const isLongCount = countLength > 2;
 
               return (
-                // <EmojiBadge
-                //   key={index}
-                //   emoji={emoji.emoji}
-                //   count={emoji.count}
-                // />
-
                 <CardEmoji key={index} $isLong={isLongCount}>
-                  {emoji.emoji}
                   {isLongCount ? (
                     <HiddenCount>
-                      <span className="hide-on-hover"> +</span>
+                      <span className="hide-on-hover">{emoji.emoji}</span>
                       <span className="show-on-hover"> {emoji.count}</span>
                     </HiddenCount>
                   ) : (
-                    ` ${emoji.count}`
+                    `${emoji.emoji} ${emoji.count}`
                   )}
                 </CardEmoji>
               );

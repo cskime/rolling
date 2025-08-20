@@ -1,21 +1,14 @@
-import ArrowButton from "../components/button/arrow-button";
-import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
-import {
-  OutlinedButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "../components/button/button";
+import { PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
-import ToggleButton from "../components/button/toggle-button";
 import { useNavigate } from "react-router";
 
 import React, { useEffect, useState, useMemo } from "react";
-// import axiosInstance from "../api/axios-instance";
-import testDataFile from "./test_recipients_data.json";
+import { getRollingPaperList } from "../features/rolling-paper/api/rollingPaperList";
 
 import styled from "styled-components";
 import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
 import { media } from "../utils/media";
+import { useMedia } from "../hooks/use-media";
 
 const TopContainer = styled.div`
   text-align: center;
@@ -75,42 +68,23 @@ function ShowMessageList() {
   const [popularCurrentPage, setPopularCurrentPage] = useState(0);
   const [recentCurrentPage, setRecentCurrentPage] = useState(0);
   const [cardCount, setCardCount] = useState(4);
+  const { isDesktop } = useMedia();
 
   useEffect(() => {
-    const mql = window.matchMedia("(max-width: 1199px)");
-    const updateCardCount = (e) => {
-      if (e.matches) {
-        setCardCount(null);
-      } else {
-        setCardCount(4);
-      }
-    };
-
-    updateCardCount(mql);
-    mql.addEventListener("change", updateCardCount);
-    return () => mql.removeEventListener("change", updateCardCount);
-  }, []);
+    isDesktop ? setCardCount(4) : setCardCount(null);
+  }, [isDesktop]);
 
   const handleMakingButton = () => {
     navigate("/post");
   };
 
   useEffect(() => {
-    setTestData(testDataFile);
-    // axiosInstance
-    //   .get("/18-3/recipients/?limit=5&offset=20")
-    //   .then((res) => {
-    //     setTestData(res.data);
-    //     console.log(res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.error("오류:", err);
-    //   });
+    getRollingPaperList().then(setTestData);
   }, []);
 
   useEffect(() => {
-    testData.forEach((item) => {
-      getCachedImage(item.imageURL);
+    testData.forEach((data) => {
+      getCachedImage(data.imageURL);
     });
   }, [testData]);
 
@@ -141,9 +115,13 @@ function ShowMessageList() {
   }, [recentDataList, recentCurrentPage, cardCount]);
 
   const handleTurnCards = (direction, mode) => {
-    const current = mode === "popular" ? popularCurrentPage : recentCurrentPage;
-    const setter =
-      mode === "popular" ? setPopularCurrentPage : setRecentCurrentPage;
+    const cardPageMap = {
+      popular: { current: popularCurrentPage, setter: setPopularCurrentPage },
+      recent: { current: recentCurrentPage, setter: setRecentCurrentPage },
+    };
+
+    const cardPageValue = cardPageMap[mode];
+    const { current, setter } = cardPageValue;
     const total = totalPages;
 
     const additionalPageIndex = direction === "next" ? 1 : -1;
