@@ -118,6 +118,7 @@ function MessagesPage() {
       {recipient && (
         <>
           <RollingPaperHeader
+            isEditing={isEditing}
             recipientId={recipient.id}
             recipientName={recipient.name}
             messages={recipient.recentMessages}
