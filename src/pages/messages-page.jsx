@@ -17,6 +17,7 @@ function MessagesPage() {
       {recipient && (
         <>
           <RollingPaperHeader
+            recipientId={recipient.id}
             recipientName={recipient.name}
             messages={recipient.recentMessages}
             reactions={recipient.topReactions}

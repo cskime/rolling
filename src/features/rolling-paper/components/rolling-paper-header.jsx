@@ -10,6 +10,7 @@ import POPOVER_ALIGNMENT from "../../../components/popover/popover-alignment";
 import Toast from "../../../components/toast/toast";
 import { useMedia } from "../../../hooks/use-media";
 import { useToast } from "../../../hooks/use-toast";
+import { shareRollingPaper } from "../../../libs/kakao/kakao-service";
 import { media } from "../../../utils/media";
 import RollingPaperReactions from "./rolling-paper-reactions";
 import RollingPaperSenders from "./rolling-paper-senders";
@@ -106,14 +107,22 @@ const StyledRollingPaperHeader = styled.div`
   }
 `;
 
-function RollingPaperHeader({ recipientName, messages, reactions }) {
+function RollingPaperHeader({
+  recipientId,
+  recipientName,
+  messages,
+  reactions,
+}) {
   const { showsToast, setShowsToast } = useToast();
   const { isDesktop, isMobile } = useMedia();
 
   const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
 
   const handleShareKakao = () => {
-    // TODO: KakaoTalk 공유하기
+    shareRollingPaper({
+      recipientId,
+      recipientName,
+    });
   };
 
   const handleShareUrl = () => {
