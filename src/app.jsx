@@ -8,6 +8,7 @@ import MessagePage from "./pages/message-list";
 import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestPage from "./pages/test-page";
+import TestApiPage from "./tests/test-api-page";
 
 function Provider({ children }) {
   return <PortalProvider>{children}</PortalProvider>;
@@ -57,6 +58,7 @@ function App() {
             </Route>
           </Route>
           <Route path="/test-components" element={<TestPage />} />
+          <Route path="/test-api" element={<TestApiPage />} />
           <Route path="/list" element={<MessagePage />} />
         </Routes>
       </BrowserRouter>
