@@ -43,15 +43,18 @@ function App() {
                 </ContentLayout>
               }
             />
-            <Route
-              path=":id/message"
-              element={
-                <ContentLayout>
-                  <SendMessagePage />
-                </ContentLayout>
-              }
-            />
-            <Route path=":id" element={<MessagesPage />} />
+            <Route path=":id">
+              <Route index element={<MessagesPage />} />
+              <Route path="edit" element={<MessagesPage />} />
+              <Route
+                path="message"
+                element={
+                  <ContentLayout>
+                    <SendMessagePage />
+                  </ContentLayout>
+                }
+              />
+            </Route>
           </Route>
           <Route path="/test-components" element={<TestPage />} />
           <Route path="/list" element={<MessagePage />} />

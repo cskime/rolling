@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import deleteImage from "../../../assets/ic-trash.svg";
+import { OutlinedButton } from "../../../components/button/button";
+import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
 import { formatDate } from "../../../utils/formatter";
 import { media } from "../../../utils/media";
@@ -7,6 +10,9 @@ import MessageSender from "./message-sender";
 const Header = styled.header`
   padding-bottom: 16px;
   border-bottom: 1px solid ${Colors.gray(200)};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Content = styled.div`
@@ -46,7 +52,7 @@ const StyledMessageCard = styled.article`
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
 `;
 
-function MessageCard({ message }) {
+function MessageCard({ isEditing, message, onDelete }) {
   return (
     <StyledMessageCard>
       <Header>
@@ -54,6 +60,13 @@ function MessageCard({ message }) {
           profileImage={message.profileImage}
           name={message.sender}
         />
+        {isEditing && (
+          <OutlinedButton
+            size={BUTTON_SIZE.medium}
+            icon={deleteImage}
+            onClick={onDelete}
+          />
+        )}
       </Header>
       <Content>{message.content}</Content>
       <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>

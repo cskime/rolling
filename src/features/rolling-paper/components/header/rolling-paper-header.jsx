@@ -108,6 +108,7 @@ const StyledRollingPaperHeader = styled.div`
 `;
 
 function RollingPaperHeader({
+  isEditing,
   recipientId,
   recipientName,
   messages,
@@ -148,19 +149,21 @@ function RollingPaperHeader({
             <RollingPaperReactions reactions={reactions.slice(0, 8)} />
           </DividedContainer>
           <DividedContainer>
-            <Popover
-              id="emoji-picker-popover"
-              alignment={POPOVER_ALIGNMENT.right}
-              action={
-                <AddButton
-                  size={BUTTON_SIZE.small}
-                  title={isMobile ? null : "추가"}
-                  icon={addImage}
-                />
-              }
-            >
-              <EmojiPicker />
-            </Popover>
+            {isEditing || (
+              <Popover
+                id="emoji-picker-popover"
+                alignment={POPOVER_ALIGNMENT.right}
+                action={
+                  <AddButton
+                    size={BUTTON_SIZE.small}
+                    title={isMobile ? null : "추가"}
+                    icon={addImage}
+                  />
+                }
+              >
+                <EmojiPicker />
+              </Popover>
+            )}
             <Popover
               id="share-popover"
               alignment={POPOVER_ALIGNMENT.right}
