@@ -72,6 +72,10 @@ const CreateButton = styled(PrimaryButton)`
   width: 100%;
 `;
 
+const TextFieldStyle = styled(TextField)`
+  width: 50%;
+`;
+
 function SendMessagePage() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
@@ -173,7 +177,7 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>상대와의 관계</SendTitle>
-        <TextField
+        <TextFieldStyle
           type={TEXT_FIELD_TYPE.dropdown}
           dropdownId="realtionship-dropdown"
           placeholder={relationOption}
@@ -199,7 +203,7 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
-        <TextField
+        <TextFieldStyle
           type={TEXT_FIELD_TYPE.dropdown}
           dropdownId="font-option-dropdown"
           placeholder={selectedFont.title}

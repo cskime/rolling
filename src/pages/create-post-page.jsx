@@ -8,6 +8,7 @@ import { PrimaryButton } from "../components/button/button";
 import BackgroundSelect from "../components/option/background-select";
 import { useNavigate } from "react-router";
 import BUTTON_SIZE from "../components/button/button-size";
+import { media } from "../utils/media";
 
 const PostContainer = styled.div`
   display: flex;
@@ -16,11 +17,23 @@ const PostContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 0 auto;
+
+  ${media.tablet} {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 const Wrapper = styled.div`
   padding-top: 50px;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 `;
 
 const PostTitle = styled.h2`
@@ -40,7 +53,8 @@ const ToggleButtonWrapper = styled.div`
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 150px;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 `;
 
 const CreateButton = styled(PrimaryButton)`
