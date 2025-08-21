@@ -12,7 +12,7 @@ import { useMedia } from "../../../../hooks/use-media";
 import { useToast } from "../../../../hooks/use-toast";
 import { shareRollingPaper } from "../../../../libs/kakao/kakao-service";
 import { media } from "../../../../utils/media";
-import RollingPaperReactions from "./rolling-paper-reactions";
+import ReceivedReactions from "../../../reaction/components/received-reactions";
 import RollingPaperSenders from "./rolling-paper-senders";
 import RollingPaperSharePopover from "./rolling-paper-share-popover";
 
@@ -146,7 +146,7 @@ function RollingPaperHeader({
                 profiles={messages.map((message) => message.profileImageURL)}
               />
             )}
-            <RollingPaperReactions reactions={reactions.slice(0, 8)} />
+            <ReceivedReactions topReactions={reactions} reactions={reactions} />
           </DividedContainer>
           <DividedContainer>
             {isEditing || (
