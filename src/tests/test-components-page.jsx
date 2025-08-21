@@ -28,7 +28,7 @@ const OutlinedHeader = styled(Header)`
   border: 1px solid black;
 `;
 
-function TestPage() {
+function TestComponentsPage() {
   /* Dropdown type TextField */
   const [option1, setOption1] = useState();
   const [option2, setOption2] = useState();
@@ -251,4 +251,4 @@ function TestPage() {
   );
 }
 
-export default TestPage;
+export default TestComponentsPage;
