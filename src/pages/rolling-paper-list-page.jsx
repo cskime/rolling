@@ -23,6 +23,8 @@ const CardSection = styled.section`
 
 const CardTitle = styled.h2`
   text-align: left;
+  font-size: 24px;
+  font-weight: 700;
 
   ${media.tablet} {
     margin-left: 24px;
@@ -30,6 +32,8 @@ const CardTitle = styled.h2`
 
   ${media.mobile} {
     margin-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
   }
 `;
 
@@ -39,12 +43,13 @@ const MakingButton = styled(PrimaryButton)`
   padding: 14px 60px;
 
   ${media.tablet} {
-    position: absolute;
-    bottom: 24px;
     justify-self: anchor-center;
     margin-left: 24px;
     margin-right: 24px;
     width: calc(100% - 48px);
+    padding: 14px 20px;
+    position: relative;
+    bottom: 24px;
   }
 `;
 
