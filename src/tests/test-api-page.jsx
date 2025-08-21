@@ -210,10 +210,6 @@ function TestApiPage() {
   const handleCreateReactionsClick = async () => {
     const recipientId = prompt("추가할 recipient id", "");
     await createReactions({ recipientId });
-
-    const reactions = await getAllReactions({ recipientId });
-    setReactions(reactions);
-
     updateRecipients();
   };
 
