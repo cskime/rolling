@@ -9,6 +9,7 @@ import BUTTON_SIZE from "../components/button/button-size";
 import { useNavigate } from "react-router";
 import { PrimaryButton } from "../components/button/button";
 import TextEditor from "../components/text-editor/text-editor";
+import { media } from "../utils/media";
 
 const SendContainer = styled.div`
   display: flex;
@@ -17,11 +18,23 @@ const SendContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 0 auto;
+
+  ${media.tablet} {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 const Wrapper = styled.div`
   padding-top: 50px;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 `;
 
 const SendTitle = styled.h2`
@@ -30,7 +43,6 @@ const SendTitle = styled.h2`
 
 const AvatarWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 32px;
 `;
 
@@ -38,7 +50,7 @@ const AvatarOptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 `;
 
 const AvatarDescription = styled.p`
@@ -49,6 +61,13 @@ const AvatarDescription = styled.p`
 const AvatarOption = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${media.mobile} {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    width: 50%;
+  }
 `;
 
 const AvatarPreview = styled.div`
@@ -57,16 +76,22 @@ const AvatarPreview = styled.div`
 
 const DefaultAvatar = styled.div`
   cursor: pointer;
+  padding-top: 20px;
 `;
 
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 150px;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 `;
 
 const CreateButton = styled(PrimaryButton)`
   width: 100%;
+`;
+
+const TextFieldStyle = styled(TextField)`
+  width: 50%;
 `;
 
 function SendMessagePage() {
@@ -158,7 +183,7 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>상대와의 관계</SendTitle>
-        <TextField
+        <TextFieldStyle
           type={TEXT_FIELD_TYPE.dropdown}
           dropdownId="realtionship-dropdown"
           placeholder={relationOption}
@@ -184,7 +209,7 @@ function SendMessagePage() {
       </Wrapper>
       <Wrapper>
         <SendTitle>폰트 선택</SendTitle>
-        <TextField
+        <TextFieldStyle
           type={TEXT_FIELD_TYPE.dropdown}
           dropdownId="font-option-dropdown"
           placeholder={fontOption}
