@@ -189,6 +189,11 @@ function TestApiPage() {
     const recipientId = prompt("추가할 recipient id", "");
     await createMessages({ recipientId });
     updateRecipients();
+
+    if (selectedRecipient) {
+      const messages = await getAllMessages({ recipientId });
+      setMessages(messages);
+    }
   };
 
   const handleDeleteMessagesClick = async () => {
@@ -211,6 +216,11 @@ function TestApiPage() {
     const recipientId = prompt("추가할 recipient id", "");
     await createReactions({ recipientId });
     updateRecipients();
+
+    if (selectedRecipient) {
+      const reactions = await getAllReactions({ recipientId });
+      setReactions(reactions);
+    }
   };
 
   useEffect(() => {
