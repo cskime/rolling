@@ -21,7 +21,7 @@ const OptionItem = styled.div`
   position: relative;
 `;
 
-const CheckedIcon = styled(OutlinedButton)`
+const CheckedIcon = styled.img`
   background-color: ${Colors.gray(500)};
   box-shadow: none;
   border-radius: 50%;
@@ -29,9 +29,7 @@ const CheckedIcon = styled(OutlinedButton)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  &:hover {
-    background-color: ${Colors.gray(500)};
+  padding: 5px;
   }
 `;
 
@@ -104,9 +102,7 @@ function BackgroundSelect({ type, selected, onSelect }) {
             url={option.url}
             selected={selected === index}
           />
-          {selected === index && (
-            <CheckedIcon size={BUTTON_SIZE.extraSmall} icon={CheckImage} />
-          )}
+          {selected === index && <CheckedIcon src={CheckImage} />}
         </OptionItem>
       ))}
     </BackgroundWrapper>
