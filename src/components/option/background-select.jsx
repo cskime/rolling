@@ -19,6 +19,7 @@ const OptionItem = styled.div`
   height: 168px;
   border-radius: 8px;
   cursor: pointer;
+  position: relative;
 `;
 
 const CheckedIcon = styled.img`
