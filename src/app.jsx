@@ -54,7 +54,7 @@ function App() {
             <Route path=":id" element={<MessagesPage />} />
           </Route>
           <Route path="/test-components" element={<TestPage />} />
-          <Route path="/list" element={<MessagePage />} />
+          <Route path="/list" element={<RollingPaperListPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>
