@@ -54,12 +54,8 @@ const AvatarOption = styled.div`
 const AvatarPreview = styled.div`
   cursor: pointer;
   box-shadow: ${({ $isSelected }) =>
-    $isSelected ? `0 0 0 2px ${Colors.purple(400)}` : "none"};
+    $isSelected ? `0 0 0 2px ${Colors.purple(600)}` : "none"};
   border-radius: 50%;
-`;
-
-const DefaultAvatar = styled.div`
-  cursor: pointer;
 `;
 
 const ButtonWrapper = styled.div`
@@ -108,16 +104,16 @@ function SendMessagePage() {
   };
 
   const avatarList = [
-    "https://i.pinimg.com/236x/49/86/62/4986627b45cecd1a5c4330bda777c2bf.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRok3sjZOWtm7o5kFf0BdW0w7IUHI1oAlC-Z6RCKAiCvvCExG_qq7qMzPOQlEzfknS3B3U&usqp=CAU",
-    "https://i.pinimg.com/236x/20/d1/6f/20d16f236500e8daa315a298a8586193.jpg",
-    "https://i.pinimg.com/474x/28/6c/fd/286cfdcdaeaf2768d4b285a226c33a02.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxR-Twic2lXwfF87JweyQ81vrGDUgn7zzYj60N-wD21DwS4JzOc0BLhzaOuUt4PGfLcI&usqp=CAU",
-    "https://i.pinimg.com/236x/74/68/89/7468894ce7592357a3514dbb8dc5f181.jpg",
-    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMjE1/MDAxNjMwNTk5NjE4NTc5.b-OgHjcav5kz8kt_9Cr2u1Z_eJYmKY_H9Ii9mOnwo74g.r0G6iGYg-oQMLnTymwyrjDlOMGLEnWGYJXefCSy2ixwg.JPEG.gmlwjd5363/FB＿IMG＿1630599533529.jpg?type=w800",
-    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMTIy/MDAxNjMwNTk5NjE5MDA5.w_wMeYmMF2kOhDAVXXxe0JgVqJhtGd0EuR0b2D2k3S0g.Nds6Oxagjks2DjjwFz5yWyjCGcEOL1iS84XqhAQw3wUg.JPEG.gmlwjd5363/FB＿IMG＿1630599535069.jpg?type=w800",
-    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfNDQg/MDAxNjMwNTk5NjE5MzQ4.J4lhtJZRKMzEXj0HjrG1aH65qIcBv9GI1LdVQsWlC-Ug.10QCNt81CdbIyBkd1bFOAOAolDL6hxYXrb9dXgmS8zQg.JPEG.gmlwjd5363/FB＿IMG＿1630599536666.jpg?type=w800",
-    "https://mblogthumb-phinf.pstatic.net/MjAyMTA5MDNfMzAg/MDAxNjMwNTk5NjE5ODI2.cmwNyDHTza4N64bhN0rIRu2KaFHUxqv0BkuaX6GBHJ0g.ufZqe7x1GLrCLJg2zb6N_nJ_fTgFPXq09TTe_fhsMiog.JPEG.gmlwjd5363/FB＿IMG＿1630599538261.jpg?type=w800",
+    "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png",
+    "https://picsum.photos/id/522/100/100",
+    "https://picsum.photos/id/547/100/100",
+    "https://picsum.photos/id/268/100/100",
+    "https://picsum.photos/id/1082/100/100",
+    "https://picsum.photos/id/571/100/100",
+    "https://picsum.photos/id/494/100/100",
+    "https://picsum.photos/id/859/100/100",
+    "https://picsum.photos/id/437/100/100",
+    "https://picsum.photos/id/1064/100/100",
   ];
 
   const handleCreate = () => {
@@ -152,11 +148,7 @@ function SendMessagePage() {
       <Wrapper>
         <SendTitle>프로필 이미지</SendTitle>
         <AvatarWrapper>
-          <DefaultAvatar
-            onClick={() => setSelectedAvatar((prev) => (prev ? null : prev))} // 아바타 선택 상태에서 재클릭 시 기본 아바타로
-          >
-            <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
-          </DefaultAvatar>
+          <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
           <AvatarOptionWrapper>
             <AvatarDescription>
               프로필 이미지를 선택해 주세요!
