@@ -5,6 +5,7 @@ import Popover from "../../../../components/popover/popover";
 import POPOVER_ALIGNMENT from "../../../../components/popover/popover-alignment";
 import { useMedia } from "../../../../hooks/use-media";
 import { media } from "../../../../utils/media";
+import TopReactions from "../../../reaction/components/top-reactions";
 
 const MoreButton = styled.button`
   background: none;
@@ -12,11 +13,6 @@ const MoreButton = styled.button`
   width: 36px;
   height: 36px;
   cursor: pointer;
-`;
-
-const TopThreeReactions = styled.div`
-  display: flex;
-  gap: 8px;
 `;
 
 const AllReactions = styled.div`
@@ -42,11 +38,7 @@ function RollingPaperReactions({ reactions }) {
 
   return (
     <StyledRollingPaperReactions>
-      <TopThreeReactions>
-        {reactions.slice(0, 3).map(({ id, emoji, count }) => (
-          <EmojiBadge key={id} emoji={emoji} count={count} />
-        ))}
-      </TopThreeReactions>
+      <TopReactions reactions={reactions.slice(0, 3)} />
       <Popover
         id="rolling-paper-reactions-popover"
         alignment={POPOVER_ALIGNMENT.right}
