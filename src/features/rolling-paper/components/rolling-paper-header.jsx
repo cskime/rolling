@@ -1,13 +1,20 @@
+import EmojiPicker from "emoji-picker-react";
 import styled from "styled-components";
 import addImage from "../../../assets/ic-face-smile-add.svg";
 import shareImage from "../../../assets/ic-share.svg";
 import { OutlinedButton } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
+import Popover from "../../../components/popover/popover";
+import POPOVER_ALIGNMENT from "../../../components/popover/popover-alignment";
+import Toast from "../../../components/toast/toast";
 import { useMedia } from "../../../hooks/use-media";
+import { useToast } from "../../../hooks/use-toast";
+import { shareRollingPaper } from "../../../libs/kakao/kakao-service";
 import { media } from "../../../utils/media";
 import RollingPaperReactions from "./rolling-paper-reactions";
 import RollingPaperSenders from "./rolling-paper-senders";
+import RollingPaperSharePopover from "./rolling-paper-share-popover";
 
 const RecipientName = styled.h2`
   margin: 0;
@@ -100,22 +107,37 @@ const StyledRollingPaperHeader = styled.div`
   }
 `;
 
-function RollingPaperHeader({ recipientName, messages, reactions }) {
+function RollingPaperHeader({
+  recipientId,
+  recipientName,
+  messages,
+  reactions,
+}) {
+  const { showsToast, setShowsToast } = useToast();
   const { isDesktop, isMobile } = useMedia();
+
+  const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
+
+  const handleShareKakao = () => {
+    shareRollingPaper({
+      recipientId,
+      recipientName,
+    });
+  };
+
+  const handleShareUrl = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url);
+    setShowsToast(true);
+  };
 
   return (
     <StyledRollingPaperHeader>
       {isMobile && (
-        <RollingPaperHeaderContent>
-          <RecipientName>{`To. ${recipientName}`}</RecipientName>
-        </RollingPaperHeaderContent>
+        <RollingPaperHeaderContent>{name}</RollingPaperHeaderContent>
       )}
       <RollingPaperHeaderContent>
-        {isMobile || (
-          <div>
-            <RecipientName>{`To. ${recipientName}`}</RecipientName>
-          </div>
-        )}
+        {isMobile || <div>{name}</div>}
         <HeaderTrailing>
           <DividedContainer>
             {isDesktop && (
@@ -126,15 +148,40 @@ function RollingPaperHeader({ recipientName, messages, reactions }) {
             <RollingPaperReactions reactions={reactions.slice(0, 8)} />
           </DividedContainer>
           <DividedContainer>
-            <AddButton
-              size={BUTTON_SIZE.small}
-              title={isMobile ? null : "추가"}
-              icon={addImage}
-            />
-            <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
+            <Popover
+              id="emoji-picker-popover"
+              alignment={POPOVER_ALIGNMENT.right}
+              action={
+                <AddButton
+                  size={BUTTON_SIZE.small}
+                  title={isMobile ? null : "추가"}
+                  icon={addImage}
+                />
+              }
+            >
+              <EmojiPicker />
+            </Popover>
+            <Popover
+              id="share-popover"
+              alignment={POPOVER_ALIGNMENT.right}
+              action={
+                <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
+              }
+            >
+              <RollingPaperSharePopover
+                onShareKakao={handleShareKakao}
+                onShareUrl={handleShareUrl}
+              />
+            </Popover>
           </DividedContainer>
         </HeaderTrailing>
       </RollingPaperHeaderContent>
+      {showsToast && (
+        <Toast
+          message="URL이 복사 되었습니다."
+          onDismiss={() => setShowsToast(false)}
+        />
+      )}
     </StyledRollingPaperHeader>
   );
 }
