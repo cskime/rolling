@@ -8,7 +8,6 @@ import { PrimaryButton } from "../components/button/button";
 import BackgroundSelect from "../components/option/background-select";
 import { useNavigate } from "react-router";
 import BUTTON_SIZE from "../components/button/button-size";
-import { media } from "../utils/media";
 
 const PostContainer = styled.div`
   display: flex;
