@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
 import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
@@ -84,6 +84,7 @@ function MessagesPage() {
   const [recipient, setRecipient] = useState();
   const location = useLocation();
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const isEditing = useMemo(
     () => location.pathname.includes("edit"),
@@ -110,8 +111,13 @@ function MessagesPage() {
   };
 
   useEffect(() => {
-    getRecipient().then(setRecipient);
-  }, []);
+    getRecipient({ id })
+      .then(setRecipient)
+      .catch((error) => {
+        // TODO: Error 처리 필요
+        console.error(error);
+      });
+  }, [id]);
 
   const content = (
     <>

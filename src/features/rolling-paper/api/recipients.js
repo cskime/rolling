@@ -1,8 +1,12 @@
-import mockRecipient from "./mock-recipient.json";
+import { apiClient } from "../../../api/client";
 
-async function getRecipient() {
-  // NOTE: API를 연동하기 전에 mock data로 먼저 개발합니다.
-  return mockRecipient;
+async function getRecipient({ id }) {
+  const response = await apiClient.get(`recipients/${id}/`);
+  if (response.status !== 200) {
+    throw new Error("Recipient data를 가져오는데 실패했습니다.");
+  }
+
+  return response.data;
 }
 
 export { getRecipient };
