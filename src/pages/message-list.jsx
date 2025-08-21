@@ -1,15 +1,9 @@
 import ArrowButton from "../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
-import {
-  OutlinedButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "../components/button/button";
+import { PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
-import ToggleButton from "../components/button/toggle-button";
 
-import React, { useEffect, useState } from "react";
-import axiosInstance from "../api/axios-instance";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 /* styled components */
