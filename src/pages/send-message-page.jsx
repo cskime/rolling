@@ -94,8 +94,9 @@ function SendMessagePage() {
     }
   };
 
+  const trimmed = name.trim();
+
   const handleBlur = () => {
-    const trimmed = name.trim();
     setName(trimmed);
     if (trimmed === "") {
       setNameError("이름을 입력해 주세요");
@@ -121,7 +122,7 @@ function SendMessagePage() {
   };
 
   const canCreate =
-    name.trim() !== "" && content.replace(/<[^>]+>/g, "").trim() !== "";
+    trimmed !== "" && content.replace(/<[^>]+>/g, "").trim() !== "";
   // 정규식 유효성 검사로 html 태그 찾기("<"로 시작해서 ">"로 끝나는 문자 중 > 를 제외한(^ not) 모든 문자 제외)
 
   const fontOptions = [

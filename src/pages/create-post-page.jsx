@@ -60,8 +60,9 @@ function CreatePostPage() {
     setNameError(""); // 값 입력 중 에러 없애기
   };
 
+  const trimmed = name.trim();
+
   const handleBlur = () => {
-    const trimmed = name.trim();
     setName(trimmed);
     if (trimmed === "") {
       setNameError("이름을 입력해 주세요");
@@ -82,7 +83,7 @@ function CreatePostPage() {
     navigate(`/post/${randomID}`);
   };
 
-  const canCreate = name.trim() !== "";
+  const canCreate = trimmed !== "";
 
   return (
     <PostContainer>
