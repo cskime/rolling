@@ -60,11 +60,14 @@ export async function deleteAllMessages(messages) {
 export async function createReactions({ recipientId }) {
   let promises = [];
   for (const body of reactionBody) {
-    const promise = apiClient.post(
-      `recipients/${recipientId}/reactions/`,
-      body
-    );
-    promises.push(promise);
+    const randomCount = Math.ceil(Math.random() * 10);
+    Array.from({ length: randomCount }).forEach(() => {
+      const promise = apiClient.post(
+        `recipients/${recipientId}/reactions/`,
+        body
+      );
+      promises.push(promise);
+    });
   }
   await Promise.all(promises);
 }
