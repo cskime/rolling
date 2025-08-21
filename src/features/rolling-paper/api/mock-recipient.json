@@ -1,8 +1,8 @@
 {
   "id": 2,
   "name": "강영훈",
-  "backgroundColor": "green",
-  "backgroundImageURL": null,
+  "backgroundColor": "#FFE2AD",
+  "backgroundImageURL": "https://picsum.photos/id/1058/3840/2160",
   "createdAt": "2023-10-26T13:19:31.401765Z",
   "messageCount": 30,
   "recentMessages": [
