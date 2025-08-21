@@ -1,7 +1,6 @@
 import ArrowButton from "../../../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../../../components/button/arrow-button-direction";
 import { media } from "../../../utils/media";
-
 import styled, { css } from "styled-components";
 
 const backgroundColors = {
