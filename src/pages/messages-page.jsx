@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
 import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
+import BACKGROUND_COLOR from "../components/color/background-color";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
 import RollingPaperMessagesGrid from "../features/rolling-paper/components/messages/rolling-paper-messages-grid";
@@ -132,7 +133,7 @@ function MessagesPage() {
           />
           <Content
             $backgroundImageUrl={recipient.backgroundImageURL}
-            $backgroundColor={recipient.backgroundColor}
+            $backgroundColor={BACKGROUND_COLOR[recipient.backgroundColor]}
           >
             <div>
               {isEditing ? (
