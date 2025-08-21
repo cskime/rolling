@@ -3,29 +3,22 @@ import Colors from "../color/colors";
 import BADGE_TYPE from "./badge-type";
 
 const styles = {
-  [BADGE_TYPE.acquaintance]: {
+  [BADGE_TYPE.지인]: {
     backgroundColor: Colors.beige(100),
     color: Colors.beige(500),
   },
-  [BADGE_TYPE.coworker]: {
+  [BADGE_TYPE.동료]: {
     backgroundColor: Colors.purple(100),
     color: Colors.purple(600),
   },
-  [BADGE_TYPE.family]: {
+  [BADGE_TYPE.가족]: {
     backgroundColor: Colors.green(100),
     color: Colors.green(500),
   },
-  [BADGE_TYPE.friend]: {
+  [BADGE_TYPE.친구]: {
     backgroundColor: Colors.blue(100),
     color: Colors.blue(500),
   },
-};
-
-const title = {
-  [BADGE_TYPE.acquaintance]: "지인",
-  [BADGE_TYPE.coworker]: "동료",
-  [BADGE_TYPE.family]: "가족",
-  [BADGE_TYPE.friend]: "친구",
 };
 
 const StyledBadge = styled.div`
@@ -39,7 +32,7 @@ const StyledBadge = styled.div`
 `;
 
 function Badge({ type }) {
-  return <StyledBadge $type={type}>{title[type]}</StyledBadge>;
+  return <StyledBadge $type={type}>{type}</StyledBadge>;
 }
 
 export default Badge;

@@ -57,7 +57,8 @@ function MessageCard({ isEditing, message, onDelete }) {
     <StyledMessageCard>
       <Header>
         <MessageSender
-          profileImage={message.profileImage}
+          profileImageUrl={message.profileImageURL}
+          relationship={message.relationship}
           name={message.sender}
         />
         {isEditing && (
