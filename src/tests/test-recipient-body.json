@@ -1,0 +1,90 @@
+[
+  {
+    "name": "김민수",
+    "backgroundColor": "beige",
+    "backgroundImageURL": "https://picsum.photos/id/683/3840/2160"
+  },
+  {
+    "name": "이지영",
+    "backgroundColor": "purple"
+  },
+  {
+    "name": "박준호",
+    "backgroundColor": "blue",
+    "backgroundImageURL": "https://picsum.photos/id/24/3840/2160"
+  },
+  {
+    "name": "최서연",
+    "backgroundColor": "green"
+  },
+  {
+    "name": "정태윤",
+    "backgroundColor": "beige"
+  },
+  {
+    "name": "한소희",
+    "backgroundColor": "purple",
+    "backgroundImageURL": "https://picsum.photos/id/599/3840/2160"
+  },
+  {
+    "name": "임재현",
+    "backgroundColor": "blue"
+  },
+  {
+    "name": "송유진",
+    "backgroundColor": "green",
+    "backgroundImageURL": "https://picsum.photos/id/1058/3840/2160"
+  },
+  {
+    "name": "강동훈",
+    "backgroundColor": "beige"
+  },
+  {
+    "name": "윤미래",
+    "backgroundColor": "purple"
+  },
+  {
+    "name": "조현우",
+    "backgroundColor": "blue",
+    "backgroundImageURL": "https://picsum.photos/id/683/3840/2160"
+  },
+  {
+    "name": "배수지",
+    "backgroundColor": "green"
+  },
+  {
+    "name": "신예린",
+    "backgroundColor": "beige"
+  },
+  {
+    "name": "오준석",
+    "backgroundColor": "purple",
+    "backgroundImageURL": "https://picsum.photos/id/24/3840/2160"
+  },
+  {
+    "name": "안채원",
+    "backgroundColor": "blue"
+  },
+  {
+    "name": "문지훈",
+    "backgroundColor": "green"
+  },
+  {
+    "name": "서다은",
+    "backgroundColor": "beige",
+    "backgroundImageURL": "https://picsum.photos/id/599/3840/2160"
+  },
+  {
+    "name": "황민규",
+    "backgroundColor": "purple"
+  },
+  {
+    "name": "김나영",
+    "backgroundColor": "blue"
+  },
+  {
+    "name": "이도현",
+    "backgroundColor": "green",
+    "backgroundImageURL": "https://picsum.photos/id/1058/3840/2160"
+  }
+]

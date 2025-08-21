@@ -1,0 +1,142 @@
+[
+  {
+    "sender": "이혜진",
+    "profileImageURL": "https://picsum.photos/id/522/100/100",
+    "relationship": "친구",
+    "content": "축하해! 항상 밝은 모습이 너무 보기 좋아. 올해도 건강하고 행복한 일만 가득하길 바라~",
+    "font": "Pretendard"
+  },
+  {
+    "sender": "박성민",
+    "profileImageURL": "https://picsum.photos/id/547/100/100",
+    "relationship": "동료",
+    "content": "정말 축하드립니다! 함께 일하면서 많이 배우고 있어요. 앞으로도 잘 부탁드려요!",
+    "font": "Noto Sans"
+  },
+  {
+    "sender": "김소영",
+    "profileImageURL": "https://picsum.photos/id/268/100/100",
+    "relationship": "가족",
+    "content": "축하해♡ 엄마가 항상 응원하고 있다는 거 알지? 사랑해!",
+    "font": "나눔손글씨 손편지체"
+  },
+  {
+    "sender": "최준영",
+    "profileImageURL": "https://picsum.photos/id/1082/100/100",
+    "relationship": "친구",
+    "content": "축하한다! 오늘 저녁에 맛있는 거 먹으러 가자. 내가 쏠게!",
+    "font": "Pretendard"
+  },
+  {
+    "sender": "정은지",
+    "profileImageURL": "https://picsum.photos/id/571/100/100",
+    "relationship": "지인",
+    "content": "축하해요! 늘 웃는 모습이 인상적이에요. 좋은 하루 보내세요~",
+    "font": "나눔명조"
+  },
+  {
+    "sender": "장현석",
+    "profileImageURL": "https://picsum.photos/id/494/100/100",
+    "relationship": "친구",
+    "content": "축하해! 시간 진짜 빠르다. 오늘 하루 특별하게 보내!",
+    "font": "Pretendard"
+  },
+  {
+    "sender": "윤서현",
+    "profileImageURL": "https://picsum.photos/id/859/100/100",
+    "relationship": "동료",
+    "content": "축하드려요! 덕분에 프로젝트가 잘 진행되고 있어요. 감사합니다!",
+    "font": "Noto Sans"
+  },
+  {
+    "sender": "김태호",
+    "profileImageURL": "https://picsum.photos/id/437/100/100",
+    "relationship": "친구",
+    "content": "축하해! 정말 수고 많았어. 이제 새로운 시작이네!",
+    "font": "나눔명조"
+  },
+  {
+    "sender": "박미영",
+    "profileImageURL": "https://picsum.photos/id/1064/100/100",
+    "relationship": "친구",
+    "content": "드디어구나~ 그동안 정말 열심히 했어. 앞으로도 화이팅!",
+    "font": "나눔손글씨 손편지체"
+  },
+  {
+    "sender": "이준수",
+    "profileImageURL": "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png",
+    "relationship": "지인",
+    "content": "축하드려요! 앞으로의 새로운 도전을 응원합니다.",
+    "font": "나눔명조"
+  },
+  {
+    "sender": "최유나",
+    "profileImageURL": "https://picsum.photos/id/522/100/100",
+    "relationship": "친구",
+    "content": "축하해♡ 우리 추억 정말 많았는데 이제 또 새로운 추억 만들어가자!",
+    "font": "Pretendard"
+  },
+  {
+    "sender": "강민호",
+    "profileImageURL": "https://picsum.photos/id/547/100/100",
+    "relationship": "동료",
+    "content": "축하합니다! 함께 활동했던 시간이 좋은 추억이에요.",
+    "font": "Noto Sans"
+  },
+  {
+    "sender": "홍서윤",
+    "profileImageURL": "https://picsum.photos/id/268/100/100",
+    "relationship": "가족",
+    "content": "축하해! 언니가 너무 자랑스러워. 앞으로 하고 싶은 일 다 해봐!",
+    "font": "나눔손글씨 손편지체"
+  },
+  {
+    "sender": "노진우",
+    "profileImageURL": "https://picsum.photos/id/1082/100/100",
+    "relationship": "친구",
+    "content": "축하해! 새로운 변화가 기대되네. 응원할게!",
+    "font": "Pretendard"
+  },
+  {
+    "sender": "임소은",
+    "profileImageURL": "https://picsum.photos/id/571/100/100",
+    "relationship": "친구",
+    "content": "정말 축하해! 그동안 고생 많았어. 이제 좋은 일만 있을 거야!",
+    "font": "나눔명조"
+  },
+  {
+    "sender": "조민석",
+    "profileImageURL": "https://picsum.photos/id/494/100/100",
+    "relationship": "지인",
+    "content": "축하드려요! 앞으로의 여정을 응원합니다.",
+    "font": "Noto Sans"
+  },
+  {
+    "sender": "김다은",
+    "profileImageURL": "https://picsum.photos/id/859/100/100",
+    "relationship": "친구",
+    "content": "축하해! 정말 열심히 하더니 결실을 맺었네. 너무 축하해!",
+    "font": "Pretendard"
+  },
+  {
+    "sender": "이현우",
+    "profileImageURL": "https://picsum.photos/id/437/100/100",
+    "relationship": "동료",
+    "content": "축하드립니다! 앞으로도 많이 배우고 싶어요.",
+    "font": "Noto Sans"
+  },
+  {
+    "sender": "박지민",
+    "profileImageURL": "https://picsum.photos/id/1064/100/100",
+    "relationship": "가족",
+    "content": "축하해! 아빠가 정말 자랑스럽다. 건강 조심하고 화이팅!",
+    "font": "나눔명조"
+  },
+  {
+    "sender": "정수빈",
+    "profileImageURL": "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png",
+    "relationship": "친구",
+    "content": "축하축하~ 이제 더 바빠지겠네. 건강 챙기면서 해!",
+    "font": "Pretendard"
+  }
+]
