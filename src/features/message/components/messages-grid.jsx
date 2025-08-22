@@ -48,7 +48,7 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
       key={message.id}
       isEditing={isEditing}
       message={message}
-      onDelete={(event) => handleDeleteClick(event, message.id)}
+      onDelete={() => handleDeleteClick(message.id)}
     />
   );
 

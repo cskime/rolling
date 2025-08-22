@@ -37,4 +37,11 @@ async function getNextPageMessages() {
   return data.results;
 }
 
-export { getMessages, getNextPageMessages };
+async function deleteMessage({ id }) {
+  const response = await apiClient.delete(`messages/${id}/`);
+  if (response.status !== 204) {
+    throw new Error("Message를 삭제하는데 실패했습니다.");
+  }
+}
+
+export { deleteMessage, getMessages, getNextPageMessages };

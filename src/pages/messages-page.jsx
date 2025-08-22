@@ -5,6 +5,7 @@ import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
 import {
+  deleteMessage,
   getMessages,
   getNextPageMessages,
 } from "../features/message/api/messages";
@@ -77,7 +78,7 @@ function EditingButtons({ onDelete, onCancel }) {
       />
       <OutlinedButton
         size={BUTTON_SIZE.medium}
-        title="취소하기"
+        title="완료하기"
         onClick={onCancel}
       />
     </ButtonContainer>
@@ -111,9 +112,14 @@ function MessagesPage() {
     navigate(-1);
   };
 
-  const handleMessageDelete = (messageId) => {
-    // TODO: Message 삭제
-    console.log(`Delete Message ${messageId}`);
+  const handleMessageDelete = async (messageId) => {
+    try {
+      await deleteMessage({ id: messageId });
+      setMessages((prev) => prev.filter((message) => message.id !== messageId));
+    } catch (error) {
+      // TODO: Error 처리
+      console.log(error);
+    }
   };
 
   const handleInfiniteScroll = async () => {
