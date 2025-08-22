@@ -10,7 +10,10 @@ import {
   getNextPageMessages,
 } from "../features/message/api/messages";
 import MessagesGrid from "../features/message/components/messages-grid";
-import { getRecipient } from "../features/rolling-paper/api/recipients";
+import {
+  deleteRecipient,
+  getRecipient,
+} from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
@@ -102,10 +105,14 @@ function MessagesPage() {
     navigate("edit");
   };
 
-  const handleRollingPaperDelete = () => {
-    // TODO: Rolling Paper 삭제
-    console.log(`Delete Rolling Paper ${recipient.id}`);
-    navigate(-1);
+  const handleRollingPaperDelete = async () => {
+    try {
+      await deleteRecipient({ id: recipient.id });
+      navigate(`/list`);
+    } catch (error) {
+      // TODO: Error 처리
+      console.log(error);
+    }
   };
 
   const handleEditCancel = () => {
