@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import shareImage from "../../../../assets/ic-share.svg";
-import { OutlinedButton } from "../../../../components/button/button";
-import BUTTON_SIZE from "../../../../components/button/button-size";
 import Colors from "../../../../components/color/colors";
-import Popover from "../../../../components/popover/popover";
-import POPOVER_ALIGNMENT from "../../../../components/popover/popover-alignment";
 import Toast from "../../../../components/toast/toast";
 import { useMedia } from "../../../../hooks/use-media";
 import { useToast } from "../../../../hooks/use-toast";
@@ -65,31 +60,6 @@ const StyledRollingPaperHeader = styled.div`
     align-items: flex-start;
   }
 `;
-
-const ShareButton = styled(OutlinedButton)`
-  width: auto;
-  padding: 0 16px;
-
-  ${media.mobile} {
-    padding: 0 8px;
-  }
-`;
-
-function SharePopover({ onShareKakao, onShareUrl }) {
-  return (
-    <Popover
-      id="share-popover"
-      alignment={POPOVER_ALIGNMENT.right}
-      action={<ShareButton size={BUTTON_SIZE.small} icon={shareImage} />}
-    >
-      <RollingPaperSharePopover
-        onShareKakao={onShareKakao}
-        onShareUrl={onShareUrl}
-      />
-    </Popover>
-  );
-}
-
 function RollingPaperHeader({
   isEditing,
   recipientId,
@@ -133,7 +103,7 @@ function RollingPaperHeader({
           </DividedContainer>
           <DividedContainer layout="compact">
             {isEditing || <AddReactionPopover />}
-            <SharePopover
+            <RollingPaperSharePopover
               onShareKakao={handleShareKakao}
               onShareUrl={handleShareUrl}
             />
