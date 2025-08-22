@@ -37,6 +37,7 @@ function Popover({ id, alignment, action, children }) {
 
   const handleClick = () => handleTargetClick(true);
   const handleBackdropClick = () => setShowsPopover(false);
+  const handlePopoverClick = (event) => event.stopPropagation();
 
   return (
     <>
@@ -46,7 +47,9 @@ function Popover({ id, alignment, action, children }) {
       {showsPopover && (
         <Portal id="popover">
           <Container onClick={handleBackdropClick}>
-            <StyledPopover $position={position}>{children}</StyledPopover>
+            <StyledPopover $position={position} onClick={handlePopoverClick}>
+              {children}
+            </StyledPopover>
           </Container>
         </Portal>
       )}
