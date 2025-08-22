@@ -1,4 +1,7 @@
+import axios from "axios";
 import { apiClient } from "../../../api/client";
+
+let nextPage;
 
 async function getMessages({ recipientId, limit, page = 1 }) {
   const searchParams = new URLSearchParams();
@@ -15,7 +18,23 @@ async function getMessages({ recipientId, limit, page = 1 }) {
   }
 
   const data = response.data;
+  nextPage = data.next;
+
   return data.results;
 }
 
-export { getMessages };
+async function getNextPageMessages() {
+  if (!nextPage) return;
+
+  const response = await axios.get(nextPage);
+  if (response.status !== 200) {
+    throw new Error("Message data를 가져오는데 실패했습니다.");
+  }
+
+  const data = response.data;
+  nextPage = data.next;
+
+  return data.results;
+}
+
+export { getMessages, getNextPageMessages };

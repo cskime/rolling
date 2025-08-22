@@ -4,7 +4,10 @@ import styled from "styled-components";
 import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
-import { getMessages } from "../features/message/api/messages";
+import {
+  getMessages,
+  getNextPageMessages,
+} from "../features/message/api/messages";
 import MessagesGrid from "../features/message/components/messages-grid";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
@@ -113,6 +116,22 @@ function MessagesPage() {
     console.log(`Delete Message ${messageId}`);
   };
 
+  const handleInfiniteScroll = async () => {
+    const messages = await getNextPageMessages();
+    if (!messages) return;
+
+    setMessages((prev) => {
+      const newMessages = [...prev];
+
+      for (const message of messages) {
+        if (newMessages.find((value) => value.id === message.id)) continue;
+        newMessages.push(message);
+      }
+
+      return newMessages;
+    });
+  };
+
   useEffect(() => {
     async function fetchRollingPaper() {
       try {
@@ -159,6 +178,7 @@ function MessagesPage() {
                 isEditing={isEditing}
                 messages={messages}
                 onDelete={handleMessageDelete}
+                onInfiniteScroll={handleInfiniteScroll}
               />
             </div>
           </Content>
