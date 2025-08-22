@@ -11,6 +11,15 @@ import { useMedia } from "../hooks/use-media";
 const TopContainer = styled.div`
   text-align: center;
   margin-top: 50px;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+`;
+
+const CardBox = styled.article`
+  ${media.tablet} {
+    flex: 1;
+  }
 `;
 
 const CardSection = styled.section`
@@ -37,6 +46,10 @@ const CardTitle = styled.h2`
   }
 `;
 
+const ButtonFooter = styled.footer`
+  position: relative;
+`;
+
 const MakingButton = styled(PrimaryButton)`
   margin-top: 64px;
   font-weight: 400;
@@ -44,12 +57,9 @@ const MakingButton = styled(PrimaryButton)`
 
   ${media.tablet} {
     justify-self: anchor-center;
-    margin-left: 24px;
-    margin-right: 24px;
     width: calc(100% - 48px);
     padding: 14px 20px;
-    position: relative;
-    bottom: 24px;
+    margin: 24px;
   }
 `;
 
@@ -142,7 +152,7 @@ function ShowMessageList() {
 
   return (
     <TopContainer>
-      <article>
+      <CardBox>
         <CardSection>
           <CardTitle>인기 롤링 페이퍼 🔥</CardTitle>
           <RollingPaperList
@@ -162,12 +172,14 @@ function ShowMessageList() {
             onTurnCards={(direction) => handleTurnCards(direction, "recent")}
           />
         </CardSection>
-      </article>
-      <MakingButton
-        size={BUTTON_SIZE.large}
-        title="나도 만들어보기"
-        onClick={handleMakingButton}
-      />
+      </CardBox>
+      <ButtonFooter>
+        <MakingButton
+          size={BUTTON_SIZE.large}
+          title="나도 만들어보기"
+          onClick={handleMakingButton}
+        />
+      </ButtonFooter>
     </TopContainer>
   );
 }
