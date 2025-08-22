@@ -26,14 +26,18 @@ function PopoverAction() {
   );
 }
 
-function AddReactionPopover() {
+function AddReactionPopover({ onSelect }) {
+  const handleEmojiClick = (data) => {
+    onSelect(data.emoji);
+  };
+
   return (
     <Popover
       id="emoji-picker-popover"
       alignment={POPOVER_ALIGNMENT.right}
       action={<PopoverAction />}
     >
-      <EmojiPicker />
+      <EmojiPicker onEmojiClick={handleEmojiClick} />
     </Popover>
   );
 }

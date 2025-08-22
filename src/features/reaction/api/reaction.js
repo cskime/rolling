@@ -10,4 +10,20 @@ async function getReactions({ recipientId }) {
   return data.results;
 }
 
-export { getReactions };
+async function addReaction({ recipientId, emoji }) {
+  const response = await apiClient.post(
+    `recipients/${recipientId}/reactions/`,
+    {
+      emoji,
+      type: "increase",
+    }
+  );
+  if (response.status !== 201) {
+    throw new Error("Reaction을 추가하는데 실패했습니다.");
+  }
+
+  const data = response.data;
+  return data;
+}
+
+export { addReaction, getReactions };

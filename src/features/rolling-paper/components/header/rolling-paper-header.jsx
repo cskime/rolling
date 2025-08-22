@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import Colors from "../../../../components/color/colors";
 import Toast from "../../../../components/toast/toast";
@@ -6,7 +6,7 @@ import { useMedia } from "../../../../hooks/use-media";
 import { useToast } from "../../../../hooks/use-toast";
 import { shareRollingPaper } from "../../../../libs/kakao/kakao-service";
 import { media } from "../../../../utils/media";
-import { getReactions } from "../../../reaction/api/reaction";
+import { addReaction, getReactions } from "../../../reaction/api/reaction";
 import AddReactionPopover from "../../../reaction/components/add-reaction-popover";
 import ReceivedReactions from "../../../reaction/components/received-reactions";
 import DividedContainer from "./divided-container";
@@ -75,6 +75,22 @@ function RollingPaperHeader({
 
   const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
 
+  const updateReactions = useCallback(
+    () =>
+      getReactions({ recipientId })
+        .then(setReactions)
+        .catch((error) => {
+          // TODO: Error 처리 필요
+          console.error(error);
+        }),
+    [recipientId]
+  );
+
+  const handleReactionSelect = async (emoji) => {
+    await addReaction({ recipientId, emoji });
+    updateReactions();
+  };
+
   const handleShareKakao = () => {
     shareRollingPaper({
       recipientId,
@@ -89,13 +105,8 @@ function RollingPaperHeader({
   };
 
   useEffect(() => {
-    getReactions({ recipientId })
-      .then(setReactions)
-      .catch((error) => {
-        // TODO: Error 처리 필요
-        console.error(error);
-      });
-  }, [recipientId]);
+    updateReactions();
+  }, [updateReactions]);
 
   return (
     <StyledRollingPaperHeader>
@@ -114,7 +125,9 @@ function RollingPaperHeader({
             <ReceivedReactions reactions={reactions} />
           </DividedContainer>
           <DividedContainer layout="compact">
-            {isEditing || <AddReactionPopover />}
+            {isEditing || (
+              <AddReactionPopover onSelect={handleReactionSelect} />
+            )}
             <RollingPaperSharePopover
               onShareKakao={handleShareKakao}
               onShareUrl={handleShareUrl}
