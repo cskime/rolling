@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
-import Modal from "../../../../components/modal/modal.jsx";
-import { media } from "../../../../utils/media.js";
-import MessageCardAdd from "../../../message/components/message-card-add.jsx";
-import MessageCardDetail from "../../../message/components/message-card-detail.jsx";
-import MessageCard from "../../../message/components/message-card.jsx";
+import Modal from "../../../components/modal/modal.jsx";
+import { media } from "../../../utils/media.js";
+import MessageCardAdd from "./message-card-add.jsx";
+import MessageCardDetail from "./message-card-detail.jsx";
+import MessageCard from "./message-card.jsx";
 
 const StyledRollingPaperMessagesGrid = styled.div`
   display: grid;
@@ -22,7 +22,7 @@ const StyledRollingPaperMessagesGrid = styled.div`
   }
 `;
 
-function RollingPaperMessagesGrid({ isEditing, messages, onDelete }) {
+function MessagesGrid({ isEditing, messages, onDelete }) {
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -59,4 +59,4 @@ function RollingPaperMessagesGrid({ isEditing, messages, onDelete }) {
   );
 }
 
-export default RollingPaperMessagesGrid;
+export default MessagesGrid;

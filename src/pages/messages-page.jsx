@@ -5,9 +5,9 @@ import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
 import { getMessages } from "../features/message/api/messages";
+import MessagesGrid from "../features/message/components/messages-grid";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
-import RollingPaperMessagesGrid from "../features/rolling-paper/components/messages/rolling-paper-messages-grid";
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
 import { media } from "../utils/media";
@@ -155,7 +155,7 @@ function MessagesPage() {
               ) : (
                 <ViewerButtons onEdit={handleEditClick} />
               )}
-              <RollingPaperMessagesGrid
+              <MessagesGrid
                 isEditing={isEditing}
                 messages={messages}
                 onDelete={handleMessageDelete}
