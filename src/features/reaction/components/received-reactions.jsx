@@ -9,12 +9,12 @@ const StyledRollingPaperReactions = styled.div`
   align-items: center;
 `;
 
-function ReceivedReactions({ topReactions, reactions }) {
+function ReceivedReactions({ reactions }) {
   const { isMobile } = useMedia();
 
   return (
     <StyledRollingPaperReactions>
-      <TopReactions reactions={topReactions.slice(0, 3)} />
+      <TopReactions reactions={reactions.slice(0, 3)} />
       <AllReactionsPopover reactions={reactions.slice(0, isMobile ? 6 : 8)} />
     </StyledRollingPaperReactions>
   );

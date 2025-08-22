@@ -141,7 +141,6 @@ function MessagesPage() {
             recipientId={recipient.id}
             recipientName={recipient.name}
             messages={messages}
-            topReactions={recipient.topReactions}
           />
           <Content
             $backgroundImageUrl={recipient.backgroundImageURL}

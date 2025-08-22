@@ -62,12 +62,12 @@ const StyledRollingPaperHeader = styled.div`
     align-items: flex-start;
   }
 `;
+
 function RollingPaperHeader({
   isEditing,
   recipientId,
   recipientName,
   messages,
-  topReactions,
 }) {
   const { showsToast, setShowsToast } = useToast();
   const { isDesktop, isMobile } = useMedia();
@@ -111,10 +111,7 @@ function RollingPaperHeader({
                 profiles={messages.map((message) => message.profileImageURL)}
               />
             )}
-            <ReceivedReactions
-              topReactions={topReactions}
-              reactions={reactions}
-            />
+            <ReceivedReactions reactions={reactions} />
           </DividedContainer>
           <DividedContainer layout="compact">
             {isEditing || <AddReactionPopover />}
