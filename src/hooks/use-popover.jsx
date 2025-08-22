@@ -16,7 +16,7 @@ function calculatePopoverPosition(target, alignment) {
 
   switch (alignment) {
     case POPOVER_ALIGNMENT.right:
-      position.right = window.innerWidth - targetRect.right;
+      position.right = window.innerWidth - targetRect.right - 16; // 오른쪽 정렬 시 -16px 보정
       break;
     default:
       position.left = targetRect.left;
