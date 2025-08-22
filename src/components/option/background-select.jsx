@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import Colors from "../color/colors";
-import CheckImage from "../../assets/ic-check.svg";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+import CheckImage from "../../assets/ic-check.svg";
 import { OutlinedButton } from "../button/button";
 import BUTTON_SIZE from "../button/button-size";
+import BACKGROUND_COLOR from "../color/background-color";
+import Colors from "../color/colors";
 
 const BackgroundWrapper = styled.div`
   padding-top: 50px;
@@ -44,10 +45,10 @@ function BackgroundSelect({ type, selected, onSelect }) {
   const [imageUrls, setImageUrls] = useState([]);
 
   const colorOptions = [
-    { color: Colors.beige(200) },
-    { color: Colors.purple(200) },
-    { color: Colors.blue(200) },
-    { color: Colors.green(200) },
+    { color: BACKGROUND_COLOR.beige },
+    { color: BACKGROUND_COLOR.purple },
+    { color: BACKGROUND_COLOR.blue },
+    { color: BACKGROUND_COLOR.green },
   ];
 
   /* useEffect(() => {

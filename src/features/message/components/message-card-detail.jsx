@@ -48,7 +48,8 @@ function MessageCardDetail({ message }) {
     <StyledMessageCardDetail>
       <Header>
         <MessageSender
-          profileImage={message.profileImage}
+          profileImageUrl={message.profileImageURL}
+          relationship={message.relationship}
           name={message.sender}
         />
         <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>

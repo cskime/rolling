@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
 import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
+import BACKGROUND_COLOR from "../components/color/background-color";
+import { getMessages } from "../features/message/api/messages";
 import { getRecipient } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
 import RollingPaperMessagesGrid from "../features/rolling-paper/components/messages/rolling-paper-messages-grid";
@@ -82,8 +84,10 @@ function EditingButtons({ onDelete, onCancel }) {
 function MessagesPage() {
   const { isMobile } = useMedia();
   const [recipient, setRecipient] = useState();
+  const [messages, setMessages] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const isEditing = useMemo(
     () => location.pathname.includes("edit"),
@@ -110,8 +114,23 @@ function MessagesPage() {
   };
 
   useEffect(() => {
-    getRecipient().then(setRecipient);
-  }, []);
+    async function fetchRollingPaper() {
+      try {
+        const [recipient, messages] = await Promise.all([
+          getRecipient({ id }),
+          getMessages({ recipientId: id }),
+        ]);
+
+        setRecipient(recipient);
+        setMessages(messages);
+      } catch (error) {
+        // TODO: Error 처리 필요
+        console.error(error);
+      }
+    }
+
+    fetchRollingPaper();
+  }, [id]);
 
   const content = (
     <>
@@ -121,12 +140,11 @@ function MessagesPage() {
             isEditing={isEditing}
             recipientId={recipient.id}
             recipientName={recipient.name}
-            messages={recipient.recentMessages}
-            reactions={recipient.topReactions}
+            messages={messages}
           />
           <Content
             $backgroundImageUrl={recipient.backgroundImageURL}
-            $backgroundColor={recipient.backgroundColor}
+            $backgroundColor={BACKGROUND_COLOR[recipient.backgroundColor]}
           >
             <div>
               {isEditing ? (
@@ -139,7 +157,7 @@ function MessagesPage() {
               )}
               <RollingPaperMessagesGrid
                 isEditing={isEditing}
-                messages={recipient.recentMessages}
+                messages={messages}
                 onDelete={handleMessageDelete}
               />
             </div>

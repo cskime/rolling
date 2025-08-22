@@ -1,18 +1,15 @@
-import EmojiPicker from "emoji-picker-react";
+import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import addImage from "../../../../assets/ic-face-smile-add.svg";
-import shareImage from "../../../../assets/ic-share.svg";
-import { OutlinedButton } from "../../../../components/button/button";
-import BUTTON_SIZE from "../../../../components/button/button-size";
 import Colors from "../../../../components/color/colors";
-import Popover from "../../../../components/popover/popover";
-import POPOVER_ALIGNMENT from "../../../../components/popover/popover-alignment";
 import Toast from "../../../../components/toast/toast";
 import { useMedia } from "../../../../hooks/use-media";
 import { useToast } from "../../../../hooks/use-toast";
 import { shareRollingPaper } from "../../../../libs/kakao/kakao-service";
 import { media } from "../../../../utils/media";
-import RollingPaperReactions from "./rolling-paper-reactions";
+import { addReaction, getReactions } from "../../../reaction/api/reaction";
+import AddReactionPopover from "../../../reaction/components/add-reaction-popover";
+import ReceivedReactions from "../../../reaction/components/received-reactions";
+import DividedContainer from "./divided-container";
 import RollingPaperSenders from "./rolling-paper-senders";
 import RollingPaperSharePopover from "./rolling-paper-share-popover";
 
@@ -29,51 +26,10 @@ const RecipientName = styled.h2`
   }
 `;
 
-const Divider = styled.div`
-  width: 1px;
-  height: 28px;
-  background-color: ${Colors.gray(200)};
-`;
-
-const StyledDividedContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 28px;
-
-  ${media.mobile} {
-    gap: 16px;
-  }
-`;
-
-function DividedContainer({ children }) {
-  return (
-    <StyledDividedContainer>
-      {children[0]}
-      {children[0] && <Divider />}
-      {children[1]}
-    </StyledDividedContainer>
-  );
-}
-
 const HeaderTrailing = styled.div`
   display: flex;
   gap: 8px;
   align-items: center;
-`;
-
-const AddButton = styled(OutlinedButton)`
-  ${media.mobile} {
-    padding: 0 8px;
-  }
-`;
-
-const ShareButton = styled(OutlinedButton)`
-  width: auto;
-  padding: 0 16px;
-
-  ${media.mobile} {
-    padding: 0 8px;
-  }
 `;
 
 const RollingPaperHeaderContent = styled.div`
@@ -112,12 +68,28 @@ function RollingPaperHeader({
   recipientId,
   recipientName,
   messages,
-  reactions,
 }) {
   const { showsToast, setShowsToast } = useToast();
   const { isDesktop, isMobile } = useMedia();
+  const [reactions, setReactions] = useState([]);
 
   const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
+
+  const updateReactions = useCallback(
+    () =>
+      getReactions({ recipientId })
+        .then(setReactions)
+        .catch((error) => {
+          // TODO: Error 처리 필요
+          console.error(error);
+        }),
+    [recipientId]
+  );
+
+  const handleReactionSelect = async (emoji) => {
+    await addReaction({ recipientId, emoji });
+    updateReactions();
+  };
 
   const handleShareKakao = () => {
     shareRollingPaper({
@@ -131,6 +103,10 @@ function RollingPaperHeader({
     navigator.clipboard.writeText(url);
     setShowsToast(true);
   };
+
+  useEffect(() => {
+    updateReactions();
+  }, [updateReactions]);
 
   return (
     <StyledRollingPaperHeader>
@@ -146,36 +122,16 @@ function RollingPaperHeader({
                 profiles={messages.map((message) => message.profileImageURL)}
               />
             )}
-            <RollingPaperReactions reactions={reactions.slice(0, 8)} />
+            <ReceivedReactions reactions={reactions} />
           </DividedContainer>
-          <DividedContainer>
+          <DividedContainer layout="compact">
             {isEditing || (
-              <Popover
-                id="emoji-picker-popover"
-                alignment={POPOVER_ALIGNMENT.right}
-                action={
-                  <AddButton
-                    size={BUTTON_SIZE.small}
-                    title={isMobile ? null : "추가"}
-                    icon={addImage}
-                  />
-                }
-              >
-                <EmojiPicker />
-              </Popover>
+              <AddReactionPopover onSelect={handleReactionSelect} />
             )}
-            <Popover
-              id="share-popover"
-              alignment={POPOVER_ALIGNMENT.right}
-              action={
-                <ShareButton size={BUTTON_SIZE.small} icon={shareImage} />
-              }
-            >
-              <RollingPaperSharePopover
-                onShareKakao={handleShareKakao}
-                onShareUrl={handleShareUrl}
-              />
-            </Popover>
+            <RollingPaperSharePopover
+              onShareKakao={handleShareKakao}
+              onShareUrl={handleShareUrl}
+            />
           </DividedContainer>
         </HeaderTrailing>
       </RollingPaperHeaderContent>

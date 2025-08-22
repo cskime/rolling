@@ -37,13 +37,13 @@ const StyledRollingPaperReactions = styled.div`
   align-items: center;
 `;
 
-function RollingPaperReactions({ reactions }) {
+function RollingPaperReactions({ topReactions, reactions }) {
   const { isMobile } = useMedia();
 
   return (
     <StyledRollingPaperReactions>
       <TopThreeReactions>
-        {reactions.slice(0, 3).map(({ id, emoji, count }) => (
+        {topReactions.map(({ id, emoji, count }) => (
           <EmojiBadge key={id} emoji={emoji} count={count} />
         ))}
       </TopThreeReactions>

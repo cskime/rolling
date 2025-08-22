@@ -42,11 +42,11 @@ const StyledMessageSender = styled.div`
   gap: 14px;
 `;
 
-function MessageSender({ profileImage, name }) {
+function MessageSender({ profileImageUrl, relationship, name }) {
   return (
     <StyledMessageSender>
-      <Avatar source={profileImage} />
-      <SenderInfo name={name} type={BADGE_TYPE.coworker} />
+      <Avatar source={profileImageUrl} />
+      <SenderInfo name={name} type={BADGE_TYPE[relationship]} />
     </StyledMessageSender>
   );
 }

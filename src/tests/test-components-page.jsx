@@ -128,10 +128,10 @@ function TestComponentsPage() {
         <ToggleButton value="이미지" options={["컬러", "이미지", "다른값"]} />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <Badge type={BADGE_TYPE.acquaintance} />
-        <Badge type={BADGE_TYPE.coworker} />
-        <Badge type={BADGE_TYPE.family} />
-        <Badge type={BADGE_TYPE.friend} />
+        <Badge type={BADGE_TYPE.지인} />
+        <Badge type={BADGE_TYPE.동료} />
+        <Badge type={BADGE_TYPE.가족} />
+        <Badge type={BADGE_TYPE.친구} />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <EmojiBadge emoji="😚" count={1} />
