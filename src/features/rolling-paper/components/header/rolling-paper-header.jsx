@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Colors from "../../../../components/color/colors";
 import Toast from "../../../../components/toast/toast";
@@ -5,6 +6,7 @@ import { useMedia } from "../../../../hooks/use-media";
 import { useToast } from "../../../../hooks/use-toast";
 import { shareRollingPaper } from "../../../../libs/kakao/kakao-service";
 import { media } from "../../../../utils/media";
+import { getReactions } from "../../../reaction/api/reaction";
 import AddReactionPopover from "../../../reaction/components/add-reaction-popover";
 import ReceivedReactions from "../../../reaction/components/received-reactions";
 import DividedContainer from "./divided-container";
@@ -65,10 +67,11 @@ function RollingPaperHeader({
   recipientId,
   recipientName,
   messages,
-  reactions,
+  topReactions,
 }) {
   const { showsToast, setShowsToast } = useToast();
   const { isDesktop, isMobile } = useMedia();
+  const [reactions, setReactions] = useState([]);
 
   const name = <RecipientName>{`To. ${recipientName}`}</RecipientName>;
 
@@ -85,6 +88,15 @@ function RollingPaperHeader({
     setShowsToast(true);
   };
 
+  useEffect(() => {
+    getReactions({ recipientId })
+      .then(setReactions)
+      .catch((error) => {
+        // TODO: Error 처리 필요
+        console.error(error);
+      });
+  }, [recipientId]);
+
   return (
     <StyledRollingPaperHeader>
       {isMobile && (
@@ -99,7 +111,10 @@ function RollingPaperHeader({
                 profiles={messages.map((message) => message.profileImageURL)}
               />
             )}
-            <ReceivedReactions topReactions={reactions} reactions={reactions} />
+            <ReceivedReactions
+              topReactions={topReactions}
+              reactions={reactions}
+            />
           </DividedContainer>
           <DividedContainer layout="compact">
             {isEditing || <AddReactionPopover />}

@@ -120,6 +120,7 @@ function MessagesPage() {
           getRecipient({ id }),
           getMessages({ recipientId: id }),
         ]);
+
         setRecipient(recipient);
         setMessages(messages);
       } catch (error) {
@@ -140,7 +141,7 @@ function MessagesPage() {
             recipientId={recipient.id}
             recipientName={recipient.name}
             messages={messages}
-            reactions={recipient.topReactions}
+            topReactions={recipient.topReactions}
           />
           <Content
             $backgroundImageUrl={recipient.backgroundImageURL}
