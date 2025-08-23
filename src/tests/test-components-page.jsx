@@ -28,7 +28,7 @@ const OutlinedHeader = styled(Header)`
   border: 1px solid black;
 `;
 
-function TestPage() {
+function TestComponentsPage() {
   /* Dropdown type TextField */
   const [option1, setOption1] = useState();
   const [option2, setOption2] = useState();
@@ -128,10 +128,10 @@ function TestPage() {
         <ToggleButton value="이미지" options={["컬러", "이미지", "다른값"]} />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <Badge type={BADGE_TYPE.acquaintance} />
-        <Badge type={BADGE_TYPE.coworker} />
-        <Badge type={BADGE_TYPE.family} />
-        <Badge type={BADGE_TYPE.friend} />
+        <Badge type={BADGE_TYPE.지인} />
+        <Badge type={BADGE_TYPE.동료} />
+        <Badge type={BADGE_TYPE.가족} />
+        <Badge type={BADGE_TYPE.친구} />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <EmojiBadge emoji="😚" count={1} />
@@ -201,11 +201,10 @@ function TestPage() {
       <div>
         <Modal
           id="user"
-          user={{ name: "김동훈", profileImage: null }}
-          date={new Date("2023-07-08")}
-          content="코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요! 코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심 또 하세요!"
           action={<PrimaryButton size={BUTTON_SIZE.small} title="Show Modal" />}
-        />
+        >
+          <h1>This is Modal.</h1>
+        </Modal>
       </div>
       <div style={{ display: "flex", gap: "16px" }}>
         <Popover
@@ -252,4 +251,4 @@ function TestPage() {
   );
 }
 
-export default TestPage;
+export default TestComponentsPage;

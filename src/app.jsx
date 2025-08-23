@@ -7,7 +7,8 @@ import MainPage from "./pages/main-page";
 import RollingPaperListPage from "./pages/rolling-paper-list-page";
 import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
-import TestPage from "./pages/test-page";
+import TestApiPage from "./tests/test-api-page";
+import TestComponentsPage from "./tests/test-components-page";
 
 function Provider({ children }) {
   return <PortalProvider>{children}</PortalProvider>;
@@ -43,18 +44,21 @@ function App() {
                 </ContentLayout>
               }
             />
-            <Route
-              path=":id/message"
-              element={
-                <ContentLayout>
-                  <SendMessagePage />
-                </ContentLayout>
-              }
-            />
-            <Route path=":id" element={<MessagesPage />} />
+            <Route path=":id">
+              <Route index element={<MessagesPage />} />
+              <Route path="edit" element={<MessagesPage />} />
+              <Route
+                path="message"
+                element={
+                  <ContentLayout>
+                    <SendMessagePage />
+                  </ContentLayout>
+                }
+              />
+            </Route>
           </Route>
           <Route path="/test-components" element={<TestPage />} />
-          <Route path="/list" element={<RollingPaperListPage />} />
+          <Route path="/test-api" element={<TestApiPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>
