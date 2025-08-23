@@ -3,22 +3,27 @@ import styled from "styled-components";
 import CheckImage from "../../assets/ic-check.svg";
 import { OutlinedButton } from "../button/button";
 import BUTTON_SIZE from "../button/button-size";
+import { media } from "../../utils/media";
 import BACKGROUND_COLOR from "../color/background-color";
 import Colors from "../color/colors";
 
 const BackgroundWrapper = styled.div`
   padding-top: 50px;
-  width: 720px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 720px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+
+  ${media.mobile} {
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const OptionItem = styled.div`
-  width: 168px;
-  height: 168px;
-  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   position: relative;
 `;

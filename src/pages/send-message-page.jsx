@@ -9,6 +9,7 @@ import BUTTON_SIZE from "../components/button/button-size";
 import { useNavigate } from "react-router";
 import { PrimaryButton } from "../components/button/button";
 import TextEditor from "../components/text-editor/text-editor";
+import { media } from "../utils/media";
 
 const SendContainer = styled.div`
   display: flex;
@@ -17,11 +18,23 @@ const SendContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 0 auto;
+
+  ${media.tablet} {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 const Wrapper = styled.div`
   padding-top: 50px;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 `;
 
 const SendTitle = styled.h2`
@@ -30,7 +43,6 @@ const SendTitle = styled.h2`
 
 const AvatarWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 32px;
 `;
 
@@ -38,7 +50,7 @@ const AvatarOptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 `;
 
 const AvatarDescription = styled.p`
@@ -49,10 +61,22 @@ const AvatarDescription = styled.p`
 const AvatarOption = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${media.mobile} {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    width: 50%;
+  }
 `;
 
 const AvatarPreview = styled.div`
   cursor: pointer;
+`;
+
+const DefaultAvatar = styled.div`
+  cursor: pointer;
+  padding-top: 20px;
   box-shadow: ${({ $isSelected }) =>
     $isSelected ? `0 0 0 2px ${Colors.purple(600)}` : "none"};
   border-radius: 50%;
@@ -61,7 +85,8 @@ const AvatarPreview = styled.div`
 const ButtonWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 150px;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 `;
 
 const CreateButton = styled(PrimaryButton)`
