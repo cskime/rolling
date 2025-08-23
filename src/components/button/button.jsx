@@ -215,4 +215,37 @@ function OutlinedButton({ className, title, icon, size, ...props }) {
   );
 }
 
-export { OutlinedButton, PrimaryButton, SecondaryButton };
+/* Dangerous Button */
+
+const StyledDangerousButton = styled(BaseButton)`
+  padding: 0 24px;
+  background-color: ${Colors.red(600)};
+  color: white;
+
+  &:hover {
+    background-color: ${Colors.red(700)};
+  }
+
+  &:active {
+    background-color: ${Colors.red(800)};
+  }
+
+  &:focus {
+    background-color: ${Colors.red(800)};
+    box-shadow: 0 0 0 1px ${Colors.red(900)} inset;
+  }
+
+  &:disabled {
+    background-color: ${Colors.gray(300)};
+  }
+`;
+
+function DangerousButton({ title, size, ...props }) {
+  return (
+    <StyledDangerousButton $size={size} {...props}>
+      <span>{title}</span>
+    </StyledDangerousButton>
+  );
+}
+
+export { DangerousButton, OutlinedButton, PrimaryButton, SecondaryButton };

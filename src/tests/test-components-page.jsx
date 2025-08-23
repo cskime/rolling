@@ -9,6 +9,7 @@ import EmojiBadge from "../components/badge/emoji-badge";
 import ArrowButton from "../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
 import {
+  DangerousButton,
   OutlinedButton,
   PrimaryButton,
   SecondaryButton,
@@ -78,6 +79,13 @@ function TestComponentsPage() {
         <OutlinedButton size={BUTTON_SIZE.small} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <DangerousButton size={BUTTON_SIZE.large} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.medium} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.small} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.extraSmall} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <OutlinedButton
