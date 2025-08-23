@@ -1,10 +1,12 @@
+import { useRef } from "react";
 import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
-import Modal from "../../../../components/modal/modal.jsx";
-import { media } from "../../../../utils/media.js";
-import MessageCardAdd from "../../../message/components/message-card-add.jsx";
-import MessageCardDetail from "../../../message/components/message-card-detail.jsx";
-import MessageCard from "../../../message/components/message-card.jsx";
+import Modal from "../../../components/modal/modal.jsx";
+import { useIntersectionObserver } from "../../../hooks/use-intersection-observer.jsx";
+import { media } from "../../../utils/media.js";
+import MessageCardAdd from "./message-card-add.jsx";
+import MessageCardDetail from "./message-card-detail.jsx";
+import MessageCard from "./message-card.jsx";
 
 const StyledRollingPaperMessagesGrid = styled.div`
   display: grid;
@@ -22,9 +24,16 @@ const StyledRollingPaperMessagesGrid = styled.div`
   }
 `;
 
-function RollingPaperMessagesGrid({ isEditing, messages, onDelete }) {
+function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
   const navigate = useNavigate();
   const { id } = useParams();
+  const infiniteScrollTargetRef = useRef();
+
+  const observerCallback = (entry) => {
+    if (!entry.isIntersecting) return;
+    onInfiniteScroll();
+  };
+  useIntersectionObserver(infiniteScrollTargetRef, observerCallback);
 
   const handleAddClick = () => {
     navigate(`/post/${id}/message`);
@@ -39,7 +48,7 @@ function RollingPaperMessagesGrid({ isEditing, messages, onDelete }) {
       key={message.id}
       isEditing={isEditing}
       message={message}
-      onDelete={(event) => handleDeleteClick(event, message.id)}
+      onDelete={() => handleDeleteClick(message.id)}
     />
   );
 
@@ -55,8 +64,9 @@ function RollingPaperMessagesGrid({ isEditing, messages, onDelete }) {
           </Modal>
         )
       )}
+      <div ref={infiniteScrollTargetRef}></div>
     </StyledRollingPaperMessagesGrid>
   );
 }
 
-export default RollingPaperMessagesGrid;
+export default MessagesGrid;

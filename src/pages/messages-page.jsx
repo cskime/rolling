@@ -4,10 +4,17 @@ import styled from "styled-components";
 import { OutlinedButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
-import { getMessages } from "../features/message/api/messages";
-import { getRecipient } from "../features/rolling-paper/api/recipients";
+import {
+  deleteMessage,
+  getMessages,
+  getNextPageMessages,
+} from "../features/message/api/messages";
+import MessagesGrid from "../features/message/components/messages-grid";
+import {
+  deleteRecipient,
+  getRecipient,
+} from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
-import RollingPaperMessagesGrid from "../features/rolling-paper/components/messages/rolling-paper-messages-grid";
 import { useMedia } from "../hooks/use-media";
 import ContentLayout from "../layouts/content-layout";
 import { media } from "../utils/media";
@@ -74,7 +81,7 @@ function EditingButtons({ onDelete, onCancel }) {
       />
       <OutlinedButton
         size={BUTTON_SIZE.medium}
-        title="취소하기"
+        title="완료하기"
         onClick={onCancel}
       />
     </ButtonContainer>
@@ -98,19 +105,44 @@ function MessagesPage() {
     navigate("edit");
   };
 
-  const handleRollingPaperDelete = () => {
-    // TODO: Rolling Paper 삭제
-    console.log(`Delete Rolling Paper ${recipient.id}`);
-    navigate(-1);
+  const handleRollingPaperDelete = async () => {
+    try {
+      await deleteRecipient({ id: recipient.id });
+      navigate(`/list`);
+    } catch (error) {
+      // TODO: Error 처리
+      console.log(error);
+    }
   };
 
   const handleEditCancel = () => {
     navigate(-1);
   };
 
-  const handleMessageDelete = (messageId) => {
-    // TODO: Message 삭제
-    console.log(`Delete Message ${messageId}`);
+  const handleMessageDelete = async (messageId) => {
+    try {
+      await deleteMessage({ id: messageId });
+      setMessages((prev) => prev.filter((message) => message.id !== messageId));
+    } catch (error) {
+      // TODO: Error 처리
+      console.log(error);
+    }
+  };
+
+  const handleInfiniteScroll = async () => {
+    const messages = await getNextPageMessages();
+    if (!messages) return;
+
+    setMessages((prev) => {
+      const newMessages = [...prev];
+
+      for (const message of messages) {
+        if (newMessages.find((value) => value.id === message.id)) continue;
+        newMessages.push(message);
+      }
+
+      return newMessages;
+    });
   };
 
   useEffect(() => {
@@ -155,10 +187,11 @@ function MessagesPage() {
               ) : (
                 <ViewerButtons onEdit={handleEditClick} />
               )}
-              <RollingPaperMessagesGrid
+              <MessagesGrid
                 isEditing={isEditing}
                 messages={messages}
                 onDelete={handleMessageDelete}
+                onInfiniteScroll={handleInfiniteScroll}
               />
             </div>
           </Content>
