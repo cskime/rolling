@@ -75,7 +75,7 @@ function ViewerButtons({ onEdit }) {
   );
 }
 
-function EditingButtons({ onDelete, onCancel }) {
+function EditingButtons({ onDelete, onDone }) {
   return (
     <ButtonContainer>
       <DangerousButton
@@ -86,7 +86,7 @@ function EditingButtons({ onDelete, onCancel }) {
       <OutlinedButton
         size={BUTTON_SIZE.medium}
         title="완료"
-        onClick={onCancel}
+        onClick={onDone}
       />
     </ButtonContainer>
   );
@@ -119,7 +119,7 @@ function MessagesPage() {
     }
   };
 
-  const handleEditCancel = () => {
+  const handleEditDone = () => {
     navigate(-1);
   };
 
@@ -186,7 +186,7 @@ function MessagesPage() {
               {isEditing ? (
                 <EditingButtons
                   onDelete={handleRollingPaperDelete}
-                  onCancel={handleEditCancel}
+                  onDone={handleEditDone}
                 />
               ) : (
                 <ViewerButtons onEdit={handleEditClick} />
