@@ -5,7 +5,6 @@ import {
   DangerousButton,
   OutlinedButton,
   PrimaryButton,
-  SecondaryButton,
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
@@ -82,7 +81,7 @@ function ViewerButtons({ onEdit }) {
 function EditingButtons({ onDelete, onDone }) {
   return (
     <ButtonContainer>
-      <DangerousButton
+      <PrimaryButton
         size={BUTTON_SIZE.medium}
         title="삭제하기"
         onClick={onDelete}
@@ -245,12 +244,12 @@ function MessagesPage() {
           content={dialogContent}
           action={
             <>
-              <PrimaryButton
+              <DangerousButton
                 size={BUTTON_SIZE.medium}
                 title="삭제"
                 onClick={handleDelete}
               />
-              <SecondaryButton
+              <OutlinedButton
                 size={BUTTON_SIZE.medium}
                 title="취소"
                 onClick={handleDeleteCancel}
