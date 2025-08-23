@@ -50,11 +50,22 @@ const StyledMessageCard = styled.article`
   border-radius: 16px;
   background-color: white;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  cursor: ${({ $isEditing }) => ($isEditing ? "default" : "pointer")};
 `;
 
-function MessageCard({ isEditing, message, onDelete }) {
+function MessageCard({ isEditing, message, onClick, onDelete }) {
+  const handleClick = () => {
+    if (isEditing) return;
+    onClick(message);
+  };
+
+  const handleDeleteClick = (event) => {
+    event.stopPropagation();
+    onDelete(message.id);
+  };
+
   return (
-    <StyledMessageCard>
+    <StyledMessageCard $isEditing={isEditing} onClick={handleClick}>
       <Header>
         <MessageSender
           profileImageUrl={message.profileImageURL}
@@ -65,7 +76,7 @@ function MessageCard({ isEditing, message, onDelete }) {
           <OutlinedButton
             size={BUTTON_SIZE.medium}
             icon={deleteImage}
-            onClick={onDelete}
+            onClick={handleDeleteClick}
           />
         )}
       </Header>

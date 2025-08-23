@@ -1,8 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
 import Modal from "../../../components/modal/modal.jsx";
 import { useIntersectionObserver } from "../../../hooks/use-intersection-observer.jsx";
+import { useModal } from "../../../hooks/use-modal.jsx";
 import { media } from "../../../utils/media.js";
 import MessageCardAdd from "./message-card-add.jsx";
 import MessageCardDetail from "./message-card-detail.jsx";
@@ -28,6 +29,10 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const infiniteScrollTargetRef = useRef();
+  const { showsModal, setShowsModal } = useModal({
+    key: "message-modal",
+  });
+  const [modalMessage, setModalMessage] = useState(null);
 
   const observerCallback = (entry) => {
     if (!entry.isIntersecting) return;
@@ -39,33 +44,42 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
     navigate(`/post/${id}/message`);
   };
 
+  const handleMessageClick = (message) => {
+    setShowsModal(true);
+    setModalMessage(message);
+  };
+
   const handleDeleteClick = (messageId) => {
     onDelete(messageId);
   };
 
-  const messageCard = (message) => (
-    <MessageCard
-      key={message.id}
-      isEditing={isEditing}
-      message={message}
-      onDelete={() => handleDeleteClick(message.id)}
-    />
-  );
+  const handleModalConfirm = () => {
+    setShowsModal(false);
+    setModalMessage(null);
+  };
 
   return (
-    <StyledRollingPaperMessagesGrid>
-      <MessageCardAdd onClick={handleAddClick} />
-      {messages.map((message) =>
-        isEditing ? (
-          messageCard(message)
-        ) : (
-          <Modal key={message.id} id={message.id} action={messageCard(message)}>
-            <MessageCardDetail message={message} />
-          </Modal>
-        )
-      )}
-      <div ref={infiniteScrollTargetRef}></div>
-    </StyledRollingPaperMessagesGrid>
+    <>
+      <StyledRollingPaperMessagesGrid>
+        <MessageCardAdd onClick={handleAddClick} />
+        {messages.map((message) => (
+          <MessageCard
+            key={message.id}
+            isEditing={isEditing}
+            message={message}
+            onClick={handleMessageClick}
+            onDelete={handleDeleteClick}
+          />
+        ))}
+        <div ref={infiniteScrollTargetRef}></div>
+      </StyledRollingPaperMessagesGrid>
+      <Modal shows={showsModal && modalMessage != null}>
+        <MessageCardDetail
+          message={modalMessage}
+          onConfirm={handleModalConfirm}
+        />
+      </Modal>
+    </>
   );
 }
 
