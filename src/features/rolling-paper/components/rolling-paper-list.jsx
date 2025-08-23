@@ -7,6 +7,7 @@ import Avatar from "../../../components/avatar/avatar";
 import AVATAR_SIZE from "../../../components/avatar/avatar-size";
 import CardBackground from "../../../components/image/card-background";
 import { useImageListLodeChecker } from "../../../hooks/use-image-loader";
+import { useNavigate } from "react-router";
 
 const CardContainer = styled.div`
   display: grid;
@@ -62,6 +63,7 @@ const CardItem = styled(CardBackground)`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   justify-content: space-between;
 
@@ -277,6 +279,11 @@ const PreviewButtonWrapper = styled.div`
 `;
 
 function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = (id) => {
+    navigate(`/post/${id}`);
+  };
   const profileImages = useMemo(
     () =>
       cardData.flatMap((card) =>
@@ -300,6 +307,7 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
           backgroundImageURL={card.backgroundImageURL}
           backgroundColor={card.backgroundColor}
           overlayOn
+          onClick={() => handleCardClick(card.id)}
         >
           <CardTitle
             $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
