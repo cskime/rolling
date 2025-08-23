@@ -57,7 +57,7 @@ function App() {
               />
             </Route>
           </Route>
-          <Route path="/test-components" element={<TestPage />} />
+          <Route path="/test-components" element={<TestComponentsPage />} />
           <Route path="/test-api" element={<TestApiPage />} />
         </Routes>
       </BrowserRouter>

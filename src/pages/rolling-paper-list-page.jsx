@@ -1,16 +1,25 @@
 import { PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
-import { useNavigate } from "react-router";
 import React, { useEffect, useState, useMemo } from "react";
-import { getRollingPaperList } from "../features/rolling-paper/api/rollingPaperList";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
 import { media } from "../utils/media";
 import { useMedia } from "../hooks/use-media";
+import { apiClient } from "../api/client";
 
 const TopContainer = styled.div`
   text-align: center;
   margin-top: 50px;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+`;
+
+const CardBox = styled.article`
+  ${media.tablet} {
+    flex: 1;
+  }
 `;
 
 const CardSection = styled.section`
@@ -37,6 +46,10 @@ const CardTitle = styled.h2`
   }
 `;
 
+const ButtonFooter = styled.footer`
+  position: relative;
+`;
+
 const MakingButton = styled(PrimaryButton)`
   margin-top: 64px;
   font-weight: 400;
@@ -44,12 +57,9 @@ const MakingButton = styled(PrimaryButton)`
 
   ${media.tablet} {
     justify-self: anchor-center;
-    margin-left: 24px;
-    margin-right: 24px;
     width: calc(100% - 48px);
     padding: 14px 20px;
-    position: relative;
-    bottom: 24px;
+    margin: 24px;
   }
 `;
 
@@ -65,7 +75,7 @@ function getCachedImage(url) {
 function ShowMessageList() {
   const navigate = useNavigate();
 
-  const [testData, setTestData] = useState([]);
+  const [recipientsData, setRecipientsData] = useState([]);
   const [popularDataList, setPopularDataList] = useState([]);
   const [recentDataList, setRecentDataList] = useState([]);
   const [popularCurrentPage, setPopularCurrentPage] = useState(0);
@@ -82,33 +92,37 @@ function ShowMessageList() {
   };
 
   useEffect(() => {
-    isDesktop ? setCardCount(4) : setCardCount(null);
-  }, [isDesktop]);
-
-
-  useEffect(() => {
-    getRollingPaperList().then(setTestData);
+    apiClient
+      .get("/recipients/")
+      .then((res) => {
+        setRecipientsData(res.data.results);
+      })
+      .catch((err) => {
+        console.error("오류:", err);
+      });
   }, []);
 
   useEffect(() => {
-    testData.forEach((data) => {
+    recipientsData.forEach((data) => {
       getCachedImage(data.imageURL);
     });
-  }, [testData]);
+  }, [recipientsData]);
 
   useEffect(() => {
-    const sortedPopular = testData
+    const sortedPopular = recipientsData
       .slice()
       .sort((a, b) => b.messageCount - a.messageCount);
     setPopularDataList(sortedPopular);
 
-    const sortedRecent = testData
+    const sortedRecent = recipientsData
       .slice()
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     setRecentDataList(sortedRecent);
-  }, [testData]);
+  }, [recipientsData]);
 
-  const totalPages = cardCount ? Math.ceil(testData.length / cardCount) : 1;
+  const totalPages = cardCount
+    ? Math.ceil(recipientsData.length / cardCount)
+    : 1;
 
   const popularShowCards = useMemo(() => {
     if (!cardCount) return popularDataList;
@@ -142,7 +156,7 @@ function ShowMessageList() {
 
   return (
     <TopContainer>
-      <article>
+      <CardBox>
         <CardSection>
           <CardTitle>인기 롤링 페이퍼 🔥</CardTitle>
           <RollingPaperList
@@ -162,12 +176,14 @@ function ShowMessageList() {
             onTurnCards={(direction) => handleTurnCards(direction, "recent")}
           />
         </CardSection>
-      </article>
-      <MakingButton
-        size={BUTTON_SIZE.large}
-        title="나도 만들어보기"
-        onClick={handleMakingButton}
-      />
+      </CardBox>
+      <ButtonFooter>
+        <MakingButton
+          size={BUTTON_SIZE.large}
+          title="나도 만들어보기"
+          onClick={handleMakingButton}
+        />
+      </ButtonFooter>
     </TopContainer>
   );
 }

@@ -1,17 +1,12 @@
 import ArrowButton from "../../../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../../../components/button/arrow-button-direction";
 import { media } from "../../../utils/media";
-import React, { useEffect, useState } from "react";
-import styled, { keyframes, css } from "styled-components";
+import React, { useMemo } from "react";
+import styled, { css } from "styled-components";
 import Avatar from "../../../components/avatar/avatar";
 import AVATAR_SIZE from "../../../components/avatar/avatar-size";
-
-const backgroundColors = {
-  beige: "#FFE2AD",
-  purple: "#ECD9FF",
-  green: "#D0F5C3",
-  blue: "#B1E4FF",
-};
+import CardBackground from "../../../components/image/card-background";
+import { useImageListLodeChecker } from "../../../hooks/use-image-loader";
 
 const CardContainer = styled.div`
   display: grid;
@@ -53,9 +48,9 @@ const CardContainer = styled.div`
   }
 `;
 
-const CardItem = styled.div`
+const CardItem = styled(CardBackground)`
   width: 275px;
-  min-height: 260px;
+  height: 260px;
   border-radius: 16px;
   text-align: left;
   padding: 30px 24px 20px 24px;
@@ -67,12 +62,8 @@ const CardItem = styled.div`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: ${(props) => {
-    if (props.$backgroundImageURL) {
-      return `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${props.$backgroundImageURL}) center/cover no-repeat`;
-    }
-    return backgroundColors[props.$backgroundColor] || "white";
-  }};
+
+  justify-content: space-between;
 
   ${media.tablet} {
     flex-shrink: 0;
@@ -82,28 +73,27 @@ const CardItem = styled.div`
   ${media.mobile} {
     width: 208px;
     height: 232px;
-    padding: 30px 15px 20px 15px;
+    padding: 25px 15px 15px 15px;
+    gap: 8px;
   }
 
   &::before {
     content: "";
     position: absolute;
-    ${({ $backgroundImageURL, $backgroundColor }) => {
-      return $backgroundImageURL ? "" : polygonStyle[$backgroundColor];
+    ${({ $backgroundImageURLForStyle, $backgroundColorForStyle }) => {
+      return $backgroundImageURLForStyle
+        ? ""
+        : polygonStyle[$backgroundColorForStyle];
     }}
-  }
-
-  & > * {
-    position: relative;
   }
 `;
 
 const ellipseStyle = css`
   width: 336px;
   height: 169px;
-  background-color: ${({ $backgroundColor }) =>
-    $backgroundColor === "purple"
-      ? "rgba(220,185,255,0.4)"
+  background-color: ${({ $backgroundColorForStyle }) =>
+    $backgroundColorForStyle === "purple"
+      ? "rgba(220, 185, 255, 0.4)"
       : "rgba(155, 226, 130, 0.3)"};
   border-radius: 90.5px;
   top: 124px;
@@ -179,7 +169,7 @@ const ProfileContainer = styled.div`
 `;
 
 const CardProfile = styled.div`
-  margin-left: ${($messageIndex) => ($messageIndex === 0 ? "0" : "-12px")};
+  margin-left: ${({ $messageIndex }) => ($messageIndex === 0 ? "0" : "-12px")};
 `;
 
 const OverProfile = styled.div`
@@ -206,14 +196,22 @@ const MessageCountText = styled.span`
 `;
 
 const CardEmojiBox = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 17px;
+  ${(props) =>
+    props.$haveEmoji &&
+    `
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    `}
+  padding-top: 13px;
   margin-top: auto;
 
   display: flex;
   flex-wrap: wrap;
   row-gap: 5px;
   z-index: 2;
+
+  ${media.mobile} {
+    padding-top: 10px;
+  }
 `;
 
 const CardEmoji = styled.span`
@@ -278,130 +276,31 @@ const PreviewButtonWrapper = styled.div`
   z-index: 10;
 `;
 
-const spin = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
-
-const Spinner = styled.div`
-  width: ${(props) => props.size || "40px"};
-  height: ${(props) => props.size || "40px"};
-  border: ${(props) => props.thickness || "4px"} solid
-    ${(props) => props.trackColor || "#f3f3f313"};
-  border-top: ${(props) => props.thickness || "4px"} solid
-    var(--color-purple-700);
-  border-radius: 50%;
-  animation: ${spin} 1s linear infinite;
-
-  ${(props) =>
-    props.centered &&
-    css`
-      margin: 0 auto;
-      display: block;
-    `}
-
-  position: absolute;
-  justify-self: anchor-center;
-  align-self: anchor-center;
-`;
-
 function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
-  const [imageLoadStates, setImageLoadStates] = useState({});
-  const [profileLoadStates, setProfileLoadStates] = useState({});
+  const profileImages = useMemo(
+    () =>
+      cardData.flatMap((card) =>
+        card.recentMessages.slice(0, 3).map((msg) => ({
+          id: msg.id,
+          backgroundImageURL: msg.profileImageURL,
+        }))
+      ),
+    [cardData]
+  );
 
-  useEffect(() => {
-    const loadImages = async () => {
-      const loadStates = {};
-
-      cardData.forEach((card) => {
-        if (card.backgroundImageURL) {
-          loadStates[card.id] = false;
-        }
-      });
-
-      setImageLoadStates(loadStates);
-
-      const imagePromises = cardData.map((card) => {
-        if (!card.backgroundImageURL) return Promise.resolve();
-
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => {
-            setImageLoadStates((prev) => ({
-              ...prev,
-              [card.id]: true,
-            }));
-            resolve();
-          };
-          img.onerror = () => {
-            setImageLoadStates((prev) => ({
-              ...prev,
-              [card.id]: false,
-            }));
-            resolve();
-          };
-          img.src = card.backgroundImageURL;
-        });
-      });
-
-      await Promise.all(imagePromises);
-    };
-
-    loadImages();
-  }, [cardData]);
-
-  useEffect(() => {
-    const loadProfileImages = async () => {
-      const initialStates = {};
-      cardData.forEach((card) => {
-        card.recentMessages.slice(0, 3).forEach((msg) => {
-          initialStates[msg.id] = false;
-        });
-      });
-      setProfileLoadStates(initialStates);
-
-      const promises = [];
-      cardData.forEach((card) => {
-        card.recentMessages.slice(0, 3).forEach((msg) => {
-          if (!msg.profileImageURL) return;
-          promises.push(
-            new Promise((resolve) => {
-              const img = new Image();
-              img.src = msg.profileImageURL;
-              img.onload = () => {
-                setProfileLoadStates((prev) => ({ ...prev, [msg.id]: true }));
-                resolve();
-              };
-              img.onerror = () => {
-                setProfileLoadStates((prev) => ({ ...prev, [msg.id]: false }));
-                resolve();
-              };
-            })
-          );
-        });
-      });
-
-      await Promise.all(promises);
-    };
-
-    loadProfileImages();
-  }, [cardData]);
+  const profileLoadStates = useImageListLodeChecker(profileImages);
 
   return (
     <CardContainer>
       {cardData.map((card) => (
         <CardItem
           key={card.id}
-          $backgroundColor={card.backgroundColor}
-          $backgroundImageURL={card.backgroundImageURL}
+          $backgroundImageURLForStyle={card.backgroundImageURL}
+          $backgroundColorForStyle={card.backgroundColor}
+          backgroundImageURL={card.backgroundImageURL}
+          backgroundColor={card.backgroundColor}
+          overlayOn
         >
-          {card.backgroundImageURL && !imageLoadStates[card.id] && (
-            <Spinner size="50px" thickness="3px" />
-          )}
           <CardTitle
             $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
           >
@@ -411,7 +310,7 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
             {card.recentMessages
               .slice(0, 3)
               .map((messageCard, messageIndex) => (
-                <CardProfile $messageIndex={messageIndex}>
+                <CardProfile $messageIndex={messageIndex} key={messageIndex}>
                   <Avatar
                     key={messageIndex}
                     source={
@@ -434,7 +333,7 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
           >
             <em>{card.messageCount}</em>명이 작성했어요!
           </MessageCountText>
-          <CardEmojiBox>
+          <CardEmojiBox $haveEmoji={card.topReactions.length > 0}>
             {card.topReactions.map((emoji, index) => {
               const countLength = emoji.count.toString().length;
               const isLongCount = countLength > 2;
