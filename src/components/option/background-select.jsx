@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CheckImage from "../../assets/ic-check.svg";
-import { OutlinedButton } from "../button/button";
-import BUTTON_SIZE from "../button/button-size";
 import { media } from "../../utils/media";
 import BACKGROUND_COLOR from "../color/background-color";
 import Colors from "../color/colors";
