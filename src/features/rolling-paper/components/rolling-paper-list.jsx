@@ -196,7 +196,11 @@ const MessageCountText = styled.span`
 `;
 
 const CardEmojiBox = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  ${(props) =>
+    props.$haveEmoji &&
+    `
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    `}
   padding-top: 13px;
   margin-top: auto;
 
@@ -329,7 +333,7 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
           >
             <em>{card.messageCount}</em>명이 작성했어요!
           </MessageCountText>
-          <CardEmojiBox>
+          <CardEmojiBox $haveEmoji={card.topReactions.length > 0}>
             {card.topReactions.map((emoji, index) => {
               const countLength = emoji.count.toString().length;
               const isLongCount = countLength > 2;
