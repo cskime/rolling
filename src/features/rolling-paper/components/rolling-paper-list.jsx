@@ -73,7 +73,7 @@ const CardItem = styled(CardBackground)`
   ${media.mobile} {
     width: 208px;
     height: 232px;
-    padding: 25px 18px 15px 18px;
+    padding: 25px 15px 15px 15px;
     gap: 8px;
   }
 
