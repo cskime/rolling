@@ -4,7 +4,7 @@ import ContentLayout from "./layouts/content-layout";
 import OnboardingLayout from "./layouts/onboarding-layout";
 import CreatePostPage from "./pages/create-post-page";
 import MainPage from "./pages/main-page";
-import MessagePage from "./pages/message-list";
+import RollingPaperListPage from "./pages/rolling-paper-list-page";
 import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestApiPage from "./tests/test-api-page";
@@ -31,7 +31,7 @@ function App() {
             path="/list"
             element={
               <OnboardingLayout>
-                <MessagePage />
+                <RollingPaperListPage />
               </OnboardingLayout>
             }
           />
@@ -57,9 +57,8 @@ function App() {
               />
             </Route>
           </Route>
-          <Route path="/test-components" element={<TestComponentsPage />} />
+          <Route path="/test-components" element={<TestPage />} />
           <Route path="/test-api" element={<TestApiPage />} />
-          <Route path="/list" element={<MessagePage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

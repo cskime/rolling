@@ -1,15 +1,6 @@
 import ArrowButton from "../../../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../../../components/button/arrow-button-direction";
-import {
-  OutlinedButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "../../../components/button/button";
-import BUTTON_SIZE from "../../../components/button/button-size";
-import ToggleButton from "../../../components/button/toggle-button";
-import EmojiBadge from "../../../components/badge/emoji-badge";
-
-// import React, { useEffect, useState } from "react";
+import { media } from "../../../utils/media";
 
 import styled, { css } from "styled-components";
 
@@ -28,6 +19,31 @@ const CardContainer = styled.div`
   font-family: Pretendard;
 
   position: relative;
+
+  ${media.tablet} {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    max-width: 1199px;
+    width: 100%;
+    padding: 0 24px;
+
+    & > div {
+      flex: 0 0 275px;
+      scroll-snap-align: start;
+    }
+  }
+
+  ${media.mobile} {
+    max-width: 767px;
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 const CardItem = styled.div`
@@ -51,6 +67,16 @@ const CardItem = styled.div`
   position: relative;
   overflow: hidden;
 
+  ${media.tablet} {
+    flex-shrink: 0;
+  }
+
+  ${media.mobile} {
+    width: 208px;
+    height: 232px;
+    padding: 30px 15px 20px 15px;
+  }
+
   /* 배경 도형 */
   &::before {
     content: "";
@@ -59,6 +85,7 @@ const CardItem = styled.div`
     ${({ $backgroundImageURL, $backgroundColor }) => {
       return $backgroundImageURL ? "" : polygonStyle[$backgroundColor];
     }}
+  }
 
   & > * {
     position: relative;
@@ -76,6 +103,10 @@ const ellipseStyle = css`
   border-radius: 90.5px;
   top: 124px;
   left: 133px;
+
+  ${media.mobile} {
+    left: 100.6px;
+  }
 `;
 
 const roundedRectangleStyle = css`
@@ -85,6 +116,10 @@ const roundedRectangleStyle = css`
   background-color: #ffd382;
   top: 124px;
   left: 154px;
+
+  ${media.mobile} {
+    left: 121.6px;
+  }
 `;
 
 function getTriangleBackgroundImage() {
@@ -102,6 +137,10 @@ const roundedTriangleStyle = css`
   background-size: contain;
   top: 108px;
   left: 113px;
+
+  ${media.mobile} {
+    left: 60.6px;
+  }
 `;
 
 const polygonStyle = {
@@ -150,6 +189,7 @@ const OverProfile = styled.div`
 
 const MessageCountText = styled.span`
   color: ${(props) => props.$fontColor || "black"};
+  z-index: 1;
   em {
     font-weight: 700;
     font-style: normal;
@@ -172,14 +212,14 @@ const CardEmoji = styled.span`
   border-radius: 32px;
   color: #ffffff;
   padding: 8px 12px;
-  margin-right: 8px;
+  margin-right: 5px;
 
   position: relative;
   white-space: nowrap;
   overflow: hidden;
 
-  min-width: ${(props) => (props.$isLong ? "60px" : "auto")};
-  max-width: ${(props) => (props.$isLong ? "44px" : "none")};
+  font-size: 16px;
+  font-weight: 400;
 
   transition: max-width 0.3s ease, z-index 0s;
 
@@ -187,6 +227,12 @@ const CardEmoji = styled.span`
     max-width: 200px;
     z-index: 100;
     position: relative;
+  }
+
+  ${media.mobile} {
+    font-size: 14px;
+    padding: 8px 8px;
+    margin-right: 3px;
   }
 `;
 
@@ -226,57 +272,50 @@ const PreviewButtonWrapper = styled.div`
 function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
   return (
     <CardContainer>
-      {cardData.map((item) => (
+      {cardData.map((card) => (
         <CardItem
-          key={item.id}
-          $backgroundColor={item.backgroundColor}
-          $backgroundImageURL={item.backgroundImageURL}
+          key={card.id}
+          $backgroundColor={card.backgroundColor}
+          $backgroundImageURL={card.backgroundImageURL}
         >
           <CardTitle
-            $fontColor={item.backgroundImageURL ? "#ffffff" : "#000000"}
+            $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
           >
-            To. {item.name}
+            To. {card.name}
           </CardTitle>
           <ProfileContainer>
-            {item.recentMessages.slice(0, 3).map((messageItem, index) => (
+            {card.recentMessages.slice(0, 3).map((messagecard, index) => (
               <CardProfile
                 key={index}
-                src={messageItem.profileImageURL}
+                src={messagecard.profileImageURL}
                 alt={`profile-${index}`}
               />
             ))}
-            {item.messageCount > 3 && (
+            {card.messageCount > 3 && (
               <OverProfile>
-                <span>+{item.messageCount - 3}</span>
+                <span>+{card.messageCount - 3}</span>
               </OverProfile>
             )}
           </ProfileContainer>
           <MessageCountText
-            $fontColor={item.backgroundImageURL ? "#ffffff" : "#000000"}
+            $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
           >
-            <em>{item.messageCount}</em>명이 작성했어요!
+            <em>{card.messageCount}</em>명이 작성했어요!
           </MessageCountText>
           <CardEmojiBox>
-            {item.topReactions.map((emoji, index) => {
+            {card.topReactions.map((emoji, index) => {
               const countLength = emoji.count.toString().length;
               const isLongCount = countLength > 2;
 
               return (
-                // <EmojiBadge
-                //   key={index}
-                //   emoji={emoji.emoji}
-                //   count={emoji.count}
-                // />
-
                 <CardEmoji key={index} $isLong={isLongCount}>
-                  {emoji.emoji}
                   {isLongCount ? (
                     <HiddenCount>
-                      <span className="hide-on-hover"> +</span>
+                      <span className="hide-on-hover">{emoji.emoji}</span>
                       <span className="show-on-hover"> {emoji.count}</span>
                     </HiddenCount>
                   ) : (
-                    ` ${emoji.count}`
+                    `${emoji.emoji} ${emoji.count}`
                   )}
                 </CardEmoji>
               );
