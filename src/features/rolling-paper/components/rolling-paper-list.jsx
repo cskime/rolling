@@ -88,6 +88,16 @@ const CardItem = styled(CardBackground)`
         : polygonStyle[$backgroundColorForStyle];
     }}
   }
+
+  &:hover {
+    filter: brightness(0.9);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+  }
+  &:active {
+    filter: brightness(0.8);
+    transform: translateY(1px);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const ellipseStyle = css`
@@ -281,8 +291,8 @@ const PreviewButtonWrapper = styled.div`
 function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
   const navigate = useNavigate();
 
-  const handleCardClick = (id) => {
-    navigate(`/post/${id}`);
+  const handleCardClick = (cardId) => {
+    navigate(`/post/${cardId}`);
   };
   const profileImages = useMemo(
     () =>
