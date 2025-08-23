@@ -5,9 +5,12 @@ import {
   DangerousButton,
   OutlinedButton,
   PrimaryButton,
+  SecondaryButton,
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
+import Modal from "../components/modal/modal";
+import ModalDialog from "../components/modal/modal-dialog";
 import {
   deleteMessage,
   getMessages,
@@ -20,6 +23,7 @@ import {
 } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
 import { useMedia } from "../hooks/use-media";
+import { useModalDialog } from "../hooks/use-modal-dialog";
 import ContentLayout from "../layouts/content-layout";
 import { media } from "../utils/media";
 
@@ -83,11 +87,7 @@ function EditingButtons({ onDelete, onDone }) {
         title="삭제하기"
         onClick={onDelete}
       />
-      <OutlinedButton
-        size={BUTTON_SIZE.medium}
-        title="완료"
-        onClick={onDone}
-      />
+      <OutlinedButton size={BUTTON_SIZE.medium} title="완료" onClick={onDone} />
     </ButtonContainer>
   );
 }
@@ -99,6 +99,14 @@ function MessagesPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
+  const {
+    showsDialog,
+    dialogTitle,
+    dialogContent,
+    openDialog,
+    closeDialog,
+    onPrimaryAction,
+  } = useModalDialog();
 
   const isEditing = useMemo(
     () => location.pathname.includes("edit"),
@@ -109,28 +117,50 @@ function MessagesPage() {
     navigate("edit");
   };
 
-  const handleRollingPaperDelete = async () => {
-    try {
-      await deleteRecipient({ id: recipient.id });
-      navigate(`/list`);
-    } catch (error) {
-      // TODO: Error 처리
-      console.log(error);
-    }
+  const handleRollingPaperDelete = () => {
+    openDialog({
+      title: `${recipient.name} 님의 롤링 페이퍼를 삭제할까요?`,
+      content: "삭제한 롤링 페이퍼는 복원할 수 없어요.",
+      primaryAction: async () => {
+        try {
+          await deleteRecipient({ id: recipient.id });
+          navigate(`/list`);
+        } catch (error) {
+          // TODO: Error 처리
+          console.log(error);
+        }
+      },
+    });
   };
 
   const handleEditDone = () => {
     navigate(-1);
   };
 
-  const handleMessageDelete = async (messageId) => {
-    try {
-      await deleteMessage({ id: messageId });
-      setMessages((prev) => prev.filter((message) => message.id !== messageId));
-    } catch (error) {
-      // TODO: Error 처리
-      console.log(error);
-    }
+  const handleMessageDelete = (message) => {
+    openDialog({
+      title: `${message.sender} 님의 메시지를 삭제할까요?`,
+      content: "삭제한 메시지는 복원할 수 없어요.",
+      primaryAction: async () => {
+        try {
+          await deleteMessage({ id: message.id });
+          setMessages((prev) =>
+            prev.filter((prevMessage) => prevMessage.id !== message.id)
+          );
+        } catch (error) {
+          // TODO: Error 처리
+          console.log(error);
+        }
+      },
+    });
+  };
+
+  const handleDelete = () => {
+    onPrimaryAction();
+  };
+
+  const handleDeleteCancel = () => {
+    closeDialog();
   };
 
   const handleInfiniteScroll = async () => {
@@ -204,7 +234,33 @@ function MessagesPage() {
     </>
   );
 
-  return isMobile ? content : <ContentLayout>{content}</ContentLayout>;
+  return isMobile ? (
+    content
+  ) : (
+    <ContentLayout>
+      {content}
+      <Modal shows={showsDialog}>
+        <ModalDialog
+          title={dialogTitle}
+          content={dialogContent}
+          action={
+            <>
+              <PrimaryButton
+                size={BUTTON_SIZE.medium}
+                title="삭제"
+                onClick={handleDelete}
+              />
+              <SecondaryButton
+                size={BUTTON_SIZE.medium}
+                title="취소"
+                onClick={handleDeleteCancel}
+              />
+            </>
+          }
+        />
+      </Modal>
+    </ContentLayout>
+  );
 }
 
 export default MessagesPage;

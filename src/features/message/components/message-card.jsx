@@ -61,7 +61,7 @@ function MessageCard({ isEditing, message, onClick, onDelete }) {
 
   const handleDeleteClick = (event) => {
     event.stopPropagation();
-    onDelete(message.id);
+    onDelete(message);
   };
 
   return (

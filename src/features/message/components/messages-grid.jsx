@@ -49,8 +49,8 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
     setModalMessage(message);
   };
 
-  const handleDeleteClick = (messageId) => {
-    onDelete(messageId);
+  const handleDeleteClick = (message) => {
+    onDelete(message);
   };
 
   const handleModalConfirm = () => {
