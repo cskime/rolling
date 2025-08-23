@@ -1,7 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
-import { OutlinedButton, PrimaryButton } from "../components/button/button";
+import {
+  DangerousButton,
+  OutlinedButton,
+  PrimaryButton,
+} from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
 import {
@@ -74,14 +78,14 @@ function ViewerButtons({ onEdit }) {
 function EditingButtons({ onDelete, onCancel }) {
   return (
     <ButtonContainer>
-      <PrimaryButton
+      <DangerousButton
         size={BUTTON_SIZE.medium}
         title="삭제하기"
         onClick={onDelete}
       />
       <OutlinedButton
         size={BUTTON_SIZE.medium}
-        title="완료하기"
+        title="완료"
         onClick={onCancel}
       />
     </ButtonContainer>
