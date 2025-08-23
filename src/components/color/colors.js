@@ -18,6 +18,9 @@ const Colors = {
   gray: function (value) {
     return `var(--color-gray-${shade({ value })})`;
   },
+  red: function (value) {
+    return `var(--color-red-${shade({ value })})`;
+  },
   error: "var(--color-error)",
   surface: "var(--color-surface)",
 };

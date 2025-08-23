@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { PrimaryButton } from "../components/button/button";
+import { DangerousButton, PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import Colors from "../components/color/colors";
 import {
@@ -250,23 +250,13 @@ function TestApiPage() {
           />
         </Row>
         <Row>
-          <PrimaryButton
-            style={
-              recipients.length === 0
-                ? undefined
-                : { backgroundColor: Colors.error }
-            }
+          <DangerousButton
             size={buttonSize}
             title="롤링페이퍼 삭제"
             onClick={handleDeleteRecipientsClick}
             disabled={recipients.length === 0}
           />
-          <PrimaryButton
-            style={
-              recipients.length === 0
-                ? undefined
-                : { backgroundColor: Colors.error }
-            }
+          <DangerousButton
             size={buttonSize}
             title="메시지 삭제"
             onClick={handleDeleteMessagesClick}
