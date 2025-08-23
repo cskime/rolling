@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import arrowDownImage from "../../../assets/ic-chevron-down.svg";
-import EmojiBadge from "../../../components/badge/emoji-badge";
-import Popover from "../../../components/popover/popover";
-import POPOVER_ALIGNMENT from "../../../components/popover/popover-alignment";
-import { useMedia } from "../../../hooks/use-media";
-import { media } from "../../../utils/media";
+import arrowDownImage from "../../../../assets/ic-chevron-down.svg";
+import EmojiBadge from "../../../../components/badge/emoji-badge";
+import Popover from "../../../../components/popover/popover";
+import POPOVER_ALIGNMENT from "../../../../components/popover/popover-alignment";
+import { useMedia } from "../../../../hooks/use-media";
+import { media } from "../../../../utils/media";
 
 const MoreButton = styled.button`
   background: none;
@@ -37,13 +37,13 @@ const StyledRollingPaperReactions = styled.div`
   align-items: center;
 `;
 
-function RollingPaperReactions({ reactions }) {
+function RollingPaperReactions({ topReactions, reactions }) {
   const { isMobile } = useMedia();
 
   return (
     <StyledRollingPaperReactions>
       <TopThreeReactions>
-        {reactions.slice(0, 3).map(({ id, emoji, count }) => (
+        {topReactions.map(({ id, emoji, count }) => (
           <EmojiBadge key={id} emoji={emoji} count={count} />
         ))}
       </TopThreeReactions>

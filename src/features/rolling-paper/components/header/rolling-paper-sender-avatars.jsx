@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Avatar from "../../../components/avatar/avatar";
-import AVATAR_SIZE from "../../../components/avatar/avatar-size";
+import Avatar from "../../../../components/avatar/avatar";
+import AVATAR_SIZE from "../../../../components/avatar/avatar-size";
 
 const METRICS = {
   size: AVATAR_SIZE.extraSmall,

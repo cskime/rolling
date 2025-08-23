@@ -1,36 +1,56 @@
-import ArrowButton from "../components/button/arrow-button";
-import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
-import {
-  OutlinedButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "../components/button/button";
+import { PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
-import ToggleButton from "../components/button/toggle-button";
-
-import React, { useEffect, useState } from "react";
-// import axiosInstance from "../api/axios-instance";
-import testDataFile from "./test_recipients_data.json";
-
+import { useNavigate } from "react-router";
+import React, { useEffect, useState, useMemo } from "react";
+import { getRollingPaperList } from "../features/rolling-paper/api/rollingPaperList";
 import styled from "styled-components";
 import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
+import { media } from "../utils/media";
+import { useMedia } from "../hooks/use-media";
 
 const TopContainer = styled.div`
   text-align: center;
+  margin-top: 50px;
 `;
 
 const CardSection = styled.section`
   justify-self: center;
+
+  ${media.tablet} {
+    width: 100%;
+  }
 `;
 
 const CardTitle = styled.h2`
   text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+
+  ${media.tablet} {
+    margin-left: 24px;
+  }
+
+  ${media.mobile} {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
 `;
 
 const MakingButton = styled(PrimaryButton)`
   margin-top: 64px;
   font-weight: 400;
   padding: 14px 60px;
+
+  ${media.tablet} {
+    justify-self: anchor-center;
+    margin-left: 24px;
+    margin-right: 24px;
+    width: calc(100% - 48px);
+    padding: 14px 20px;
+    position: relative;
+    bottom: 24px;
+  }
 `;
 
 const cache = {};
@@ -43,31 +63,36 @@ function getCachedImage(url) {
 }
 
 function ShowMessageList() {
+  const navigate = useNavigate();
+
   const [testData, setTestData] = useState([]);
   const [popularDataList, setPopularDataList] = useState([]);
   const [recentDataList, setRecentDataList] = useState([]);
   const [popularCurrentPage, setPopularCurrentPage] = useState(0);
   const [recentCurrentPage, setRecentCurrentPage] = useState(0);
-  const [popularrecentShowCards, setPopularrecentShowCards] = useState([]);
-  const [recentShowCards, setRecentShowCards] = useState([]);
-  const cardCount = 4;
+  const [cardCount, setCardCount] = useState(4);
+  const { isDesktop } = useMedia();
 
   useEffect(() => {
-    setTestData(testDataFile);
-    // axiosInstance
-    //   .get("/18-3/recipients/?limit=5&offset=20")
-    //   .then((res) => {
-    //     setTestData(res.data);
-    //     console.log(res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.error("오류:", err);
-    //   });
+    isDesktop ? setCardCount(4) : setCardCount(null);
+  }, [isDesktop]);
+
+  const handleMakingButton = () => {
+    navigate("/post");
+  };
+
+  useEffect(() => {
+    isDesktop ? setCardCount(4) : setCardCount(null);
+  }, [isDesktop]);
+
+
+  useEffect(() => {
+    getRollingPaperList().then(setTestData);
   }, []);
 
   useEffect(() => {
-    testData.forEach((item) => {
-      getCachedImage(item.imageURL);
+    testData.forEach((data) => {
+      getCachedImage(data.imageURL);
     });
   }, [testData]);
 
@@ -79,35 +104,32 @@ function ShowMessageList() {
 
     const sortedRecent = testData
       .slice()
-      .sort((a, b) => b.createdAt - a.createdAt);
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     setRecentDataList(sortedRecent);
   }, [testData]);
 
-  const totalPages = Math.ceil(testData.length / cardCount);
+  const totalPages = cardCount ? Math.ceil(testData.length / cardCount) : 1;
 
-  useEffect(() => {
-    const startPageNum = recentCurrentPage * cardCount;
-    const endPageNum = startPageNum + cardCount;
+  const popularShowCards = useMemo(() => {
+    if (!cardCount) return popularDataList;
+    const start = popularCurrentPage * cardCount;
+    return popularDataList.slice(start, start + cardCount);
+  }, [popularDataList, popularCurrentPage, cardCount]);
 
-    const popularStartPageNum = popularCurrentPage * cardCount;
-    const popularEndPageNum = popularStartPageNum + cardCount;
-
-    setPopularrecentShowCards(
-      popularDataList.slice(popularStartPageNum, popularEndPageNum)
-    );
-    setRecentShowCards(recentDataList.slice(startPageNum, endPageNum));
-  }, [
-    popularCurrentPage,
-    recentCurrentPage,
-    testData,
-    popularDataList,
-    recentDataList,
-  ]);
+  const recentShowCards = useMemo(() => {
+    if (!cardCount) return recentDataList;
+    const start = recentCurrentPage * cardCount;
+    return recentDataList.slice(start, start + cardCount);
+  }, [recentDataList, recentCurrentPage, cardCount]);
 
   const handleTurnCards = (direction, mode) => {
-    const current = mode === "popular" ? popularCurrentPage : recentCurrentPage;
-    const setter =
-      mode === "popular" ? setPopularCurrentPage : setRecentCurrentPage;
+    const cardPageMap = {
+      popular: { current: popularCurrentPage, setter: setPopularCurrentPage },
+      recent: { current: recentCurrentPage, setter: setRecentCurrentPage },
+    };
+
+    const cardPageValue = cardPageMap[mode];
+    const { current, setter } = cardPageValue;
     const total = totalPages;
 
     const additionalPageIndex = direction === "next" ? 1 : -1;
@@ -124,7 +146,7 @@ function ShowMessageList() {
         <CardSection>
           <CardTitle>인기 롤링 페이퍼 🔥</CardTitle>
           <RollingPaperList
-            cardData={popularrecentShowCards}
+            cardData={popularShowCards}
             totalPages={totalPages}
             currentPage={popularCurrentPage}
             onTurnCards={(direction) => handleTurnCards(direction, "popular")}
@@ -141,7 +163,11 @@ function ShowMessageList() {
           />
         </CardSection>
       </article>
-      <MakingButton size={BUTTON_SIZE.large} title="나도 만들어보기" />
+      <MakingButton
+        size={BUTTON_SIZE.large}
+        title="나도 만들어보기"
+        onClick={handleMakingButton}
+      />
     </TopContainer>
   );
 }
