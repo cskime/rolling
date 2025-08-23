@@ -6,7 +6,6 @@ function useImageLodeChecker(imageURL, noNeedToLoad = false) {
   useEffect(() => {
     if (noNeedToLoad || !imageURL) return;
     const img = new Image();
-    img.src = imageURL;
 
     const handleLoad = () => setIsLode(true);
     const handleError = () => setIsLode(false);
@@ -14,6 +13,7 @@ function useImageLodeChecker(imageURL, noNeedToLoad = false) {
     img.addEventListener("load", handleLoad);
     img.addEventListener("error", handleError);
 
+    img.src = imageURL;
     return () => {
       img.removeEventListener("load", handleLoad);
       img.removeEventListener("error", handleError);
