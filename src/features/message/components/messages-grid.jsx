@@ -62,9 +62,10 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
     <>
       <StyledRollingPaperMessagesGrid>
         <MessageCardAdd onClick={handleAddClick} />
-        {messages.map((message) => (
+        {messages.map((message, index) => (
           <MessageCard
             key={message.id}
+            index={index}
             isEditing={isEditing}
             message={message}
             onClick={handleMessageClick}
