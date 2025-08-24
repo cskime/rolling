@@ -1,7 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./app";
-import "./styles/global.css";
+import { initKakaoSDK } from "./libs/kakao/kakao-service";
+
+initKakaoSDK();
 
 const root = createRoot(document.getElementById("root"));
 

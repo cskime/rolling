@@ -1,0 +1,353 @@
+{
+  "id": 2,
+  "name": "강영훈",
+  "backgroundColor": "#FFE2AD",
+  "backgroundImageURL": "https://picsum.photos/id/1058/3840/2160",
+  "createdAt": "2023-10-26T13:19:31.401765Z",
+  "messageCount": 30,
+  "recentMessages": [
+    {
+      "id": 1,
+      "recipientId": 2,
+      "sender": "김하은",
+      "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+      "relationship": "가족",
+      "content": "열심히 일하는 모습 멋있습니다.",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T08:05:25.399056Z"
+    },
+    {
+      "id": 2,
+      "recipientId": 2,
+      "sender": "이영준",
+      "profileImageURL": "https://fastly.picsum.photos/id/312/200/200.jpg?hmac=XYZ123ABC456DEF",
+      "relationship": "지인",
+      "content": "항상 응원합니다",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T08:04:12.852691Z"
+    },
+    {
+      "id": 3,
+      "recipientId": 2,
+      "sender": "박민지",
+      "profileImageURL": "https://fastly.picsum.photos/id/313/200/200.jpg?hmac=ABC789XYZ123GHI",
+      "relationship": "친구",
+      "content": "오늘도 좋은 하루 보내세요!",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T07:58:45.123456Z"
+    },
+    {
+      "id": 4,
+      "recipientId": 2,
+      "sender": "최수현",
+      "profileImageURL": "https://fastly.picsum.photos/id/314/200/200.jpg?hmac=DEF456GHI789JKL",
+      "relationship": "동료",
+      "content": "프로젝트 성공을 기원합니다",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T07:42:18.987654Z"
+    },
+    {
+      "id": 5,
+      "recipientId": 2,
+      "sender": "정다은",
+      "profileImageURL": "https://fastly.picsum.photos/id/315/200/200.jpg?hmac=GHI123JKL456MNO",
+      "relationship": "친구",
+      "content": "건강 챙기시고 화이팅!",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T07:30:22.654321Z"
+    },
+    {
+      "id": 6,
+      "recipientId": 2,
+      "sender": "윤서준",
+      "profileImageURL": "https://fastly.picsum.photos/id/316/200/200.jpg?hmac=JKL789MNO123PQR",
+      "relationship": "지인",
+      "content": "좋은 결과 있길 바래요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T07:15:33.111111Z"
+    },
+    {
+      "id": 7,
+      "recipientId": 2,
+      "sender": "강예원",
+      "profileImageURL": "https://fastly.picsum.photos/id/317/200/200.jpg?hmac=MNO456PQR789STU",
+      "relationship": "가족",
+      "content": "항상 자랑스러워요",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T06:58:47.222222Z"
+    },
+    {
+      "id": 8,
+      "recipientId": 2,
+      "sender": "임하늘",
+      "profileImageURL": "https://fastly.picsum.photos/id/318/200/200.jpg?hmac=PQR123STU456VWX",
+      "relationship": "동료",
+      "content": "멋진 하루 되세요!",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T06:45:12.333333Z"
+    },
+    {
+      "id": 9,
+      "recipientId": 2,
+      "sender": "신지우",
+      "profileImageURL": "https://fastly.picsum.photos/id/319/200/200.jpg?hmac=STU789VWX123YZA",
+      "relationship": "친구",
+      "content": "언제나 응원할게요",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T06:32:55.444444Z"
+    },
+    {
+      "id": 10,
+      "recipientId": 2,
+      "sender": "배소영",
+      "profileImageURL": "https://fastly.picsum.photos/id/320/200/200.jpg?hmac=VWX456YZA789BCD",
+      "relationship": "지인",
+      "content": "오늘도 힘내세요!",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T06:18:41.555555Z"
+    },
+    {
+      "id": 11,
+      "recipientId": 2,
+      "sender": "한민수",
+      "profileImageURL": "https://fastly.picsum.photos/id/321/200/200.jpg?hmac=YZA123BCD456EFG",
+      "relationship": "동료",
+      "content": "성공적인 하루 보내시길",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T06:05:28.666666Z"
+    },
+    {
+      "id": 12,
+      "recipientId": 2,
+      "sender": "조아름",
+      "profileImageURL": "https://fastly.picsum.photos/id/322/200/200.jpg?hmac=BCD789EFG123HIJ",
+      "relationship": "친구",
+      "content": "늘 감사해요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T05:52:16.777777Z"
+    },
+    {
+      "id": 13,
+      "recipientId": 2,
+      "sender": "송태현",
+      "profileImageURL": "https://fastly.picsum.photos/id/323/200/200.jpg?hmac=EFG456HIJ789KLM",
+      "relationship": "가족",
+      "content": "건강이 최고에요",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T05:38:53.888888Z"
+    },
+    {
+      "id": 14,
+      "recipientId": 2,
+      "sender": "오지현",
+      "profileImageURL": "https://fastly.picsum.photos/id/324/200/200.jpg?hmac=HIJ123KLM456NOP",
+      "relationship": "지인",
+      "content": "좋은 일만 가득하세요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T05:25:39.999999Z"
+    },
+    {
+      "id": 15,
+      "recipientId": 2,
+      "sender": "남도윤",
+      "profileImageURL": "https://fastly.picsum.photos/id/325/200/200.jpg?hmac=KLM789NOP123QRS",
+      "relationship": "동료",
+      "content": "멋진 성과 기대합니다",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T05:12:14.101010Z"
+    },
+    {
+      "id": 16,
+      "recipientId": 2,
+      "sender": "유채린",
+      "profileImageURL": "https://fastly.picsum.photos/id/326/200/200.jpg?hmac=NOP456QRS789TUV",
+      "relationship": "친구",
+      "content": "화이팅!! 잘 하고 계세요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T04:58:27.121212Z"
+    },
+    {
+      "id": 17,
+      "recipientId": 2,
+      "sender": "서준호",
+      "profileImageURL": "https://fastly.picsum.photos/id/327/200/200.jpg?hmac=QRS123TUV456WXY",
+      "relationship": "가족",
+      "content": "항상 믿고 있어요",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T04:45:51.131313Z"
+    },
+    {
+      "id": 18,
+      "recipientId": 2,
+      "sender": "문예진",
+      "profileImageURL": "https://fastly.picsum.photos/id/328/200/200.jpg?hmac=TUV789WXY123ZAB",
+      "relationship": "지인",
+      "content": "좋은 소식 기다려요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T04:32:38.141414Z"
+    },
+    {
+      "id": 19,
+      "recipientId": 2,
+      "sender": "홍승우",
+      "profileImageURL": "https://fastly.picsum.photos/id/329/200/200.jpg?hmac=WXY456ZAB789CDE",
+      "relationship": "동료",
+      "content": "오늘도 수고 많으셨어요",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T04:19:22.151515Z"
+    },
+    {
+      "id": 20,
+      "recipientId": 2,
+      "sender": "전소민",
+      "profileImageURL": "https://fastly.picsum.photos/id/330/200/200.jpg?hmac=ZAB123CDE456FGH",
+      "relationship": "친구",
+      "content": "멋진 하루 만들어가세요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T04:06:47.161616Z"
+    },
+    {
+      "id": 21,
+      "recipientId": 2,
+      "sender": "황지아",
+      "profileImageURL": "https://fastly.picsum.photos/id/331/200/200.jpg?hmac=CDE789FGH123IJK",
+      "relationship": "가족",
+      "content": "언제나 응원해요",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T03:53:15.171717Z"
+    },
+    {
+      "id": 22,
+      "recipientId": 2,
+      "sender": "김도현",
+      "profileImageURL": "https://fastly.picsum.photos/id/332/200/200.jpg?hmac=FGH456IJK789LMN",
+      "relationship": "지인",
+      "content": "좋은 결과가 있길 바라요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T03:40:33.181818Z"
+    },
+    {
+      "id": 23,
+      "recipientId": 2,
+      "sender": "이서연",
+      "profileImageURL": "https://fastly.picsum.photos/id/333/200/200.jpg?hmac=IJK123LMN456OPQ",
+      "relationship": "동료",
+      "content": "항상 최고입니다",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T03:27:49.191919Z"
+    },
+    {
+      "id": 24,
+      "recipientId": 2,
+      "sender": "박준영",
+      "profileImageURL": "https://fastly.picsum.photos/id/334/200/200.jpg?hmac=LMN789OPQ123RST",
+      "relationship": "친구",
+      "content": "건강하고 행복하세요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T03:14:26.202020Z"
+    },
+    {
+      "id": 25,
+      "recipientId": 2,
+      "sender": "최은지",
+      "profileImageURL": "https://fastly.picsum.photos/id/335/200/200.jpg?hmac=OPQ456RST789UVW",
+      "relationship": "가족",
+      "content": "오늘도 화이팅!",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T03:01:44.212121Z"
+    },
+    {
+      "id": 26,
+      "recipientId": 2,
+      "sender": "정민호",
+      "profileImageURL": "https://fastly.picsum.photos/id/336/200/200.jpg?hmac=RST123UVW456XYZ",
+      "relationship": "지인",
+      "content": "좋은 에너지 전해드려요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T02:48:57.222222Z"
+    },
+    {
+      "id": 27,
+      "recipientId": 2,
+      "sender": "윤하영",
+      "profileImageURL": "https://fastly.picsum.photos/id/337/200/200.jpg?hmac=UVW789XYZ123ABC",
+      "relationship": "동료",
+      "content": "성공을 위해 응원합니다",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T02:35:31.232323Z"
+    },
+    {
+      "id": 28,
+      "recipientId": 2,
+      "sender": "강시우",
+      "profileImageURL": "https://fastly.picsum.photos/id/338/200/200.jpg?hmac=XYZ456ABC789DEF",
+      "relationship": "친구",
+      "content": "멋진 모습 항상 보기 좋아요",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T02:22:18.242424Z"
+    },
+    {
+      "id": 29,
+      "recipientId": 2,
+      "sender": "임수빈",
+      "profileImageURL": "https://fastly.picsum.photos/id/339/200/200.jpg?hmac=ABC123DEF456GHI",
+      "relationship": "가족",
+      "content": "늘 자랑스럽습니다",
+      "font": "Pretendard",
+      "createdAt": "2023-11-01T02:09:42.252525Z"
+    },
+    {
+      "id": 30,
+      "recipientId": 2,
+      "sender": "신예린",
+      "profileImageURL": "https://fastly.picsum.photos/id/340/200/200.jpg?hmac=DEF789GHI123JKL",
+      "relationship": "지인",
+      "content": "오늘도 좋은 하루 되시길!",
+      "font": "Noto Sans",
+      "createdAt": "2023-11-01T01:56:27.262626Z"
+    }
+  ],
+  "reactionCount": 8,
+  "topReactions": [
+    {
+      "id": 1,
+      "emoji": "😀",
+      "count": 247
+    },
+    {
+      "id": 2,
+      "emoji": "🥹",
+      "count": 189
+    },
+    {
+      "id": 3,
+      "emoji": "❤️",
+      "count": 156
+    },
+    {
+      "id": 4,
+      "emoji": "👍",
+      "count": 98
+    },
+    {
+      "id": 5,
+      "emoji": "🎉",
+      "count": 67
+    },
+    {
+      "id": 6,
+      "emoji": "💪",
+      "count": 34
+    },
+    {
+      "id": 7,
+      "emoji": "🙏",
+      "count": 23
+    },
+    {
+      "id": 8,
+      "emoji": "✨",
+      "count": 8
+    }
+  ]
+}

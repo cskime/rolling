@@ -1,0 +1,36 @@
+import styled from "styled-components";
+import arrowLeftImage from "../../assets/ic-chevron-left.svg";
+import arrowRightImage from "../../assets/ic-chevron-right.svg";
+import Colors from "../color/colors";
+import ARROW_BUTTON_DIRECTION from "./arrow-button-direction";
+
+const arrowImg = {
+  [ARROW_BUTTON_DIRECTION.left]: arrowLeftImage,
+  [ARROW_BUTTON_DIRECTION.right]: arrowRightImage,
+};
+
+const StyledArrowButton = styled.button`
+  background: #ffffff;
+  border: 1px solid ${Colors.gray(300)};
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+function ArrowButton({ direction }) {
+  return (
+    <StyledArrowButton>
+      <img src={arrowImg[direction]} alt="화살표" />
+    </StyledArrowButton>
+  );
+}
+
+export default ArrowButton;
