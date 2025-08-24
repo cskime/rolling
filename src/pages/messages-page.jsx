@@ -102,11 +102,13 @@ function MessagesPage() {
   const { id } = useParams();
   const {
     showsDialog,
+    isDialogOpen,
     dialogTitle,
     dialogContent,
     openDialog,
     closeDialog,
     onPrimaryAction,
+    onDismissDialog,
   } = useModalDialog();
 
   const isEditing = useMemo(
@@ -243,7 +245,11 @@ function MessagesPage() {
   ) : (
     <ContentLayout>
       {content}
-      <Modal shows={showsDialog}>
+      <Modal
+        shows={showsDialog}
+        isOpen={isDialogOpen}
+        onDismiss={onDismissDialog}
+      >
         <ModalDialog
           title={dialogTitle}
           content={dialogContent}
