@@ -19,8 +19,9 @@ const avatarStyle = css`
 
 const StyledAvatar = styled.div`
   ${avatarStyle}
-  border: ${({ $size }) => borderWidth[`${$size}`]}px solid ${({ $color }) =>
-    $color};
+  background-color: ${Colors.gray(200)};
+  border: ${({ $size }) => borderWidth[`${$size}`]}px solid
+    ${({ $color }) => $color};
 
   img {
     width: 100%;
