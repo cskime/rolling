@@ -23,6 +23,7 @@ import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
+import { useModal } from "../hooks/use-modal";
 import { useToast } from "../hooks/use-toast";
 
 const OutlinedHeader = styled(Header)`
@@ -48,6 +49,13 @@ function TestComponentsPage() {
 
   const handleToastClick = () => setShowsToast(true);
   const handleToastDismiss = () => setShowsToast(false);
+
+  /* Modal */
+  const { showsModal, setShowsModal } = useModal({
+    key: "test-modal",
+  });
+  const handleModalOpen = () => setShowsModal(true);
+  const handleModalClose = () => setShowsModal(false);
 
   return (
     <div
@@ -207,11 +215,18 @@ function TestComponentsPage() {
         )}
       </div>
       <div>
-        <Modal
-          id="user"
-          action={<PrimaryButton size={BUTTON_SIZE.small} title="Show Modal" />}
-        >
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Modal"
+          onClick={handleModalOpen}
+        />
+        <Modal shows={showsModal}>
           <h1>This is Modal.</h1>
+          <PrimaryButton
+            size={BUTTON_SIZE.small}
+            title={"Close"}
+            onClick={handleModalClose}
+          />
         </Modal>
       </div>
       <div style={{ display: "flex", gap: "16px" }}>

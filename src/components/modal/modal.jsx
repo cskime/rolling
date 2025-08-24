@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { useModal } from "../../hooks/use-modal";
-import { PrimaryButton } from "../button/button";
-import BUTTON_SIZE from "../button/button-size";
 import Portal from "../portal/portal";
 
 const Content = styled.div`
@@ -34,34 +31,14 @@ const ModalContainer = styled.div`
   align-items: center;
 `;
 
-const ActionButton = styled.div`
-  cursor: pointer;
-`;
-
-function Modal({ id, action, children }) {
-  const { showsModal, setShowsModal } = useModal({
-    id: id,
-    type: "modal",
-  });
-
-  const handleClick = () => setShowsModal(true);
-  const handleConfirmClick = () => setShowsModal(false);
-
+function Modal({ shows, children }) {
   return (
     <>
-      <ActionButton onClick={handleClick}>{action}</ActionButton>
-      {showsModal && (
+      {shows && (
         <Portal id="modal">
           <ModalContainer>
             <StyledModal>
-              <Content>
-                {children}
-                <PrimaryButton
-                  size={BUTTON_SIZE.medium}
-                  title="확인"
-                  onClick={handleConfirmClick}
-                />
-              </Content>
+              <Content>{children}</Content>
             </StyledModal>
           </ModalContainer>
         </Portal>
