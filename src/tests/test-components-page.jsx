@@ -153,7 +153,7 @@ function TestComponentsPage() {
         <EmojiBadge emoji="😚" count={1} />
         <EmojiBadge emoji="😁" count={10} />
         <EmojiBadge emoji="😉" count={100} />
-        <EmojiBadge emoji="😊" count={1000} />
+        <EmojiBadge emoji="😊" count={1000} maxDigits={2} />
       </div>
       <div style={{ display: "flex", gap: 16 }}>
         <TextField type={TEXT_FIELD_TYPE.input} placeholder="Placeholder" />
