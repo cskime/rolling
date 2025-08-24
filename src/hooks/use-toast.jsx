@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useToast(timeout = 2500) {
+function useToast({ timeout = 2500 } = {}) {
   const [showsToast, setShowsToast] = useState(false);
 
   useEffect(() => {

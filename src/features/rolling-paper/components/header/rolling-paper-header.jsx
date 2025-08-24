@@ -69,7 +69,7 @@ function RollingPaperHeader({
   recipientName,
   messages,
 }) {
-  const { showsToast, setShowsToast } = useToast();
+  const { showsToast, setShowsToast } = useToast({ timeout: 5000 });
   const { isDesktop, isMobile } = useMedia();
   const [reactions, setReactions] = useState([]);
 
