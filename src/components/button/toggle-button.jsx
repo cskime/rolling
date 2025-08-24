@@ -18,6 +18,12 @@ const ToggleItem = styled.button`
   padding: 0 16px;
   height: 40px;
   cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${({ $selected }) =>
+      $selected ? Colors.purple(100) : Colors.gray(200)};
+  }
 
   span {
     display: block;
