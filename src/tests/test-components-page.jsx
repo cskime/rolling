@@ -58,7 +58,7 @@ function TestComponentsPage() {
   const handleToastClose = () => setShowsToast(false);
 
   /* Modal */
-  const { showsModal, setShowsModal } = useModal({
+  const { showsModal, isModalOpen, setShowsModal, onDismissModal } = useModal({
     key: "test-modal",
   });
   const handleModalOpen = () => setShowsModal(true);
@@ -236,7 +236,11 @@ function TestComponentsPage() {
           title="Show Modal"
           onClick={handleModalOpen}
         />
-        <Modal shows={showsModal}>
+        <Modal
+          shows={showsModal}
+          isOpen={isModalOpen}
+          onDismiss={onDismissModal}
+        >
           <h1>This is Modal.</h1>
           <PrimaryButton
             size={BUTTON_SIZE.small}
