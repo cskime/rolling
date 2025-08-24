@@ -22,6 +22,7 @@ const StyledMessageCardAdd = styled.button`
   justify-content: center;
   align-items: center;
   min-height: 280px;
+  cursor: pointer;
 
   ${media.tablet} {
     min-height: 284px;

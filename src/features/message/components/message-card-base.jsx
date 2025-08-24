@@ -19,9 +19,13 @@ const StyledMessageCardBase = styled.div`
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
-  cursor: pointer;
   overflow: hidden;
   animation: ${mountAnimation} 900ms ${animationDelay} backwards;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 function MessageCardBase({ index, children }) {
