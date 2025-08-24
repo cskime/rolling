@@ -48,13 +48,13 @@ function useImageListLodeChecker(imageList = []) {
         }
 
         const img = new Image();
-        img.src = backgroundImageURL;
         img.onload = () => {
           setImageLoadStates((p) => ({ ...p, [id]: true }));
         };
         img.onerror = () => {
           setImageLoadStates((p) => ({ ...p, [id]: false }));
         };
+        img.src = backgroundImageURL;
 
         return prev;
       });
