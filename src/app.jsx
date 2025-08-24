@@ -9,6 +9,7 @@ import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestApiPage from "./tests/test-api-page";
 import TestComponentsPage from "./tests/test-components-page";
+import Error404Page from "./pages/404-page";
 
 function Provider({ children }) {
   return <PortalProvider>{children}</PortalProvider>;
@@ -59,6 +60,7 @@ function App() {
           </Route>
           <Route path="/test-components" element={<TestComponentsPage />} />
           <Route path="/test-api" element={<TestApiPage />} />
+          <Route path="*" element={<Error404Page />} />
         </Routes>
       </BrowserRouter>
     </Provider>
