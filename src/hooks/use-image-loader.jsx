@@ -29,36 +29,51 @@ function useImageListLodeChecker(imageList = []) {
   useEffect(() => {
     if (!imageList.length) return;
 
+    let cancelled = false;
+
     setImageLoadStates((prev) => {
       const nextStates = { ...prev };
       imageList.forEach(({ id }) => {
-        if (nextStates[id] === undefined) {
-          nextStates[id] = false;
-        }
+        if (nextStates[id] === undefined) nextStates[id] = false;
       });
       return nextStates;
     });
 
+    const imageMap = {};
+
     imageList.forEach(({ id, backgroundImageURL }) => {
       setImageLoadStates((prev) => {
-        if (prev[id]) return prev;
+        if (prev[id] === true) return prev;
 
-        if (!backgroundImageURL) {
-          return { ...prev, [id]: false };
-        }
+        if (!backgroundImageURL) return { ...prev, [id]: false };
 
         const img = new Image();
-        img.onload = () => {
-          setImageLoadStates((p) => ({ ...p, [id]: true }));
-        };
-        img.onerror = () => {
-          setImageLoadStates((p) => ({ ...p, [id]: false }));
-        };
-        img.src = backgroundImageURL;
+        imageMap[id] = img;
 
+        img.onload = () => {
+          if (!cancelled) {
+            setImageLoadStates((p) => ({ ...p, [id]: true }));
+          }
+        };
+
+        img.onerror = () => {
+          if (!cancelled) {
+            setImageLoadStates((p) => ({ ...p, [id]: false }));
+          }
+        };
+
+        img.src = backgroundImageURL;
         return prev;
       });
     });
+
+    return () => {
+      cancelled = true;
+      Object.values(imageMap).forEach((img) => {
+        img.onload = null;
+        img.onerror = null;
+      });
+    };
   }, [imageList]);
 
   return imageLoadStates;
