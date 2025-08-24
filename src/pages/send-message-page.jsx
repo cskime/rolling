@@ -71,13 +71,13 @@ const AvatarOption = styled.div`
   }
 `;
 
-const AvatarPreview = styled.div`
-  cursor: pointer;
-`;
-
 const DefaultAvatar = styled.div`
   cursor: pointer;
   padding-top: 20px;
+`;
+
+const AvatarPreview = styled.div`
+  cursor: pointer;
   box-shadow: ${({ $isSelected }) =>
     $isSelected ? `0 0 0 2px ${Colors.purple(600)}` : "none"};
   border-radius: 50%;
@@ -197,7 +197,9 @@ function SendMessagePage() {
       <Wrapper>
         <SendTitle>프로필 이미지</SendTitle>
         <AvatarWrapper>
-          <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
+          <DefaultAvatar>
+            <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
+          </DefaultAvatar>
           <AvatarOptionWrapper>
             <AvatarDescription>
               프로필 이미지를 선택해 주세요!

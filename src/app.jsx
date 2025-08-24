@@ -9,15 +9,7 @@ import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestApiPage from "./tests/test-api-page";
 import TestComponentsPage from "./tests/test-components-page";
-import { createGlobalStyle } from "styled-components";
-import NanumPenScript from "../src/assets/NanumPenScript.ttf";
-
-const GlobalStyle = createGlobalStyle`
-@font-face {
-font-family: 'NanumPenScript';
-src: url(${NanumPenScript}) format('truetype');
-font-weight: normal;
-font-style: normal;}`;
+import GlobalStyle from "./styles/global-style";
 
 function Provider({ children }) {
   return <PortalProvider>{children}</PortalProvider>;
