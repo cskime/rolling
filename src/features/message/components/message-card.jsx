@@ -63,7 +63,7 @@ function MessageCard({ isEditing, index, message, onClick, onDelete }) {
   };
 
   return (
-    <MessageCardBase index={index + 1}>
+    <MessageCardBase index={index + 1} useScaleTransform={!isEditing}>
       <StyledMessageCard $isEditing={isEditing} onClick={handleClick}>
         <Header>
           <MessageSender
