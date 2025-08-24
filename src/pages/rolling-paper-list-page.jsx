@@ -71,7 +71,7 @@ function getCachedImage(url) {
   return cache[url].src;
 }
 
-function ShowMessageList() {
+function RollingPaperListPage() {
   const navigate = useNavigate();
 
   const [recipientsData, setRecipientsData] = useState([]);
@@ -187,4 +187,4 @@ function ShowMessageList() {
   );
 }
 
-export default ShowMessageList;
+export default RollingPaperListPage;
