@@ -126,7 +126,7 @@ function RollingPaperHeader({
                 profiles={messages.map((message) => message.profileImageURL)}
               />
             )}
-            <ReceivedReactions reactions={reactions} />
+            {reactions.length > 0 && <ReceivedReactions reactions={reactions} />}
           </DividedContainer>
           <DividedContainer layout="compact">
             {isEditing || (

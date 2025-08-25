@@ -1,16 +1,17 @@
 import { useState } from "react";
-import TextField from "../components/text-field/text-field";
-import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
-import Colors from "../components/color/colors";
+import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
+import { apiClient } from "../api/client";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
-import BUTTON_SIZE from "../components/button/button-size";
-import { useNavigate, useParams } from "react-router";
 import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
+import Colors from "../components/color/colors";
+import { fontOptions } from "../components/font/message-font";
 import TextEditor from "../components/text-editor/text-editor";
+import TextField from "../components/text-field/text-field";
+import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import { media } from "../utils/media";
-import { apiClient } from "../api/client";
 
 const SendContainer = styled.div`
   display: flex;
@@ -174,13 +175,6 @@ function SendMessagePage() {
   const canCreate =
     trimmed !== "" && content.replace(/<[^>]+>/g, "").trim() !== "";
   // 정규식 유효성 검사로 html 태그 찾기("<"로 시작해서 ">"로 끝나는 문자 중 > 를 제외한(^ not) 모든 문자 제외)
-
-  const fontOptions = [
-    { title: "Noto Sans", fontFamily: "Noto Sans" },
-    { title: "Pretendard", fontFamily: "Pretendard" },
-    { title: "나눔명조", fontFamily: "Nanum Myeongjo" },
-    { title: "나눔손글씨 손편지체", fontFamily: "NanumPenScript" },
-  ];
 
   return (
     <SendContainer>

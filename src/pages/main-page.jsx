@@ -4,6 +4,8 @@ import emojiImg from "../assets/ld-emoji.png";
 import cardImg1 from "../assets/ld-img01.png";
 import cardImg2 from "../assets/ld-img02.png";
 import cardImg3 from "../assets/ld-img03.png";
+import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
 
 const Content = styled.div`
   width: 100%;
@@ -115,6 +117,10 @@ const PointBadge = styled.div`
   width: fit-content;
 `;
 
+const MoveButton = styled(PrimaryButton)`
+  width: 280px;
+`;
+
 function MainPage() {
   return (
     <Content>
@@ -158,7 +164,7 @@ function MainPage() {
         }}
       >
         <Link to="/list">
-          <button className="cta-button">구경해 보기</button>
+          <MoveButton size={BUTTON_SIZE.large} title="구경해 보기" />
         </Link>
       </div>
     </Content>

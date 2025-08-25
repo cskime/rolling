@@ -53,6 +53,7 @@ const BackgroundColor = styled.div`
 `;
 
 const BackgroundImage = styled.div`
+  height: 100%;
   ${({ $backgroundImageUrl }) =>
     $backgroundImageUrl
       ? `
