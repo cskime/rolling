@@ -1,8 +1,16 @@
-import styled from "styled-components";
-import { useModal } from "../../hooks/use-modal";
-import { PrimaryButton } from "../button/button";
-import BUTTON_SIZE from "../button/button-size";
+import styled, { keyframes } from "styled-components";
+import { mountAnimation } from "../animated-mount/mount-animation";
 import Portal from "../portal/portal";
+
+const openAnimation = keyframes`
+  from { opacity: 0 }
+  to { opacity: 1 } 
+`;
+
+const closeAnimation = keyframes`
+  from { opacity: 1 }
+  to { opacity: 0 } 
+`;
 
 const Content = styled.div`
   width: 100%;
@@ -32,36 +40,22 @@ const ModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${({ $isOpen }) =>
+    mountAnimation({
+      isOpen: $isOpen,
+      open: openAnimation,
+      close: closeAnimation,
+    })};
 `;
 
-const ActionButton = styled.div`
-  cursor: pointer;
-`;
-
-function Modal({ id, action, children }) {
-  const { showsModal, setShowsModal } = useModal({
-    id: id,
-    type: "modal",
-  });
-
-  const handleClick = () => setShowsModal(true);
-  const handleConfirmClick = () => setShowsModal(false);
-
+function Modal({ shows, isOpen, onDismiss, children }) {
   return (
     <>
-      <ActionButton onClick={handleClick}>{action}</ActionButton>
-      {showsModal && (
+      {shows && (
         <Portal id="modal">
-          <ModalContainer>
+          <ModalContainer $isOpen={isOpen} onAnimationEnd={onDismiss}>
             <StyledModal>
-              <Content>
-                {children}
-                <PrimaryButton
-                  size={BUTTON_SIZE.medium}
-                  title="확인"
-                  onClick={handleConfirmClick}
-                />
-              </Content>
+              <Content>{children}</Content>
             </StyledModal>
           </ModalContainer>
         </Portal>

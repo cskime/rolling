@@ -1,12 +1,14 @@
-import ArrowButton from "../../../components/button/arrow-button";
-import ARROW_BUTTON_DIRECTION from "../../../components/button/arrow-button-direction";
-import { media } from "../../../utils/media";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import styled, { css } from "styled-components";
 import Avatar from "../../../components/avatar/avatar";
 import AVATAR_SIZE from "../../../components/avatar/avatar-size";
+import EmojiBadge from "../../../components/badge/emoji-badge";
+import ArrowButton from "../../../components/button/arrow-button";
+import ARROW_BUTTON_DIRECTION from "../../../components/button/arrow-button-direction";
 import CardBackground from "../../../components/image/card-background";
 import { useImageListLodeChecker } from "../../../hooks/use-image-loader";
+import { media } from "../../../utils/media";
+import { useNavigate } from "react-router";
 
 const CardContainer = styled.div`
   display: grid;
@@ -62,6 +64,7 @@ const CardItem = styled(CardBackground)`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   justify-content: space-between;
 
@@ -85,6 +88,16 @@ const CardItem = styled(CardBackground)`
         ? ""
         : polygonStyle[$backgroundColorForStyle];
     }}
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+  }
+  &:active {
+    filter: brightness(0.8);
+    transform: translateY(1px);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -206,57 +219,12 @@ const CardEmojiBox = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  row-gap: 5px;
+  gap: 8px;
   z-index: 2;
 
   ${media.mobile} {
     padding-top: 10px;
-  }
-`;
-
-const CardEmoji = styled.span`
-  background-color: rgba(0, 0, 0, 0.54);
-  border-radius: 32px;
-  color: #ffffff;
-  padding: 8px 12px;
-  margin-right: 5px;
-
-  position: relative;
-  white-space: nowrap;
-  overflow: hidden;
-
-  font-size: 16px;
-  font-weight: 400;
-
-  transition: max-width 0.3s ease, z-index 0s;
-
-  &:hover {
-    max-width: 200px;
-    z-index: 100;
-    position: relative;
-  }
-
-  ${media.mobile} {
-    font-size: 14px;
-    padding: 8px 8px;
-    margin-right: 3px;
-  }
-`;
-
-const HiddenCount = styled.span`
-  display: inline;
-
-  .show-on-hover {
-    display: none;
-  }
-
-  ${CardEmoji}:hover & {
-    .show-on-hover {
-      display: inline;
-    }
-    .hide-on-hover {
-      display: none;
-    }
+    gap: 4px;
   }
 `;
 
@@ -277,6 +245,11 @@ const PreviewButtonWrapper = styled.div`
 `;
 
 function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = (cardId) => {
+    navigate(`/post/${cardId}`);
+  };
   const profileImages = useMemo(
     () =>
       cardData.flatMap((card) =>
@@ -300,6 +273,7 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
           backgroundImageURL={card.backgroundImageURL}
           backgroundColor={card.backgroundColor}
           overlayOn
+          onClick={() => handleCardClick(card.id)}
         >
           <CardTitle
             $fontColor={card.backgroundImageURL ? "#ffffff" : "#000000"}
@@ -334,23 +308,13 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
             <em>{card.messageCount}</em>명이 작성했어요!
           </MessageCountText>
           <CardEmojiBox $haveEmoji={card.topReactions.length > 0}>
-            {card.topReactions.map((emoji, index) => {
-              const countLength = emoji.count.toString().length;
-              const isLongCount = countLength > 2;
-
-              return (
-                <CardEmoji key={index} $isLong={isLongCount}>
-                  {isLongCount ? (
-                    <HiddenCount>
-                      <span className="hide-on-hover">{emoji.emoji}</span>
-                      <span className="show-on-hover"> {emoji.count}</span>
-                    </HiddenCount>
-                  ) : (
-                    `${emoji.emoji} ${emoji.count}`
-                  )}
-                </CardEmoji>
-              );
-            })}
+            {card.topReactions.map((reaction) => (
+              <EmojiBadge
+                emoji={reaction.emoji}
+                count={reaction.count}
+                maxDigits={2}
+              />
+            ))}
           </CardEmojiBox>
         </CardItem>
       ))}

@@ -51,6 +51,7 @@ const StyledDropdownInput = styled.button`
   gap: 8px;
   cursor: pointer;
   position: relative;
+  transition: box-shadow 0.3s;
 
   &:hover {
     box-shadow: 0 0 0 1px

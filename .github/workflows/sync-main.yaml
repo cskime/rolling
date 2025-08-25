@@ -1,20 +1,20 @@
-name: Synchronize to forked repo
+name: Synchronize the main branch to forked repo
 on:
   push:
     branches:
-      - develop
+      - main
 jobs:
   sync:
     name: Sync forked repo
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout develop
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.AUTO_ACTIONS }}
           fetch-depth: 0
-          ref: develop
+          ref: main
 
       - name: Add remote-url
         run: |
@@ -24,7 +24,7 @@ jobs:
 
       - name: Push changes to forked-repo
         run: |
-          git push -f forked-repo develop
+          git push -f forked-repo main
 
       - name: Clean up
         run: |

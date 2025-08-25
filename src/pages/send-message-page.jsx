@@ -73,6 +73,7 @@ const AvatarOption = styled.div`
 
 const DefaultAvatar = styled.div`
   cursor: pointer;
+  height: 100%;
   padding-top: 20px;
 `;
 

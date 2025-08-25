@@ -18,6 +18,12 @@ const ToggleItem = styled.button`
   padding: 0 16px;
   height: 40px;
   cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${({ $selected }) =>
+      $selected ? Colors.purple(100) : Colors.gray(200)};
+  }
 
   span {
     display: block;
@@ -27,22 +33,28 @@ const ToggleItem = styled.button`
   }
 `;
 
-function ToggleButton({ value, options = [] }) {
+function ToggleButton({ value, options = [], onChange }) {
   const [selected, setSelected] = useState(value);
 
-  const handleOptionClick = (event) => {
-    setSelected(event.target.textContent);
+  const handleOptionClick = (option, index) => {
+    setSelected(option);
+
+    if (onChange) {
+      onChange(option, index);
+    }
   };
 
   return (
     <StyledToggleButton>
-      {options.map((title, index) => (
+      {options.map((option, index) => (
         <ToggleItem
           key={index}
-          $selected={selected === title}
-          onClick={handleOptionClick}
+          $selected={selected === option}
+          onClick={(event) =>
+            handleOptionClick(event.target.textContent, index)
+          }
         >
-          <span>{title}</span>
+          <span>{option}</span>
         </ToggleItem>
       ))}
     </StyledToggleButton>

@@ -1,9 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
-import { OutlinedButton, PrimaryButton } from "../components/button/button";
+import {
+  DangerousButton,
+  OutlinedButton,
+  PrimaryButton,
+} from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import BACKGROUND_COLOR from "../components/color/background-color";
+import Modal from "../components/modal/modal";
+import ModalDialog from "../components/modal/modal-dialog";
 import {
   deleteMessage,
   getMessages,
@@ -16,24 +22,11 @@ import {
 } from "../features/rolling-paper/api/recipients";
 import RollingPaperHeader from "../features/rolling-paper/components/header/rolling-paper-header";
 import { useMedia } from "../hooks/use-media";
+import { useModalDialog } from "../hooks/use-modal-dialog";
 import ContentLayout from "../layouts/content-layout";
 import { media } from "../utils/media";
 
-const backgroundStyle = ({ $backgroundImageUrl, $backgroundColor }) => {
-  if (!$backgroundImageUrl) {
-    return `background-color: ${$backgroundColor}`;
-  }
-
-  return `
-    background: url('${$backgroundImageUrl}');
-    background-size: contain;
-  `;
-};
-
 const Content = styled.div`
-  ${backgroundStyle};
-  height: calc(100% - 68px);
-
   & > div {
     display: flex;
     flex-direction: column;
@@ -51,6 +44,22 @@ const Content = styled.div`
       padding: 24px 20px 38px;
     }
   }
+`;
+
+const BackgroundColor = styled.div`
+  height: calc(100% - 68px);
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor ?? BACKGROUND_COLOR.beige};
+`;
+
+const BackgroundImage = styled.div`
+  ${({ $backgroundImageUrl }) =>
+    $backgroundImageUrl
+      ? `
+          background: url('${$backgroundImageUrl}');
+          background-size: contain;
+        `
+      : ""}
 `;
 
 const ButtonContainer = styled.div`
@@ -71,7 +80,7 @@ function ViewerButtons({ onEdit }) {
   );
 }
 
-function EditingButtons({ onDelete, onCancel }) {
+function EditingButtons({ onDelete, onDone }) {
   return (
     <ButtonContainer>
       <PrimaryButton
@@ -79,11 +88,7 @@ function EditingButtons({ onDelete, onCancel }) {
         title="삭제하기"
         onClick={onDelete}
       />
-      <OutlinedButton
-        size={BUTTON_SIZE.medium}
-        title="완료하기"
-        onClick={onCancel}
-      />
+      <OutlinedButton size={BUTTON_SIZE.medium} title="완료" onClick={onDone} />
     </ButtonContainer>
   );
 }
@@ -95,6 +100,16 @@ function MessagesPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
+  const {
+    showsDialog,
+    isDialogOpen,
+    dialogTitle,
+    dialogContent,
+    openDialog,
+    closeDialog,
+    onPrimaryAction,
+    onDismissDialog,
+  } = useModalDialog();
 
   const isEditing = useMemo(
     () => location.pathname.includes("edit"),
@@ -105,28 +120,50 @@ function MessagesPage() {
     navigate("edit");
   };
 
-  const handleRollingPaperDelete = async () => {
-    try {
-      await deleteRecipient({ id: recipient.id });
-      navigate(`/list`);
-    } catch (error) {
-      // TODO: Error 처리
-      console.log(error);
-    }
+  const handleRollingPaperDelete = () => {
+    openDialog({
+      title: `${recipient.name} 님의 롤링 페이퍼를 삭제할까요?`,
+      content: "삭제한 롤링 페이퍼는 복원할 수 없어요.",
+      primaryAction: async () => {
+        try {
+          await deleteRecipient({ id: recipient.id });
+          navigate(`/list`);
+        } catch (error) {
+          // TODO: Error 처리
+          console.log(error);
+        }
+      },
+    });
   };
 
-  const handleEditCancel = () => {
+  const handleEditDone = () => {
     navigate(-1);
   };
 
-  const handleMessageDelete = async (messageId) => {
-    try {
-      await deleteMessage({ id: messageId });
-      setMessages((prev) => prev.filter((message) => message.id !== messageId));
-    } catch (error) {
-      // TODO: Error 처리
-      console.log(error);
-    }
+  const handleMessageDelete = (message) => {
+    openDialog({
+      title: `${message.sender} 님의 메시지를 삭제할까요?`,
+      content: "삭제한 메시지는 복원할 수 없어요.",
+      primaryAction: async () => {
+        try {
+          await deleteMessage({ id: message.id });
+          setMessages((prev) =>
+            prev.filter((prevMessage) => prevMessage.id !== message.id)
+          );
+        } catch (error) {
+          // TODO: Error 처리
+          console.log(error);
+        }
+      },
+    });
+  };
+
+  const handleDelete = () => {
+    onPrimaryAction();
+  };
+
+  const handleDeleteCancel = () => {
+    closeDialog();
   };
 
   const handleInfiniteScroll = async () => {
@@ -174,33 +211,66 @@ function MessagesPage() {
             recipientName={recipient.name}
             messages={messages}
           />
-          <Content
-            $backgroundImageUrl={recipient.backgroundImageURL}
+          <BackgroundColor
             $backgroundColor={BACKGROUND_COLOR[recipient.backgroundColor]}
           >
-            <div>
-              {isEditing ? (
-                <EditingButtons
-                  onDelete={handleRollingPaperDelete}
-                  onCancel={handleEditCancel}
-                />
-              ) : (
-                <ViewerButtons onEdit={handleEditClick} />
-              )}
-              <MessagesGrid
-                isEditing={isEditing}
-                messages={messages}
-                onDelete={handleMessageDelete}
-                onInfiniteScroll={handleInfiniteScroll}
-              />
-            </div>
-          </Content>
+            <BackgroundImage $backgroundImageUrl={recipient.backgroundImageURL}>
+              <Content>
+                <div>
+                  {isEditing ? (
+                    <EditingButtons
+                      onDelete={handleRollingPaperDelete}
+                      onDone={handleEditDone}
+                    />
+                  ) : (
+                    <ViewerButtons onEdit={handleEditClick} />
+                  )}
+                  <MessagesGrid
+                    isEditing={isEditing}
+                    messages={messages}
+                    onDelete={handleMessageDelete}
+                    onInfiniteScroll={handleInfiniteScroll}
+                  />
+                </div>
+              </Content>
+            </BackgroundImage>
+          </BackgroundColor>
         </>
       )}
     </>
   );
 
-  return isMobile ? content : <ContentLayout>{content}</ContentLayout>;
+  return isMobile ? (
+    content
+  ) : (
+    <ContentLayout>
+      {content}
+      <Modal
+        shows={showsDialog}
+        isOpen={isDialogOpen}
+        onDismiss={onDismissDialog}
+      >
+        <ModalDialog
+          title={dialogTitle}
+          content={dialogContent}
+          action={
+            <>
+              <DangerousButton
+                size={BUTTON_SIZE.medium}
+                title="삭제"
+                onClick={handleDelete}
+              />
+              <OutlinedButton
+                size={BUTTON_SIZE.medium}
+                title="취소"
+                onClick={handleDeleteCancel}
+              />
+            </>
+          }
+        />
+      </Modal>
+    </ContentLayout>
+  );
 }
 
 export default MessagesPage;

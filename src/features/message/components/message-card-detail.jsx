@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { PrimaryButton } from "../../../components/button/button";
+import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
 import { formatDate } from "../../../utils/formatter";
 import MessageSender from "./message-sender";
 
 const Header = styled.header`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +15,7 @@ const Header = styled.header`
 `;
 
 const Content = styled.div`
+  width: 100%;
   margin-top: 16px;
   font-size: 18px;
   font-weight: 400;
@@ -34,6 +38,10 @@ const Content = styled.div`
   }
 `;
 
+const Action = styled.div`
+  padding-top: 24px;
+`;
+
 const CreatedDate = styled.span`
   font-size: 14px;
   font-weight: 400;
@@ -41,9 +49,13 @@ const CreatedDate = styled.span`
   color: ${Colors.gray(400)};
 `;
 
-const StyledMessageCardDetail = styled.div``;
+const StyledMessageCardDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-function MessageCardDetail({ message }) {
+function MessageCardDetail({ message, onConfirm }) {
   return (
     <StyledMessageCardDetail>
       <Header>
@@ -55,6 +67,13 @@ function MessageCardDetail({ message }) {
         <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
       </Header>
       <Content>{message.content}</Content>
+      <Action>
+        <PrimaryButton
+          size={BUTTON_SIZE.medium}
+          title="확인"
+          onClick={onConfirm}
+        />
+      </Action>
     </StyledMessageCardDetail>
   );
 }

@@ -9,6 +9,7 @@ import EmojiBadge from "../components/badge/emoji-badge";
 import ArrowButton from "../components/button/arrow-button";
 import ARROW_BUTTON_DIRECTION from "../components/button/arrow-button-direction";
 import {
+  DangerousButton,
   OutlinedButton,
   PrimaryButton,
   SecondaryButton,
@@ -22,6 +23,7 @@ import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
+import { useModal } from "../hooks/use-modal";
 import { useToast } from "../hooks/use-toast";
 
 const OutlinedHeader = styled(Header)`
@@ -29,6 +31,11 @@ const OutlinedHeader = styled(Header)`
 `;
 
 function TestComponentsPage() {
+  /* Toggle Button */
+  const handleToggleChange = (option, index) => {
+    console.log(option, index);
+  };
+
   /* Dropdown type TextField */
   const [option1, setOption1] = useState();
   const [option2, setOption2] = useState();
@@ -43,10 +50,19 @@ function TestComponentsPage() {
   };
 
   /* Toast */
-  const { showsToast, setShowsToast } = useToast();
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
 
   const handleToastClick = () => setShowsToast(true);
-  const handleToastDismiss = () => setShowsToast(false);
+  const handleToastClose = () => setShowsToast(false);
+
+  /* Modal */
+  const { showsModal, isModalOpen, setShowsModal, onDismissModal } = useModal({
+    key: "test-modal",
+  });
+  const handleModalOpen = () => setShowsModal(true);
+  const handleModalClose = () => setShowsModal(false);
 
   return (
     <div
@@ -78,6 +94,13 @@ function TestComponentsPage() {
         <OutlinedButton size={BUTTON_SIZE.small} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" />
         <OutlinedButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <DangerousButton size={BUTTON_SIZE.large} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.medium} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.small} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.extraSmall} title="Hello" />
+        <DangerousButton size={BUTTON_SIZE.extraSmall} title="Hello" disabled />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <OutlinedButton
@@ -124,8 +147,15 @@ function TestComponentsPage() {
           gap: 16,
         }}
       >
-        <ToggleButton options={["컬러", "이미지", "다른값"]} />
-        <ToggleButton value="이미지" options={["컬러", "이미지", "다른값"]} />
+        <ToggleButton
+          options={["컬러", "이미지", "다른값"]}
+          onChange={handleToggleChange}
+        />
+        <ToggleButton
+          value="이미지"
+          options={["컬러", "이미지", "다른값"]}
+          onChange={handleToggleChange}
+        />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <Badge type={BADGE_TYPE.지인} />
@@ -137,7 +167,7 @@ function TestComponentsPage() {
         <EmojiBadge emoji="😚" count={1} />
         <EmojiBadge emoji="😁" count={10} />
         <EmojiBadge emoji="😉" count={100} />
-        <EmojiBadge emoji="😊" count={1000} />
+        <EmojiBadge emoji="😊" count={1000} maxDigits={2} />
       </div>
       <div style={{ display: "flex", gap: 16 }}>
         <TextField type={TEXT_FIELD_TYPE.input} placeholder="Placeholder" />
@@ -193,17 +223,30 @@ function TestComponentsPage() {
         />
         {showsToast && (
           <Toast
+            isOpen={isOpen}
             message="URL이 복사 되었습니다."
-            onDismiss={handleToastDismiss}
+            onClose={handleToastClose}
+            onDismiss={onDismiss}
           />
         )}
       </div>
       <div>
+        <PrimaryButton
+          size={BUTTON_SIZE.small}
+          title="Show Modal"
+          onClick={handleModalOpen}
+        />
         <Modal
-          id="user"
-          action={<PrimaryButton size={BUTTON_SIZE.small} title="Show Modal" />}
+          shows={showsModal}
+          isOpen={isModalOpen}
+          onDismiss={onDismissModal}
         >
           <h1>This is Modal.</h1>
+          <PrimaryButton
+            size={BUTTON_SIZE.small}
+            title={"Close"}
+            onClick={handleModalClose}
+          />
         </Modal>
       </div>
       <div style={{ display: "flex", gap: "16px" }}>

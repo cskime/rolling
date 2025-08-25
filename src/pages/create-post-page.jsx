@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import styled from "styled-components";
+import { apiClient } from "../api/client";
+import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
+import ToggleButton from "../components/button/toggle-button";
+import BACKGROUND_COLOR from "../components/color/background-color";
+import Colors from "../components/color/colors";
+import BackgroundSelect from "../components/option/background-select";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
-import Colors from "../components/color/colors";
-import ToggleButton from "../components/button/toggle-button";
-import styled from "styled-components";
-import { PrimaryButton } from "../components/button/button";
-import BackgroundSelect from "../components/option/background-select";
-import { useNavigate } from "react-router";
-import BUTTON_SIZE from "../components/button/button-size";
 import { media } from "../utils/media";
-import { apiClient } from "../api/client";
-import BACKGROUND_COLOR from "../components/color/background-color";
 
 const PostContainer = styled.div`
   display: flex;
@@ -63,10 +63,17 @@ const CreateButton = styled(PrimaryButton)`
   width: 100%;
 `;
 
+const TOGGLE_OPTIONS = ["컬러", "이미지"];
+
+const SELECT_TYPE = {
+  컬러: "color",
+  이미지: "image",
+};
+
 function CreatePostPage() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
-  const [backgroundType, setBackgroundType] = useState("컬러");
+  const [backgroundType, setBackgroundType] = useState(TOGGLE_OPTIONS[0]);
   const [selected, setSelected] = useState(0);
   const [backgroundUrls, setBackgroundUrls] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -147,6 +154,11 @@ function CreatePostPage() {
 
   const canCreate = trimmed !== "" && !loading;
 
+  const handleToggleChange = (option) => {
+    setBackgroundType(option);
+    setSelected(0);
+  };
+
   return (
     <PostContainer>
       <Wrapper>
@@ -165,19 +177,16 @@ function CreatePostPage() {
         <PostSummary>
           컬러를 선택하거나, 이미지를 선택할 수 있습니다.
         </PostSummary>
-        <ToggleButtonWrapper onClick={handleBackgroundSelect}>
+        <ToggleButtonWrapper>
           <ToggleButton
             value={backgroundType}
-            options={["컬러", "이미지"]}
-            onChange={(type) => {
-              handleBackgroundSelect(type);
-              setSelected(0);
-            }}
+            options={TOGGLE_OPTIONS}
+            onChange={handleToggleChange}
           />
         </ToggleButtonWrapper>
       </Wrapper>
       <BackgroundSelect
-        type={backgroundType === "컬러" ? "color" : "image"}
+        type={SELECT_TYPE[backgroundType]}
         selected={selected}
         onSelect={setSelected}
       />
