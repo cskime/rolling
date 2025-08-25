@@ -1,11 +1,9 @@
-import React from 'react';
-import Header from '../components/header/header';
-import emojiImg from '../assets/ld-emoji.png';
-import cardImg1 from '../assets/ld-img01.png';
-import cardImg2 from '../assets/ld-img02.png';
-import cardImg3 from '../assets/ld-img03.png';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import emojiImg from "../assets/ld-emoji.png";
+import cardImg1 from "../assets/ld-img01.png";
+import cardImg2 from "../assets/ld-img02.png";
+import cardImg3 from "../assets/ld-img03.png";
 
 const Content = styled.div`
   width: 100%;
@@ -123,7 +121,7 @@ function MainPage() {
       <ContentDetail>
         <CardContainer>
           <div className="CardContainerText">
-            <div style={{ margin: '0px', display: 'flex', gap: '0px' }}>
+            <div style={{ margin: "0px", display: "flex", gap: "0px" }}>
               <PointBadge>Point. 01</PointBadge>
             </div>
             <h2>누구나 손쉽게, 온라인 롤링페이퍼를 만들 수 있어요</h2>
@@ -141,7 +139,7 @@ function MainPage() {
               <img src={emojiImg} alt="올이모지" />
             </div>
             <div className="EmojiContainerText">
-              <div style={{ margin: '0px', display: 'flex', gap: '0px' }}>
+              <div style={{ margin: "0px", display: "flex", gap: "0px" }}>
                 <PointBadge>Point. 02</PointBadge>
               </div>
               <h2>서로에게 이모지로 감정을 표현해보세요</h2>
@@ -153,10 +151,10 @@ function MainPage() {
       <div
         className="Footer"
         style={{
-          textAlign: 'center',
-          marginTop: '20px',
-          padding: '20px',
-          backgroundColor: '#ffffff',
+          textAlign: "center",
+          marginTop: "20px",
+          padding: "20px",
+          backgroundColor: "#ffffff",
         }}
       >
         <Link to="/list">
