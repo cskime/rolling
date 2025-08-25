@@ -8,10 +8,10 @@ const INPUT_STYLES = Object.freeze({
     line-height: 26px;
   `,
   borderColor: {
-    normal: (error) => (error ? Colors.error : Colors.gray(300)),
-    hover: (error) => (error ? Colors.error : Colors.gray(500)),
-    active: (error) => (error ? Colors.error : Colors.gray(700)),
-    focus: (error) => (error ? Colors.error : Colors.gray(500)),
+    normal: (error) => (error ? Colors.red(400) : Colors.gray(300)),
+    hover: (error) => (error ? Colors.red(500) : Colors.gray(500)),
+    active: (error) => (error ? Colors.red(700) : Colors.gray(700)),
+    focus: (error) => (error ? Colors.red(500) : Colors.gray(500)),
     disabled: Colors.gray(300),
   },
   textColor: {

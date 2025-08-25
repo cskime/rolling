@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useAnimatedMount } from "./use-animated-mount";
 
-function useToast(timeout = 2500) {
-  const [showsToast, setShowsToast] = useState(false);
+function useToast({ timeout = 1000 } = {}) {
+  const { isMount, isOpen, setShows, onAnimationEnd } = useAnimatedMount();
 
   useEffect(() => {
-    if (!showsToast) return;
+    if (!isOpen) return;
 
-    const id = setTimeout(() => {
-      setShowsToast(false);
+    const timer = setTimeout(() => {
+      setShows(false);
     }, timeout);
 
-    return () => {
-      clearTimeout(id);
-    };
-  }, [showsToast, setShowsToast, timeout]);
+    return () => clearTimeout(timer);
+  }, [timeout, isOpen, setShows]);
 
-  return { showsToast, setShowsToast };
+  return {
+    showsToast: isMount,
+    isOpen,
+    setShowsToast: setShows,
+    onDismiss: onAnimationEnd,
+  };
 }
 
 export { useToast };

@@ -50,13 +50,15 @@ function TestComponentsPage() {
   };
 
   /* Toast */
-  const { showsToast, setShowsToast } = useToast();
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
 
   const handleToastClick = () => setShowsToast(true);
-  const handleToastDismiss = () => setShowsToast(false);
+  const handleToastClose = () => setShowsToast(false);
 
   /* Modal */
-  const { showsModal, setShowsModal } = useModal({
+  const { showsModal, isModalOpen, setShowsModal, onDismissModal } = useModal({
     key: "test-modal",
   });
   const handleModalOpen = () => setShowsModal(true);
@@ -221,8 +223,10 @@ function TestComponentsPage() {
         />
         {showsToast && (
           <Toast
+            isOpen={isOpen}
             message="URL이 복사 되었습니다."
-            onDismiss={handleToastDismiss}
+            onClose={handleToastClose}
+            onDismiss={onDismiss}
           />
         )}
       </div>
@@ -232,7 +236,11 @@ function TestComponentsPage() {
           title="Show Modal"
           onClick={handleModalOpen}
         />
-        <Modal shows={showsModal}>
+        <Modal
+          shows={showsModal}
+          isOpen={isModalOpen}
+          onDismiss={onDismissModal}
+        >
           <h1>This is Modal.</h1>
           <PrimaryButton
             size={BUTTON_SIZE.small}

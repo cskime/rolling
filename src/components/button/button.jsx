@@ -50,6 +50,7 @@ const BaseButton = styled.button`
   line-height: ${({ $size }) => styles.lineHeight[$size]};
   border-radius: ${({ $size }) => styles.borderRadius[$size]};
   height: ${({ $size, $icon }) => styles.height($icon)[$size]};
+  transition: background-color 0.3s;
 
   span {
     display: block;
