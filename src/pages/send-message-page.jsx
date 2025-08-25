@@ -1,16 +1,16 @@
 import { useState } from "react";
-import TextField from "../components/text-field/text-field";
-import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
-import Colors from "../components/color/colors";
+import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
+import { apiClient } from "../api/client";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
-import BUTTON_SIZE from "../components/button/button-size";
-import { useNavigate, useParams } from "react-router";
 import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
+import Colors from "../components/color/colors";
 import TextEditor from "../components/text-editor/text-editor";
+import TextField from "../components/text-field/text-field";
+import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import { media } from "../utils/media";
-import { apiClient } from "../api/client";
 
 const SendContainer = styled.div`
   display: flex;

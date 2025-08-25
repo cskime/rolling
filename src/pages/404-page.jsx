@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { PrimaryButton } from "../components/button/button";
-import BUTTON_SIZE from "../components/button/button-size";
 import styled from "styled-components";
 import CrushedPaperPlane from "../assets/ic-paperairplane.svg";
 import logoImage from "../assets/logo.svg";
+import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
 import { media } from "../utils/media";
 
 const TopContainer = styled.article`

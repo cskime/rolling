@@ -116,15 +116,6 @@ function CreatePostPage() {
     }
   };
 
-  const handleBackgroundSelect = (e) => {
-    let typeSelect = e.target.textContent;
-
-    if (typeSelect === "컬러" || typeSelect === "이미지") {
-      setBackgroundType(typeSelect);
-      setSelected(0);
-    }
-  };
-
   const handleCreate = async () => {
     if (!trimmed) {
       setNameError("이름을 입력해 주세요"); // 이거 안전장치로 필요할까요?
