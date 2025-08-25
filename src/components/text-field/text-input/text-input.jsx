@@ -12,6 +12,7 @@ const StyledTextInput = styled.input`
   ${INPUT_STYLES.font}
   color: ${INPUT_STYLES.textColor.normal};
   min-width: 320px;
+  transition: box-shadow 0.3s;
 
   &::placeholder {
     ${INPUT_STYLES.font}

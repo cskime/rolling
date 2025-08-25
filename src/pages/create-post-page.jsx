@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
+import { apiClient } from "../api/client";
 import { PrimaryButton } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
+import BACKGROUND_COLOR from "../components/color/background-color";
+import Colors from "../components/color/colors";
 import BackgroundSelect from "../components/option/background-select";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
@@ -41,7 +44,7 @@ const PostTitle = styled.h2`
 
 const PostSummary = styled.p`
   font-weight: 400;
-  color: Colors.gray(500);
+  color: ${Colors.gray(500)};
 `;
 
 const ToggleButtonWrapper = styled.div`
@@ -72,7 +75,31 @@ function CreatePostPage() {
   const [nameError, setNameError] = useState("");
   const [backgroundType, setBackgroundType] = useState(TOGGLE_OPTIONS[0]);
   const [selected, setSelected] = useState(0);
+  const [backgroundUrls, setBackgroundUrls] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const colorOptions = [
+    { label: "beige", color: BACKGROUND_COLOR.beige },
+    { label: "purple", color: BACKGROUND_COLOR.purple },
+    { label: "blue", color: BACKGROUND_COLOR.blue },
+    { label: "green", color: BACKGROUND_COLOR.green },
+  ];
+
+  const selectedColor = colorOptions[selected];
+  const selectedImageURL = backgroundUrls[selected];
+
+  useEffect(() => {
+    if (backgroundType !== "이미지") return;
+
+    const imageUrls = [
+      "https://picsum.photos/id/683/3840/2160",
+      "https://picsum.photos/id/24/3840/2160",
+      "https://picsum.photos/id/599/3840/2160",
+      "https://picsum.photos/id/1058/3840/2160",
+    ];
+    setBackgroundUrls(imageUrls);
+  }, [backgroundType]);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -89,12 +116,43 @@ function CreatePostPage() {
     }
   };
 
-  const handleCreate = () => {
-    const randomID = Math.floor(Math.random() * 10000);
-    navigate(`/post/${randomID}`);
+  const handleBackgroundSelect = (e) => {
+    let typeSelect = e.target.textContent;
+
+    if (typeSelect === "컬러" || typeSelect === "이미지") {
+      setBackgroundType(typeSelect);
+      setSelected(0);
+    }
   };
 
-  const canCreate = trimmed !== "";
+  const handleCreate = async () => {
+    if (!trimmed) {
+      setNameError("이름을 입력해 주세요"); // 이거 안전장치로 필요할까요?
+      return;
+    }
+
+    setLoading(true);
+
+    const postData = {
+      name: trimmed,
+      backgroundColor:
+        backgroundType === "컬러" ? selectedColor.label : "beige",
+      backgroundImageURL: backgroundType === "이미지" ? selectedImageURL : null,
+    };
+
+    try {
+      const response = await apiClient.post("/recipients/", postData);
+      const newPostId = response.data.id;
+      navigate(`/post/${newPostId}`);
+    } catch (error) {
+      console.error("게시물 생성 실패:", error);
+      alert("게시물 생성에 실패했습니다. 다시 시도해 주세요");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const canCreate = trimmed !== "" && !loading;
 
   const handleToggleChange = (option) => {
     setBackgroundType(option);

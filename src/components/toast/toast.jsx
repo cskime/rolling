@@ -1,6 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import checkImage from "../../assets/ic-check-circle-green.svg";
 import closeImage from "../../assets/ic-xmark.svg";
+import { mountAnimation } from "../animated-mount/mount-animation";
+
+const openAnimation = keyframes`
+  from { opacity: 0 }
+  to { opacity: 1 } 
+`;
+
+const closeAnimation = keyframes`
+  from { opacity: 1 }
+  to { opacity: 0 } 
+`;
 
 const StyledToast = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
@@ -20,6 +31,12 @@ const StyledToast = styled.div`
   left: 50%;
   bottom: 70px;
   transform: translateX(-50%);
+  ${({ $isOpen }) =>
+    mountAnimation({
+      isOpen: $isOpen,
+      open: openAnimation,
+      close: closeAnimation,
+    })};
 
   p {
     margin: 0;
@@ -56,14 +73,14 @@ const IconButton = styled(Icon)`
   cursor: pointer;
 `;
 
-function Toast({ message, onDismiss }) {
+function Toast({ isOpen, message, onClose, onDismiss }) {
   return (
-    <StyledToast>
+    <StyledToast $isOpen={isOpen} onAnimationEnd={onDismiss}>
       <Icon>
         <img src={checkImage} alt="확인" />
       </Icon>
       <p>{message}</p>
-      <IconButton as="button" onClick={onDismiss}>
+      <IconButton as="button" onClick={onClose}>
         <img src={closeImage} alt="닫기" />
       </IconButton>
     </StyledToast>

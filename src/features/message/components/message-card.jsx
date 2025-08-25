@@ -5,6 +5,7 @@ import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
 import { formatDate } from "../../../utils/formatter";
 import { media } from "../../../utils/media";
+import MessageCardBase from "./message-card-base";
 import MessageSender from "./message-sender";
 
 const Header = styled.header`
@@ -47,13 +48,10 @@ const StyledMessageCard = styled.article`
   display: flex;
   flex-direction: column;
   padding: 24px;
-  border-radius: 16px;
-  background-color: white;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   cursor: ${({ $isEditing }) => ($isEditing ? "default" : "pointer")};
 `;
 
-function MessageCard({ isEditing, message, onClick, onDelete }) {
+function MessageCard({ isEditing, index, message, onClick, onDelete }) {
   const handleClick = () => {
     if (isEditing) return;
     onClick(message);
@@ -65,24 +63,26 @@ function MessageCard({ isEditing, message, onClick, onDelete }) {
   };
 
   return (
-    <StyledMessageCard $isEditing={isEditing} onClick={handleClick}>
-      <Header>
-        <MessageSender
-          profileImageUrl={message.profileImageURL}
-          relationship={message.relationship}
-          name={message.sender}
-        />
-        {isEditing && (
-          <OutlinedButton
-            size={BUTTON_SIZE.medium}
-            icon={deleteImage}
-            onClick={handleDeleteClick}
+    <MessageCardBase index={index + 1} useScaleTransform={!isEditing}>
+      <StyledMessageCard $isEditing={isEditing} onClick={handleClick}>
+        <Header>
+          <MessageSender
+            profileImageUrl={message.profileImageURL}
+            relationship={message.relationship}
+            name={message.sender}
           />
-        )}
-      </Header>
-      <Content>{message.content}</Content>
-      <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
-    </StyledMessageCard>
+          {isEditing && (
+            <OutlinedButton
+              size={BUTTON_SIZE.medium}
+              icon={deleteImage}
+              onClick={handleDeleteClick}
+            />
+          )}
+        </Header>
+        <Content>{message.content}</Content>
+        <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
+      </StyledMessageCard>
+    </MessageCardBase>
   );
 }
 

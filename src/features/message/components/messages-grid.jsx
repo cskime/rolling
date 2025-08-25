@@ -29,7 +29,7 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const infiniteScrollTargetRef = useRef();
-  const { showsModal, setShowsModal } = useModal({
+  const { showsModal, isModalOpen, setShowsModal, onDismissModal } = useModal({
     key: "message-modal",
   });
   const [modalMessage, setModalMessage] = useState(null);
@@ -62,9 +62,10 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
     <>
       <StyledRollingPaperMessagesGrid>
         <MessageCardAdd onClick={handleAddClick} />
-        {messages.map((message) => (
+        {messages.map((message, index) => (
           <MessageCard
             key={message.id}
+            index={index}
             isEditing={isEditing}
             message={message}
             onClick={handleMessageClick}
@@ -73,7 +74,11 @@ function MessagesGrid({ isEditing, messages, onDelete, onInfiniteScroll }) {
         ))}
         <div ref={infiniteScrollTargetRef}></div>
       </StyledRollingPaperMessagesGrid>
-      <Modal shows={showsModal && modalMessage != null}>
+      <Modal
+        shows={showsModal && modalMessage != null}
+        isOpen={isModalOpen}
+        onDismiss={onDismissModal}
+      >
         <MessageCardDetail
           message={modalMessage}
           onConfirm={handleModalConfirm}
