@@ -19,6 +19,25 @@ const Content = styled.div`
   font-weight: 400;
   line-height: 20px;
 
+  ${({ $hidesCount }) =>
+    $hidesCount
+      ? `
+          &:hover {
+            & > span:first-child {
+              display: none;
+            }
+
+            & > span:last-child {
+              display: inline;
+            }  
+          }
+
+          & > span:last-child {
+            display: none;
+          }
+        `
+      : ""};
+
   ${media.mobile} {
     gap: 6px;
     font-size: 14px;
@@ -26,10 +45,17 @@ const Content = styled.div`
   }
 `;
 
-function EmojiBadge({ emoji, count }) {
+function EmojiBadge({ emoji, count, maxDigits }) {
+  let hidesCount;
+  if (maxDigits) {
+    hidesCount = String(count).length > maxDigits;
+  } else {
+    hidesCount = false;
+  }
+
   return (
     <StyledEmojiBadge>
-      <Content>
+      <Content $hidesCount={hidesCount}>
         <span>{emoji}</span>
         <span>{count}</span>
       </Content>

@@ -26,21 +26,7 @@ import { useModalDialog } from "../hooks/use-modal-dialog";
 import ContentLayout from "../layouts/content-layout";
 import { media } from "../utils/media";
 
-const backgroundStyle = ({ $backgroundImageUrl, $backgroundColor }) => {
-  if (!$backgroundImageUrl) {
-    return `background-color: ${$backgroundColor}`;
-  }
-
-  return `
-    background: url('${$backgroundImageUrl}');
-    background-size: contain;
-  `;
-};
-
 const Content = styled.div`
-  ${backgroundStyle};
-  height: calc(100% - 68px);
-
   & > div {
     display: flex;
     flex-direction: column;
@@ -58,6 +44,23 @@ const Content = styled.div`
       padding: 24px 20px 38px;
     }
   }
+`;
+
+const BackgroundColor = styled.div`
+  height: calc(100% - 68px);
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor ?? BACKGROUND_COLOR.beige};
+`;
+
+const BackgroundImage = styled.div`
+  height: 100%;
+  ${({ $backgroundImageUrl }) =>
+    $backgroundImageUrl
+      ? `
+          background: url('${$backgroundImageUrl}');
+          background-size: contain;
+        `
+      : ""}
 `;
 
 const ButtonContainer = styled.div`
@@ -100,11 +103,13 @@ function MessagesPage() {
   const { id } = useParams();
   const {
     showsDialog,
+    isDialogOpen,
     dialogTitle,
     dialogContent,
     openDialog,
     closeDialog,
     onPrimaryAction,
+    onDismissDialog,
   } = useModalDialog();
 
   const isEditing = useMemo(
@@ -207,27 +212,30 @@ function MessagesPage() {
             recipientName={recipient.name}
             messages={messages}
           />
-          <Content
-            $backgroundImageUrl={recipient.backgroundImageURL}
+          <BackgroundColor
             $backgroundColor={BACKGROUND_COLOR[recipient.backgroundColor]}
           >
-            <div>
-              {isEditing ? (
-                <EditingButtons
-                  onDelete={handleRollingPaperDelete}
-                  onDone={handleEditDone}
-                />
-              ) : (
-                <ViewerButtons onEdit={handleEditClick} />
-              )}
-              <MessagesGrid
-                isEditing={isEditing}
-                messages={messages}
-                onDelete={handleMessageDelete}
-                onInfiniteScroll={handleInfiniteScroll}
-              />
-            </div>
-          </Content>
+            <BackgroundImage $backgroundImageUrl={recipient.backgroundImageURL}>
+              <Content>
+                <div>
+                  {isEditing ? (
+                    <EditingButtons
+                      onDelete={handleRollingPaperDelete}
+                      onDone={handleEditDone}
+                    />
+                  ) : (
+                    <ViewerButtons onEdit={handleEditClick} />
+                  )}
+                  <MessagesGrid
+                    isEditing={isEditing}
+                    messages={messages}
+                    onDelete={handleMessageDelete}
+                    onInfiniteScroll={handleInfiniteScroll}
+                  />
+                </div>
+              </Content>
+            </BackgroundImage>
+          </BackgroundColor>
         </>
       )}
     </>
@@ -238,7 +246,11 @@ function MessagesPage() {
   ) : (
     <ContentLayout>
       {content}
-      <Modal shows={showsDialog}>
+      <Modal
+        shows={showsDialog}
+        isOpen={isDialogOpen}
+        onDismiss={onDismissDialog}
+      >
         <ModalDialog
           title={dialogTitle}
           content={dialogContent}

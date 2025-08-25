@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 import logoImage from "../../assets/logo.svg";
 import { media } from "../../utils/media";
@@ -27,7 +28,9 @@ function Header({ className, children }) {
   return (
     <StyledHeader className={className}>
       <HeaderContent>
-        <img src={logoImage} alt="로고" />
+        <Link to="/">
+          <img src={logoImage} alt="로고" />
+        </Link>
         <div>{children}</div>
       </HeaderContent>
     </StyledHeader>

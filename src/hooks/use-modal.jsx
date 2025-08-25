@@ -1,8 +1,16 @@
-import { usePortal } from "./use-portal";
+import { useAnimatedPortal } from "./use-animated-portal";
 
 function useModal({ key }) {
-  const { isOpen, setIsOpen } = usePortal({ key });
-  return { showsModal: isOpen, setShowsModal: setIsOpen };
+  const { isMount, isOpen, setShows, onAnimationEnd } = useAnimatedPortal({
+    key,
+  });
+
+  return {
+    showsModal: isMount,
+    isModalOpen: isOpen,
+    setShowsModal: setShows,
+    onDismissModal: onAnimationEnd,
+  };
 }
 
 export { useModal };

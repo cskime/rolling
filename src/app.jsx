@@ -9,6 +9,8 @@ import MessagesPage from "./pages/messages-page";
 import SendMessagePage from "./pages/send-message-page";
 import TestApiPage from "./tests/test-api-page";
 import TestComponentsPage from "./tests/test-components-page";
+import Error404Page from "./pages/404-page";
+import GlobalStyle from "./styles/global-style";
 
 function Provider({ children }) {
   return <PortalProvider>{children}</PortalProvider>;
@@ -16,52 +18,57 @@ function Provider({ children }) {
 
 function App() {
   return (
-    <Provider>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <OnboardingLayout>
-                <MainPage />
-              </OnboardingLayout>
-            }
-          />
-          <Route
-            path="/list"
-            element={
-              <OnboardingLayout>
-                <RollingPaperListPage />
-              </OnboardingLayout>
-            }
-          />
-          <Route path="/post">
+    <>
+      <GlobalStyle />
+      <Provider>
+        <BrowserRouter>
+          <Routes>
             <Route
-              index
+              path="/"
               element={
-                <ContentLayout>
-                  <CreatePostPage />
-                </ContentLayout>
+                <OnboardingLayout>
+                  <MainPage />
+                </OnboardingLayout>
               }
             />
-            <Route path=":id">
-              <Route index element={<MessagesPage />} />
-              <Route path="edit" element={<MessagesPage />} />
+            <Route
+              path="/list"
+              element={
+                <OnboardingLayout>
+                  <RollingPaperListPage />
+                </OnboardingLayout>
+              }
+            />
+            <Route path="/post">
               <Route
-                path="message"
+                index
                 element={
                   <ContentLayout>
-                    <SendMessagePage />
+                    <CreatePostPage />
                   </ContentLayout>
                 }
               />
+              <Route path=":id">
+                <Route index element={<MessagesPage />} />
+                <Route path="edit" element={<MessagesPage />} />
+                <Route
+                  path="message"
+                  element={
+                    <ContentLayout>
+                      <SendMessagePage />
+                    </ContentLayout>
+                  }
+                />
+              </Route>
             </Route>
-          </Route>
-          <Route path="/test-components" element={<TestComponentsPage />} />
-          <Route path="/test-api" element={<TestApiPage />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+            <Route path="/test-components" element={<TestComponentsPage />} />
+            <Route path="/test-api" element={<TestApiPage />} />
+            <Route path="*" element={<Error404Page />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </>
+
   );
 }
 

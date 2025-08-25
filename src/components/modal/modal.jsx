@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { mountAnimation } from "../animated-mount/mount-animation";
 import Portal from "../portal/portal";
+
+const openAnimation = keyframes`
+  from { opacity: 0 }
+  to { opacity: 1 } 
+`;
+
+const closeAnimation = keyframes`
+  from { opacity: 1 }
+  to { opacity: 0 } 
+`;
 
 const Content = styled.div`
   width: 100%;
@@ -29,14 +40,20 @@ const ModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${({ $isOpen }) =>
+    mountAnimation({
+      isOpen: $isOpen,
+      open: openAnimation,
+      close: closeAnimation,
+    })};
 `;
 
-function Modal({ shows, children }) {
+function Modal({ shows, isOpen, onDismiss, children }) {
   return (
     <>
       {shows && (
         <Portal id="modal">
-          <ModalContainer>
+          <ModalContainer $isOpen={isOpen} onAnimationEnd={onDismiss}>
             <StyledModal>
               <Content>{children}</Content>
             </StyledModal>

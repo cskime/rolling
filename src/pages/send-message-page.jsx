@@ -1,14 +1,16 @@
 import { useState } from "react";
-import TextField from "../components/text-field/text-field";
-import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
-import Colors from "../components/color/colors";
+import { useNavigate, useParams } from "react-router";
 import styled from "styled-components";
+import { apiClient } from "../api/client";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
-import BUTTON_SIZE from "../components/button/button-size";
-import { useNavigate } from "react-router";
 import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
+import Colors from "../components/color/colors";
+import { fontOptions } from "../components/font/message-font";
 import TextEditor from "../components/text-editor/text-editor";
+import TextField from "../components/text-field/text-field";
+import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import { media } from "../utils/media";
 
 const SendContainer = styled.div`
@@ -70,13 +72,14 @@ const AvatarOption = styled.div`
   }
 `;
 
-const AvatarPreview = styled.div`
-  cursor: pointer;
-`;
-
 const DefaultAvatar = styled.div`
   cursor: pointer;
+  height: 100%;
   padding-top: 20px;
+`;
+
+const AvatarPreview = styled.div`
+  cursor: pointer;
   box-shadow: ${({ $isSelected }) =>
     $isSelected ? `0 0 0 2px ${Colors.purple(600)}` : "none"};
   border-radius: 50%;
@@ -141,21 +144,37 @@ function SendMessagePage() {
     "https://picsum.photos/id/1064/100/100",
   ];
 
-  const handleCreate = () => {
-    const randomID = Math.floor(Math.random() * 10000);
-    navigate(`/post/${randomID}`);
+  const { id: recipientId } = useParams();
+
+  const handleCreate = async () => {
+    if (!canCreate) return;
+
+    const plainContent = content.replace(/<[^>]+>/g, "").trim();
+
+    const newMessage = {
+      sender: trimmed,
+      profileImageURL:
+        selectedAvatar ||
+        "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png",
+      relationship: relationOption,
+      content: plainContent,
+      font: selectedFont.title,
+    };
+    try {
+      const response = await apiClient.post(
+        `recipients/${recipientId}/messages/`,
+        newMessage
+      );
+      console.log("메시지 저장 성공:", response.data);
+      navigate(`/post/${recipientId}`);
+    } catch (error) {
+      console.error("메시지 저장 실패:", error);
+    }
   };
 
   const canCreate =
     trimmed !== "" && content.replace(/<[^>]+>/g, "").trim() !== "";
   // 정규식 유효성 검사로 html 태그 찾기("<"로 시작해서 ">"로 끝나는 문자 중 > 를 제외한(^ not) 모든 문자 제외)
-
-  const fontOptions = [
-    { title: "Noto Sans", fontFamily: "Noto Sans" },
-    { title: "Pretendard", fontFamily: "Pretendard" },
-    { title: "나눔고딕", fontFamily: "Nanum Ghthic" },
-    { title: "나눔손글씨 펜체", fontFamily: "Nanum Pen Script" },
-  ];
 
   return (
     <SendContainer>
@@ -173,7 +192,9 @@ function SendMessagePage() {
       <Wrapper>
         <SendTitle>프로필 이미지</SendTitle>
         <AvatarWrapper>
-          <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
+          <DefaultAvatar>
+            <Avatar size={AVATAR_SIZE.large} source={selectedAvatar} />
+          </DefaultAvatar>
           <AvatarOptionWrapper>
             <AvatarDescription>
               프로필 이미지를 선택해 주세요!

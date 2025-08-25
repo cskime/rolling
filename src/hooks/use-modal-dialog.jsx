@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useModal } from "./use-modal";
 
 function useModalDialog() {
-  const { showsModal, setShowsModal } = useModal({
+  const { showsModal, isModalOpen, setShowsModal, onDismissModal } = useModal({
     key: "delete-modal",
   });
   const [title, setTitle] = useState("");
@@ -30,11 +30,13 @@ function useModalDialog() {
 
   return {
     showsDialog: showsModal,
+    isDialogOpen: isModalOpen,
     dialogTitle: title,
     dialogContent: content,
     openDialog,
     closeDialog,
     onPrimaryAction,
+    onDismissDialog: onDismissModal,
   };
 }
 

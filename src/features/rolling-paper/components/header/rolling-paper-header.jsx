@@ -69,7 +69,9 @@ function RollingPaperHeader({
   recipientName,
   messages,
 }) {
-  const { showsToast, setShowsToast } = useToast();
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
   const { isDesktop, isMobile } = useMedia();
   const [reactions, setReactions] = useState([]);
 
@@ -104,6 +106,8 @@ function RollingPaperHeader({
     setShowsToast(true);
   };
 
+  const handleToastClose = () => setShowsToast(false);
+
   useEffect(() => {
     updateReactions();
   }, [updateReactions]);
@@ -122,7 +126,7 @@ function RollingPaperHeader({
                 profiles={messages.map((message) => message.profileImageURL)}
               />
             )}
-            <ReceivedReactions reactions={reactions} />
+            {reactions.length > 0 && <ReceivedReactions reactions={reactions} />}
           </DividedContainer>
           <DividedContainer layout="compact">
             {isEditing || (
@@ -137,8 +141,10 @@ function RollingPaperHeader({
       </RollingPaperHeaderContent>
       {showsToast && (
         <Toast
+          isOpen={isOpen}
           message="URL이 복사 되었습니다."
-          onDismiss={() => setShowsToast(false)}
+          onClose={handleToastClose}
+          onDismiss={onDismiss}
         />
       )}
     </StyledRollingPaperHeader>
