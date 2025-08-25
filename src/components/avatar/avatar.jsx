@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled, { css } from "styled-components";
 import defaultAvatarImage from "../../assets/ic-person.svg";
 import Colors from "../color/colors";
+import SkeletonLoading from "../loading/skeleton-loading";
 import AVATAR_SIZE from "./avatar-size";
 
 const borderWidth = {
@@ -19,7 +21,6 @@ const avatarStyle = css`
 
 const StyledAvatar = styled.div`
   ${avatarStyle}
-  background-color: ${Colors.gray(200)};
   border: ${({ $size }) => borderWidth[`${$size}`]}px solid
     ${({ $color }) => $color};
 
@@ -47,10 +48,22 @@ function Avatar({
   size = AVATAR_SIZE.medium,
   color = Colors.gray(200),
 }) {
-  const img = <img src={source ?? defaultAvatarImage} alt="사용자 사진" />;
+  const [isLoading, setLoading] = useState(source ?? false);
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
+
+  const img = (
+    <img
+      src={source ?? defaultAvatarImage}
+      alt="사용자 사진"
+      onLoad={handleImageLoad}
+    />
+  );
+
   return source ? (
     <StyledAvatar $size={size} $color={color}>
-      {img}
+      <SkeletonLoading isLoading={isLoading}>{img}</SkeletonLoading>
     </StyledAvatar>
   ) : (
     <StyledDefaultAvatar $size={size}>{img}</StyledDefaultAvatar>
