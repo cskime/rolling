@@ -31,6 +31,11 @@ const OutlinedHeader = styled(Header)`
 `;
 
 function TestComponentsPage() {
+  /* Toggle Button */
+  const handleToggleChange = (option, index) => {
+    console.log(option, index);
+  };
+
   /* Dropdown type TextField */
   const [option1, setOption1] = useState();
   const [option2, setOption2] = useState();
@@ -140,8 +145,15 @@ function TestComponentsPage() {
           gap: 16,
         }}
       >
-        <ToggleButton options={["컬러", "이미지", "다른값"]} />
-        <ToggleButton value="이미지" options={["컬러", "이미지", "다른값"]} />
+        <ToggleButton
+          options={["컬러", "이미지", "다른값"]}
+          onChange={handleToggleChange}
+        />
+        <ToggleButton
+          value="이미지"
+          options={["컬러", "이미지", "다른값"]}
+          onChange={handleToggleChange}
+        />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         <Badge type={BADGE_TYPE.지인} />
