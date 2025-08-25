@@ -1,17 +1,16 @@
-import { PrimaryButton } from "../components/button/button";
-import BUTTON_SIZE from "../components/button/button-size";
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
-import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
-import { media } from "../utils/media";
-import { useMedia } from "../hooks/use-media";
 import { apiClient } from "../api/client";
+import { PrimaryButton } from "../components/button/button";
+import BUTTON_SIZE from "../components/button/button-size";
+import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
+import { useMedia } from "../hooks/use-media";
+import { media } from "../utils/media";
 
 const TopContainer = styled.div`
   text-align: center;
   margin-top: 50px;
-  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
 `;
@@ -72,7 +71,7 @@ function getCachedImage(url) {
   return cache[url].src;
 }
 
-function ShowMessageList() {
+function RollingPaperListPage() {
   const navigate = useNavigate();
 
   const [recipientsData, setRecipientsData] = useState([]);
@@ -188,4 +187,4 @@ function ShowMessageList() {
   );
 }
 
-export default ShowMessageList;
+export default RollingPaperListPage;
