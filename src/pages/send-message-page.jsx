@@ -6,10 +6,11 @@ import styled from "styled-components";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
 import BUTTON_SIZE from "../components/button/button-size";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { PrimaryButton } from "../components/button/button";
 import TextEditor from "../components/text-editor/text-editor";
 import { media } from "../utils/media";
+import { apiClient } from "../api/client";
 
 const SendContainer = styled.div`
   display: flex;
@@ -71,6 +72,7 @@ const AvatarOption = styled.div`
 `;
 
 const DefaultAvatar = styled.div`
+  cursor: pointer;
   height: 100%;
   padding-top: 20px;
 `;
@@ -141,9 +143,32 @@ function SendMessagePage() {
     "https://picsum.photos/id/1064/100/100",
   ];
 
-  const handleCreate = () => {
-    const randomID = Math.floor(Math.random() * 10000);
-    navigate(`/post/${randomID}`);
+  const { id: recipientId } = useParams();
+
+  const handleCreate = async () => {
+    if (!canCreate) return;
+
+    const plainContent = content.replace(/<[^>]+>/g, "").trim();
+
+    const newMessage = {
+      sender: trimmed,
+      profileImageURL:
+        selectedAvatar ||
+        "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/sprint-proj-image/default_avatar.png",
+      relationship: relationOption,
+      content: plainContent,
+      font: selectedFont.title,
+    };
+    try {
+      const response = await apiClient.post(
+        `recipients/${recipientId}/messages/`,
+        newMessage
+      );
+      console.log("메시지 저장 성공:", response.data);
+      navigate(`/post/${recipientId}`);
+    } catch (error) {
+      console.error("메시지 저장 실패:", error);
+    }
   };
 
   const canCreate =
@@ -153,8 +178,8 @@ function SendMessagePage() {
   const fontOptions = [
     { title: "Noto Sans", fontFamily: "Noto Sans" },
     { title: "Pretendard", fontFamily: "Pretendard" },
-    { title: "나눔고딕", fontFamily: "Nanum Ghthic" },
-    { title: "나눔손글씨 펜체", fontFamily: "Nanum Pen Script" },
+    { title: "나눔명조", fontFamily: "Nanum Myeongjo" },
+    { title: "나눔손글씨 손편지체", fontFamily: "NanumPenScript" },
   ];
 
   return (
