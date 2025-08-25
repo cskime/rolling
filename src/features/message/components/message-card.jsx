@@ -3,6 +3,7 @@ import deleteImage from "../../../assets/ic-trash.svg";
 import { OutlinedButton } from "../../../components/button/button";
 import BUTTON_SIZE from "../../../components/button/button-size";
 import Colors from "../../../components/color/colors";
+import { messageFontFamily } from "../../../components/font/message-font";
 import { formatDate } from "../../../utils/formatter";
 import { media } from "../../../utils/media";
 import MessageCardBase from "./message-card-base";
@@ -18,6 +19,7 @@ const Header = styled.header`
 
 const Content = styled.div`
   margin: 16px 0;
+  font-family: ${({ $fontFamily }) => $fontFamily};
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -79,7 +81,7 @@ function MessageCard({ isEditing, index, message, onClick, onDelete }) {
             />
           )}
         </Header>
-        <Content>{message.content}</Content>
+        <Content $fontFamily={messageFontFamily[message.font]}>{message.content}</Content>
         <CreatedDate>{formatDate(message.createdAt, ".")}</CreatedDate>
       </StyledMessageCard>
     </MessageCardBase>
