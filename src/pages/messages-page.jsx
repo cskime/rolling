@@ -196,11 +196,12 @@ function MessagesPage() {
       } catch (error) {
         // TODO: Error 처리 필요
         console.error(error);
+        navigate("/notfound", { replace: true });
       }
     }
 
     fetchRollingPaper();
-  }, [id]);
+  }, [id, navigate]);
 
   const content = (
     <>

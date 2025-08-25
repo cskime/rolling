@@ -45,20 +45,20 @@ const ErrorNumber = styled.h1`
   font-weight: 900;
   color: var(--color-purple-700);
   margin: 0;
-  font-size: 200px;
+  font-size: 150px;
 
   ${media.mobile} {
-    font-size: 130px;
+    font-size: 110px;
   }
 `;
 
 const ErrorComment = styled.span`
-  font-size: 80px;
+  font-size: 70px;
   color: #6e6293;
   font-weight: 700;
 
   em {
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 800;
     font-style: normal;
     color: #240079;
@@ -72,24 +72,20 @@ const ErrorComment = styled.span`
   }
 
   ${media.mobile} {
-    font-size: 50px;
+    font-size: 40px;
     em {
-      font-size: 60px;
+      font-size: 50px;
     }
   }
 `;
 
 const ErrorCommentSofter = styled.span`
-  font-size: 50px;
+  font-size: 25px;
   color: #6e6293;
   font-weight: 400;
 
-  ${media.tablet} {
-    font-size: 40px;
-  }
-
   ${media.mobile} {
-    font-size: 30px;
+    font-size: 18px;
   }
 `;
 
@@ -133,10 +129,10 @@ const Error404Page = () => {
           <AirplaneSVG src={logoImage} />
           <ErrorNumber>404</ErrorNumber>
           <ErrorComment>
-            <em>Oops!</em> Page Not Found...
+            <em>앗 이런!</em> 페이지를 찾을 수 없습니다.
           </ErrorComment>
           <ErrorCommentSofter>
-            Don't worry, let's get you back on track.
+            페이지의 주소가 올바르지 않거나, 삭제 또는 다른 페이지로 변경되었습니다.
           </ErrorCommentSofter>
           <HomeButton
             size={BUTTON_SIZE.large}
