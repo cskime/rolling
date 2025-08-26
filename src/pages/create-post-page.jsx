@@ -11,6 +11,8 @@ import BackgroundSelect from "../components/option/background-select";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import { media } from "../utils/media";
+import Toast from "../components/toast/toast";
+import { useToast } from "../hooks/use-toast";
 
 const PostContainer = styled.div`
   display: flex;
@@ -77,7 +79,14 @@ function CreatePostPage() {
   const [selected, setSelected] = useState(0);
   const [backgroundUrls, setBackgroundUrls] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [toastMessage, setToastMessage] = useState();
   const navigate = useNavigate();
+
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
+
+  const handleToastCloseClick = () => setShowsToast(false);
 
   const colorOptions = [
     { label: "beige", color: BACKGROUND_COLOR.beige },
@@ -137,7 +146,8 @@ function CreatePostPage() {
       navigate(`/post/${newPostId}`);
     } catch (error) {
       console.error("게시물 생성 실패:", error);
-      alert("게시물 생성에 실패했습니다. 다시 시도해 주세요");
+      setToastMessage("게시물 생성에 실패했습니다. 다시 시도해 주세요.")
+      setShowsToast(true);
     } finally {
       setLoading(false);
     }
@@ -189,6 +199,15 @@ function CreatePostPage() {
           onClick={handleCreate}
         />
       </ButtonWrapper>
+
+      {showsToast&&
+        <Toast
+          isOpen={isOpen}
+          message={`${toastMessage} 🚨`}
+          onClose={handleToastCloseClick}
+          onDismiss={onDismiss}
+        />
+      }
     </PostContainer>
   );
 }
