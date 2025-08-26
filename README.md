@@ -1,6 +1,6 @@
 # Rolling: 롤링 페이퍼 커뮤니티 플랫폼
 
-<img src="img-demo.png" alt="데모" />
+<img src="/docs/images/img-demo.png" alt="데모" />
 
 ## 소개
 
