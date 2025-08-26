@@ -12,6 +12,8 @@ import TextEditor from "../components/text-editor/text-editor";
 import TextField from "../components/text-field/text-field";
 import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import { media } from "../utils/media";
+import Toast from "../components/toast/toast";
+import { useToast } from "../hooks/use-toast";
 
 const SendContainer = styled.div`
   display: flex;
@@ -110,7 +112,14 @@ function SendMessagePage() {
     title: "Noto Sans",
     fontFamily: "Noto Sans",
   });
+  const [toastMessage, setToastMessage] = useState();
   const navigate = useNavigate();
+
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
+
+  const handleToastCloseClick = () => setShowsToast(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -169,6 +178,8 @@ function SendMessagePage() {
       navigate(`/post/${recipientId}`);
     } catch (error) {
       console.error("메시지 저장 실패:", error);
+      setToastMessage("메시지를 저장하는 중 오류가 발생했어요.")
+      setShowsToast(true);
     }
   };
 
@@ -264,6 +275,15 @@ function SendMessagePage() {
           onClick={handleCreate}
         />
       </ButtonWrapper>
+
+      {showsToast&&
+        <Toast
+          isOpen={isOpen}
+          message={`${toastMessage} 🚨`}
+          onClose={handleToastCloseClick}
+          onDismiss={onDismiss}
+        />
+      }
     </SendContainer>
   );
 }

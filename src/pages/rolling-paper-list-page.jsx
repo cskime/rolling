@@ -7,6 +7,8 @@ import BUTTON_SIZE from "../components/button/button-size";
 import RollingPaperList from "../features/rolling-paper/components/rolling-paper-list";
 import { useMedia } from "../hooks/use-media";
 import { media } from "../utils/media";
+import Toast from "../components/toast/toast";
+import { useToast } from "../hooks/use-toast";
 
 const TopContainer = styled.div`
   text-align: center;
@@ -71,9 +73,8 @@ function getCachedImage(url) {
   return cache[url].src;
 }
 
-function RollingPaperListPage() {
-  const navigate = useNavigate();
 
+function RollingPaperListPage() {
   const [recipientsData, setRecipientsData] = useState([]);
   const [popularDataList, setPopularDataList] = useState([]);
   const [recentDataList, setRecentDataList] = useState([]);
@@ -81,6 +82,15 @@ function RollingPaperListPage() {
   const [recentCurrentPage, setRecentCurrentPage] = useState(0);
   const [cardCount, setCardCount] = useState(4);
   const { isDesktop } = useMedia();
+  const [isCalledApi, setIsCalledApi] = useState(true);
+  const [toastMessage, setToastMessage] = useState();
+  const navigate = useNavigate();
+
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
+
+  const handleToastCloseClick = () => setShowsToast(false);
 
   useEffect(() => {
     isDesktop ? setCardCount(4) : setCardCount(null);
@@ -90,16 +100,24 @@ function RollingPaperListPage() {
     navigate("/post");
   };
 
+
   useEffect(() => {
-    apiClient
-      .get("/recipients/")
-      .then((res) => {
+    if (!isCalledApi) return;
+
+    const fetchData = async () => {
+      try {
+        const res = await apiClient.get("/recipients/");
         setRecipientsData(res.data.results);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("오류:", err);
-      });
-  }, []);
+        setToastMessage("메시지를 가져오는 중 오류가 발생했어요.")
+        setShowsToast(true);
+      } finally {
+        setIsCalledApi(false);
+      }
+    };
+    fetchData();
+  }, [isCalledApi, setShowsToast]);
 
   useEffect(() => {
     recipientsData.forEach((data) => {
@@ -183,6 +201,15 @@ function RollingPaperListPage() {
           onClick={handleMakingButton}
         />
       </ButtonFooter>
+
+      {showsToast&&
+        <Toast
+          isOpen={isOpen}
+          message={`${toastMessage} 🚨`}
+          onClose={handleToastCloseClick}
+          onDismiss={onDismiss}
+        />
+      }
     </TopContainer>
   );
 }

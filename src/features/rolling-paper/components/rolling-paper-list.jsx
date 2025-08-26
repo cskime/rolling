@@ -248,8 +248,15 @@ function RollingPaperList({ cardData, totalPages, currentPage, onTurnCards }) {
   const navigate = useNavigate();
 
   const handleCardClick = (cardId) => {
+    if(!cardId) {
+      navigate("*");
+      return;
+    }
+
     navigate(`/post/${cardId}`);
   };
+
+
   const profileImages = useMemo(
     () =>
       cardData.flatMap((card) =>

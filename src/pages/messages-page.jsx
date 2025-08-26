@@ -25,6 +25,8 @@ import { useMedia } from "../hooks/use-media";
 import { useModalDialog } from "../hooks/use-modal-dialog";
 import ContentLayout from "../layouts/content-layout";
 import { media } from "../utils/media";
+import Toast from "../components/toast/toast";
+import { useToast } from "../hooks/use-toast";
 
 const Content = styled.div`
   & > div {
@@ -111,6 +113,8 @@ function MessagesPage() {
     onPrimaryAction,
     onDismissDialog,
   } = useModalDialog();
+  const [toastMessage, setToastMessage] = useState();
+  const [hasMoreMessages, setHasMoreMessages] = useState(true);
 
   const isEditing = useMemo(
     () => location.pathname.includes("edit"),
@@ -121,6 +125,12 @@ function MessagesPage() {
     navigate("edit");
   };
 
+  const { showsToast, isOpen, setShowsToast, onDismiss } = useToast({
+    timeout: 5000,
+  });
+
+  const handleToastCloseClick = () => setShowsToast(false);
+
   const handleRollingPaperDelete = () => {
     openDialog({
       title: `${recipient.name} 님의 롤링 페이퍼를 삭제할까요?`,
@@ -130,8 +140,9 @@ function MessagesPage() {
           await deleteRecipient({ id: recipient.id });
           navigate(`/list`);
         } catch (error) {
-          // TODO: Error 처리
           console.log(error);
+          setToastMessage(error);
+          setShowsToast(true);
         }
       },
     });
@@ -152,8 +163,9 @@ function MessagesPage() {
             prev.filter((prevMessage) => prevMessage.id !== message.id)
           );
         } catch (error) {
-          // TODO: Error 처리
           console.log(error);
+          setToastMessage(error);
+          setShowsToast(true);
         }
       },
     });
@@ -168,8 +180,11 @@ function MessagesPage() {
   };
 
   const handleInfiniteScroll = async () => {
-    const messages = await getNextPageMessages();
-    if (!messages) return;
+    if (!hasMoreMessages) return;
+
+    try {
+       const messages = await getNextPageMessages();
+       if (!messages) return;
 
     setMessages((prev) => {
       const newMessages = [...prev];
@@ -181,6 +196,12 @@ function MessagesPage() {
 
       return newMessages;
     });
+    } catch(error) {
+      console.error(error);
+      setToastMessage(error);
+      setShowsToast(true);
+      setHasMoreMessages(false);
+    }
   };
 
   useEffect(() => {
@@ -196,11 +217,12 @@ function MessagesPage() {
       } catch (error) {
         // TODO: Error 처리 필요
         console.error(error);
+        navigate("/notfound", { replace: true });
       }
     }
 
     fetchRollingPaper();
-  }, [id]);
+  }, [id, navigate]);
 
   const content = (
     <>
@@ -270,6 +292,15 @@ function MessagesPage() {
           }
         />
       </Modal>
+
+      {showsToast&&
+        <Toast
+          isOpen={isOpen}
+          message={`${toastMessage} 🚨`}
+          onClose={handleToastCloseClick}
+          onDismiss={onDismiss}
+        />
+      }
     </ContentLayout>
   );
 }
