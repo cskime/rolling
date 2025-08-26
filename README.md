@@ -11,7 +11,7 @@
 
 | 분류 | 내용 | 비고 |
 | --- | --- | --- |
-| UI | React<br>Styled Components | |
+| UI | React<br>Styled-Components | |
 | Routing | React Router | |
 | Network | Axios | Fetch API를 활용하여 공통 네트워크 모듈을 개발하는 대신 팀원들에게 더 익숙한 axios 사용 |
 | Bundling | Vite | |
