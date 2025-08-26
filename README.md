@@ -1,5 +1,7 @@
 # Rolling: 롤링 페이퍼 커뮤니티 플랫폼
 
+<img src="img-demo.png" alt="데모" />
+
 ## 소개
 
 - 코드잇 스프린트 프론트엔드 과정에 18기로 참여하고 진행한 첫 번째 팀 프로젝트
@@ -7,19 +9,14 @@
 
 ## 기술스택
 
-- UI
-    - React
-    - Styled Components
-- Routing
-    - React Router
-- Network
-    - Axios : Fetch API를 활용하여 공통 네트워크 모듈을 개발하는 대신 팀원들에게 더 익숙한 axios 사용
-- Deploy : 
-    - Vercel : 향후 학습할 Next.js와 관련된 배포 환경을 미리 체험해 보기 위해 Vercel로 배포 진행
-    - GitHub : Organization repository를 무료로 배포하기 위해 forked repository로 배포 우회
-- Library
-    - [React Quill New](https://www.npmjs.com/package/react-quill-new?activeTab=readme) : Text editor 개발 시간 단축을 위해 외부 라이브러리 사용
-    - [Emoji Picker React](https://www.npmjs.com/package/emoji-picker-react) : Emoji picker 개발 시간 단축을 위해 외부 라이브러리 사용
+| 분류 | 내용 | 비고 |
+| --- | --- | --- |
+| UI | React<br>Styled Components | |
+| Routing | React Router | |
+| Network | Axios | Fetch API를 활용하여 공통 네트워크 모듈을 개발하는 대신 팀원들에게 더 익숙한 axios 사용 |
+| Bundling | Vite | |
+| Deploy | Vercel | 향후 학습할 Next.js와 관련된 배포 환경을 미리 체험해 보기 위해 Vercel로 배포 진행 |
+| Library | React Quill New<br>Emoji Picker React | 개발 시간 단축을 위해 외부 라이브러리 사용 |
 
 ## 참고 자료
 
@@ -31,24 +28,25 @@
 - [MDN | Element: getBoundingClientRect() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
 - [React | createPortal](https://react.dev/reference/react-dom/createPortal)
 - [Vite | Vite의 환경 변수와 모드](https://ko.vite.dev/guide/env-and-mode)
+- [GitHub | Using secrets in GitHub Actions - use using secrets in a workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets#using-secrets-in-a-workflow)
 
 ### 블로그
 
+- [GitHub Actions의 pull_request_target과 workflow_run 이벤트](https://blog.outsider.ne.kr/1541)
 - [React portal을 활용한 드롭다운 컴포넌트 구현하기](https://ji-hoon.github.io/blog/implement-dropdown-with-react-portal)
-- [마운트 될 때와 언마운트 될 때 각기 다른 애니메이션 적용하기](https://seo-tory.tistory.com/73)
+- [React component: 마운트 될 때와 언마운트 될 때 각기 다른 애니메이션 적용하기](https://seo-tory.tistory.com/73)
+- [setTimeout없이 애니메이션이 끝날 때 컴포넌트 언마운트 시키기 (feat. FSM, animation event)](https://ianlog.me/blog/modal-atoz/alert-dialog-animation)
+- [Vercel로 Organization 레포지토리 무료 배포하기](https://velog.io/@woogur29/Organization-%EB%A0%88%ED%8F%AC%EC%A7%80%ED%86%A0%EB%A6%AC-vercel%EB%A1%9C-%EB%AC%B4%EB%A3%8C-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0)
 
 ## 담당 역할 및 개발 내용
 
-### 프로젝트 세팅
+### 프로젝트 설정 및 협업
 
 - GitHub repository의 branch ruleset 설정
     - Direct push 및 force push 금지
     - Branch 삭제 금지
     - PR merge를 위한 approve 조건 설정 (최소 2명)
 - Pull request 관련 알림을 위한 discord webhook 연동 및 설정
-
-### 협업
-
 - 모든 팀원들이 일관된 형식으로 PR을 작성하기 위한 [PR template](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/pull_request_template.md) 추가
 - 작업 종류에 따라 일관된 issue를 작성하기 위한 5가지 [issue template](https://github.com/codeit-FE-18-part2/rolling/tree/develop/.github/ISSUE_TEMPLATE) 추가
 - PR 생성 시 자동으로 reviewer를 추가하기 위한 '[auto assign  app](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/auto_assign.yml)' 설정
@@ -82,14 +80,14 @@
 
 - 
 
-#### 카카오톡 공유하기 기능 개발 ([PR](https://github.com/codeit-FE-18-part2/rolling/pull/66))
+#### 카카오톡 공유하기 기능 개발 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/66))
 
 <img src="/docs/images/img-kakao-share.png" alt="카카오톡 공유 예시" width="200px" />
 
 - KakaoTalk JavaScript API를 연동하고 custom message template를 사용하여 공유하기 기능 개발
 - 상용 환경과 개발 환경을 구분하여 JavaScript API key 및 template ID를 환경 변수로 관리
 
-#### 공통 컴포넌트 개발 ([Issue](https://github.com/orgs/codeit-FE-18-part2/projects/1?pane=issue&itemId=123586709&issue=codeit-FE-18-part2%7Crolling%7C4))
+#### 공통 컴포넌트 개발 ([관련 issue](https://github.com/orgs/codeit-FE-18-part2/projects/1?pane=issue&itemId=123586709&issue=codeit-FE-18-part2%7Crolling%7C4))
 
 <img src="/docs/images/img-test-comps.png" alt="공통 컴포넌트 테스트 페이지" width="400px" />
 
@@ -97,7 +95,7 @@
 - 공통 컴포넌트를 테스트하고 팀원들에게 기본적인 사용 방법 예시를 제공하기 위해 별도의 페이지 개발
 - Storybook을 사용할 수도 있었지만, 학습한 것을 연습하는 것에 집중하기 위해 새로운 도구는 도입하지 않음
 
-#### 테스트 데이터 관리 페이지 개발
+#### 테스트 데이터 관리 페이지 개발 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/74))
 
 <img src="/docs/images/img-test-api.png" alt="공통 컴포넌트 테스트 페이지" width="600px" />
 
@@ -111,9 +109,23 @@
 - `IntersectionObserver`
 - Animation이 끝났을 때 component를 unmount 시키기
 
+## 문제 해결
+
+### Vercel 배포 시 root 이외 경로에 접근하면 404 error가 발생하는 문제 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/58))
+
+- 문제
+    - React 프로젝트를 Vercel로 배포한 뒤, root(`/`) 이외의 경로로 접근하면 404 status error가 반환되는 문제
+- 원인
+    - React는 SPA이기 때문에 기본적으로 root HTML 1개만 가짐. `#root` id를 가진 요소에 JavaScript로 UI를 그리는 구조.
+    - Vercel 등 정적 웹사이트 배포 서비스에 React 프로젝트를 배포했을 때, root 이외의 경로로 접근하면 해당 경로의 HTML 파일을 서버에 요청함
+    - 하지만, React는 단일 HTML 파일만 가지고 있으므로 요청한 경로에 HTML 파일이 없어서 error가 발생한 것
+        - React app에서 어떤 URL을 요청하면 웹 서버에 요청을 보내는게 아니라, URL 경로에 해당하는 component를 rendering 함
+- 해결
+    - `vercel.json` 설정 파일에서 root(`/`) 이외의 경로로 접근하면 항상 root로 redirect
+
 ## 시도해 봤지만 구현하지 못한 것
 
-### PR 생성 시 결과물을 바로 확인하기
+### PR 생성 시 결과물을 바로 확인하기 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/59))
 
 - 목표 : PR을 만들 때마다 Vercel에 배포해서 reviewer가 프로젝트를 실행하지 않고 결과를 확인하여 생산성을 향상
 - 시도 : PR이 생성되면 Vercel CLI를 사용해서 source branch를 기준으로 Vercel에 preview 배포하는 GitHub Actions workflow 작성
