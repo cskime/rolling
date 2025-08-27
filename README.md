@@ -64,9 +64,20 @@
 
 ### 개발
 
-#### `IntersectionObserver`를 활용한 무한 스크롤 구현
+#### `IntersectionObserver`를 활용한 무한 스크롤 구현 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/82))
 
-- 
+<img src="./docs/images/demo-infinite-scroll.gif" alt="무한 스크롤 시연" />
+
+- 구현 방식
+    1. 서버에 첫 번째 page의 데이터를 요청하고 render
+    2. List의 끝까지 스크롤하면 서버에 다음 page의 데이터를 추가 요청
+    3. 다음 page 데이터를 `useState`가 반환하는 setter를 통해 이전 state에 이어붙이고 component를 re-render
+- `IntersectionObserver` API 활용
+    1. List 맨 아래에 observing을 위한 `<div>` 요소를 추가
+    2. 이 요소를 `IntersectionObserver`가 observe
+    3. 요소가 viewport에 들어오거나 나갈 때마다 callback 실행
+    4. Observer callback으로 받는 `IntersectionObserverEntry`의 `isIntersecting` 값이 `true`일 때 다음 page 데이터 요청
+- React component에서 사용하기 위해 [`useIntersectionObserver` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-intersection-observer.jsx)으로 구현
 
 #### React portal을 활용하여 컴포넌트를 별도의 layer에 render
 
@@ -82,14 +93,14 @@
 
 #### 카카오톡 공유하기 기능 개발 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/66))
 
-<img src="/docs/images/img-kakao-share.png" alt="카카오톡 공유 예시" width="200px" />
+<img src="./docs/images/img-kakao-share.png" alt="카카오톡 공유 예시" width="200px" />
 
 - KakaoTalk JavaScript API를 연동하고 custom message template를 사용하여 공유하기 기능 개발
 - 상용 환경과 개발 환경을 구분하여 JavaScript API key 및 template ID를 환경 변수로 관리
 
 #### 공통 컴포넌트 개발 ([관련 issue](https://github.com/orgs/codeit-FE-18-part2/projects/1?pane=issue&itemId=123586709&issue=codeit-FE-18-part2%7Crolling%7C4))
 
-<img src="/docs/images/img-test-comps.png" alt="공통 컴포넌트 테스트 페이지" width="400px" />
+<img src="./docs/images/img-test-comps.png" alt="공통 컴포넌트 테스트 페이지" width="400px" />
 
 - 프로젝트 초기에 Button, TextField 등 팀원들이 담당한 화면을 개발하기 위해 필요한 공통 컴포넌트 개발
 - 공통 컴포넌트를 테스트하고 팀원들에게 기본적인 사용 방법 예시를 제공하기 위해 별도의 페이지 개발
@@ -97,7 +108,7 @@
 
 #### 테스트 데이터 관리 페이지 개발 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/74))
 
-<img src="/docs/images/img-test-api.png" alt="공통 컴포넌트 테스트 페이지" width="600px" />
+<img src="./docs/images/img-test-api.png" alt="공통 컴포넌트 테스트 페이지" width="600px" />
 
 - 개발 서버에 주입할 테스트 데이터를 생성, 조회, 삭제 등 관리하기 위한 별도의 페이지 개발
 - 팀원들이 편리하게 테스트 데이터를 관리할 수 있도록 하여 API 연동 개발 시 생산성 향상에 기여함
