@@ -79,9 +79,22 @@
     4. Observer callback으로 받는 `IntersectionObserverEntry`의 `isIntersecting` 값이 `true`일 때 다음 page 데이터 요청
 - React component에서 사용하기 위해 [`useIntersectionObserver` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-intersection-observer.jsx)으로 구현
 
-#### React portal을 활용하여 컴포넌트를 별도의 layer에 render
+#### React portal을 활용하여 컴포넌트를 별도의 layer에 render ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/56))
 
-- 
+- Portal : React component tree 구조는 유지하면서도 DOM tree 상에 임의의 위치에 component를 render 해 주는 것
+- Dropdown, Modal, Popover 등 화면 전체를 덮어야 하는 component를 portal을 활용해서 별도의 layer에 render
+- 구현 방식
+    1. React Context API를 활용해서 component를 portal로 render할 수 있는 scope를 제공하는 [`PortalProvider` component](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/components/portal/portal-provider.jsx) 구현
+    2. Portal로 rendering할 요소를 결정하는 [`Portal` component](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/components/portal/portal.jsx) 구현
+    3. Portal로 rendering할 요소의 rendering 조건을 결정하는 [`usePortal()` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-portal.jsx) 구현
+    4. Portal로 rendering한 component의 mount/unmount를 animation의 시작/끝 시점과 동기화 시키기 위한 [`useAnimatedPortal()` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-animated-portal.jsx) 구현
+
+- **구현 예시 : `Modal` component**
+
+    <img src="./docs/images/demo-portal-modal.gif" alt="Portal을 사용한 Modal 구현 데모" />
+
+    1. `Modal` component를 `Portal` component로 감싸서 구현
+    2. `Modal`을 animation과 함께 열고 닫기 위해 `useAnimatedPortal()` custom hook을 활용한 [`useModal()` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-modal.jsx) 구현
 
 #### Component를 animation 종료 후 unmount 하는 custom hook 구현
 
