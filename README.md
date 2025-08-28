@@ -88,21 +88,119 @@
     2. Portal로 rendering할 요소를 결정하는 [`Portal` component](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/components/portal/portal.jsx) 구현
     3. Portal로 rendering할 요소의 rendering 조건을 결정하는 [`usePortal()` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-portal.jsx) 구현
     4. Portal로 rendering한 component의 mount/unmount를 animation의 시작/끝 시점과 동기화 시키기 위한 [`useAnimatedPortal()` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-animated-portal.jsx) 구현
-
 - **구현 예시 : `Modal` component**
-
     <img src="./docs/images/demo-portal-modal.gif" alt="Portal을 사용한 Modal 구현 데모" />
-
     1. `Modal` component를 `Portal` component로 감싸서 구현
     2. `Modal`을 animation과 함께 열고 닫기 위해 `useAnimatedPortal()` custom hook을 활용한 [`useModal()` custom hook](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-modal.jsx) 구현
 
-#### Component를 animation 종료 후 unmount 하는 custom hook 구현
+#### Component를 animation 종료 후 unmount 하는 custom hook 구현 ([source code](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-animated-mount.jsx))
 
-- 
+- React는 component가 화면에서 사라지는 방식을 조건부 rendering으로 구현
+- 닫는 animation을 추가하려면 animation이 동작하는 동안에는 component가 mount 되어 있어야 하고, animation이 끝난 뒤 unmount 해야 함
+- 이것을 구현하기 위해 component에 두 가지 상태 필요
+    1. Mount or unmount
+    2. Show or hide (animation)
+- 위 두 가지 상태를 관리하는 `useAnimatedMount()` custom hook 구현
+    - `useState()`를 두 번 사용해서 두 가지 상탯값 관리
+        ```javascript
+        function useAnimatedMount() {
+            const [isMount, setMount] = useState(false);
+            const [isOpen, setOpen] = useState(false);
+            ...
+        }
+        ```
+    - Component가 animation과 함께 나타나고 사라지는 코드를 추상화한 `setShows` setter 구현
+        ```javascript
+        function useAnimatedMount() {
+            ...
+            const setShows = (shows) => {
+                if (shows) {
+                    // `true`를 전달하면 component를 mount하고 열리는 animation 시작
+                    setMount(true);
+                    setOpen(true);
+                } else {
+                    // `false`를 전달하면 닫는 animation 시작
+                    // 이 때, `isMount`는 `true`로 component가 mount된 상태
+                    setOpen(false);
+                }
+            };
+            ...
+        }
+        ```
+    - 닫는 animation이 종료되면 component를 unmount 시키기 위한 `onAnimatedEnd` handler 구현
+        ```javascript
+        function useAnimatedMount() {
+            ...
+            const onAnimationEnd = () => {
+                // Open animation이 종료되는 경우는 무시
+                if (isOpen) return;
+                setMount(false);
+            };
+            ...
+        }
+        ```
+    - 이 custom hook은 네 가지 값을 반환
+        ```javascript
+        function useAnimatedMount() {
+            ...
 
-#### `matchMedia()` method를 활용하여 JavaScript에서 media query matching 감지
+            return { isMount, isOpen, setShows, onAnimationEnd };
+        }
+        ```
+        - `isMount` : Component의 mount/unmount 제어 (조건부 rendering)
+        - `isOpen` : Component의 open/close animation 제어
+        - `setShows` : Component가 animation과 함께 나타나고 사라지는 코드 추상화
+        - `onAnimationEnd` : Component에서 animation이 종료되었을 때 unmount 시키기 위한 handler
 
-- 
+#### `matchMedia()` method를 활용하여 JavaScript에서 media query matching 감지 ([source code](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/hooks/use-media.jsx))
+
+- JavaScript에서 media query를 감지할 때 `matchMedia()` method를 사용할 수 있음
+- 이 method를 React component에서 사용하기 위한 custom hook 구현
+- Desktop, tablet, mobile size 변화를 감지하기 위한 `useMedia()` custom hook 구현 예시
+    - 각 size 별로 `matchMedia(queryString)`을 실행하여 `MediaQueryList` 생성
+        ```javascript
+        function useMedia() {
+            const desktop = useRef(matchMedia(mediaQueryString.desktop)).current;
+            const tablet = useRef(matchMedia(mediaQueryString.tablet)).current;
+            const mobile = useRef(matchMedia(mediaQueryString.mobile)).current;
+            ...
+        }
+        ```
+        - 이 때, `matchMedia()`가 생성하는 `MediaQueryList` 객체는 한 번만 생성하면 됨
+        - 최초 한 번만 `MediaQueryList` 객체가 생성되도록 `useRef()` hook 사용 
+    - 각 size 별로 활성화 여부를 상탯값으로 관리
+        ```javascript
+        function useMedia() {
+            ...
+            const [matches, setMatches] = useState({
+                isDesktop: desktop.matches,
+                isTablet: tablet.matches,
+                isMobile: mobile.matches,
+            });
+            ...
+        }
+        ```
+    - `useEffect()` 안에서 `MediaQueryList`에 `change` event를 감지하면 상탯값을 변경해서 component를 re-render
+        ```javascript
+        function useMedia() {
+            ...
+            useEffect(() => {
+                const handleDesktopMatch = (event) => { ... };
+                const handleTabletMatch = (event) => { ... };
+                const handleMobileMatch = (event) => { ... };
+
+                desktop.addEventListener("change", handleDesktopMatch);
+                tablet.addEventListener("change", handleTabletMatch);
+                mobile.addEventListener("change", handleMobileMatch);
+
+                return () => {
+                desktop.removeEventListener("change", handleDesktopMatch);
+                tablet.removeEventListener("change", handleTabletMatch);
+                mobile.removeEventListener("change", handleMobileMatch);
+                };
+            }, [desktop, tablet, mobile]);
+        }
+        ```
 
 #### 카카오톡 공유하기 기능 개발 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/66))
 
