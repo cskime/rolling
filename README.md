@@ -129,6 +129,39 @@
         - `setShows` : Component가 animation과 함께 나타나고 사라지는 코드 추상화
         - `onAnimationEnd` : Component에서 animation이 종료되었을 때 unmount 시키기 위한 handler
 
+#### Skeleton loading animation 구현 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/111))
+
+- Image loading 중 placeholder로 사용할 수 있는 [`SkeletonLoading`](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/components/loading/skeleton-loading.jsx) component 구현
+- Background에 linear gradient를 넣고, gradient를 좌에서 우 방향으로 animate 시켜서 loading animation 구현
+    ```javascript
+    const StyledSkeletonLoading = styled.div`
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to left,
+            ${Colors.gray(200)} 40%,
+            white 50%,
+            ${Colors.gray(200)} 60%
+        );
+        background-size: 300% 100%;
+        background-repeat: no-repeat;
+        animation: ${({ $isLoading }) => ($isLoading ? LoadingAnimation : "none")} 2s
+            infinite;
+    `;
+    ```
+- `Avatar` component 등 loading 중 placeholder를 보여줘야 하는 곳에서 활용 ([source code](https://github.com/codeit-FE-18-part2/rolling/blob/176e6a959651bc9c379e96e8715602e714f9918f/src/components/avatar/avatar.jsx#L65-L67))
+    ```javascript
+    <StyledAvatar $size={size} $color={color}>
+        <SkeletonLoading isLoading={isLoading}>
+            <img
+                src={source ?? defaultAvatarImage}
+                alt="사용자 사진"
+                onLoad={handleImageLoad}
+            />
+        </SkeletonLoading>
+    </StyledAvatar>
+    ```
+
 #### `IntersectionObserver`를 활용한 무한 스크롤 구현 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/82))
 
 <img src="./docs/images/demo-infinite-scroll.gif" alt="무한 스크롤 시연" />
