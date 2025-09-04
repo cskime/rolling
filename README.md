@@ -131,6 +131,8 @@
 
 #### Skeleton loading animation 구현 ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/111))
 
+<img src="./docs/images/demo-skeleton-loading.gif" width="300px"/>
+
 - Image loading 중 placeholder로 사용할 수 있는 [`SkeletonLoading`](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/components/loading/skeleton-loading.jsx) component 구현
 - Background에 linear gradient를 넣고, gradient를 좌에서 우 방향으로 animate 시켜서 loading animation 구현
     ```javascript
