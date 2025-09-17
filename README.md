@@ -4,38 +4,57 @@
 
 ## 소개
 
-- 코드잇 스프린트 프론트엔드 과정에 18기로 참여하고 진행한 첫 번째 팀 프로젝트
-- 의도적으로 배우지 않은 기술과 외부 라이브러리 사용을 최대한 자제하고 **학습한 기술들의 숙련도 향상**에 초점을 맞추어 진행
+- 코드잇 스프린트 프론트엔드 18기 과정에서 2주간 진행한 팀 프로젝트
+- 배우지 않은 기술과 외부 라이브러리 사용을 최소화하고 가능한 직접 구현하며 **학습한 기술들의 숙련도 향상**을 목표로 진행
 
 ### 사용 기술
 
 - UI : React, Styled components
 - Routing : React Router
 - Network : Axios
-  - Fetch API를 활용하여 공통 네트워크 모듈을 개발하는 대신 팀원들에게 더 익숙한 axios 사용 |
-- Tool : Vite, Vercel
+  - Fetch API를 사용해서 공통 네트워크 모듈을 개발하는 대신 팀원들에게 더 익숙한 axios 사용
+- Build Tool : Vite
+- Deloyment : Vercel
   - 향후 학습할 Next.js와 관련된 배포 환경을 미리 체험해 보기 위해 Vercel로 배포 진행
-- Library : React Quill New, Emoji Picker React
 
 ## 담당 역할 및 개발 내용
 
 ### 프로젝트 설정 및 협업
 
-- GitHub repository의 branch ruleset 설정
-  - Direct push 및 force push 금지
-  - Branch 삭제 금지
-  - PR merge를 위한 approve 조건 설정 (최소 2명)
-- GitHub [issue](https://github.com/codeit-FE-18-part2/rolling/issues)와 [project board](https://github.com/orgs/codeit-FE-18-part2/projects/1)를 활용한 할 일 및 일정 관리 방식 수립
-- 일관된 issue 및 PR 작성을 위한 template 설정
-  - [PR template](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/pull_request_template.md)
-  - [Issue templates](https://github.com/codeit-FE-18-part2/rolling/tree/develop/.github/ISSUE_TEMPLATE)
-- PR 생성 시 자동으로 reviewer를 추가하기 위한 '[auto assign app](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/auto_assign.yml)' 설정
-- GitHub [WiKi](https://github.com/codeit-FE-18-part2/rolling/wiki)를 활용하여 프로젝트 규칙, 참고자료 등 문서화
-- 팀원들이 생성한 PR의 코드 리뷰 진행
-  - [예시 1](https://github.com/codeit-FE-18-part2/rolling/pull/23#discussion_r2271472628)
-  - [예시 2](https://github.com/codeit-FE-18-part2/rolling/pull/23#discussion_r2277835736)
-  - [예시 3](https://github.com/codeit-FE-18-part2/rolling/pull/54#discussion_r2281056746)
-- Pull request 관련 알림을 위한 discord webhook 연동 및 설정
+**GitHub repository의 branch ruleset 설정**
+
+- 목적 : 아직 git에 익숙하지 않은 팀원들이 부담 없이 개발에 집중할 수 있는 환경 설정
+- 활동
+  - `main` 및 `develop` branch에 direct push, force push, branch 삭제 금지 설정
+  - PR 병합을 위한 approve 조건 설정 (최소 2명)
+    - 아직 개발에 익숙하지 않은 팀원들의 코드를 안전하게 병합하고, 다른 팀원들에게 코드 리뷰 경험을 장려하기 위함
+    - PR 생성 시 자동으로 reviewer를 추가하는 '[auto assign app](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/auto_assign.yml)'을 설정해서 리뷰 요청 자동화
+- 성과
+  - Git 숙련도가 낮은 팀원들이 실수로 코드를 덮어쓰거나 삭제할 걱정 없이 git을 활용하고 개발에 집중할 수 있었음
+  - 팀원들의 코드를 리뷰하고 수정을 제안해서 더 나은 코드가 병합될 수 있도록 유도하고, 다른 팀원들에게 코드 리뷰를 장려
+    - [예시 1](https://github.com/codeit-FE-18-part2/rolling/pull/23#discussion_r2271472628)
+    - [예시 2](https://github.com/codeit-FE-18-part2/rolling/pull/23#discussion_r2277835736)
+    - [예시 3](https://github.com/codeit-FE-18-part2/rolling/pull/54#discussion_r2281056746)
+
+**GitHub의 issue tracking 기능을 활용한 프로젝트 일정 관리**
+
+- 목적 : 짧은 기간 안에 프로젝트를 완성하기 위해 팀원 별로 담당한 작업의 진행 현황과 병목 지점을 파악하고 대처
+- 활동
+  - [GitHub issue](https://github.com/codeit-FE-18-part2/rolling/issues)에 개발할 action item을 등록
+  - [GitHub project board](https://github.com/orgs/codeit-FE-18-part2/projects/1)에 팀원 별로 개발 진행 현황 파악
+- 성과 : 매일 팀 미팅을 진행하면서 project board의 작업 현황을 바탕으로 개발 일정을 유동적으로 조정할 수 있었음
+
+**GitHub template을 통한 일관된 문서 작성**
+
+- 목적 : Issue 및 PR을 생성할 때 다른 팀원들이 작업 내용을 쉽게 이해할 수 있는 항목들로 본문을 작성할 수 있도록 유도
+- 활동 :
+  - 일관된 형식으로 issue를 작성하기 위한 [issue template](https://github.com/codeit-FE-18-part2/rolling/tree/develop/.github/ISSUE_TEMPLATE) 설정
+  - 일관된 형식으로 PR을 작성하기 위한 [PR template](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/pull_request_template.md) 설정
+- 성과
+  - Issue 및 관련된 PR의 실제 작업 내용을 살펴보지 않아도 어떤 작업을 진행했고 어떤 결과물이 나왔는지 쉽게 파악 가능
+  - 실제 개발에 들어가기 전에 해야 할 작업을 간략하게 정리하는 시간을 갖게 되어 요구사항 이해도를 높이는 데에 도움
+
+---
 
 ### 배포
 
@@ -187,6 +206,7 @@
 - 이 method를 React component에서 사용하기 위한 custom hook 구현
 - Desktop, tablet, mobile size 변화를 감지하기 위한 `useMedia()` custom hook 구현 예시
   - 각 size 별로 `matchMedia(queryString)`을 실행하여 `MediaQueryList` 생성
+
     ```javascript
     function useMedia() {
         const desktop = useRef(matchMedia(mediaQueryString.desktop)).current;
@@ -198,6 +218,7 @@
 
     - 이 때, `matchMedia()`가 생성하는 `MediaQueryList` 객체는 한 번만 생성하면 됨
     - 최초 한 번만 `MediaQueryList` 객체가 생성되도록 `useRef()` hook 사용
+
   - 각 size 별로 활성화 여부를 상탯값으로 관리
     ```javascript
     function useMedia() {
