@@ -2,7 +2,7 @@ const shade = ({ min = 100, max = 900, value }) => {
   return Math.min(Math.max(min, value), max);
 };
 
-const Colors = {
+const Colors = Object.freeze({
   purple: function (value) {
     return `var(--color-purple-${shade({ value })})`;
   },
@@ -23,6 +23,6 @@ const Colors = {
   },
   error: "var(--color-error)",
   surface: "var(--color-surface)",
-};
+});
 
 export default Colors;
