@@ -23,7 +23,7 @@
 
 **GitHub repository의 branch ruleset 설정**
 
-- 목적 : 아직 git에 익숙하지 않은 팀원들이 부담 없이 개발에 집중할 수 있는 환경 설정
+- 목표 : 아직 git에 익숙하지 않은 팀원들이 부담 없이 개발에 집중할 수 있는 환경 설정
 - 활동
   - `main` 및 `develop` branch에 direct push, force push, branch 삭제 금지 설정
   - PR 병합을 위한 approve 조건 설정 (최소 2명)
@@ -38,7 +38,7 @@
 
 **GitHub의 issue tracking 기능을 활용한 프로젝트 일정 관리**
 
-- 목적 : 짧은 기간 안에 프로젝트를 완성하기 위해 팀원 별로 담당한 작업의 진행 현황과 병목 지점을 파악하고 대처
+- 목표 : 짧은 기간 안에 프로젝트를 완성하기 위해 팀원 별로 담당한 작업의 진행 현황과 병목 지점을 파악하고 대처
 - 활동
   - [GitHub issue](https://github.com/codeit-FE-18-part2/rolling/issues)에 개발할 action item을 등록
   - [GitHub project board](https://github.com/orgs/codeit-FE-18-part2/projects/1)에 팀원 별로 개발 진행 현황 파악
@@ -46,7 +46,7 @@
 
 **GitHub template을 통한 일관된 문서 작성**
 
-- 목적 : Issue 및 PR을 생성할 때 다른 팀원들이 작업 내용을 쉽게 이해할 수 있는 항목들로 본문을 작성할 수 있도록 유도
+- 목표 : Issue 및 PR을 생성할 때 다른 팀원들이 작업 내용을 쉽게 이해할 수 있는 항목들로 본문을 작성할 수 있도록 유도
 - 활동 :
   - 일관된 형식으로 issue를 작성하기 위한 [issue template](https://github.com/codeit-FE-18-part2/rolling/tree/develop/.github/ISSUE_TEMPLATE) 설정
   - 일관된 형식으로 PR을 작성하기 위한 [PR template](https://github.com/codeit-FE-18-part2/rolling/blob/develop/.github/pull_request_template.md) 설정
@@ -56,24 +56,20 @@
 
 ---
 
-### 배포
-
-- 배포 환경에 따라 다르게 사용될 값을 환경 변수 파일로 관리
-  - `.env.production` : Vite가 production mode에서 사용할 환경 변수
-  - `.env.development` : Vite가 development mode에서 사용할 환경 변수
-- 배포 자동화를 위한 [GitHub Actions workflow](https://github.com/codeit-FE-18-part2/rolling/tree/develop/.github/workflows) 작성
-  - Vercel은 organization repository에 대해 유료 plan을 사용해야 하므로 forked repository를 배포용 repository로 사용
-  - Upstream repository의 `develop` branch에 commit이 push 또는 merge되면 forked repository로 push하는 workflow 작성
-
 ### 개발
 
-#### 공통 컴포넌트 개발 ([관련 issue](https://github.com/orgs/codeit-FE-18-part2/projects/1?pane=issue&itemId=123586709&issue=codeit-FE-18-part2%7Crolling%7C4))
+**공통 컴포넌트 개발 ([관련 issue](https://github.com/orgs/codeit-FE-18-part2/projects/1?pane=issue&itemId=123586709&issue=codeit-FE-18-part2%7Crolling%7C4))**
 
-<img src="./docs/images/img-test-comps.png" alt="공통 컴포넌트 테스트 페이지" width="400px" />
-
-- 프로젝트 초기에 Button, TextField 등 팀원들이 담당한 화면을 개발하기 위해 필요한 공통 컴포넌트 개발
-- 공통 컴포넌트를 테스트하고 팀원들에게 기본적인 사용 방법 예시를 제공하기 위해 별도의 페이지 개발
-- Storybook을 사용할 수도 있었지만, 학습한 것을 연습하는 것에 집중하기 위해 새로운 도구는 도입하지 않음
+- 목표 : 팀원들이 각자 맡은 화면을 개발할 때 활용할 수 있는 공통 컴포넌트 개발
+- 활동
+  - 공통 컴포넌트 및 전체 화면 시안을 참고하여 프로젝트 초기에 공통 컴포넌트 개발 (e.g. [Button](https://github.com/codeit-FE-18-part2/rolling/tree/develop/src/components/button), [TextField](https://github.com/codeit-FE-18-part2/rolling/tree/develop/src/components/text-field))
+  - 'styled-components'에서 CSS color variable 문자열을 쉽게 사용하기 위한 [`Colors`](https://github.com/codeit-FE-18-part2/rolling/blob/develop/src/components/color/colors.js) 개발
+  - 공통 컴포넌트의 간단한 테스트 및 사용 방법 예시를 제공하기 위한 별도의 페이지 개발
+    <img src="./docs/images/img-test-comps.png" alt="공통 컴포넌트 테스트 페이지" width="400px" />
+    - Storybook 사용을 고려했으나, 새로운 도구를 학습하고 적응하는 비용 대비 효과가 적다고 판단하여 도입하지 않음
+- 성과
+  - 팀원들이 각자 맡은 화면을 빠르게 개발할 수 있었음
+  - 재사용성 및 확장성을 고려한 공통 컴포넌트 설계 경험
 
 #### React portal을 활용하여 컴포넌트를 별도의 layer에 render ([관련 PR](https://github.com/codeit-FE-18-part2/rolling/pull/56))
 
@@ -267,6 +263,13 @@
 
 - 개발 서버에 주입할 테스트 데이터를 생성, 조회, 삭제 등 관리하기 위한 별도의 페이지 개발
 - 팀원들이 편리하게 테스트 데이터를 관리할 수 있도록 하여 API 연동 개발 시 생산성 향상에 기여함
+
+- 배포 환경에 따라 다르게 사용될 값을 환경 변수 파일로 관리
+  - `.env.production` : Vite가 production mode에서 사용할 환경 변수
+  - `.env.development` : Vite가 development mode에서 사용할 환경 변수
+- 배포 자동화를 위한 [GitHub Actions workflow](https://github.com/codeit-FE-18-part2/rolling/tree/develop/.github/workflows) 작성
+  - Vercel은 organization repository에 대해 유료 plan을 사용해야 하므로 forked repository를 배포용 repository로 사용
+  - Upstream repository의 `develop` branch에 commit이 push 또는 merge되면 forked repository로 push하는 workflow 작성
 
 ## 새로 배운 것
 
