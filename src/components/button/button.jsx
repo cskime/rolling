@@ -39,6 +39,16 @@ const styles = {
     [BUTTON_SIZE.small]: "6px",
     [BUTTON_SIZE.extraSmall]: "6px",
   },
+  iconSize: {
+    [BUTTON_SIZE.medium]: "24px",
+    [BUTTON_SIZE.small]: "24px",
+    [BUTTON_SIZE.extraSmall]: "20px",
+  },
+  gap: {
+    [BUTTON_SIZE.medium]: "10px",
+    [BUTTON_SIZE.small]: "4px",
+    [BUTTON_SIZE.extraSmall]: "4px",
+  },
 };
 
 const BaseButton = styled.button`
@@ -158,29 +168,16 @@ const StyledOutlinedButton = styled(BaseButton)`
   }
 `;
 
-const stylesWithIcon = {
-  iconSize: {
-    [BUTTON_SIZE.medium]: "24px",
-    [BUTTON_SIZE.small]: "24px",
-    [BUTTON_SIZE.extraSmall]: "20px",
-  },
-  gap: {
-    [BUTTON_SIZE.medium]: "10px",
-    [BUTTON_SIZE.small]: "4px",
-    [BUTTON_SIZE.extraSmall]: "4px",
-  },
-};
-
 const IconTitleContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${({ $size }) => stylesWithIcon.gap[$size]};
+  gap: ${({ $size }) => styles.gap[$size]};
 `;
 
 const Icon = styled.div`
-  width: ${({ $size }) => stylesWithIcon.iconSize[$size]};
-  height: ${({ $size }) => stylesWithIcon.iconSize[$size]};
+  width: ${({ $size }) => styles.iconSize[$size]};
+  height: ${({ $size }) => styles.iconSize[$size]};
 
   img {
     width: 100%;
