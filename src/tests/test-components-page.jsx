@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import smileAddImage from "../assets/ic-face-smile-add.svg";
 import Avatar from "../components/avatar/avatar";
 import AVATAR_SIZE from "../components/avatar/avatar-size";
@@ -16,7 +15,6 @@ import {
 } from "../components/button/button";
 import BUTTON_SIZE from "../components/button/button-size";
 import ToggleButton from "../components/button/toggle-button";
-import Header from "../components/header/header";
 import Modal from "../components/modal/modal";
 import Popover from "../components/popover/popover";
 import POPOVER_ALIGNMENT from "../components/popover/popover-alignment";
@@ -25,10 +23,6 @@ import TEXT_FIELD_TYPE from "../components/text-field/text-field-type";
 import Toast from "../components/toast/toast";
 import { useModal } from "../hooks/use-modal";
 import { useToast } from "../hooks/use-toast";
-
-const OutlinedHeader = styled(Header)`
-  border: 1px solid black;
-`;
 
 function TestComponentsPage() {
   /* Toggle Button */
